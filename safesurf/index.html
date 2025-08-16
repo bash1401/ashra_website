@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SafeSurf - DNS Privacy Protection</title>
   <meta name="description" content="SafeSurf protects your DNS queries using DNS over HTTPS (DoH) for enhanced privacy and security." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { 
@@ -13,6 +14,7 @@
       color: #333; 
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       min-height: 100vh;
+      overflow-x: hidden;
     }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     
@@ -25,142 +27,458 @@
       top: 0; 
       z-index: 100;
       box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    header.scrolled {
+      background: rgba(255, 255, 255, 0.98);
+      padding: 0.8rem 0;
     }
     nav { display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-size: 1.8rem; font-weight: bold; color: #1a73e8; }
-    .nav-links { display: flex; gap: 2rem; }
-    .nav-links a { color: #333; text-decoration: none; font-weight: 500; transition: color 0.3s; }
-    .nav-links a:hover { color: #1a73e8; }
+    .logo { 
+      font-size: 1.8rem; 
+      font-weight: bold; 
+      color: #1a73e8; 
+      display: flex; 
+      align-items: center; 
+      gap: 0.5rem;
+    }
+    .logo-icon { font-size: 2rem; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { 
+      color: #333; 
+      text-decoration: none; 
+      font-weight: 500; 
+      transition: all 0.3s; 
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+    }
+    .nav-links a:hover { 
+      color: #1a73e8; 
+      background: rgba(26, 115, 232, 0.1);
+      transform: translateY(-2px);
+    }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #333;
+    }
     
     /* Hero Section */
     .hero { 
       text-align: center; 
-      padding: 4rem 0; 
+      padding: 6rem 0; 
       color: white;
+      position: relative;
+      overflow: hidden;
     }
-    .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700; }
-    .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9; }
-    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 { 
+      font-size: 4rem; 
+      margin-bottom: 1.5rem; 
+      font-weight: 700; 
+      background: linear-gradient(45deg, #fff, #e3f2fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeInUp 1s ease-out;
+    }
+    .hero p { 
+      font-size: 1.4rem; 
+      margin-bottom: 3rem; 
+      opacity: 0.9; 
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 1s ease-out 0.2s both;
+    }
+    .cta-buttons { 
+      display: flex; 
+      gap: 1.5rem; 
+      justify-content: center; 
+      flex-wrap: wrap;
+      animation: fadeInUp 1s ease-out 0.4s both;
+    }
     .btn { 
-      padding: 1rem 2rem; 
+      padding: 1.2rem 2.5rem; 
       border-radius: 50px; 
       text-decoration: none; 
       font-weight: 600; 
       transition: all 0.3s; 
       display: inline-flex; 
       align-items: center; 
-      gap: 0.5rem;
+      gap: 0.8rem;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
-    .btn-primary { background: #1a73e8; color: white; }
-    .btn-primary:hover { background: #1557b0; transform: translateY(-2px); }
-    .btn-secondary { background: rgba(255,255,255,0.2); color: white; border: 2px solid rgba(255,255,255,0.3); }
-    .btn-secondary:hover { background: rgba(255,255,255,0.3); transform: translateY(-2px); }
+    .btn-primary { 
+      background: linear-gradient(45deg, #1a73e8, #34a853); 
+      color: white; 
+    }
+    .btn-primary:hover { 
+      background: linear-gradient(45deg, #1557b0, #2d8f47); 
+      transform: translateY(-3px); 
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+    .btn-secondary { 
+      background: rgba(255,255,255,0.2); 
+      color: white; 
+      border: 2px solid rgba(255,255,255,0.3); 
+      backdrop-filter: blur(10px);
+    }
+    .btn-secondary:hover { 
+      background: rgba(255,255,255,0.3); 
+      transform: translateY(-3px); 
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
     
     /* Features Section */
     .features { 
       background: white; 
-      padding: 5rem 0; 
+      padding: 6rem 0; 
+      position: relative;
     }
-    .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #333; }
+    .section-title { 
+      text-align: center; 
+      font-size: 3rem; 
+      margin-bottom: 4rem; 
+      color: #333; 
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(45deg, #1a73e8, #34a853);
+      border-radius: 2px;
+    }
     .features-grid { 
       display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-      gap: 2rem; 
-      margin-top: 3rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+      gap: 2.5rem; 
+      margin-top: 4rem;
     }
     .feature-card { 
-      background: #f8f9fa; 
-      padding: 2rem; 
-      border-radius: 15px; 
+      background: linear-gradient(135deg, #f8f9fa, #ffffff); 
+      padding: 2.5rem; 
+      border-radius: 20px; 
       text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: all 0.4s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+      position: relative;
+      overflow: hidden;
     }
-    .feature-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-    .feature-icon { font-size: 3rem; margin-bottom: 1rem; }
-    .feature-card h3 { color: #1a73e8; margin-bottom: 1rem; }
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(26, 115, 232, 0.1), transparent);
+      transition: left 0.5s;
+    }
+    .feature-card:hover::before {
+      left: 100%;
+    }
+    .feature-card:hover { 
+      transform: translateY(-8px); 
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      border-color: rgba(26, 115, 232, 0.2);
+    }
+    .feature-icon { 
+      font-size: 3.5rem; 
+      margin-bottom: 1.5rem; 
+      display: inline-block;
+      animation: bounce 2s infinite;
+    }
+    .feature-card h3 { 
+      color: #1a73e8; 
+      margin-bottom: 1rem; 
+      font-size: 1.4rem;
+    }
+    .feature-card p {
+      color: #666;
+      line-height: 1.7;
+    }
     
     /* About Section */
     .about { 
-      background: #f8f9fa; 
-      padding: 5rem 0; 
+      background: linear-gradient(135deg, #f8f9fa, #e3f2fd); 
+      padding: 6rem 0; 
+      position: relative;
+    }
+    .about::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%231a73e8" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+      pointer-events: none;
     }
     .about-content { 
       display: grid; 
       grid-template-columns: 1fr 1fr; 
-      gap: 3rem; 
+      gap: 4rem; 
       align-items: center;
+      position: relative;
+      z-index: 2;
     }
-    .about-text h2 { color: #1a73e8; margin-bottom: 1rem; }
-    .about-text p { margin-bottom: 1rem; }
+    .about-text h2 { 
+      color: #1a73e8; 
+      margin-bottom: 1.5rem; 
+      font-size: 2.2rem;
+    }
+    .about-text p { 
+      margin-bottom: 1.5rem; 
+      color: #555;
+      line-height: 1.8;
+    }
+    .feature-list {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+    .feature-list li {
+      padding: 0.8rem 0;
+      color: #555;
+      position: relative;
+      padding-left: 2rem;
+    }
+    .feature-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #34a853;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
     
     /* Developer Section */
     .developer { 
       background: white; 
-      padding: 5rem 0; 
+      padding: 6rem 0; 
     }
     .developer-card { 
       background: linear-gradient(135deg, #1a73e8, #34a853); 
       color: white; 
-      padding: 3rem; 
-      border-radius: 20px; 
+      padding: 4rem; 
+      border-radius: 25px; 
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-    .developer-card h2 { margin-bottom: 1rem; }
-    .developer-links { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap; }
+    .developer-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+    }
+    .developer-card > * {
+      position: relative;
+      z-index: 2;
+    }
+    .developer-card h2 { 
+      margin-bottom: 1.5rem; 
+      font-size: 2.5rem;
+    }
+    .developer-card p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+    .developer-links { 
+      display: flex; 
+      gap: 1rem; 
+      justify-content: center; 
+      margin-top: 2.5rem; 
+      flex-wrap: wrap; 
+    }
     .developer-links a { 
       background: rgba(255,255,255,0.2); 
       color: white; 
-      padding: 0.8rem 1.5rem; 
+      padding: 1rem 2rem; 
       border-radius: 25px; 
       text-decoration: none; 
-      transition: background 0.3s;
+      transition: all 0.3s;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.3);
     }
-    .developer-links a:hover { background: rgba(255,255,255,0.3); }
+    .developer-links a:hover { 
+      background: rgba(255,255,255,0.3); 
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
     
     /* Footer */
     footer { 
-      background: #333; 
+      background: linear-gradient(135deg, #333, #222); 
       color: white; 
-      padding: 3rem 0; 
+      padding: 4rem 0 2rem; 
       text-align: center;
     }
-    .footer-links { display: flex; gap: 2rem; justify-content: center; margin-bottom: 2rem; flex-wrap: wrap; }
-    .footer-links a { color: #ccc; text-decoration: none; }
-    .footer-links a:hover { color: white; }
+    .footer-links { 
+      display: flex; 
+      gap: 2rem; 
+      justify-content: center; 
+      margin-bottom: 2rem; 
+      flex-wrap: wrap; 
+    }
+    .footer-links a { 
+      color: #ccc; 
+      text-decoration: none; 
+      transition: color 0.3s;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+    }
+    .footer-links a:hover { 
+      color: white; 
+      background: rgba(255,255,255,0.1);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 2rem;
+      margin-top: 2rem;
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+    
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    
+    /* Scroll animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
     
     /* Responsive */
     @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hero h1 { font-size: 2.5rem; }
+      .nav-links { 
+        display: none; 
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .hero h1 { font-size: 2.8rem; }
+      .hero p { font-size: 1.2rem; }
       .about-content { grid-template-columns: 1fr; }
       .cta-buttons { flex-direction: column; align-items: center; }
+      .features-grid { grid-template-columns: 1fr; }
+      .developer-card { padding: 3rem 2rem; }
+      .developer-links { flex-direction: column; align-items: center; }
+      .section-title { font-size: 2.5rem; }
+    }
+    
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1.1rem; }
+      .section-title { font-size: 2rem; }
+      .container { padding: 0 15px; }
     }
   </style>
 </head>
 <body>
-  <header>
+  <header id="header">
     <nav class="container">
-      <div class="logo">SafeSurf</div>
-      <div class="nav-links">
+      <div class="logo">
+        <span class="logo-icon">🛡️</span>
+        SafeSurf
+      </div>
+      <div class="nav-links" id="navLinks">
         <a href="#features">Features</a>
         <a href="#about">About</a>
         <a href="#developer">Developer</a>
-        <a href="https://bash1401.github.io/SafeSurf-DNS-VPN/about.html" target="_blank">More Info</a>
-        <a href="https://bash1401.github.io/SafeSurf-DNS-VPN/privacy.html" target="_blank">Privacy</a>
+        <a href="about.html">More Info</a>
+        <a href="privacy.html">Privacy</a>
         <a href="https://buymeacoffee.com/bash14" target="_blank" style="color: #ff6b6b; font-weight: 600;">☕ Support</a>
         <a href="../">← Back to BashTech</a>
       </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
     </nav>
   </header>
 
   <section class="hero">
     <div class="container">
-      <h1>Protect Your DNS Privacy</h1>
-      <p>SafeSurf encrypts your DNS queries using DNS over HTTPS (DoH) for enhanced privacy and security</p>
-      <div class="cta-buttons">
-        <a href="https://play.google.com/store/apps/details?id=com.bashtech.safesurfvpn" class="btn btn-primary">
-          <span>📱</span> Download on Google Play
-        </a>
+      <div class="hero-content">
+        <h1>Protect Your DNS Privacy</h1>
+        <p>SafeSurf encrypts your DNS queries using DNS over HTTPS (DoH) for enhanced privacy and security. Lightweight, fast, and battery-efficient.</p>
+        <div class="cta-buttons">
+          <a href="https://play.google.com/store/apps/details?id=com.bashtech.safesurfvpn" class="btn btn-primary">
+            <span>📱</span> Download on Google Play
+          </a>
+          <a href="#features" class="btn btn-secondary">
+            <span>🔍</span> Learn More
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -169,32 +487,32 @@
     <div class="container">
       <h2 class="section-title">Why Choose SafeSurf?</h2>
       <div class="features-grid">
-        <div class="feature-card">
+        <div class="feature-card fade-in">
           <div class="feature-icon">🔒</div>
           <h3>DNS Privacy</h3>
           <p>Encrypts DNS queries using DoH (DNS over HTTPS) to prevent network operators from seeing your domain lookups.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card fade-in">
           <div class="feature-icon">⚡</div>
           <h3>Lightweight</h3>
           <p>No system-wide VPN tunnel - only secures DNS traffic for better performance and battery life.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card fade-in">
           <div class="feature-icon">🛡️</div>
           <h3>No Logs</h3>
           <p>We don't collect or store any browsing activity or DNS query logs. Your privacy is our priority.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card fade-in">
           <div class="feature-icon">🎯</div>
           <h3>Simple Setup</h3>
           <p>One-tap activation with minimal permissions required. Get protected in seconds.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card fade-in">
           <div class="feature-icon">🌐</div>
           <h3>Bypass Blocking</h3>
           <p>Helps access sites affected by DNS-level blocking where applicable and legal.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card fade-in">
           <div class="feature-icon">📱</div>
           <h3>Small Size</h3>
           <p>Minimal install size with efficient resource usage for smooth performance.</p>
@@ -206,21 +524,23 @@
   <section class="about" id="about">
     <div class="container">
       <div class="about-content">
-        <div class="about-text">
+        <div class="about-text fade-in">
           <h2>About SafeSurf</h2>
           <p>SafeSurf is a lightweight privacy app designed to protect your DNS queries using DNS over HTTPS (DoH). Unlike traditional VPNs, SafeSurf focuses specifically on DNS privacy - it's faster and uses less battery because it only secures DNS traffic.</p>
           <p>Our app helps prevent passive observers from seeing your domain lookups while maintaining excellent performance. Whether you're concerned about privacy, want to bypass DNS-level blocking, or simply prefer encrypted DNS, SafeSurf provides a simple and effective solution.</p>
           <p><strong>Note:</strong> SafeSurf protects DNS lookup privacy only. It does not route or encrypt all application traffic like a full VPN.</p>
         </div>
-        <div class="about-text">
+        <div class="about-text fade-in">
           <h2>Key Features</h2>
-          <ul style="margin-left: 1.5rem; line-height: 2;">
+          <ul class="feature-list">
             <li>DNS-over-HTTPS (DoH) support</li>
             <li>No activity or browsing logs</li>
             <li>Simple one-tap activation</li>
             <li>Small install size and minimal permissions</li>
             <li>Lightweight and battery-efficient</li>
             <li>Regular updates and improvements</li>
+            <li>Cloudflare and Google DNS servers</li>
+            <li>No registration required</li>
           </ul>
         </div>
       </div>
@@ -229,7 +549,7 @@
 
   <section class="developer" id="developer">
     <div class="container">
-      <div class="developer-card">
+      <div class="developer-card fade-in">
         <h2>Meet the Developer</h2>
         <p>SafeSurf is developed by <strong>BashTech</strong>, a developer focused on creating privacy-focused mobile applications that enhance user security without compromising performance.</p>
         <p>We believe in transparency, user privacy, and building apps that make a real difference in protecting your digital life.</p>
@@ -246,16 +566,76 @@
   <footer>
     <div class="container">
       <div class="footer-links">
-        <a href="https://bash1401.github.io/SafeSurf-DNS-VPN/about.html" target="_blank">About</a>
-        <a href="https://bash1401.github.io/SafeSurf-DNS-VPN/privacy.html" target="_blank">Privacy Policy</a>
-        <a href="https://bash1401.github.io/SafeSurf-DNS-VPN/" target="_blank">Full SafeSurf Site</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
         <a href="../">BashTech Home</a>
         <a href="mailto:subash.rathinam1401@gmail.com">Contact</a>
         <a href="https://buymeacoffee.com/bash14" target="_blank" style="color: #ff6b6b;">☕ Support</a>
       </div>
-      <p>&copy; 2024 BashTech. All rights reserved.</p>
-      <p style="margin-top: 1rem; opacity: 0.8;">SafeSurf - Protecting your DNS privacy</p>
+      <div class="footer-bottom">
+        <p>&copy; 2024 BashTech. All rights reserved.</p>
+        <p style="margin-top: 1rem; opacity: 0.8;">SafeSurf - Protecting your DNS privacy</p>
+      </div>
     </div>
   </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('nav') && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>
