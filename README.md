@@ -7,7 +7,7 @@ A centralized developer website showcasing all BashTech mobile applications with
 **Main Site**: `https://yourusername.github.io/ashra_website/`
 
 **App Pages**:
-- **SafeSurf**: `https://yourusername.github.io/ashra_website/safesurf/` (Live)
+- **SafeSurf**: `https://bash1401.github.io/SafeSurf-DNS-VPN/` (Live - External)
 - **SpendTrack**: `https://yourusername.github.io/ashra_website/spendtrack/` (Planned)
 - **PG Pay**: `https://yourusername.github.io/ashra_website/pgpay/` (Planned)
 
@@ -17,8 +17,6 @@ A centralized developer website showcasing all BashTech mobile applications with
 ashra_website/
 ├── index.html                    # Main developer landing page (loads from apps.json)
 ├── apps.json                     # JSON file managing all app information
-├── safesurf/                     # SafeSurf app section
-│   └── index.html               # SafeSurf preview page (links to main site)
 ├── spendtrack/                   # SpendTrack app section (future)
 ├── pgpay/                        # PG Pay app section (future)
 ├── sitemap.xml                   # SEO sitemap

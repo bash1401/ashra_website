@@ -239,7 +239,8 @@
         // Generate app cards
         data.apps.forEach(app => {
           const appCard = document.createElement('a');
-          appCard.href = app.folder + '/';
+          // If app has websiteUrl, use it; otherwise use folder
+          appCard.href = app.websiteUrl || (app.folder + '/');
           appCard.className = 'app-card';
           
           const statusClass = app.status === 'live' ? 'status-live' : app.status === 'coming-soon' ? 'status-coming-soon' : 'status-planned';
@@ -266,7 +267,7 @@
           // Add to footer links if live
           if (app.status === 'live') {
             const footerLink = document.createElement('a');
-            footerLink.href = app.folder + '/';
+            footerLink.href = app.websiteUrl || (app.folder + '/');
             footerLink.textContent = app.name;
             footerLinks.appendChild(footerLink);
           }

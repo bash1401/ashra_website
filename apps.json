@@ -9,7 +9,6 @@
   "apps": [
     {
       "name": "SafeSurf",
-      "folder": "safesurf",
       "icon": "🛡️",
       "category": "DNS Privacy Protection",
       "description": "Protect your DNS queries using DNS over HTTPS (DoH) for enhanced privacy and security. Lightweight and battery-efficient.",
