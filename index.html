@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BashTech - Privacy-Focused Mobile Apps</title>
+  <meta name="description" content="BashTech develops privacy-focused mobile applications that enhance user security without compromising performance." />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; 
+      line-height: 1.6; 
+      color: #333; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    
+    /* Header */
+    header { 
+      background: rgba(255, 255, 255, 0.95); 
+      backdrop-filter: blur(10px);
+      padding: 1rem 0; 
+      position: sticky; 
+      top: 0; 
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.8rem; font-weight: bold; color: #1a73e8; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: #333; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+    .nav-links a:hover { color: #1a73e8; }
+    
+    /* Hero Section */
+    .hero { 
+      text-align: center; 
+      padding: 4rem 0; 
+      color: white;
+    }
+    .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700; }
+    .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9; }
+    .hero-subtitle { font-size: 1.1rem; opacity: 0.8; margin-bottom: 3rem; }
+    
+    /* Apps Section */
+    .apps { 
+      background: white; 
+      padding: 5rem 0; 
+    }
+    .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #333; }
+    .apps-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+      gap: 2rem; 
+    }
+    .app-card { 
+      background: #f8f9fa; 
+      border-radius: 15px; 
+      padding: 2rem; 
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .app-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+    .app-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .app-icon { 
+      width: 60px; 
+      height: 60px; 
+      border-radius: 12px; 
+      background: linear-gradient(135deg, #1a73e8, #34a853); 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      font-size: 1.5rem;
+    }
+    .app-title { font-size: 1.3rem; font-weight: 600; color: #333; }
+    .app-category { color: #666; font-size: 0.9rem; }
+    .app-description { color: #666; margin-bottom: 1.5rem; }
+    .app-features { 
+      list-style: none; 
+      margin-bottom: 1.5rem; 
+    }
+    .app-features li { 
+      padding: 0.3rem 0; 
+      color: #555; 
+    }
+    .app-features li:before { 
+      content: "✓ "; 
+      color: #34a853; 
+      font-weight: bold; 
+    }
+    .app-link { 
+      display: inline-block; 
+      background: #1a73e8; 
+      color: white; 
+      padding: 0.8rem 1.5rem; 
+      border-radius: 25px; 
+      text-decoration: none; 
+      font-weight: 500; 
+      transition: background 0.3s;
+    }
+    .app-link:hover { background: #1557b0; }
+    .app-status { 
+      display: inline-block; 
+      padding: 0.3rem 0.8rem; 
+      border-radius: 15px; 
+      font-size: 0.8rem; 
+      font-weight: 500; 
+      margin-bottom: 1rem;
+    }
+    .status-live { background: #d4edda; color: #155724; }
+    .status-coming-soon { background: #fff3cd; color: #856404; }
+    .status-planned { background: #e2e3e5; color: #6c757d; }
+    
+    /* About Developer */
+    .about-dev { 
+      background: #f8f9fa; 
+      padding: 5rem 0; 
+    }
+    .about-content { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 3rem; 
+      align-items: center;
+    }
+    .about-text h2 { color: #1a73e8; margin-bottom: 1rem; }
+    .about-text p { margin-bottom: 1rem; color: #555; }
+    .contact-info { 
+      background: white; 
+      padding: 2rem; 
+      border-radius: 15px; 
+      border-left: 4px solid #1a73e8;
+    }
+    .contact-info h3 { color: #1a73e8; margin-bottom: 1rem; }
+    .contact-info p { margin-bottom: 0.5rem; }
+    .contact-info a { color: #1a73e8; text-decoration: none; }
+    .contact-info a:hover { text-decoration: underline; }
+    
+    /* Footer */
+    footer { 
+      background: #333; 
+      color: white; 
+      padding: 3rem 0; 
+      text-align: center;
+    }
+    .footer-links { display: flex; gap: 2rem; justify-content: center; margin-bottom: 2rem; flex-wrap: wrap; }
+    .footer-links a { color: #ccc; text-decoration: none; }
+    .footer-links a:hover { color: white; }
+    
+    /* Loading */
+    .loading { text-align: center; padding: 2rem; color: #666; }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero h1 { font-size: 2.5rem; }
+      .about-content { grid-template-columns: 1fr; }
+      .apps-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="logo">BashTech</div>
+      <div class="nav-links">
+        <a href="#apps">Apps</a>
+        <a href="#about">About</a>
+        <a href="mailto:subash.rathinam1401@gmail.com">Contact</a>
+        <a href="https://play.google.com/store/apps/developer?id=Ashra" target="_blank">Play Store</a>
+        <a href="https://buymeacoffee.com/bash14" target="_blank" style="color: #ff6b6b; font-weight: 600;">☕ Support</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>BashTech</h1>
+      <p>Privacy-focused mobile app developer</p>
+      <p class="hero-subtitle">Building apps that protect your digital life</p>
+    </div>
+  </section>
+
+  <section class="apps" id="apps">
+    <div class="container">
+      <h2 class="section-title">Our Applications</h2>
+      <div class="apps-grid" id="appsGrid">
+        <div class="loading">Loading apps...</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-dev" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>About BashTech</h2>
+          <p>BashTech is a developer focused on creating privacy-focused mobile applications that enhance user security without compromising performance. We believe in building apps that make a real difference in protecting your digital life.</p>
+          <p>Our mission is to develop applications that prioritize user privacy, security, and convenience. Each app is designed with the user in mind, ensuring a seamless experience while maintaining the highest standards of data protection.</p>
+          <p>We are committed to transparency and regularly update our applications to provide the best possible experience for our users.</p>
+        </div>
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <p><strong>Email:</strong> <a href="mailto:subash.rathinam1401@gmail.com">subash.rathinam1401@gmail.com</a></p>
+          <p><strong>Google Play Store:</strong> <a href="https://play.google.com/store/apps/developer?id=Ashra" target="_blank">Ashra Developer Page</a></p>
+          <p><strong>Location:</strong> India</p>
+          <p><strong>Focus:</strong> Privacy & Security Apps</p>
+          <p><strong>Support:</strong> <a href="https://buymeacoffee.com/bash14" target="_blank" style="color: #ff6b6b; font-weight: 600;">☕ Buy Me a Coffee</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links" id="footerLinks">
+        <a href="mailto:subash.rathinam1401@gmail.com">Contact</a>
+        <a href="https://buymeacoffee.com/bash14" target="_blank" style="color: #ff6b6b;">☕ Support</a>
+      </div>
+      <p>&copy; 2024 BashTech. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Load apps from JSON file
+    async function loadApps() {
+      try {
+        const response = await fetch('apps.json');
+        const data = await response.json();
+        
+        const appsGrid = document.getElementById('appsGrid');
+        const footerLinks = document.getElementById('footerLinks');
+        
+        // Clear loading message
+        appsGrid.innerHTML = '';
+        
+        // Generate app cards
+        data.apps.forEach(app => {
+          const appCard = document.createElement('a');
+          appCard.href = app.folder + '/';
+          appCard.className = 'app-card';
+          
+          const statusClass = app.status === 'live' ? 'status-live' : app.status === 'coming-soon' ? 'status-coming-soon' : 'status-planned';
+          const statusText = app.status === 'live' ? 'Live' : app.status === 'coming-soon' ? 'Coming Soon' : 'Planned';
+          
+          appCard.innerHTML = `
+            <div class="app-header">
+              <div class="app-icon">${app.icon}</div>
+              <div>
+                <div class="app-title">${app.name}</div>
+                <div class="app-category">${app.category}</div>
+              </div>
+            </div>
+            <div class="app-status ${statusClass}">${statusText}</div>
+            <p class="app-description">${app.description}</p>
+            <ul class="app-features">
+              ${app.features.map(feature => `<li>${feature}</li>`).join('')}
+            </ul>
+            <div class="app-link">${app.status === 'live' ? 'Learn More' : app.status === 'coming-soon' ? 'Coming Soon' : 'Planned'}</div>
+          `;
+          
+          appsGrid.appendChild(appCard);
+          
+          // Add to footer links if live
+          if (app.status === 'live') {
+            const footerLink = document.createElement('a');
+            footerLink.href = app.folder + '/';
+            footerLink.textContent = app.name;
+            footerLinks.appendChild(footerLink);
+          }
+        });
+        
+      } catch (error) {
+        console.error('Error loading apps:', error);
+        document.getElementById('appsGrid').innerHTML = '<div class="loading">Error loading apps. Please try again later.</div>';
+      }
+    }
+    
+    // Load apps when page loads
+    document.addEventListener('DOMContentLoaded', loadApps);
+  </script>
+</body>
+</html>

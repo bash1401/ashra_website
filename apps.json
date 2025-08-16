@@ -1,0 +1,57 @@
+{
+  "developer": {
+    "name": "BashTech",
+    "email": "subash.rathinam1401@gmail.com",
+    "playStoreUrl": "https://play.google.com/store/apps/developer?id=Ashra",
+    "focus": "Privacy & Security Apps",
+    "location": "India"
+  },
+  "apps": [
+    {
+      "name": "SafeSurf",
+      "folder": "safesurf",
+      "icon": "🛡️",
+      "category": "DNS Privacy Protection",
+      "description": "Protect your DNS queries using DNS over HTTPS (DoH) for enhanced privacy and security. Lightweight and battery-efficient.",
+      "status": "live",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.bashtech.safesurfvpn",
+      "websiteUrl": "https://bash1401.github.io/SafeSurf-DNS-VPN/",
+      "features": [
+        "DNS-over-HTTPS (DoH) support",
+        "No activity or browsing logs",
+        "Simple one-tap activation",
+        "Small install size and minimal permissions"
+      ]
+    },
+    {
+      "name": "SpendTrack",
+      "folder": "spendtrack",
+      "icon": "💰",
+      "category": "Expense Tracking",
+      "description": "Track your daily expenses automatically from SMS and get spending alerts. Smart expense management made simple.",
+      "status": "planned",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.bashtech.spendtrack",
+      "features": [
+        "Automatic SMS expense detection",
+        "Spending alerts and notifications",
+        "Expense categorization",
+        "Monthly spending reports"
+      ]
+    },
+    {
+      "name": "PG Pay",
+      "folder": "pgpay",
+      "icon": "🏠",
+      "category": "Rent Management",
+      "description": "Easily manage and pay your PG rent with reminders and receipts. Streamlined rent payment solution.",
+      "status": "planned",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.bashtech.pgpay",
+      "features": [
+        "Rent payment reminders",
+        "Digital receipt management",
+        "Payment history tracking",
+        "Easy payment scheduling"
+      ]
+    }
+  ]
+}

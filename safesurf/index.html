@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SafeSurf - DNS Privacy Protection</title>
+  <meta name="description" content="SafeSurf protects your DNS queries using DNS over HTTPS (DoH) for enhanced privacy and security." />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; 
+      line-height: 1.6; 
+      color: #333; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    
+    /* Header */
+    header { 
+      background: rgba(255, 255, 255, 0.95); 
+      backdrop-filter: blur(10px);
+      padding: 1rem 0; 
+      position: sticky; 
+      top: 0; 
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.8rem; font-weight: bold; color: #1a73e8; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: #333; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+    .nav-links a:hover { color: #1a73e8; }
+    
+    /* Hero Section */
+    .hero { 
+      text-align: center; 
+      padding: 4rem 0; 
+      color: white;
+    }
+    .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700; }
+    .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9; }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn { 
+      padding: 1rem 2rem; 
+      border-radius: 50px; 
+      text-decoration: none; 
+      font-weight: 600; 
+      transition: all 0.3s; 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 0.5rem;
+    }
+    .btn-primary { background: #1a73e8; color: white; }
+    .btn-primary:hover { background: #1557b0; transform: translateY(-2px); }
+    .btn-secondary { background: rgba(255,255,255,0.2); color: white; border: 2px solid rgba(255,255,255,0.3); }
+    .btn-secondary:hover { background: rgba(255,255,255,0.3); transform: translateY(-2px); }
+    
+    /* Features Section */
+    .features { 
+      background: white; 
+      padding: 5rem 0; 
+    }
+    .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #333; }
+    .features-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 2rem; 
+      margin-top: 3rem;
+    }
+    .feature-card { 
+      background: #f8f9fa; 
+      padding: 2rem; 
+      border-radius: 15px; 
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .feature-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .feature-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .feature-card h3 { color: #1a73e8; margin-bottom: 1rem; }
+    
+    /* About Section */
+    .about { 
+      background: #f8f9fa; 
+      padding: 5rem 0; 
+    }
+    .about-content { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 3rem; 
+      align-items: center;
+    }
+    .about-text h2 { color: #1a73e8; margin-bottom: 1rem; }
+    .about-text p { margin-bottom: 1rem; }
+    
+    /* Developer Section */
+    .developer { 
+      background: white; 
+      padding: 5rem 0; 
+    }
+    .developer-card { 
+      background: linear-gradient(135deg, #1a73e8, #34a853); 
+      color: white; 
+      padding: 3rem; 
+      border-radius: 20px; 
+      text-align: center;
+    }
+    .developer-card h2 { margin-bottom: 1rem; }
+    .developer-links { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap; }
+    .developer-links a { 
+      background: rgba(255,255,255,0.2); 
+      color: white; 
+      padding: 0.8rem 1.5rem; 
+      border-radius: 25px; 
+      text-decoration: none; 
+      transition: background 0.3s;
+    }
+    .developer-links a:hover { background: rgba(255,255,255,0.3); }
+    
+    /* Footer */
+    footer { 
+      background: #333; 
+      color: white; 
+      padding: 3rem 0; 
+      text-align: center;
+    }
+    .footer-links { display: flex; gap: 2rem; justify-content: center; margin-bottom: 2rem; flex-wrap: wrap; }
+    .footer-links a { color: #ccc; text-decoration: none; }
+    .footer-links a:hover { color: white; }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero h1 { font-size: 2.5rem; }
+      .about-content { grid-template-columns: 1fr; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="logo">SafeSurf</div>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#developer">Developer</a>
+        <a href="https://bash1401.github.io/SafeSurf-DNS-VPN/about.html" target="_blank">More Info</a>
+        <a href="https://bash1401.github.io/SafeSurf-DNS-VPN/privacy.html" target="_blank">Privacy</a>
+        <a href="https://buymeacoffee.com/bash14" target="_blank" style="color: #ff6b6b; font-weight: 600;">☕ Support</a>
+        <a href="../">← Back to BashTech</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Protect Your DNS Privacy</h1>
+      <p>SafeSurf encrypts your DNS queries using DNS over HTTPS (DoH) for enhanced privacy and security</p>
+      <div class="cta-buttons">
+        <a href="https://play.google.com/store/apps/details?id=com.bashtech.safesurfvpn" class="btn btn-primary">
+          <span>📱</span> Download on Google Play
+        </a>
+        <a href="https://bash1401.github.io/SafeSurf-DNS-VPN/" class="btn btn-secondary">Visit Full Site</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <h2 class="section-title">Why Choose SafeSurf?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>DNS Privacy</h3>
+          <p>Encrypts DNS queries using DoH (DNS over HTTPS) to prevent network operators from seeing your domain lookups.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Lightweight</h3>
+          <p>No system-wide VPN tunnel - only secures DNS traffic for better performance and battery life.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>No Logs</h3>
+          <p>We don't collect or store any browsing activity or DNS query logs. Your privacy is our priority.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Simple Setup</h3>
+          <p>One-tap activation with minimal permissions required. Get protected in seconds.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3>Bypass Blocking</h3>
+          <p>Helps access sites affected by DNS-level blocking where applicable and legal.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Small Size</h3>
+          <p>Minimal install size with efficient resource usage for smooth performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>About SafeSurf</h2>
+          <p>SafeSurf is a lightweight privacy app designed to protect your DNS queries using DNS over HTTPS (DoH). Unlike traditional VPNs, SafeSurf focuses specifically on DNS privacy - it's faster and uses less battery because it only secures DNS traffic.</p>
+          <p>Our app helps prevent passive observers from seeing your domain lookups while maintaining excellent performance. Whether you're concerned about privacy, want to bypass DNS-level blocking, or simply prefer encrypted DNS, SafeSurf provides a simple and effective solution.</p>
+          <p><strong>Note:</strong> SafeSurf protects DNS lookup privacy only. It does not route or encrypt all application traffic like a full VPN.</p>
+        </div>
+        <div class="about-text">
+          <h2>Key Features</h2>
+          <ul style="margin-left: 1.5rem; line-height: 2;">
+            <li>DNS-over-HTTPS (DoH) support</li>
+            <li>No activity or browsing logs</li>
+            <li>Simple one-tap activation</li>
+            <li>Small install size and minimal permissions</li>
+            <li>Lightweight and battery-efficient</li>
+            <li>Regular updates and improvements</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="developer" id="developer">
+    <div class="container">
+      <div class="developer-card">
+        <h2>Meet the Developer</h2>
+        <p>SafeSurf is developed by <strong>BashTech</strong>, a developer focused on creating privacy-focused mobile applications that enhance user security without compromising performance.</p>
+        <p>We believe in transparency, user privacy, and building apps that make a real difference in protecting your digital life.</p>
+        <div class="developer-links">
+          <a href="https://play.google.com/store/apps/developer?id=Ashra" target="_blank">Google Play Store</a>
+          <a href="mailto:subash.rathinam1401@gmail.com">Contact Developer</a>
+          <a href="https://buymeacoffee.com/bash14" target="_blank" style="background: rgba(255, 107, 107, 0.3);">☕ Support</a>
+          <a href="../">View All Apps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="https://bash1401.github.io/SafeSurf-DNS-VPN/about.html" target="_blank">About</a>
+        <a href="https://bash1401.github.io/SafeSurf-DNS-VPN/privacy.html" target="_blank">Privacy Policy</a>
+        <a href="https://bash1401.github.io/SafeSurf-DNS-VPN/" target="_blank">Full SafeSurf Site</a>
+        <a href="../">BashTech Home</a>
+        <a href="mailto:subash.rathinam1401@gmail.com">Contact</a>
+        <a href="https://buymeacoffee.com/bash14" target="_blank" style="color: #ff6b6b;">☕ Support</a>
+      </div>
+      <p>&copy; 2024 BashTech. All rights reserved.</p>
+      <p style="margin-top: 1rem; opacity: 0.8;">SafeSurf - Protecting your DNS privacy</p>
+    </div>
+  </footer>
+</body>
+</html>
