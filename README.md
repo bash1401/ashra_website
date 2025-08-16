@@ -1,6 +1,6 @@
 # BashTech Developer Website
 
-A centralized developer website showcasing all BashTech mobile applications with JSON-based app management system.
+A centralized developer website showcasing all BashTech mobile applications with JSON-based app management system. Features innovative apps for productivity, privacy, and everyday utility.
 
 ## 🚀 Live Website
 
