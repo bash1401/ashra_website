@@ -1,0 +1,12 @@
+{
+  "version": "1.0.3",
+  "description": "Bug fixes and performance improvements",
+  "forceUpdate": false,
+  "releaseNotes": [
+    "Fixed VPN connection stability issues",
+    "Improved app performance",
+    "Updated UI components",
+    "Enhanced security features"
+  ],
+  "minSupportedVersion": "1.0.0"
+}
