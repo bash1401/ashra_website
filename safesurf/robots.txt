@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.bashtech.info/safesurf/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all content
+Allow: /about.html
+Allow: /privacy.html
+Allow: /apps.json
+Allow: /app_version.json
+Allow: /README.md
+
+# Disallow any potential sensitive files
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /.env
+Disallow: /config/

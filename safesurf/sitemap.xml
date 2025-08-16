@@ -1,31 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Main Developer Website -->
-  <url>
-    <loc>https://www.bashtech.info/</loc>
-    <lastmod>2024-08-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  <!-- SafeSurf App Section -->
   <url>
     <loc>https://www.bashtech.info/safesurf/</loc>
     <lastmod>2024-08-17</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.bashtech.info/safesurf/index.html</loc>
     <lastmod>2024-08-17</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.bashtech.info/safesurf/about.html</loc>
     <lastmod>2024-08-17</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.bashtech.info/safesurf/privacy.html</loc>
@@ -33,12 +24,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
-  <!-- Future App Pages (Coming Soon) -->
   <url>
-    <loc>https://www.bashtech.info/spendtrack/</loc>
+    <loc>https://www.bashtech.info/safesurf/apps.json</loc>
     <lastmod>2024-08-17</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.bashtech.info/safesurf/app_version.json</loc>
+    <lastmod>2024-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
