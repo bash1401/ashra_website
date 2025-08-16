@@ -15,7 +15,7 @@
       "description": "Protect your DNS queries using DNS over HTTPS (DoH) for enhanced privacy and security. Lightweight and battery-efficient.",
       "status": "live",
       "playStoreUrl": "https://play.google.com/store/apps/details?id=com.bashtech.safesurfvpn",
-      "websiteUrl": "https://bash1401.github.io/SafeSurf-DNS-VPN/",
+      "websiteUrl": "https://bash1401.github.io/SafeSurf-DNS-VPN/index.html",
       "features": [
         "DNS-over-HTTPS (DoH) support",
         "No activity or browsing logs",
