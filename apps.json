@@ -37,21 +37,6 @@
         "Expense categorization",
         "Monthly spending reports"
       ]
-    },
-    {
-      "name": "PG Pay",
-      "folder": "pgpay",
-      "icon": "🏠",
-      "category": "Rent Management",
-      "description": "Easily manage and pay your PG rent with reminders and receipts. Streamlined rent payment solution.",
-      "status": "planned",
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.bashtech.pgpay",
-      "features": [
-        "Rent payment reminders",
-        "Digital receipt management",
-        "Payment history tracking",
-        "Easy payment scheduling"
-      ]
     }
   ]
 }
