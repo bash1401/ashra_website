@@ -8,6 +8,23 @@
   },
   "apps": [
     {
+      "name": "Focus Timer",
+      "icon": "⏱️",
+      "category": "Productivity & Time Management",
+      "description": "Boost your productivity with the Pomodoro technique. Stay focused with customizable work sessions and breaks.",
+      "status": "live",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.bashtech.focustimer",
+      "websiteUrl": "https://www.bashtech.info/focustimer/index.html",
+      "features": [
+        "Pomodoro technique implementation",
+        "Customizable work and break durations",
+        "Productivity statistics tracking",
+        "Task naming and tracking",
+        "Auto-start functionality",
+        "System sound notifications"
+      ]
+    },
+    {
       "name": "SafeSurf",
       "icon": "🛡️",
       "category": "DNS Privacy Protection",

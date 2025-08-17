@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Focus Timer - Pomodoro Technique Timer App | BashTech</title>
+  <meta name="description" content="Boost your productivity with Focus Timer - a simple and effective Pomodoro technique timer app. Stay focused, stay productive with customizable work sessions and breaks." />
+  <meta name="keywords" content="pomodoro timer, focus timer, productivity app, work timer, break timer, time management, pomodoro technique, focus app, productivity tool" />
+  <meta name="author" content="BashTech" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.bashtech.info/focustimer/" />
+  <meta property="og:title" content="Focus Timer - Pomodoro Technique Timer App" />
+  <meta property="og:description" content="Boost your productivity with Focus Timer - a simple and effective Pomodoro technique timer app." />
+  <meta property="og:image" content="https://www.bashtech.info/focustimer/og-image.png" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.bashtech.info/focustimer/" />
+  <meta property="twitter:title" content="Focus Timer - Pomodoro Technique Timer App" />
+  <meta property="twitter:description" content="Boost your productivity with Focus Timer - a simple and effective Pomodoro technique timer app." />
+  <meta property="twitter:image" content="https://www.bashtech.info/focustimer/og-image.png" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.bashtech.info/focustimer/" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⏱️</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⏱️</text></svg>">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Focus Timer",
+    "description": "A simple and effective Pomodoro timer for focused work sessions",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "BashTech"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "150"
+    }
+  }
+  </script>
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; 
+      line-height: 1.6; 
+      color: #333; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    
+    /* Header */
+    header { 
+      background: rgba(255, 255, 255, 0.95); 
+      backdrop-filter: blur(10px);
+      padding: 1rem 0; 
+      position: sticky; 
+      top: 0; 
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo { 
+      font-size: 1.8rem; 
+      font-weight: bold; 
+      color: #1a73e8; 
+      display: flex; 
+      align-items: center; 
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    .logo-icon { font-size: 2rem; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { 
+      color: #333; 
+      text-decoration: none; 
+      font-weight: 500; 
+      transition: all 0.3s; 
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
+    .nav-links a:hover { 
+      background: #f0f0f0; 
+      color: #1a73e8; 
+    }
+    
+    /* Hero Section */
+    .hero { 
+      text-align: center; 
+      padding: 4rem 0; 
+      color: white;
+    }
+    .hero h1 { 
+      font-size: 3.5rem; 
+      margin-bottom: 1rem; 
+      font-weight: 800;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .hero .subtitle { 
+      font-size: 1.5rem; 
+      margin-bottom: 2rem; 
+      opacity: 0.9;
+      font-weight: 300;
+    }
+    .app-icon { 
+      font-size: 8rem; 
+      margin-bottom: 2rem; 
+      display: block;
+      filter: drop-shadow(0 4px 20px rgba(0,0,0,0.3));
+    }
+    
+    /* Download Buttons */
+    .download-section { 
+      margin: 3rem 0; 
+      text-align: center; 
+    }
+    .download-btn { 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 0.5rem; 
+      background: #1a73e8; 
+      color: white; 
+      padding: 1rem 2rem; 
+      text-decoration: none; 
+      border-radius: 12px; 
+      font-weight: 600; 
+      font-size: 1.1rem; 
+      transition: all 0.3s; 
+      margin: 0.5rem; 
+      box-shadow: 0 4px 20px rgba(26, 115, 232, 0.4);
+    }
+    .download-btn:hover { 
+      transform: translateY(-2px); 
+      box-shadow: 0 6px 25px rgba(26, 115, 232, 0.6);
+    }
+    .download-btn.secondary { 
+      background: rgba(255, 255, 255, 0.2); 
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+    .download-btn.secondary:hover { 
+      background: rgba(255, 255, 255, 0.3); 
+    }
+    
+    /* Features Section */
+    .features { 
+      background: white; 
+      padding: 4rem 0; 
+      margin: 2rem 0;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    .features h2 { 
+      text-align: center; 
+      font-size: 2.5rem; 
+      margin-bottom: 3rem; 
+      color: #333;
+    }
+    .features-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 2rem; 
+      margin-top: 2rem; 
+    }
+    .feature-card { 
+      background: #f8f9fa; 
+      padding: 2rem; 
+      border-radius: 16px; 
+      text-align: center; 
+      transition: all 0.3s;
+      border: 1px solid #e9ecef;
+    }
+    .feature-card:hover { 
+      transform: translateY(-5px); 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .feature-icon { 
+      font-size: 3rem; 
+      margin-bottom: 1rem; 
+      display: block;
+    }
+    .feature-card h3 { 
+      font-size: 1.5rem; 
+      margin-bottom: 1rem; 
+      color: #333;
+    }
+    .feature-card p { 
+      color: #666; 
+      line-height: 1.6;
+    }
+    
+    /* Screenshots Section */
+    .screenshots { 
+      padding: 4rem 0; 
+      text-align: center;
+      color: white;
+    }
+    .screenshots h2 { 
+      font-size: 2.5rem; 
+      margin-bottom: 3rem; 
+    }
+    .screenshot-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+      gap: 2rem; 
+      margin-top: 2rem; 
+    }
+    .screenshot { 
+      background: rgba(255, 255, 255, 0.1); 
+      backdrop-filter: blur(10px);
+      padding: 1rem; 
+      border-radius: 16px; 
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .screenshot img { 
+      width: 100%; 
+      height: auto; 
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    
+    /* Footer */
+    footer { 
+      background: rgba(0, 0, 0, 0.8); 
+      color: white; 
+      padding: 2rem 0; 
+      text-align: center;
+      margin-top: 4rem;
+    }
+    .footer-links { 
+      display: flex; 
+      justify-content: center; 
+      gap: 2rem; 
+      margin-bottom: 1rem; 
+    }
+    .footer-links a { 
+      color: #ccc; 
+      text-decoration: none; 
+      transition: color 0.3s; 
+    }
+    .footer-links a:hover { 
+      color: white; 
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .hero .subtitle { font-size: 1.2rem; }
+      .app-icon { font-size: 6rem; }
+      .features-grid { grid-template-columns: 1fr; }
+      .screenshot-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in-up { animation: fadeInUp 0.6s ease-out; }
+    
+    /* Stats Section */
+    .stats { 
+      background: rgba(255, 255, 255, 0.1); 
+      backdrop-filter: blur(10px);
+      padding: 3rem 0; 
+      margin: 2rem 0;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .stats-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+      gap: 2rem; 
+      text-align: center;
+      color: white;
+    }
+    .stat-item h3 { 
+      font-size: 2.5rem; 
+      margin-bottom: 0.5rem; 
+      font-weight: 800;
+    }
+    .stat-item p { 
+      font-size: 1.1rem; 
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a href="https://www.bashtech.info/" class="logo">
+        <span class="logo-icon">🚀</span>
+        BashTech
+      </a>
+      <div class="nav-links">
+        <a href="https://www.bashtech.info/">Home</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="https://play.google.com/store/apps/developer?id=Ashra">Apps</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="app-icon">⏱️</span>
+        <h1 class="fade-in-up">Focus Timer</h1>
+        <p class="subtitle fade-in-up">Boost your productivity with the Pomodoro technique</p>
+        <p class="fade-in-up">Stay focused, stay productive with customizable work sessions and breaks</p>
+      </div>
+    </section>
+
+    <section class="download-section">
+      <div class="container">
+        <a href="https://play.google.com/store/apps/details?id=com.bashtech.focustimer" class="download-btn">
+          <span>📱</span>
+          Download on Google Play
+        </a>
+        <a href="about.html" class="download-btn secondary">
+          <span>ℹ️</span>
+          Learn More
+        </a>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <h3>25</h3>
+            <p>Minute Work Sessions</p>
+          </div>
+          <div class="stat-item">
+            <h3>5</h3>
+            <p>Minute Short Breaks</p>
+          </div>
+          <div class="stat-item">
+            <h3>15</h3>
+            <p>Minute Long Breaks</p>
+          </div>
+          <div class="stat-item">
+            <h3>4</h3>
+            <p>Sessions Before Long Break</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2>Why Choose Focus Timer?</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <span class="feature-icon">🎯</span>
+            <h3>Pomodoro Technique</h3>
+            <p>Based on the proven Pomodoro technique to maximize focus and productivity with structured work sessions and breaks.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">⚙️</span>
+            <h3>Customizable</h3>
+            <p>Adjust work duration, break times, and sessions before long breaks to match your workflow preferences.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">📊</span>
+            <h3>Productivity Stats</h3>
+            <p>Track your completed sessions, work time, and productivity patterns with detailed statistics.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">🔔</span>
+            <h3>Smart Notifications</h3>
+            <p>Get notified when sessions end with system sounds and vibration feedback to keep you on track.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">📝</span>
+            <h3>Task Tracking</h3>
+            <p>Add task names to your work sessions and track time spent on different activities.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">🔄</span>
+            <h3>Auto-Start</h3>
+            <p>Automatically start the next session (work or break) to maintain your flow without interruption.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshots">
+      <div class="container">
+        <h2>App Screenshots</h2>
+        <div class="screenshot-grid">
+          <div class="screenshot">
+            <img src="screenshot1.png" alt="Focus Timer Main Screen" onerror="this.style.display='none'">
+            <p>Main Timer Interface</p>
+          </div>
+          <div class="screenshot">
+            <img src="screenshot2.png" alt="Focus Timer Settings" onerror="this.style.display='none'">
+            <p>Settings & Customization</p>
+          </div>
+          <div class="screenshot">
+            <img src="screenshot3.png" alt="Focus Timer Statistics" onerror="this.style.display='none'">
+            <p>Productivity Statistics</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="https://play.google.com/store/apps/developer?id=Ashra">More Apps</a>
+        <a href="mailto:subash.rathinam1401@gmail.com">Contact</a>
+      </div>
+      <p>&copy; 2024 BashTech. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-up');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all feature cards and screenshots
+    document.querySelectorAll('.feature-card, .screenshot, .stat-item').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

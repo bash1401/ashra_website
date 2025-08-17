@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About - Focus Timer | BashTech</title>
+  <meta name="description" content="Learn more about Focus Timer - a Pomodoro technique timer app designed to boost your productivity and help you stay focused." />
+  <meta name="keywords" content="about focus timer, pomodoro technique, productivity app, time management, focus app" />
+  <meta name="author" content="BashTech" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.bashtech.info/focustimer/about.html" />
+  <meta property="og:title" content="About - Focus Timer" />
+  <meta property="og:description" content="Learn more about Focus Timer - a Pomodoro technique timer app." />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.bashtech.info/focustimer/about.html" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⏱️</text></svg>">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; 
+      line-height: 1.6; 
+      color: #333; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+    
+    /* Header */
+    header { 
+      background: rgba(255, 255, 255, 0.95); 
+      backdrop-filter: blur(10px);
+      padding: 1rem 0; 
+      position: sticky; 
+      top: 0; 
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo { 
+      font-size: 1.8rem; 
+      font-weight: bold; 
+      color: #1a73e8; 
+      display: flex; 
+      align-items: center; 
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    .logo-icon { font-size: 2rem; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { 
+      color: #333; 
+      text-decoration: none; 
+      font-weight: 500; 
+      transition: all 0.3s; 
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
+    .nav-links a:hover { 
+      background: #f0f0f0; 
+      color: #1a73e8; 
+    }
+    
+    /* Main Content */
+    .main-content { 
+      background: white; 
+      margin: 2rem 0; 
+      padding: 3rem; 
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    .main-content h1 { 
+      font-size: 2.5rem; 
+      margin-bottom: 1rem; 
+      color: #333;
+      text-align: center;
+    }
+    .main-content h2 { 
+      font-size: 1.8rem; 
+      margin: 2rem 0 1rem 0; 
+      color: #1a73e8;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 0.5rem;
+    }
+    .main-content h3 { 
+      font-size: 1.3rem; 
+      margin: 1.5rem 0 0.5rem 0; 
+      color: #555;
+    }
+    .main-content p { 
+      margin-bottom: 1rem; 
+      color: #666;
+      line-height: 1.7;
+    }
+    .main-content ul { 
+      margin: 1rem 0; 
+      padding-left: 2rem; 
+    }
+    .main-content li { 
+      margin-bottom: 0.5rem; 
+      color: #666;
+    }
+    .main-content .highlight { 
+      background: #f8f9fa; 
+      padding: 1.5rem; 
+      border-radius: 12px; 
+      border-left: 4px solid #1a73e8;
+      margin: 1.5rem 0;
+    }
+    .main-content .feature-list { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+      gap: 1rem; 
+      margin: 1.5rem 0; 
+    }
+    .feature-item { 
+      background: #f8f9fa; 
+      padding: 1rem; 
+      border-radius: 8px; 
+      border: 1px solid #e9ecef;
+    }
+    .feature-item strong { 
+      color: #1a73e8; 
+    }
+    
+    /* Footer */
+    footer { 
+      background: rgba(0, 0, 0, 0.8); 
+      color: white; 
+      padding: 2rem 0; 
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .footer-links { 
+      display: flex; 
+      justify-content: center; 
+      gap: 2rem; 
+      margin-bottom: 1rem; 
+    }
+    .footer-links a { 
+      color: #ccc; 
+      text-decoration: none; 
+      transition: color 0.3s; 
+    }
+    .footer-links a:hover { 
+      color: white; 
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .main-content { padding: 2rem 1rem; }
+      .main-content h1 { font-size: 2rem; }
+      .nav-links { display: none; }
+      .feature-list { grid-template-columns: 1fr; }
+    }
+    
+    /* Download section */
+    .download-section { 
+      text-align: center; 
+      margin: 2rem 0; 
+      padding: 2rem; 
+      background: #f8f9fa; 
+      border-radius: 12px;
+    }
+    .download-btn { 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 0.5rem; 
+      background: #1a73e8; 
+      color: white; 
+      padding: 1rem 2rem; 
+      text-decoration: none; 
+      border-radius: 12px; 
+      font-weight: 600; 
+      font-size: 1.1rem; 
+      transition: all 0.3s; 
+      margin: 0.5rem; 
+      box-shadow: 0 4px 20px rgba(26, 115, 232, 0.4);
+    }
+    .download-btn:hover { 
+      transform: translateY(-2px); 
+      box-shadow: 0 6px 25px rgba(26, 115, 232, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">⏱️</span>
+        Focus Timer
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="https://www.bashtech.info/">BashTech</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="main-content">
+      <h1>About Focus Timer</h1>
+      
+      <div class="highlight">
+        <p><strong>Focus Timer</strong> is a simple and effective Pomodoro technique timer app designed to help you boost productivity and maintain focus during work sessions.</p>
+      </div>
+
+      <h2>What is the Pomodoro Technique?</h2>
+      <p>The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. It uses a timer to break work into focused intervals, traditionally 25 minutes in length, separated by short breaks. This technique helps improve focus, reduce mental fatigue, and increase productivity.</p>
+
+      <h2>How Focus Timer Works</h2>
+      <p>Focus Timer implements the Pomodoro Technique with a modern, user-friendly interface:</p>
+      <ul>
+        <li><strong>Work Sessions:</strong> 25-minute focused work periods (customizable)</li>
+        <li><strong>Short Breaks:</strong> 5-minute breaks between work sessions (customizable)</li>
+        <li><strong>Long Breaks:</strong> 15-minute breaks after 4 work sessions (customizable)</li>
+        <li><strong>Auto-Start:</strong> Automatically begin the next session to maintain flow</li>
+      </ul>
+
+      <h2>Key Features</h2>
+      <div class="feature-list">
+        <div class="feature-item">
+          <strong>🎯 Pomodoro Technique</strong><br>
+          Based on the proven time management method to maximize focus and productivity
+        </div>
+        <div class="feature-item">
+          <strong>⚙️ Customizable Settings</strong><br>
+          Adjust work duration, break times, and sessions before long breaks
+        </div>
+        <div class="feature-item">
+          <strong>📊 Productivity Statistics</strong><br>
+          Track completed sessions, work time, and productivity patterns
+        </div>
+        <div class="feature-item">
+          <strong>🔔 Smart Notifications</strong><br>
+          System sounds and vibration feedback when sessions end
+        </div>
+        <div class="feature-item">
+          <strong>📝 Task Tracking</strong><br>
+          Add task names to work sessions and track time spent on activities
+        </div>
+        <div class="feature-item">
+          <strong>🔄 Auto-Start</strong><br>
+          Automatically start next session to maintain uninterrupted flow
+        </div>
+        <div class="feature-item">
+          <strong>🎨 Clean Interface</strong><br>
+          Modern, intuitive design that doesn't distract from your work
+        </div>
+        <div class="feature-item">
+          <strong>🔒 Privacy Focused</strong><br>
+          All data stored locally on your device for maximum privacy
+        </div>
+      </div>
+
+      <h2>Why Choose Focus Timer?</h2>
+      <ul>
+        <li><strong>Simple & Effective:</strong> No complex features, just what you need to stay focused</li>
+        <li><strong>Proven Method:</strong> Based on the scientifically-backed Pomodoro Technique</li>
+        <li><strong>Customizable:</strong> Adapt the technique to your personal workflow</li>
+        <li><strong>Privacy First:</strong> Your data stays on your device</li>
+        <li><strong>Lightweight:</strong> Small app size with minimal battery usage</li>
+        <li><strong>Free:</strong> No hidden costs or premium features</li>
+      </ul>
+
+      <h2>Perfect For</h2>
+      <ul>
+        <li><strong>Students:</strong> Study sessions, homework, and exam preparation</li>
+        <li><strong>Professionals:</strong> Work tasks, meetings, and project management</li>
+        <li><strong>Writers:</strong> Writing sessions, content creation, and editing</li>
+        <li><strong>Developers:</strong> Coding sessions, debugging, and problem-solving</li>
+        <li><strong>Anyone:</strong> Who wants to improve focus and productivity</li>
+      </ul>
+
+      <h2>About the Developer</h2>
+      <p>Focus Timer is developed by <strong>BashTech</strong>, a mobile app development company focused on creating simple, effective, and privacy-respecting applications.</p>
+      
+      <p>Our mission is to build apps that genuinely help people improve their productivity and digital well-being without compromising their privacy or adding unnecessary complexity.</p>
+
+      <h2>Technical Details</h2>
+      <ul>
+        <li><strong>Platform:</strong> Android (minimum API level 21)</li>
+        <li><strong>Language:</strong> Flutter (Dart)</li>
+        <li><strong>Storage:</strong> Local device storage only</li>
+        <li><strong>Permissions:</strong> Minimal permissions for core functionality</li>
+        <li><strong>Ads:</strong> Google AdMob integration for app sustainability</li>
+      </ul>
+
+      <h2>Support & Feedback</h2>
+      <p>We value your feedback and are committed to improving Focus Timer based on user suggestions. If you have any questions, feature requests, or encounter issues, please don't hesitate to contact us:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:subash.rathinam1401@gmail.com">subash.rathinam1401@gmail.com</a></li>
+        <li><strong>Website:</strong> <a href="https://www.bashtech.info/">https://www.bashtech.info/</a></li>
+        <li><strong>Play Store:</strong> <a href="https://play.google.com/store/apps/developer?id=Ashra">BashTech Apps</a></li>
+      </ul>
+
+      <div class="download-section">
+        <h3>Ready to boost your productivity?</h3>
+        <p>Download Focus Timer today and start using the Pomodoro Technique to improve your focus and productivity!</p>
+        <a href="https://play.google.com/store/apps/details?id=com.bashtech.focustimer" class="download-btn">
+          <span>📱</span>
+          Download on Google Play
+        </a>
+      </div>
+
+      <h2>Version History</h2>
+      <h3>Version 1.0.0 (Current)</h3>
+      <ul>
+        <li>Initial release with core Pomodoro functionality</li>
+        <li>Customizable timer settings</li>
+        <li>Productivity statistics tracking</li>
+        <li>Task naming and tracking</li>
+        <li>Auto-start functionality</li>
+        <li>System sound notifications</li>
+        <li>Vibration feedback</li>
+        <li>Modern, clean interface</li>
+        <li>Google AdMob integration</li>
+      </ul>
+
+      <h2>Future Plans</h2>
+      <p>We're constantly working on improving Focus Timer. Planned features include:</p>
+      <ul>
+        <li>Dark mode support</li>
+        <li>Export productivity data</li>
+        <li>Multiple timer profiles</li>
+        <li>Widget support</li>
+        <li>Cloud backup (optional)</li>
+        <li>More customization options</li>
+      </ul>
+
+      <p><em>Thank you for choosing Focus Timer! We hope it helps you achieve your productivity goals.</em></p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="https://www.bashtech.info/">BashTech</a>
+        <a href="mailto:subash.rathinam1401@gmail.com">Contact</a>
+      </div>
+      <p>&copy; 2024 BashTech. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
