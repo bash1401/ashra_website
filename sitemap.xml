@@ -27,12 +27,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://www.bashtech.info/safesurf/privacy.html</loc>
     <lastmod>2024-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   
   <!-- Future App Pages (Coming Soon) -->
   <url>
