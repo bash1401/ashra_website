@@ -5,7 +5,182 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - SpendTrack | BashTech</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .about-content {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .section-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .section-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .stats-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -0.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
@@ -13,52 +188,274 @@
             <a class="navbar-brand" href="index.html">
                 <i class="fas fa-wallet me-2"></i>SpendTrack
             </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="privacy.html">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="terms.html">Terms</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <div class="container mt-5 pt-5">
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <h1>About SpendTrack</h1>
-                
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h2>Our Mission</h2>
-                        <p>To empower individuals with smart, privacy-focused financial management tools that work seamlessly with their existing banking infrastructure.</p>
+    <section class="about-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="fade-in">
+                        <i class="fas fa-rocket about-icon"></i>
+                        <h1 class="display-4 fw-bold mb-4">About SpendTrack</h1>
+                        <p class="lead mb-0">Revolutionizing personal finance management with privacy-first technology.</p>
+                        <p class="text-light mt-2">Built by BashTech for smart financial tracking</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h2>What Makes SpendTrack Special</h2>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h5>Privacy-First Design</h5>
-                                <p>Your financial data never leaves your device. All processing happens locally.</p>
+    <div class="container">
+        <div class="about-content p-5">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-bullseye text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">Our Mission</h2>
+                        </div>
+                        <p class="lead">To empower individuals with smart, privacy-focused financial management tools that work seamlessly with their existing banking infrastructure.</p>
+                        <p>We believe that managing your finances should be effortless, secure, and completely private. SpendTrack bridges the gap between traditional banking and modern financial management, all while keeping your data exactly where it belongs - on your device.</p>
+                    </div>
+
+                    <div class="row mb-5">
+                        <div class="col-md-4 mb-4">
+                            <div class="stats-card fade-in">
+                                <div class="stat-number">100%</div>
+                                <p>Privacy Protected</p>
                             </div>
-                            <div class="col-md-6">
-                                <h5>Offline Functionality</h5>
-                                <p>Works without internet connection. Your expense tracking continues even when offline.</p>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="stats-card fade-in">
+                                <div class="stat-number">24/7</div>
+                                <p>Offline Access</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="stats-card fade-in">
+                                <div class="stat-number">0</div>
+                                <p>Data Breaches</p>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h2>Contact</h2>
-                        <p>Email: support@bashtech.com</p>
-                        <p>Website: https://bashtech.com</p>
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-star text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">What Makes SpendTrack Special</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="feature-card">
+                                    <i class="fas fa-shield-alt feature-icon"></i>
+                                    <h5>Privacy-First Design</h5>
+                                    <p>Your financial data never leaves your device. All processing happens locally, ensuring complete privacy and security.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="feature-card">
+                                    <i class="fas fa-wifi-slash feature-icon"></i>
+                                    <h5>Offline Functionality</h5>
+                                    <p>Works without internet connection. Your expense tracking continues even when offline, with full synchronization when connected.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="feature-card">
+                                    <i class="fas fa-magic feature-icon"></i>
+                                    <h5>Smart Automation</h5>
+                                    <p>Automatically detects and categorizes transactions from bank SMS messages, saving you time and effort.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="feature-card">
+                                    <i class="fas fa-chart-line feature-icon"></i>
+                                    <h5>Insightful Analytics</h5>
+                                    <p>Get detailed spending insights, trends, and reports to make better financial decisions.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="text-center mt-4">
-                    <a href="index.html" class="btn btn-primary">Back to Home</a>
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-history text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">Our Story</h2>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h5>2023 - The Beginning</h5>
+                                <p>SpendTrack was born from the frustration of manually tracking expenses and concerns about privacy in financial apps.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5>2024 - Development & Testing</h5>
+                                <p>Months of development focused on creating a privacy-first solution that works seamlessly with existing banking infrastructure.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5>2024 - Launch</h5>
+                                <p>SpendTrack launches on Google Play Store, bringing secure and automated expense tracking to users worldwide.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-users text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">The Team</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="team-card">
+                                    <div class="team-avatar">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <h5>BashTech Team</h5>
+                                    <p class="text-muted">Development & Design</p>
+                                    <p>A passionate team dedicated to creating privacy-focused financial tools that empower users to take control of their finances.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="team-card">
+                                    <div class="team-avatar">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                    <h5>Our Community</h5>
+                                    <p class="text-muted">Users & Feedback</p>
+                                    <p>Our amazing community of users who provide valuable feedback and help us improve SpendTrack every day.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-cogs text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">Technology Stack</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-mobile-alt text-success me-2"></i>Mobile Development</h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success me-2"></i>Flutter Framework</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Dart Programming Language</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>SQLite Local Database</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Material Design UI</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-shield-alt text-info me-2"></i>Security Features</h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success me-2"></i>Local Data Encryption</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>No Cloud Storage</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Secure SMS Reading</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Privacy-First Architecture</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-handshake text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">Our Values</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="text-center">
+                                    <i class="fas fa-user-shield text-primary mb-3" style="font-size: 2rem;"></i>
+                                    <h5>Privacy</h5>
+                                    <p>Your data belongs to you. We never access, store, or transmit your financial information.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="text-center">
+                                    <i class="fas fa-lightbulb text-primary mb-3" style="font-size: 2rem;"></i>
+                                    <h5>Innovation</h5>
+                                    <p>We continuously innovate to provide the best possible user experience while maintaining privacy.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="text-center">
+                                    <i class="fas fa-users text-primary mb-3" style="font-size: 2rem;"></i>
+                                    <h5>Community</h5>
+                                    <p>We value our users' feedback and work together to build better financial tools.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-card fade-in">
+                        <h3><i class="fas fa-envelope me-2"></i>Get in Touch</h3>
+                        <p class="mb-3">We'd love to hear from you! Whether you have questions, feedback, or just want to say hello.</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><i class="fas fa-envelope me-2"></i>Email: support@bashtech.com</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><i class="fas fa-globe me-2"></i>Website: https://bashtech.com</p>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <a href="mailto:support@bashtech.com" class="btn btn-light me-3">
+                                <i class="fas fa-envelope me-2"></i>Send Email
+                            </a>
+                            <a href="https://bashtech.com" class="btn btn-outline-light">
+                                <i class="fas fa-external-link-alt me-2"></i>Visit Website
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-5">
+                        <a href="index.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-home me-2"></i>Back to Home
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 </html>

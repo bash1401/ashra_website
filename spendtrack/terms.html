@@ -5,7 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms and Conditions - SpendTrack | BashTech</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <style>
+        .terms-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .terms-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .terms-content {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .section-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .section-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .terms-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .feature-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+        
+        .warning-list li:before {
+            content: '⚠';
+            color: var(--warning-color);
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            border-left: 4px solid var(--warning-color);
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
@@ -13,38 +122,253 @@
             <a class="navbar-brand" href="index.html">
                 <i class="fas fa-wallet me-2"></i>SpendTrack
             </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="privacy.html">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="terms.html">Terms</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <div class="container mt-5 pt-5">
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <h1>Terms and Conditions</h1>
-                <p class="text-muted">Last updated: December 2024</p>
-                
-                <div class="card">
-                    <div class="card-body">
-                        <h2>1. Acceptance of Terms</h2>
-                        <p>By downloading, installing, or using the SpendTrack mobile application, you agree to be bound by these Terms and Conditions.</p>
-
-                        <h2>2. Description of Service</h2>
-                        <p>SpendTrack is a mobile application that automatically detects and categorizes financial transactions from bank SMS messages.</p>
-
-                        <h2>3. User Responsibilities</h2>
-                        <p>You agree to use the App only for lawful purposes and maintain the security of your device and app access.</p>
-
-                        <h2>4. Contact Information</h2>
-                        <p>If you have any questions about these Terms, please contact us at legal@bashtech.com</p>
+    <section class="terms-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="fade-in">
+                        <i class="fas fa-gavel terms-icon"></i>
+                        <h1 class="display-4 fw-bold mb-4">Terms and Conditions</h1>
+                        <p class="lead mb-0">Please read these terms carefully before using SpendTrack.</p>
+                        <p class="text-light mt-2">Last updated: December 2024</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="text-center mt-4">
-                    <a href="index.html" class="btn btn-primary">Back to Home</a>
+    <div class="container">
+        <div class="terms-content p-5">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    
+                    <div class="highlight-box fade-in">
+                        <h3><i class="fas fa-exclamation-triangle me-2"></i>Important Notice</h3>
+                        <p class="mb-0">By downloading, installing, or using the SpendTrack mobile application ("App"), you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree to these Terms, please do not use the App.</p>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-handshake text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">1. Acceptance of Terms</h2>
+                        </div>
+                        <p class="lead">By accessing or using SpendTrack, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.</p>
+                        <p>These Terms constitute a legally binding agreement between you and BashTech ("Company," "we," "us," or "our") regarding your use of the SpendTrack mobile application.</p>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-info-circle text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">2. Description of Service</h2>
+                        </div>
+                        <p class="lead">SpendTrack is a mobile application that provides automated financial transaction tracking and expense management services.</p>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-sms text-success me-2"></i>Core Features</h5>
+                                <ul class="feature-list">
+                                    <li>Automatic SMS transaction detection</li>
+                                    <li>Expense categorization and tracking</li>
+                                    <li>Financial insights and reports</li>
+                                    <li>Offline functionality</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-shield-alt text-info me-2"></i>Privacy Features</h5>
+                                <ul class="feature-list">
+                                    <li>Local data storage only</li>
+                                    <li>No cloud data transmission</li>
+                                    <li>Encrypted local database</li>
+                                    <li>User-controlled data access</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-user-check text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">3. User Eligibility and Registration</h2>
+                        </div>
+                        <p class="lead">To use SpendTrack, you must meet the following requirements:</p>
+                        <ul class="feature-list">
+                            <li>Be at least 18 years old or have parental/guardian consent</li>
+                            <li>Have a compatible mobile device with the required permissions</li>
+                            <li>Agree to grant necessary permissions for SMS reading</li>
+                            <li>Use the app in compliance with applicable laws and regulations</li>
+                        </ul>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-user-shield text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">4. User Responsibilities</h2>
+                        </div>
+                        <p class="lead">As a user of SpendTrack, you agree to:</p>
+                        <ul class="feature-list">
+                            <li>Use the App only for lawful purposes and in accordance with these Terms</li>
+                            <li>Maintain the security of your device and app access</li>
+                            <li>Not attempt to reverse engineer, decompile, or modify the App</li>
+                            <li>Not use the App to transmit harmful, offensive, or illegal content</li>
+                            <li>Respect the privacy and rights of other users</li>
+                            <li>Keep your device and app updated to the latest version</li>
+                        </ul>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-exclamation-triangle text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">5. Prohibited Uses</h2>
+                        </div>
+                        <p class="lead">You are prohibited from using SpendTrack to:</p>
+                        <ul class="warning-list feature-list">
+                            <li>Violate any applicable laws or regulations</li>
+                            <li>Infringe upon intellectual property rights</li>
+                            <li>Transmit viruses, malware, or other harmful code</li>
+                            <li>Attempt to gain unauthorized access to our systems</li>
+                            <li>Use the App for commercial purposes without permission</li>
+                            <li>Share your account credentials with others</li>
+                        </ul>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-copyright text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">6. Intellectual Property Rights</h2>
+                        </div>
+                        <p class="lead">SpendTrack and its original content, features, and functionality are owned by BashTech and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+                        <p>You may not:</p>
+                        <ul class="feature-list">
+                            <li>Copy, modify, or distribute the App without permission</li>
+                            <li>Remove or alter any copyright, trademark, or proprietary notices</li>
+                            <li>Use our trademarks or trade names without written consent</li>
+                        </ul>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-times-circle text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">7. Disclaimers and Limitations</h2>
+                        </div>
+                        <p class="lead">SpendTrack is provided "as is" without warranties of any kind.</p>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-info-circle text-info me-2"></i>Service Availability</h5>
+                                <p>We do not guarantee uninterrupted or error-free operation of the App. Service may be temporarily unavailable due to maintenance or technical issues.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-chart-line text-success me-2"></i>Financial Accuracy</h5>
+                                <p>While we strive for accuracy, we cannot guarantee that all transactions will be detected or categorized correctly. Users should verify financial information independently.</p>
+                            </div>
+                        </div>
+                        <div class="alert alert-warning mt-3">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            <strong>Limitation of Liability:</strong> In no event shall BashTech be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the App.
+                        </div>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-gavel text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">8. Termination</h2>
+                        </div>
+                        <p class="lead">We may terminate or suspend your access to SpendTrack immediately, without prior notice, for any reason, including breach of these Terms.</p>
+                        <p>Upon termination:</p>
+                        <ul class="feature-list">
+                            <li>Your right to use the App will cease immediately</li>
+                            <li>You should uninstall the App from your device</li>
+                            <li>Local data will remain on your device until manually deleted</li>
+                        </ul>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-edit text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">9. Changes to Terms</h2>
+                        </div>
+                        <p class="lead">We reserve the right to modify these Terms at any time. We will notify users of any material changes by:</p>
+                        <ul class="feature-list">
+                            <li>Updating the "Last updated" date on this page</li>
+                            <li>Posting a notice in the App</li>
+                            <li>Sending an email notification (if applicable)</li>
+                        </ul>
+                        <p>Your continued use of the App after changes become effective constitutes acceptance of the new Terms.</p>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-balance-scale text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">10. Governing Law</h2>
+                        </div>
+                        <p class="lead">These Terms shall be governed by and construed in accordance with the laws of the jurisdiction where BashTech is incorporated, without regard to its conflict of law provisions.</p>
+                        <p>Any disputes arising from these Terms or your use of the App shall be resolved through binding arbitration or in the courts of the appropriate jurisdiction.</p>
+                    </div>
+
+                    <div class="contact-card fade-in">
+                        <h3><i class="fas fa-envelope me-2"></i>Contact Information</h3>
+                        <p class="mb-3">If you have any questions about these Terms and Conditions, please contact us:</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><i class="fas fa-envelope me-2"></i>Email: legal@bashtech.com</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><i class="fas fa-globe me-2"></i>Website: https://bashtech.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-5">
+                        <a href="index.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-home me-2"></i>Back to Home
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 </html>

@@ -5,7 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - SpendTrack | BashTech</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <style>
+        .privacy-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .privacy-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .privacy-content {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .section-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .section-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .privacy-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .feature-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
@@ -13,43 +110,237 @@
             <a class="navbar-brand" href="index.html">
                 <i class="fas fa-wallet me-2"></i>SpendTrack
             </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="privacy.html">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="terms.html">Terms</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <div class="container mt-5 pt-5">
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <h1>Privacy Policy</h1>
-                <p class="text-muted">Last updated: December 2024</p>
-                
-                <div class="card">
-                    <div class="card-body">
-                        <h2>1. Introduction</h2>
-                        <p>Welcome to SpendTrack. We respect your privacy and are committed to protecting your personal data.</p>
-
-                        <h2>2. Information We Collect</h2>
-                        <p>SpendTrack reads SMS messages from your selected banks to automatically detect and categorize transactions. All data is stored locally on your device.</p>
-
-                        <h2>3. Data Security</h2>
-                        <p>We implement several security measures to protect your data:</p>
-                        <ul>
-                            <li>All data is stored locally on your device</li>
-                            <li>No cloud storage or external data transmission</li>
-                            <li>Encrypted local database storage</li>
-                        </ul>
-
-                        <h2>4. Contact Us</h2>
-                        <p>If you have any questions about this privacy policy, please contact us at privacy@bashtech.com</p>
+    <section class="privacy-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="fade-in">
+                        <i class="fas fa-shield-alt privacy-icon"></i>
+                        <h1 class="display-4 fw-bold mb-4">Privacy Policy</h1>
+                        <p class="lead mb-0">Your privacy is our top priority. Learn how we protect your financial data.</p>
+                        <p class="text-light mt-2">Last updated: December 2024</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="text-center mt-4">
-                    <a href="index.html" class="btn btn-primary">Back to Home</a>
+    <div class="container">
+        <div class="privacy-content p-5">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-info-circle text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">1. Introduction</h2>
+                        </div>
+                        <p class="lead">Welcome to SpendTrack, developed by BashTech. We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
+                        <p>By using SpendTrack, you agree to the collection and use of information in accordance with this policy. We will not use or share your information with anyone except as described in this Privacy Policy.</p>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-database text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">2. Information We Collect</h2>
+                        </div>
+                        <p class="lead">SpendTrack is designed with privacy-first principles. Here's what we collect and how:</p>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-sms text-success me-2"></i>SMS Messages</h5>
+                                <p>We read SMS messages from your selected banks to automatically detect and categorize financial transactions. This is the core functionality of our app.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-mobile-alt text-info me-2"></i>Device Information</h5>
+                                <p>Basic device information such as device model, operating system version, and app version for technical support and app optimization.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="alert alert-info mt-3">
+                            <i class="fas fa-lightbulb me-2"></i>
+                            <strong>Important:</strong> All transaction data is processed and stored locally on your device. We do not transmit your financial data to our servers.
+                        </div>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-lock text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">3. How We Use Your Information</h2>
+                        </div>
+                        <p class="lead">We use the collected information for the following purposes:</p>
+                        <ul class="feature-list">
+                            <li>Automatically detect and categorize financial transactions from bank SMS messages</li>
+                            <li>Provide expense tracking and financial insights</li>
+                            <li>Generate spending reports and analytics</li>
+                            <li>Improve app functionality and user experience</li>
+                            <li>Provide customer support and technical assistance</li>
+                        </ul>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-shield-alt text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">4. Data Security</h2>
+                        </div>
+                        <p class="lead">We implement several security measures to protect your data:</p>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 bg-light">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-home text-primary mb-3" style="font-size: 2rem;"></i>
+                                        <h5>Local Storage</h5>
+                                        <p>All data is stored locally on your device using encrypted local database storage.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 bg-light">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-cloud-slash text-primary mb-3" style="font-size: 2rem;"></i>
+                                        <h5>No Cloud Storage</h5>
+                                        <p>We do not store your financial data on external servers or cloud platforms.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 bg-light">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-lock text-primary mb-3" style="font-size: 2rem;"></i>
+                                        <h5>Encryption</h5>
+                                        <p>All sensitive data is encrypted using industry-standard encryption algorithms.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 bg-light">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-user-shield text-primary mb-3" style="font-size: 2rem;"></i>
+                                        <h5>Access Control</h5>
+                                        <p>Only you have access to your data through the app's secure authentication.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-share-alt text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">5. Data Sharing</h2>
+                        </div>
+                        <p class="lead">We do not sell, trade, or otherwise transfer your personal information to third parties. However, we may disclose your information in the following circumstances:</p>
+                        <ul class="feature-list">
+                            <li>When required by law or to comply with legal process</li>
+                            <li>To protect our rights, property, or safety</li>
+                            <li>With your explicit consent</li>
+                        </ul>
+                        <div class="alert alert-success mt-3">
+                            <i class="fas fa-check-circle me-2"></i>
+                            <strong>Your Control:</strong> You have complete control over your data. You can delete all app data at any time through your device settings.
+                        </div>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-cookie-bite text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">6. Cookies and Tracking</h2>
+                        </div>
+                        <p>SpendTrack does not use cookies or tracking technologies. Since all data is processed locally on your device, we do not need to track your online activity.</p>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-child text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">7. Children's Privacy</h2>
+                        </div>
+                        <p>SpendTrack is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately.</p>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-globe text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">8. International Data Transfers</h2>
+                        </div>
+                        <p>Since all data is stored locally on your device, no international data transfers occur. Your data remains within your device's jurisdiction.</p>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-edit text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">9. Changes to This Privacy Policy</h2>
+                        </div>
+                        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date. You are advised to review this Privacy Policy periodically for any changes.</p>
+                    </div>
+
+                    <div class="contact-card fade-in">
+                        <h3><i class="fas fa-envelope me-2"></i>Contact Us</h3>
+                        <p class="mb-3">If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><i class="fas fa-envelope me-2"></i>Email: privacy@bashtech.com</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><i class="fas fa-globe me-2"></i>Website: https://bashtech.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-5">
+                        <a href="index.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-home me-2"></i>Back to Home
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 </html>
