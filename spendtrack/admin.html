@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - SpendTrack | BashTech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .login-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            max-width: 400px;
+            margin: 100px auto;
+        }
+        
+        .admin-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
+            max-width: 1200px;
+            min-height: 80vh;
+        }
+        
+        .admin-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .request-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .request-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .request-card.pending {
+            border-left-color: #ffc107;
+        }
+        
+        .request-card.approved {
+            border-left-color: #28a745;
+        }
+        
+        .request-card.rejected {
+            border-left-color: #dc3545;
+        }
+        
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-approved {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-rejected {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .btn-action {
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-action:hover {
+            transform: translateY(-1px);
+        }
+        
+        .stats-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .form-control {
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+        
+        .btn-login {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 25px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        .sms-preview {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 1rem;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .filter-controls {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Form -->
+    <div id="loginForm" class="login-container fade-in">
+        <div class="text-center mb-4">
+            <i class="fas fa-shield-alt text-primary" style="font-size: 3rem;"></i>
+            <h2 class="mt-3">Admin Panel</h2>
+            <p class="text-muted">SpendTrack Bank Requests Management</p>
+        </div>
+        
+        <form id="adminLoginForm">
+            <div class="mb-3">
+                <label for="adminPassword" class="form-label">Admin Password</label>
+                <input type="password" class="form-control" id="adminPassword" required>
+                <div class="form-text">Enter the admin password to access the panel</div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-login w-100">
+                <i class="fas fa-sign-in-alt me-2"></i>Login
+            </button>
+        </form>
+        
+        <div class="text-center mt-4">
+            <small class="text-muted">
+                <i class="fas fa-info-circle me-1"></i>
+                Contact the developer for admin access
+            </small>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="adminDashboard" class="admin-container hidden">
+        <div class="admin-header">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h2><i class="fas fa-shield-alt me-2"></i>SpendTrack Admin Panel</h2>
+                    <p class="mb-0">Bank Support Requests Management</p>
+                </div>
+                <button class="btn btn-outline-light" onclick="logout()">
+                    <i class="fas fa-sign-out-alt me-2"></i>Logout
+                </button>
+            </div>
+        </div>
+        
+        <div class="p-4">
+            <!-- Statistics -->
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="stats-card fade-in">
+                        <div class="stats-number" id="totalRequests">0</div>
+                        <p class="mb-0">Total Requests</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card fade-in">
+                        <div class="stats-number" id="pendingRequests">0</div>
+                        <p class="mb-0">Pending</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card fade-in">
+                        <div class="stats-number" id="approvedRequests">0</div>
+                        <p class="mb-0">Approved</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card fade-in">
+                        <div class="stats-number" id="rejectedRequests">0</div>
+                        <p class="mb-0">Rejected</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Filter Controls -->
+            <div class="filter-controls fade-in">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="statusFilter" class="form-label">Filter by Status</label>
+                        <select class="form-select" id="statusFilter">
+                            <option value="all">All Requests</option>
+                            <option value="pending">Pending</option>
+                            <option value="approved">Approved</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="countryFilter" class="form-label">Filter by Country</label>
+                        <select class="form-select" id="countryFilter">
+                            <option value="all">All Countries</option>
+                            <option value="India">India</option>
+                            <option value="USA">United States</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="priorityFilter" class="form-label">Filter by Priority</label>
+                        <select class="form-select" id="priorityFilter">
+                            <option value="all">All Priorities</option>
+                            <option value="urgent">Urgent</option>
+                            <option value="high">High</option>
+                            <option value="normal">Normal</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Requests List -->
+            <div id="requestsList">
+                <!-- Requests will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Request Detail Modal -->
+    <div class="modal fade" id="requestModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Bank Request Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="requestModalBody">
+                    <!-- Request details will be loaded here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" onclick="approveRequest()">
+                        <i class="fas fa-check me-2"></i>Approve
+                    </button>
+                    <button type="button" class="btn btn-danger" onclick="rejectRequest()">
+                        <i class="fas fa-times me-2"></i>Reject
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Admin password (in a real app, this would be server-side)
+        const ADMIN_PASSWORD = "SpendTrack2024!@#";
+        let currentRequestId = null;
+        
+        // Check if already logged in
+        if (localStorage.getItem('adminLoggedIn') === 'true') {
+            showDashboard();
+        }
+        
+        // Login form handler
+        document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('adminPassword').value;
+            
+            if (password === ADMIN_PASSWORD) {
+                localStorage.setItem('adminLoggedIn', 'true');
+                showDashboard();
+            } else {
+                alert('Invalid password. Please try again.');
+                document.getElementById('adminPassword').value = '';
+            }
+        });
+        
+        function showDashboard() {
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('adminDashboard').classList.remove('hidden');
+            loadRequests();
+        }
+        
+        function logout() {
+            localStorage.setItem('adminLoggedIn', 'false');
+            document.getElementById('loginForm').classList.remove('hidden');
+            document.getElementById('adminDashboard').classList.add('hidden');
+            document.getElementById('adminPassword').value = '';
+        }
+        
+        function loadRequests() {
+            const requests = JSON.parse(localStorage.getItem('bankRequests') || '[]');
+            updateStats(requests);
+            displayRequests(requests);
+        }
+        
+        function updateStats(requests) {
+            document.getElementById('totalRequests').textContent = requests.length;
+            document.getElementById('pendingRequests').textContent = requests.filter(r => !r.status || r.status === 'pending').length;
+            document.getElementById('approvedRequests').textContent = requests.filter(r => r.status === 'approved').length;
+            document.getElementById('rejectedRequests').textContent = requests.filter(r => r.status === 'rejected').length;
+        }
+        
+        function displayRequests(requests) {
+            const container = document.getElementById('requestsList');
+            const statusFilter = document.getElementById('statusFilter').value;
+            const countryFilter = document.getElementById('countryFilter').value;
+            const priorityFilter = document.getElementById('priorityFilter').value;
+            
+            // Apply filters
+            let filteredRequests = requests;
+            if (statusFilter !== 'all') {
+                filteredRequests = filteredRequests.filter(r => r.status === statusFilter || (!r.status && statusFilter === 'pending'));
+            }
+            if (countryFilter !== 'all') {
+                filteredRequests = filteredRequests.filter(r => r.country === countryFilter);
+            }
+            if (priorityFilter !== 'all') {
+                filteredRequests = filteredRequests.filter(r => r.priority === priorityFilter);
+            }
+            
+            // Sort by timestamp (newest first)
+            filteredRequests.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+            
+            if (filteredRequests.length === 0) {
+                container.innerHTML = '<div class="text-center text-muted mt-4"><i class="fas fa-inbox fa-3x mb-3"></i><p>No requests found</p></div>';
+                return;
+            }
+            
+            container.innerHTML = filteredRequests.map(request => `
+                <div class="request-card ${request.status || 'pending'} fade-in">
+                    <div class="row align-items-center">
+                        <div class="col-md-3">
+                            <h6 class="mb-1">${request.bankName}</h6>
+                            <small class="text-muted">${request.bankType} • ${request.country}</small>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="status-badge status-${request.status || 'pending'}">
+                                ${request.status || 'Pending'}
+                            </span>
+                        </div>
+                        <div class="col-md-2">
+                            <small class="text-muted">
+                                <i class="fas fa-user me-1"></i>${request.userEmail}
+                            </small>
+                        </div>
+                        <div class="col-md-2">
+                            <small class="text-muted">
+                                <i class="fas fa-clock me-1"></i>${new Date(request.timestamp).toLocaleDateString()}
+                            </small>
+                        </div>
+                        <div class="col-md-3 text-end">
+                            <button class="btn btn-outline-primary btn-action me-2" onclick="viewRequest('${request.id}')">
+                                <i class="fas fa-eye me-1"></i>View
+                            </button>
+                            ${!request.status || request.status === 'pending' ? `
+                                <button class="btn btn-success btn-action me-1" onclick="approveRequest('${request.id}')">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button class="btn btn-danger btn-action" onclick="rejectRequest('${request.id}')">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            ` : ''}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Animate cards
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach(el => el.classList.add('animate'));
+            }, 100);
+        }
+        
+        function viewRequest(requestId) {
+            const requests = JSON.parse(localStorage.getItem('bankRequests') || '[]');
+            const request = requests.find(r => r.id === requestId);
+            
+            if (!request) return;
+            
+            currentRequestId = requestId;
+            
+            document.getElementById('requestModalBody').innerHTML = `
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Bank Information</h6>
+                        <p><strong>Name:</strong> ${request.bankName}</p>
+                        <p><strong>Type:</strong> ${request.bankType}</p>
+                        <p><strong>Country:</strong> ${request.country}</p>
+                        <p><strong>Sender:</strong> ${request.senderNumber}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Request Details</h6>
+                        <p><strong>Priority:</strong> ${request.priority}</p>
+                        <p><strong>Status:</strong> ${request.status || 'Pending'}</p>
+                        <p><strong>Submitted:</strong> ${new Date(request.timestamp).toLocaleString()}</p>
+                        <p><strong>Email:</strong> ${request.userEmail}</p>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <h6>SMS Format Example</h6>
+                    <div class="sms-preview">${request.smsFormat}</div>
+                </div>
+                ${request.additionalInfo ? `
+                    <div class="mt-3">
+                        <h6>Additional Information</h6>
+                        <p>${request.additionalInfo}</p>
+                    </div>
+                ` : ''}
+            `;
+            
+            new bootstrap.Modal(document.getElementById('requestModal')).show();
+        }
+        
+        function approveRequest(requestId = currentRequestId) {
+            if (!requestId) return;
+            
+            const requests = JSON.parse(localStorage.getItem('bankRequests') || '[]');
+            const requestIndex = requests.findIndex(r => r.id === requestId);
+            
+            if (requestIndex !== -1) {
+                requests[requestIndex].status = 'approved';
+                requests[requestIndex].approvedAt = new Date().toISOString();
+                localStorage.setItem('bankRequests', JSON.stringify(requests));
+                
+                loadRequests();
+                bootstrap.Modal.getInstance(document.getElementById('requestModal')).hide();
+                alert('Request approved successfully!');
+            }
+        }
+        
+        function rejectRequest(requestId = currentRequestId) {
+            if (!requestId) return;
+            
+            const requests = JSON.parse(localStorage.getItem('bankRequests') || '[]');
+            const requestIndex = requests.findIndex(r => r.id === requestId);
+            
+            if (requestIndex !== -1) {
+                requests[requestIndex].status = 'rejected';
+                requests[requestIndex].rejectedAt = new Date().toISOString();
+                localStorage.setItem('bankRequests', JSON.stringify(requests));
+                
+                loadRequests();
+                bootstrap.Modal.getInstance(document.getElementById('requestModal')).hide();
+                alert('Request rejected successfully!');
+            }
+        }
+        
+        // Filter event listeners
+        document.getElementById('statusFilter').addEventListener('change', loadRequests);
+        document.getElementById('countryFilter').addEventListener('change', loadRequests);
+        document.getElementById('priorityFilter').addEventListener('change', loadRequests);
+        
+        // Animate elements on load
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.fade-in').forEach(el => el.classList.add('animate'));
+        });
+    </script>
+</body>
+</html>
