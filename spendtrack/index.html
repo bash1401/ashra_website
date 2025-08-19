@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SpendTrack - Smart Expense Tracking App | Automatic SMS Detection | BashTech</title>
+  <meta name="description" content="Track your expenses automatically from SMS messages with SpendTrack. Get real-time spending alerts, monthly reports, and smart expense management. No manual entry required!" />
+  <meta name="keywords" content="expense tracker, SMS expense detection, spending alerts, financial management, budget tracking, expense categorization, spending reports, money management app, automatic expense tracking, SMS parser, financial app" />
+  <meta name="author" content="BashTech" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.bashtech.info/spendtrack/" />
+  <meta property="og:title" content="SpendTrack - Smart Expense Tracking App" />
+  <meta property="og:description" content="Track your expenses automatically from SMS messages. Get real-time spending alerts and smart expense management." />
+  <meta property="og:image" content="https://www.bashtech.info/spendtrack/og-image.png" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.bashtech.info/spendtrack/" />
+  <meta property="twitter:title" content="SpendTrack - Smart Expense Tracking App" />
+  <meta property="twitter:description" content="Track your expenses automatically from SMS messages. Get real-time spending alerts and smart expense management." />
+  <meta property="twitter:image" content="https://www.bashtech.info/spendtrack/og-image.png" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.bashtech.info/spendtrack/" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SpendTrack",
+    "description": "Smart expense tracking app that automatically detects expenses from SMS messages",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "BashTech"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "ratingCount": "89"
+    },
+    "featureList": [
+      "Automatic SMS expense detection",
+      "Real-time spending alerts",
+      "Monthly spending reports",
+      "Expense categorization",
+      "Offline functionality",
+      "Privacy-focused design"
+    ]
+  }
+  </script>
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; 
+      line-height: 1.6; 
+      color: #333; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    
+    /* Header */
+    header { 
+      background: rgba(255, 255, 255, 0.95); 
+      backdrop-filter: blur(10px);
+      padding: 1rem 0; 
+      position: sticky; 
+      top: 0; 
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo { 
+      font-size: 1.8rem; 
+      font-weight: bold; 
+      color: #1a73e8; 
+      display: flex; 
+      align-items: center; 
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    .logo-icon { font-size: 2rem; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { 
+      color: #333; 
+      text-decoration: none; 
+      font-weight: 500; 
+      transition: all 0.3s; 
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
+    .nav-links a:hover { 
+      background: rgba(26, 115, 232, 0.1); 
+      color: #1a73e8; 
+    }
+    
+    /* Hero Section */
+    .hero {
+      padding: 8rem 0 4rem;
+      text-align: center;
+      color: white;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    .hero .highlight { color: #ffd700; }
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-features {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    .hero-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      backdrop-filter: blur(10px);
+    }
+    .hero-feature i { color: #4ade80; }
+    
+    /* CTA Buttons */
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn-primary {
+      background: #1a73e8;
+      color: white;
+      box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(26, 115, 232, 0.4);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      backdrop-filter: blur(10px);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+    
+    /* Phone Mockup */
+    .phone-mockup {
+      margin: 4rem auto;
+      max-width: 300px;
+      position: relative;
+    }
+    .phone-frame {
+      background: #1a1a1a;
+      border-radius: 30px;
+      padding: 8px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .phone-screen {
+      background: white;
+      border-radius: 22px;
+      padding: 20px;
+      min-height: 500px;
+    }
+    .app-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .app-header h3 {
+      color: #1a73e8;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .app-header p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .summary-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .summary-card {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 15px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .summary-card.spent {
+      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+      color: white;
+    }
+    .summary-card.credit {
+      background: linear-gradient(135deg, #51cf66 0%, #40c057 100%);
+      color: white;
+    }
+    .summary-card h4 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .summary-card p {
+      font-size: 0.8rem;
+      opacity: 0.8;
+    }
+    
+    /* Features Section */
+    .features {
+      background: white;
+      padding: 5rem 0;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 4rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .feature-card {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 20px;
+      text-align: center;
+      transition: all 0.3s;
+      border: 1px solid #e9ecef;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #1a73e8 0%, #0056b3 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      color: white;
+      font-size: 2rem;
+    }
+    .feature-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    .feature-card p {
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    /* How It Works */
+    .how-it-works {
+      background: #f8f9fa;
+      padding: 5rem 0;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .step {
+      text-align: center;
+      position: relative;
+    }
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background: #1a73e8;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 0 auto 1.5rem;
+    }
+    .step h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    .step p {
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    /* Download Section */
+    .download {
+      background: linear-gradient(135deg, #1a73e8 0%, #0056b3 100%);
+      color: white;
+      padding: 5rem 0;
+      text-align: center;
+    }
+    .download h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .download p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    .app-info {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      backdrop-filter: blur(10px);
+    }
+    
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      color: white;
+      padding: 3rem 0 1rem;
+    }
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .footer-section h3 {
+      color: #1a73e8;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+    .footer-section p, .footer-section a {
+      color: #ccc;
+      text-decoration: none;
+      line-height: 1.8;
+    }
+    .footer-section a:hover {
+      color: #1a73e8;
+    }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #333;
+      color: #999;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .hero-features { flex-direction: column; align-items: center; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .features-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .app-info { flex-direction: column; align-items: center; }
+      .nav-links { display: none; }
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate { animation: fadeInUp 0.8s ease-out; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="container">
+      <a href="https://www.bashtech.info" class="logo">
+        <span class="logo-icon">💰</span>
+        <span>SpendTrack</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#download">Download</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Track Your Expenses <span class="highlight">Automatically</span></h1>
+      <p>SpendTrack automatically detects your expenses from SMS messages and provides intelligent spending insights. No manual entry required - just install and start tracking!</p>
+      
+      <div class="hero-features">
+        <div class="hero-feature">
+          <i class="fas fa-check-circle"></i>
+          <span>Automatic SMS Detection</span>
+        </div>
+        <div class="hero-feature">
+          <i class="fas fa-check-circle"></i>
+          <span>Real-time Spending Alerts</span>
+        </div>
+        <div class="hero-feature">
+          <i class="fas fa-check-circle"></i>
+          <span>Monthly Reports & Analytics</span>
+        </div>
+      </div>
+      
+      <div class="cta-buttons">
+        <a href="#download" class="btn btn-primary">
+          <i class="fab fa-google-play"></i>
+          Download Now
+        </a>
+        <a href="#how-it-works" class="btn btn-secondary">
+          <i class="fas fa-play"></i>
+          Learn More
+        </a>
+      </div>
+      
+      <div class="phone-mockup">
+        <div class="phone-frame">
+          <div class="phone-screen">
+            <div class="app-header">
+              <h3>SpendTrack</h3>
+              <p>This Month</p>
+            </div>
+            <div class="summary-cards">
+              <div class="summary-card spent">
+                <h4>₹12,450</h4>
+                <p>Spent</p>
+              </div>
+              <div class="summary-card credit">
+                <h4>₹25,000</h4>
+                <p>Credit</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title">Why Choose SpendTrack?</h2>
+      <p class="section-subtitle">Experience the future of expense tracking with intelligent automation and smart insights</p>
+      
+      <div class="features-grid">
+        <div class="feature-card animate">
+          <div class="feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Automatic Detection</h3>
+          <p>SpendTrack automatically reads your SMS messages and extracts transaction details. No manual entry required!</p>
+        </div>
+        
+        <div class="feature-card animate">
+          <div class="feature-icon">
+            <i class="fas fa-bell"></i>
+          </div>
+          <h3>Smart Alerts</h3>
+          <p>Get instant notifications when you make purchases. Stay informed about your spending habits in real-time.</p>
+        </div>
+        
+        <div class="feature-card animate">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Detailed Analytics</h3>
+          <p>View comprehensive reports with spending trends, category breakdowns, and monthly summaries.</p>
+        </div>
+        
+        <div class="feature-card animate">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Privacy First</h3>
+          <p>Your data stays on your device. We don't collect or store any personal information or transaction data.</p>
+        </div>
+        
+        <div class="feature-card animate">
+          <div class="feature-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3>Lightning Fast</h3>
+          <p>Built with Flutter for optimal performance. Minimal battery usage and instant transaction detection.</p>
+        </div>
+        
+        <div class="feature-card animate">
+          <div class="feature-icon">
+            <i class="fas fa-wifi-slash"></i>
+          </div>
+          <h3>Works Offline</h3>
+          <p>No internet connection required. All processing happens locally on your device for maximum privacy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="how-it-works">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">Get started in just 3 simple steps</p>
+      
+      <div class="steps">
+        <div class="step animate">
+          <div class="step-number">1</div>
+          <h3>Download & Install</h3>
+          <p>Download SpendTrack from the Google Play Store and install it on your device.</p>
+        </div>
+        
+        <div class="step animate">
+          <div class="step-number">2</div>
+          <h3>Select Your Banks</h3>
+          <p>Choose which banks you want to track from our comprehensive list of supported banks.</p>
+        </div>
+        
+        <div class="step animate">
+          <div class="step-number">3</div>
+          <h3>Start Tracking</h3>
+          <p>That's it! SpendTrack will automatically detect and categorize your transactions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section id="download" class="download">
+    <div class="container">
+      <h2>Ready to Start Tracking?</h2>
+      <p>Join thousands of users who are already managing their expenses smarter with SpendTrack.</p>
+      
+      <div class="cta-buttons">
+        <a href="https://play.google.com/store/apps/details?id=com.bashtech.spendtrack" class="btn btn-primary">
+          <i class="fab fa-google-play"></i>
+          Get it on Google Play
+        </a>
+      </div>
+      
+      <div class="app-info">
+        <div class="info-item">
+          <i class="fas fa-star"></i>
+          <span>Free to download</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-shield-alt"></i>
+          <span>No ads or tracking</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-mobile-alt"></i>
+          <span>Works offline</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>SpendTrack</h3>
+          <p>Smart expense tracking made simple. Automatically detect and categorize your spending from SMS messages.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>App</h3>
+          <p><a href="#features">Features</a></p>
+          <p><a href="#how-it-works">How It Works</a></p>
+          <p><a href="#download">Download</a></p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Support</h3>
+          <p><a href="about.html">About</a></p>
+          <p><a href="privacy.html">Privacy Policy</a></p>
+          <p><a href="terms.html">Terms of Service</a></p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Developer</h3>
+          <p>Developed by <a href="https://www.bashtech.info" target="_blank">BashTech</a></p>
+          <p><a href="mailto:subash.rathinam1401@gmail.com">subash.rathinam1401@gmail.com</a></p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 BashTech. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Font Awesome -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  
+  <!-- Smooth Scrolling -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.feature-card, .step').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

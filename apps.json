@@ -45,8 +45,9 @@
       "icon": "💰",
       "category": "Expense Tracking",
       "description": "Track your daily expenses automatically from SMS and get spending alerts. Smart expense management made simple.",
-      "status": "planned",
+      "status": "live",
       "playStoreUrl": "https://play.google.com/store/apps/details?id=com.bashtech.spendtrack",
+      "websiteUrl": "https://www.bashtech.info/spendtrack/index.html",
       "features": [
         "Automatic SMS expense detection",
         "Spending alerts and notifications",

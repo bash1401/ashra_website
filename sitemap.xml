@@ -36,11 +36,67 @@
   </url>
 
   
-  <!-- Future App Pages (Coming Soon) -->
+  <!-- Focus Timer App Section -->
+  <url>
+    <loc>https://www.bashtech.info/focustimer/</loc>
+    <lastmod>2024-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.bashtech.info/focustimer/index.html</loc>
+    <lastmod>2024-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.bashtech.info/focustimer/about.html</loc>
+    <lastmod>2024-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bashtech.info/focustimer/privacy.html</loc>
+    <lastmod>2024-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- SpendTrack App Section -->
   <url>
     <loc>https://www.bashtech.info/spendtrack/</loc>
-    <lastmod>2024-08-17</lastmod>
+    <lastmod>2024-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.bashtech.info/spendtrack/index.html</loc>
+    <lastmod>2024-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.bashtech.info/spendtrack/about.html</loc>
+    <lastmod>2024-08-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bashtech.info/spendtrack/privacy.html</loc>
+    <lastmod>2024-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bashtech.info/spendtrack/terms.html</loc>
+    <lastmod>2024-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bashtech.info/spendtrack/api/banks.json</loc>
+    <lastmod>2024-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
