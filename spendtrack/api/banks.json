@@ -12,7 +12,39 @@
       "wallet credited",
       "wallet added",
       "bank credited",
-      "bank added"
+      "bank added",
+      "cr",
+      "cr.",
+      "credit alert",
+      "amount received",
+      "received from",
+      "transfer received",
+      "incoming",
+      "inward remittance",
+      "neft credit",
+      "imps credit",
+      "rtgs credit",
+      "upi credit",
+      "refund",
+      "refund processed",
+      "refund credited",
+      "reversal",
+      "reversal credited",
+      "chargeback",
+      "salary credit",
+      "pension credited",
+      "dividend credited",
+      "cash deposit",
+      "cash deposited",
+      "auto credit",
+      "to your a/c",
+      "to your ac",
+      "to your account",
+      "by bank transfer",
+      "by imps",
+      "by neft",
+      "by rtgs",
+      "by upi"
     ],
     "debitKeywords": [
       "debited",
@@ -28,96 +60,201 @@
       "wallet debited",
       "wallet spent",
       "bank debited",
-      "bank spent"
+      "bank spent",
+      "txn",
+      "dr",
+      "dr.",
+      "debit alert",
+      "amount debited",
+      "charged",
+      "purchase",
+      "payment",
+      "payment to",
+      "transfer to",
+      "sent to",
+      "spent at",
+      "spent on",
+      "pos",
+      "pos txn",
+      "ecom",
+      "ecommerce",
+      "atm",
+      "atm withdrawal",
+      "cash withdrawal",
+      "withdrawal",
+      "upi payment",
+      "upi debit",
+      "imps debit",
+      "neft debit",
+      "rtgs debit",
+      "ecs",
+      "nach",
+      "autopay",
+      "auto-debit",
+      "mandate",
+      "si",
+      "standing instruction",
+      "bill paid",
+      "ach debit",
+      "card purchase",
+      "card xx debited",
+      "toll",
+      "fuel",
+      "merchant payment",
+      "upi to",
+      "transfer out",
+      "paid to"
     ],
     "amountPatterns": {
       "INR": [
-        "(Rs\\.|INR|₹)\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(Rs\\.|INR|₹)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:rupees?|rupee)",
-        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+        "(Rs\\.?|INR\\.?|₹)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(Rs\\.?|INR\\.?|₹)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:rupees?|rupee)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:has\\s+been|is\\s+been)",
+        "(?:Rs\\.?|INR\\.?|₹)\\s*([\\d,]+(?:\\.\\d{1,2})?)\\s*/-?",
+        "([\\d,]+)\\s*/-\\s*(?:Rs\\.?|INR\\.?|₹)"
       ],
       "USD": [
-        "(\\$|USD|US\\$)\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(\\$|USD|US\\$)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:dollars?|dollar)",
-        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+        "(\\$|USD|US\\$)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(\\$|USD|US\\$)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:dollars?|dollar)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:has\\s+been|is\\s+been)"
       ],
       "EUR": [
-        "(€|EUR|EURO)\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(€|EUR|EURO)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:euros?|euro)",
-        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+        "(€|EUR|EURO)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(€|EUR|EURO)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:euros?|euro)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:has\\s+been|is\\s+been)"
       ],
       "GBP": [
-        "(£|GBP|POUND)\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(£|GBP|POUND)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:pounds?|pound)",
-        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+        "(£|GBP|POUND)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(£|GBP|POUND)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:pounds?|pound)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:has\\s+been|is\\s+been)"
       ],
       "CAD": [
-        "(C\\$|CAD|CAN\\$)\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(C\\$|CAD|CAN\\$)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:canadian\\s+dollars?|canadian\\s+dollar)",
-        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+        "(C\\$|CAD|CAN\\$)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(C\\$|CAD|CAN\\$)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:canadian\\s+dollars?|canadian\\s+dollar)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:has\\s+been|is\\s+been)"
       ],
       "AUD": [
-        "(A\\$|AUD|AUS\\$)\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(A\\$|AUD|AUS\\$)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:australian\\s+dollars?|australian\\s+dollar)",
-        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+        "(A\\$|AUD|AUS\\$)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(A\\$|AUD|AUS\\$)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:australian\\s+dollars?|australian\\s+dollar)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:has\\s+been|is\\s+been)"
       ],
       "JPY": [
-        "(¥|JPY|YEN)\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(¥|JPY|YEN)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:yens?|yen)",
-        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+        "(¥|JPY|YEN)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(¥|JPY|YEN)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:yens?|yen)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:has\\s+been|is\\s+been)"
       ],
       "CHF": [
-        "(CHF|FRANC)\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(CHF|FRANC)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:francs?|franc)",
-        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+        "(CHF|FRANC)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(CHF|FRANC)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:francs?|franc)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:has\\s+been|is\\s+been)"
       ],
       "CNY": [
-        "(¥|CNY|RMB)\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(¥|CNY|RMB)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:yuans?|yuan|renminbi)",
-        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+        "(¥|CNY|RMB)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(¥|CNY|RMB)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:yuans?|yuan|renminbi)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:has\\s+been|is\\s+been)"
       ],
       "NZD": [
-        "(NZ\\$|NZD)\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(NZ\\$|NZD)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:new\\s+zealand\\s+dollars?|new\\s+zealand\\s+dollar)",
-        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+        "(NZ\\$|NZD)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(NZ\\$|NZD)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:new\\s+zealand\\s+dollars?|new\\s+zealand\\s+dollar)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:has\\s+been|is\\s+been)"
       ],
       "HKD": [
-        "(HK\\$|HKD)\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(HK\\$|HKD)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:hong\\s+kong\\s+dollars?|hong\\s+kong\\s+dollar)",
-        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
-        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+        "(HK\\$|HKD)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(HK\\$|HKD)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:hong\\s+kong\\s+dollars?|hong\\s+kong\\s+dollar)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(?:has\\s+been|is\\s+been)"
+      ],
+      "AED": [
+        "(AED|د\\.إ)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(AED|د\\.إ)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)"
+      ],
+      "SGD": [
+        "(S\\$|SGD)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(S\\$|SGD)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)"
+      ],
+      "SAR": [
+        "(SAR)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(SAR)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)"
+      ],
+      "QAR": [
+        "(QAR)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(QAR)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)"
+      ],
+      "OMR": [
+        "(OMR)\\s*([\\d,]+(?:\\.\\d{1,3})?)",
+        "([\\d,]+(?:\\.\\d{1,3})?)\\s*(OMR)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{1,3})?)"
+      ],
+      "KWD": [
+        "(KWD)\\s*([\\d,]+(?:\\.\\d{1,3})?)",
+        "([\\d,]+(?:\\.\\d{1,3})?)\\s*(KWD)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{1,3})?)"
+      ],
+      "BHD": [
+        "(BHD)\\s*([\\d,]+(?:\\.\\d{1,3})?)",
+        "([\\d,]+(?:\\.\\d{1,3})?)\\s*(BHD)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{1,3})?)"
+      ],
+      "ZAR": [
+        "(ZAR|R)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(ZAR|R)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{1,2})?)"
+      ],
+      "SEK": [
+        "(SEK|kr)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(SEK|kr)"
+      ],
+      "NOK": [
+        "(NOK|kr)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(NOK|kr)"
+      ],
+      "DKK": [
+        "(DKK|kr)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(DKK|kr)"
+      ],
+      "THB": [
+        "(THB|฿)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(THB|฿)"
+      ],
+      "MYR": [
+        "(MYR|RM)\\s*([\\d,]+(?:\\.\\d{1,2})?)",
+        "([\\d,]+(?:\\.\\d{1,2})?)\\s*(MYR|RM)"
       ]
     },
     "ignorePatterns": [
@@ -125,10 +262,6 @@
       "statement",
       "monthly statement",
       "credit card statement",
-      "available balance",
-      "current balance",
-      "closing balance",
-      "opening balance",
       "reward points",
       "interest credited",
       "interest earned",
@@ -147,14 +280,10 @@
       "card unblocked",
       "card activated",
       "card deactivated",
-      "upi",
-      "upi id",
-      "upi pin",
+      "failed",
+      "requested",
       "upi blocked",
       "upi unblocked",
-      "mobile number",
-      "email",
-      "address",
       "kyc",
       "know your customer",
       "account opened",
@@ -172,7 +301,6 @@
       "passbook",
       "mini statement",
       "balance enquiry",
-      "transaction limit",
       "daily limit",
       "monthly limit",
       "yearly limit",
@@ -195,54 +323,286 @@
       "limit renewed",
       "limit extended",
       "limit shortened",
-      "cashback"
+      "cashback",
+      "e-statement",
+      "unbilled",
+      "minimum due",
+      "total amount due",
+      "payment due",
+      "due date",
+      "overdue",
+      "bill generated",
+      "bill ready",
+      "pre-approved",
+      "pre approved",
+      "preapproved",
+      "personal loan",
+      "home loan",
+      "car loan",
+      "gold loan",
+      "education loan",
+      "top-up loan",
+      "instant loan",
+      "lending",
+      "promo code",
+      "voucher",
+      "coupon",
+      "rewards",
+      "points",
+      "miles",
+      "one time password",
+      "2fa",
+      "verification code",
+      "login failed",
+      "logged in",
+      "logged out",
+      "aadhaar",
+      "pan",
+      "update your details",
+      "service alert",
+      "system maintenance",
+      "maintenance",
+      "scheduled downtime",
+      "app update",
+      "device added",
+      "new device",
+      "card dispatched",
+      "card delivered",
+      "card renewal",
+      "card replaced",
+      "pin generation",
+      "pin changed",
+      "pin set",
+      "pin reset",
+      "credentials",
+      "netbanking",
+      "internet banking",
+      "cheque book dispatched",
+      "do not share otp",
+      "share otp",
+      "link to download",
+      "click here",
+      "click to",
+      "survey",
+      "feedback",
+      "refer and earn",
+      "referral",
+      "congratulations",
+      "festive",
+      "sale",
+      "lifestyle",
+      "travel offer",
+      "pre-enrollment",
+      "pre-enrolment",
+      "welcome kit",
+      "dispatch update"
     ]
   },
   "banks": [
     {
       "name": "SBI",
       "displayName": "State Bank of India",
-      "senderIds": ["SBISMS", "SBIOTP", "SBIINB", "SBICRD", "SBIDEB"]
+      "senderIds": ["SBISMS", "SBIOTP", "SBIINB", "SBICRD", "SBIDEB", "SBIYNO", "SBIYON", "SBICAR"]
     },
     {
       "name": "HDFC",
       "displayName": "HDFC Bank",
-      "senderIds": ["HDFCBK", "HDFCOTP", "HDFCINB", "HDFCCRD"]
+      "senderIds": ["HDFCBK", "HDFCOTP", "HDFCINB", "HDFCCRD", "HDFCBN", "HDFCUP"]
     },
     {
       "name": "ICICI",
       "displayName": "ICICI Bank",
-      "senderIds": ["ICICIB", "ICICOTP", "ICICINB", "ICICCRD"]
+      "senderIds": ["ICICIB", "ICICOTP", "ICICINB", "ICICCRD", "ICICID", "ICICIP"]
     },
     {
       "name": "AXIS",
       "displayName": "Axis Bank",
-      "senderIds": ["AXISBK", "AXISOTP", "AXISINB", "AXISCRD"]
+      "senderIds": ["AXISBK", "AXISOTP", "AXISINB", "AXISCRD", "AXISMB", "AXISUP"]
     },
     {
       "name": "KOTAK",
       "displayName": "Kotak Mahindra Bank",
-      "senderIds": ["KOTAKB", "KOTAKOTP", "KOTAKINB", "KOTAKCRD"]
+      "senderIds": ["KOTAKB", "KOTAKOTP", "KOTAKINB", "KOTAKCRD", "KOTAKU"]
     },
     {
       "name": "BOB",
       "displayName": "Bank of Baroda",
-      "senderIds": ["BARODA", "BARODAOTP", "BARODAINB", "BARODACRD"]
+      "senderIds": ["BARODA", "BARODAOTP", "BARODAINB", "BARODACRD", "BOBFIN"]
     },
     {
       "name": "PNB",
       "displayName": "Punjab National Bank",
-      "senderIds": ["PNBSMS", "PNBOTP", "PNBINB", "PNBCRD"]
+      "senderIds": ["PNBSMS", "PNBOTP", "PNBINB", "PNBCRD", "PNBMSG"]
     },
     {
       "name": "PAYTM",
       "displayName": "Paytm",
-      "senderIds": ["PAYTM", "PAYTMOTP", "PAYTMPAY"]
+      "senderIds": ["PAYTM", "PAYTMOTP", "PAYTMPAY", "PYTMUP", "PYTMBK"]
     },
     {
       "name": "AIRTEL",
       "displayName": "Airtel Payments Bank",
-      "senderIds": ["AIRTLB", "AIRTLOTP", "AIRTLPAY"]
+      "senderIds": ["AIRTLB", "AIRTLOTP", "AIRTLPAY", "AIRTPB"]
+    },
+    {
+      "name": "YESBANK",
+      "displayName": "YES Bank",
+      "senderIds": ["YESBNK", "YESBMS", "YESOTP", "YESCRD"]
+    },
+    {
+      "name": "IDFCFIRST",
+      "displayName": "IDFC FIRST Bank",
+      "senderIds": ["IDFCFB", "IDFCBK", "IDFCFR", "IDFCOTP"]
+    },
+    {
+      "name": "INDUSIND",
+      "displayName": "IndusInd Bank",
+      "senderIds": ["INDUSB", "INDUSN", "INDUSI", "INDUSC"]
+    },
+    {
+      "name": "CANARA",
+      "displayName": "Canara Bank",
+      "senderIds": ["CANBNK", "CANARA", "CNBOTP", "CANCRD"]
+    },
+    {
+      "name": "UNION",
+      "displayName": "Union Bank of India",
+      "senderIds": ["UNIONB", "UBIINB", "UBIOTP", "UNIONC"]
+    },
+    {
+      "name": "BOI",
+      "displayName": "Bank of India",
+      "senderIds": ["BOIINB", "BKOFIN", "BOIOTP", "BOICRD"]
+    },
+    {
+      "name": "CBI",
+      "displayName": "Central Bank of India",
+      "senderIds": ["CBIINB", "CBIOTP"]
+    },
+    {
+      "name": "IDBI",
+      "displayName": "IDBI Bank",
+      "senderIds": ["IDBIBK", "IDBIIN", "IDBICR", "IDBIOP"]
+    },
+    {
+      "name": "FEDERAL",
+      "displayName": "Federal Bank",
+      "senderIds": ["FEDBNK", "FDRLBN", "FEDOTP", "FEDCRD"]
+    },
+    {
+      "name": "RBL",
+      "displayName": "RBL Bank",
+      "senderIds": ["RBLBNK", "RBLCRD", "RBLOTP"]
+    },
+    {
+      "name": "KVB",
+      "displayName": "Karur Vysya Bank",
+      "senderIds": ["KVBBNK", "KVBOTP", "KVBCRD"]
+    },
+    {
+      "name": "SIB",
+      "displayName": "South Indian Bank",
+      "senderIds": ["SIBANK", "SIBOTP"]
+    },
+    {
+      "name": "TMB",
+      "displayName": "Tamilnad Mercantile Bank",
+      "senderIds": ["TMBANK", "TMBOTP"]
+    },
+    {
+      "name": "DCB",
+      "displayName": "DCB Bank",
+      "senderIds": ["DCBBNK", "DCBOTP"]
+    },
+    {
+      "name": "CSB",
+      "displayName": "CSB Bank",
+      "senderIds": ["CSBANK", "CSBOTP"]
+    },
+    {
+      "name": "UJJIVAN",
+      "displayName": "Ujjivan Small Finance Bank",
+      "senderIds": ["UJJIVN", "UJJOTP"]
+    },
+    {
+      "name": "AU",
+      "displayName": "AU Small Finance Bank",
+      "senderIds": ["AUBANK", "AUFIN", "AUOTP"]
+    },
+    {
+      "name": "BANDHAN",
+      "displayName": "Bandhan Bank",
+      "senderIds": ["BANDHN", "BNDOTP"]
+    },
+    {
+      "name": "HSBC",
+      "displayName": "HSBC India",
+      "senderIds": ["HSBCIN", "HSBCKR", "HSBCCB", "HSBCOT"]
+    },
+    {
+      "name": "CITI",
+      "displayName": "Citibank India",
+      "senderIds": ["CITIBK", "CITISR", "CITINB", "CITOTP"]
+    },
+    {
+      "name": "SC",
+      "displayName": "Standard Chartered",
+      "senderIds": ["SCBANK", "STDCBK", "SCOTPB", "SCBCRD"]
+    },
+    {
+      "name": "DBS",
+      "displayName": "DBS Bank India",
+      "senderIds": ["DBSBNK", "DBSSGP", "DBSOTP"]
+    },
+    {
+      "name": "AMEX",
+      "displayName": "American Express",
+      "senderIds": ["AMEXBK", "AMEXCS", "AMEXIN"]
+    },
+    {
+      "name": "GOOGLEPAY",
+      "displayName": "Google Pay",
+      "senderIds": ["GOOGPE", "GPA", "GOPAYS", "GOOGLE"]
+    },
+    {
+      "name": "PHONEPE",
+      "displayName": "PhonePe",
+      "senderIds": ["PHONPE", "PHONEP", "PPEPAY", "PHPEPG"]
+    },
+    {
+      "name": "AMAZONPAY",
+      "displayName": "Amazon Pay",
+      "senderIds": ["AMZPAY", "AMAZON", "AMZONP"]
+    },
+    {
+      "name": "RAZORPAY",
+      "displayName": "Razorpay",
+      "senderIds": ["RAZORP", "RAZPAY"]
+    },
+    {
+      "name": "PAYPAL",
+      "displayName": "PayPal",
+      "senderIds": ["PAYPAL"]
+    },
+    {
+      "name": "BHIM",
+      "displayName": "BHIM UPI",
+      "senderIds": ["BHIMUP", "BHIMUPI"]
+    },
+    {
+      "name": "MOBIKWIK",
+      "displayName": "MobiKwik",
+      "senderIds": ["MOBKWK", "MOBIKW"]
+    },
+    {
+      "name": "FREECHARGE",
+      "displayName": "Freecharge",
+      "senderIds": ["FRCHRG", "FREECH"]
+    },
+    {
+      "name": "PAYU",
+      "displayName": "PayU",
+      "senderIds": ["PAYUIN", "PAYUMO"]
     }
   ]
 }
