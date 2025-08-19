@@ -89,6 +89,11 @@
       display: flex; 
       align-items: center; 
       gap: 0.5rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .logo:hover {
+      transform: scale(1.05);
     }
     .logo-icon { font-size: 2rem; }
     .nav-links { display: flex; gap: 2rem; align-items: center; }
@@ -99,6 +104,21 @@
       transition: all 0.3s; 
       padding: 0.5rem 1rem;
       border-radius: 25px;
+      position: relative;
+      overflow: hidden;
+    }
+    .nav-links a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(26, 115, 232, 0.1), transparent);
+      transition: left 0.3s ease;
+    }
+    .nav-links a:hover::before {
+      left: 100%;
     }
     .nav-links a:hover { 
       color: #1a73e8; 
@@ -112,6 +132,10 @@
       font-size: 1.5rem;
       cursor: pointer;
       color: #333;
+      transition: all 0.3s ease;
+    }
+    .mobile-menu-btn:hover {
+      transform: scale(1.1);
     }
     
     /* Hero Section */
@@ -199,6 +223,12 @@
       border: 1px solid rgba(0,0,0,0.05);
       position: relative;
       overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .app-card.animate {
+      opacity: 1;
+      transform: translateY(0);
     }
     .app-card::before {
       content: '';
@@ -531,7 +561,7 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          entry.target.classList.add('animate');
         }
       });
     }, observerOptions);
@@ -539,8 +569,8 @@
     // Add fade-in class to app cards
     function addFadeInToApps() {
       const appCards = document.querySelectorAll('.app-card');
-      appCards.forEach(card => {
-        card.classList.add('fade-in');
+      appCards.forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(card);
       });
     }

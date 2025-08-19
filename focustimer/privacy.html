@@ -1,344 +1,375 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Privacy Policy - Focus Timer | BashTech</title>
-  <meta name="description" content="Privacy Policy for Focus Timer app. Learn how we protect your data and privacy while using our Pomodoro timer application." />
-  <meta name="keywords" content="privacy policy, focus timer, data protection, user privacy, pomodoro timer privacy" />
-  <meta name="author" content="BashTech" />
-  <meta name="robots" content="index, follow" />
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.bashtech.info/focustimer/privacy.html" />
-  <meta property="og:title" content="Privacy Policy - Focus Timer" />
-  <meta property="og:description" content="Privacy Policy for Focus Timer app. Learn how we protect your data and privacy." />
-  
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://www.bashtech.info/focustimer/privacy.html" />
-  
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⏱️</text></svg>">
-  
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; 
-      line-height: 1.6; 
-      color: #333; 
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-    }
-    .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
-    
-    /* Header */
-    header { 
-      background: rgba(255, 255, 255, 0.95); 
-      backdrop-filter: blur(10px);
-      padding: 1rem 0; 
-      position: sticky; 
-      top: 0; 
-      z-index: 100;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-    }
-    nav { display: flex; justify-content: space-between; align-items: center; }
-    .logo { 
-      font-size: 1.8rem; 
-      font-weight: bold; 
-      color: #1a73e8; 
-      display: flex; 
-      align-items: center; 
-      gap: 0.5rem;
-      text-decoration: none;
-    }
-    .logo-icon { font-size: 2rem; }
-    .nav-links { display: flex; gap: 2rem; align-items: center; }
-    .nav-links a { 
-      color: #333; 
-      text-decoration: none; 
-      font-weight: 500; 
-      transition: all 0.3s; 
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-    }
-    .nav-links a:hover { 
-      background: #f0f0f0; 
-      color: #1a73e8; 
-    }
-    
-    /* Main Content */
-    .main-content { 
-      background: white; 
-      margin: 2rem 0; 
-      padding: 3rem; 
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-    }
-    .main-content h1 { 
-      font-size: 2.5rem; 
-      margin-bottom: 1rem; 
-      color: #333;
-      text-align: center;
-    }
-    .main-content h2 { 
-      font-size: 1.8rem; 
-      margin: 2rem 0 1rem 0; 
-      color: #1a73e8;
-      border-bottom: 2px solid #e0e0e0;
-      padding-bottom: 0.5rem;
-    }
-    .main-content h3 { 
-      font-size: 1.3rem; 
-      margin: 1.5rem 0 0.5rem 0; 
-      color: #555;
-    }
-    .main-content p { 
-      margin-bottom: 1rem; 
-      color: #666;
-      line-height: 1.7;
-    }
-    .main-content ul { 
-      margin: 1rem 0; 
-      padding-left: 2rem; 
-    }
-    .main-content li { 
-      margin-bottom: 0.5rem; 
-      color: #666;
-    }
-    .main-content .last-updated { 
-      text-align: center; 
-      font-style: italic; 
-      color: #888; 
-      margin-bottom: 2rem;
-      padding: 1rem;
-      background: #f8f9fa;
-      border-radius: 8px;
-    }
-    
-    /* Footer */
-    footer { 
-      background: rgba(0, 0, 0, 0.8); 
-      color: white; 
-      padding: 2rem 0; 
-      text-align: center;
-      margin-top: 2rem;
-    }
-    .footer-links { 
-      display: flex; 
-      justify-content: center; 
-      gap: 2rem; 
-      margin-bottom: 1rem; 
-    }
-    .footer-links a { 
-      color: #ccc; 
-      text-decoration: none; 
-      transition: color 0.3s; 
-    }
-    .footer-links a:hover { 
-      color: white; 
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      .main-content { padding: 2rem 1rem; }
-      .main-content h1 { font-size: 2rem; }
-      .nav-links { display: none; }
-    }
-    
-    /* Back to top button */
-    .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #1a73e8;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: all 0.3s;
-      box-shadow: 0 4px 20px rgba(26, 115, 232, 0.4);
-    }
-    .back-to-top:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(26, 115, 232, 0.6);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Focus Timer | BashTech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .privacy-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .privacy-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .privacy-content {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .section-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .section-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .privacy-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .feature-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            border-left: 4px solid var(--warning-color);
+        }
+        
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <nav class="container">
-      <a href="index.html" class="logo">
-        <span class="logo-icon">⏱️</span>
-        Focus Timer
-      </a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="https://www.bashtech.info/">BashTech</a>
-      </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <i class="fas fa-clock me-2"></i>Focus Timer
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="privacy.html">Privacy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <main class="container">
-    <div class="main-content">
-      <h1>Privacy Policy</h1>
-      <div class="last-updated">
-        <strong>Last Updated:</strong> December 15, 2024
-      </div>
+    <section class="privacy-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="fade-in">
+                        <i class="fas fa-shield-alt privacy-icon"></i>
+                        <h1 class="display-4 fw-bold mb-4">Privacy Policy</h1>
+                        <p class="lead mb-0">Your privacy is our top priority. Learn how Focus Timer protects your data.</p>
+                        <p class="text-light mt-2">Last updated: December 2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <p>Welcome to Focus Timer! This Privacy Policy explains how we collect, use, and protect your information when you use our Pomodoro timer application.</p>
-
-      <h2>1. Information We Collect</h2>
-      
-      <h3>1.1 Information You Provide</h3>
-      <ul>
-        <li><strong>Task Names:</strong> When you add task names to your work sessions, this information is stored locally on your device.</li>
-        <li><strong>App Settings:</strong> Your timer preferences, including work duration, break times, and notification settings are stored locally.</li>
-      </ul>
-
-      <h3>1.2 Automatically Collected Information</h3>
-      <ul>
-        <li><strong>Usage Statistics:</strong> The app tracks your completed sessions, work time, and productivity patterns locally on your device.</li>
-        <li><strong>Device Information:</strong> Basic device information (Android version, app version) for app functionality and updates.</li>
-      </ul>
-
-      <h3>1.3 AdMob Integration</h3>
-      <ul>
-        <li><strong>Advertisements:</strong> Our app uses Google AdMob to display advertisements. AdMob may collect and process data according to their own privacy policy.</li>
-        <li><strong>Ad Identifiers:</strong> AdMob may use advertising identifiers to provide personalized ads.</li>
-      </ul>
-
-      <h2>2. How We Use Your Information</h2>
-      
-      <h3>2.1 App Functionality</h3>
-      <ul>
-        <li>To provide and maintain the Focus Timer service</li>
-        <li>To track your productivity statistics and session history</li>
-        <li>To customize your timer settings and preferences</li>
-        <li>To send notifications when timer sessions end</li>
-      </ul>
-
-      <h3>2.2 Analytics and Improvements</h3>
-      <ul>
-        <li>To analyze app usage patterns and improve functionality</li>
-        <li>To fix bugs and enhance user experience</li>
-        <li>To develop new features based on user needs</li>
-      </ul>
-
-      <h2>3. Data Storage and Security</h2>
-      
-      <h3>3.1 Local Storage</h3>
-      <p>Most of your data, including task names, settings, and statistics, is stored locally on your device using Android's SharedPreferences. This data never leaves your device unless you explicitly share it.</p>
-
-      <h3>3.2 Data Security</h3>
-      <ul>
-        <li>We implement appropriate security measures to protect your information</li>
-        <li>Your data is stored securely on your device</li>
-        <li>We do not transmit sensitive personal information to external servers</li>
-      </ul>
-
-      <h2>4. Third-Party Services</h2>
-      
-      <h3>4.1 Google AdMob</h3>
-      <p>Our app integrates with Google AdMob for advertising purposes. AdMob's collection and use of data is governed by their own privacy policy, which you can review at <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>.</p>
-
-      <h3>4.2 Google Play Services</h3>
-      <p>We use Google Play Services for app functionality and updates. Google's privacy policy applies to their services.</p>
-
-      <h2>5. Your Rights and Choices</h2>
-      
-      <h3>5.1 Data Access and Control</h3>
-      <ul>
-        <li>You can view and modify your app settings at any time</li>
-        <li>You can clear your task history and statistics through the app settings</li>
-        <li>You can uninstall the app to remove all locally stored data</li>
-      </ul>
-
-      <h3>5.2 Advertising Preferences</h3>
-      <ul>
-        <li>You can opt out of personalized ads through your device settings</li>
-        <li>You can reset your advertising identifier in your device settings</li>
-      </ul>
-
-      <h2>6. Children's Privacy</h2>
-      <p>Focus Timer is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
-
-      <h2>7. Data Retention</h2>
-      <ul>
-        <li>Your app data is stored locally on your device</li>
-        <li>Data is retained until you clear it through app settings or uninstall the app</li>
-        <li>We do not maintain copies of your personal data on our servers</li>
-      </ul>
-
-      <h2>8. International Data Transfers</h2>
-      <p>Since your data is stored locally on your device, no international data transfers occur. However, third-party services like AdMob may transfer data according to their own policies.</p>
-
-      <h2>9. Changes to This Privacy Policy</h2>
-      <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes.</p>
-
-      <h2>10. Contact Us</h2>
-      <p>If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
-      <ul>
-        <li><strong>Email:</strong> <a href="mailto:subash.rathinam1401@gmail.com">subash.rathinam1401@gmail.com</a></li>
-        <li><strong>Developer:</strong> BashTech</li>
-        <li><strong>Website:</strong> <a href="https://www.bashtech.info/">https://www.bashtech.info/</a></li>
-      </ul>
-
-      <h2>11. Legal Basis for Processing (GDPR)</h2>
-      <p>If you are located in the European Economic Area (EEA), our legal basis for processing your personal information includes:</p>
-      <ul>
-        <li><strong>Consent:</strong> You have given clear consent for us to process your personal data for specific purposes</li>
-        <li><strong>Legitimate Interest:</strong> Processing is necessary for our legitimate interests in providing and improving our app</li>
-        <li><strong>Contract:</strong> Processing is necessary to provide you with the app services</li>
-      </ul>
-
-      <h2>12. California Privacy Rights (CCPA)</h2>
-      <p>If you are a California resident, you have the right to:</p>
-      <ul>
-        <li>Know what personal information is collected and how it's used</li>
-        <li>Know whether personal information is sold or disclosed</li>
-        <li>Say no to the sale of personal information</li>
-        <li>Access your personal information</li>
-        <li>Equal service and price (non-discrimination)</li>
-      </ul>
-
-      <p>To exercise these rights, please contact us using the information provided above.</p>
-    </div>
-  </main>
-
-  <footer>
     <div class="container">
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="https://www.bashtech.info/">BashTech</a>
-        <a href="mailto:subash.rathinam1401@gmail.com">Contact</a>
-      </div>
-      <p>&copy; 2024 BashTech. All rights reserved.</p>
+        <div class="privacy-content p-5">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    
+                    <div class="highlight-box fade-in">
+                        <h3><i class="fas fa-info-circle me-2"></i>About Focus Timer</h3>
+                        <p class="mb-0"><strong>Focus Timer</strong> is a Pomodoro technique timer application developed by BashTech that helps you stay focused and productive. This Privacy Policy explains how we collect, use, and protect information when you use our app.</p>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-info-circle text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">1. Introduction</h2>
+                        </div>
+                        <p class="lead">Welcome to Focus Timer, developed by BashTech. We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
+                        <p>By using Focus Timer, you agree to the collection and use of information in accordance with this policy. We will not use or share your information with anyone except as described in this Privacy Policy.</p>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-database text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">2. Information We Collect</h2>
+                        </div>
+                        <p class="lead">Focus Timer is designed with privacy-first principles. Here's what we collect and how:</p>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-mobile-alt text-success me-2"></i>Device Information</h5>
+                                <p>Basic device information such as device model, operating system version, and app version for technical support and app optimization.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-chart-line text-info me-2"></i>Usage Analytics</h5>
+                                <p>Anonymous usage statistics to improve app functionality and user experience. No personal data is collected.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="alert alert-info mt-3">
+                            <i class="fas fa-lightbulb me-2"></i>
+                            <strong>Important:</strong> All timer data and settings are stored locally on your device. We do not access or transmit your personal productivity data.
+                        </div>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-lock text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">3. How We Use Your Information</h2>
+                        </div>
+                        <p class="lead">We use the collected information for the following purposes:</p>
+                        <ul class="feature-list">
+                            <li>Provide Pomodoro timer functionality and productivity features</li>
+                            <li>Improve app performance and user experience</li>
+                            <li>Fix bugs and optimize app functionality</li>
+                            <li>Provide customer support and technical assistance</li>
+                            <li>Analyze anonymous usage patterns to enhance features</li>
+                        </ul>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-shield-alt text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">4. Data Security</h2>
+                        </div>
+                        <p class="lead">We implement several security measures to protect your data:</p>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 bg-light">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-home text-primary mb-3" style="font-size: 2rem;"></i>
+                                        <h5>Local Storage</h5>
+                                        <p>All timer data and settings are stored locally on your device using secure local storage.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 bg-light">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-cloud-slash text-primary mb-3" style="font-size: 2rem;"></i>
+                                        <h5>No Cloud Storage</h5>
+                                        <p>We do not store your productivity data on external servers or cloud platforms.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 bg-light">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-lock text-primary mb-3" style="font-size: 2rem;"></i>
+                                        <h5>Data Protection</h5>
+                                        <p>All sensitive data is protected using industry-standard security measures.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 bg-light">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-user-shield text-primary mb-3" style="font-size: 2rem;"></i>
+                                        <h5>Access Control</h5>
+                                        <p>Only you have access to your timer data through the app's secure interface.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-share-alt text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">5. Data Sharing</h2>
+                        </div>
+                        <p class="lead">We do not sell, trade, or otherwise transfer your personal information to third parties. However, we may disclose your information in the following circumstances:</p>
+                        <ul class="feature-list">
+                            <li>When required by law or to comply with legal process</li>
+                            <li>To protect our rights, property, or safety</li>
+                            <li>With your explicit consent</li>
+                        </ul>
+                        <div class="alert alert-success mt-3">
+                            <i class="fas fa-check-circle me-2"></i>
+                            <strong>Your Control:</strong> You have complete control over your data. You can delete all app data at any time through your device settings.
+                        </div>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-cookie-bite text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">6. Cookies and Tracking</h2>
+                        </div>
+                        <p>Focus Timer does not use cookies or tracking technologies. Since all data is processed locally on your device, we do not need to track your online activity.</p>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-child text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">7. Children's Privacy</h2>
+                        </div>
+                        <p>Focus Timer is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately.</p>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-globe text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">8. International Data Transfers</h2>
+                        </div>
+                        <p>Since all data is stored locally on your device, no international data transfers occur. Your data remains within your device's jurisdiction.</p>
+                    </div>
+
+                    <div class="section-card fade-in">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-edit text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <h2 class="mb-0">9. Changes to This Privacy Policy</h2>
+                        </div>
+                        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date. You are advised to review this Privacy Policy periodically for any changes.</p>
+                    </div>
+
+                    <div class="contact-card fade-in">
+                        <h3><i class="fas fa-envelope me-2"></i>Contact Us</h3>
+                        <p class="mb-3">If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><i class="fas fa-envelope me-2"></i>Email: subash.rathinam1401@gmail.com</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><i class="fas fa-globe me-2"></i>Website: https://bashtech.info</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-5">
+                        <a href="../index.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-home me-2"></i>Back to Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </footer>
 
-  <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-  <script>
-    // Show/hide back to top button
-    window.addEventListener('scroll', () => {
-      const backToTop = document.querySelector('.back-to-top');
-      if (window.scrollY > 300) {
-        backToTop.style.display = 'block';
-      } else {
-        backToTop.style.display = 'none';
-      }
-    });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
 
-    // Initialize back to top button as hidden
-    document.querySelector('.back-to-top').style.display = 'none';
-  </script>
+        // Observe all fade-in elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 </html>
