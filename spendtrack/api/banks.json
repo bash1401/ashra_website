@@ -1,309 +1,248 @@
 {
+  "commonPatterns": {
+    "creditKeywords": [
+      "credited",
+      "credit",
+      "received",
+      "added",
+      "deposited",
+      "inward",
+      "credit txn",
+      "credit transaction",
+      "wallet credited",
+      "wallet added",
+      "bank credited",
+      "bank added"
+    ],
+    "debitKeywords": [
+      "debited",
+      "debit",
+      "spent",
+      "withdrawn",
+      "deducted",
+      "outward",
+      "debit txn",
+      "debit transaction",
+      "sent",
+      "paid",
+      "wallet debited",
+      "wallet spent",
+      "bank debited",
+      "bank spent"
+    ],
+    "amountPatterns": {
+      "INR": [
+        "(Rs\\.|INR|₹)\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(Rs\\.|INR|₹)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:rupees?|rupee)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+      ],
+      "USD": [
+        "(\\$|USD|US\\$)\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(\\$|USD|US\\$)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:dollars?|dollar)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+      ],
+      "EUR": [
+        "(€|EUR|EURO)\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(€|EUR|EURO)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:euros?|euro)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+      ],
+      "GBP": [
+        "(£|GBP|POUND)\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(£|GBP|POUND)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:pounds?|pound)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+      ],
+      "CAD": [
+        "(C\\$|CAD|CAN\\$)\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(C\\$|CAD|CAN\\$)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:canadian\\s+dollars?|canadian\\s+dollar)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+      ],
+      "AUD": [
+        "(A\\$|AUD|AUS\\$)\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(A\\$|AUD|AUS\\$)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:australian\\s+dollars?|australian\\s+dollar)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+      ],
+      "JPY": [
+        "(¥|JPY|YEN)\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(¥|JPY|YEN)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:yens?|yen)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+      ],
+      "CHF": [
+        "(CHF|FRANC)\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(CHF|FRANC)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:francs?|franc)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+      ],
+      "CNY": [
+        "(¥|CNY|RMB)\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(¥|CNY|RMB)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:yuans?|yuan|renminbi)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+      ],
+      "NZD": [
+        "(NZ\\$|NZD)\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(NZ\\$|NZD)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:new\\s+zealand\\s+dollars?|new\\s+zealand\\s+dollar)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+      ],
+      "HKD": [
+        "(HK\\$|HKD)\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(HK\\$|HKD)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:hong\\s+kong\\s+dollars?|hong\\s+kong\\s+dollar)",
+        "amount\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "amt\\s*:\\s*([\\d,]+(?:\\.\\d{2})?)",
+        "([\\d,]+(?:\\.\\d{2})?)\\s*(?:has\\s+been|is\\s+been)"
+      ]
+    },
+    "ignorePatterns": [
+      "statement generated",
+      "statement",
+      "monthly statement",
+      "credit card statement",
+      "available balance",
+      "current balance",
+      "closing balance",
+      "opening balance",
+      "reward points",
+      "interest credited",
+      "interest earned",
+      "loan alert",
+      "loan disbursed",
+      "promo",
+      "offer",
+      "otp",
+      "verification",
+      "login alert",
+      "login successful",
+      "password",
+      "pin",
+      "atm",
+      "card blocked",
+      "card unblocked",
+      "card activated",
+      "card deactivated",
+      "upi",
+      "upi id",
+      "upi pin",
+      "upi blocked",
+      "upi unblocked",
+      "mobile number",
+      "email",
+      "address",
+      "kyc",
+      "know your customer",
+      "account opened",
+      "account closed",
+      "fd",
+      "fixed deposit",
+      "rd",
+      "recurring deposit",
+      "investment",
+      "mutual fund",
+      "insurance",
+      "premium",
+      "cheque",
+      "cheque book",
+      "passbook",
+      "mini statement",
+      "balance enquiry",
+      "transaction limit",
+      "daily limit",
+      "monthly limit",
+      "yearly limit",
+      "limit increased",
+      "limit decreased",
+      "limit changed",
+      "limit updated",
+      "limit modified",
+      "limit revised",
+      "limit enhanced",
+      "limit reduced",
+      "limit blocked",
+      "limit unblocked",
+      "limit activated",
+      "limit deactivated",
+      "limit suspended",
+      "limit resumed",
+      "limit cancelled",
+      "limit expired",
+      "limit renewed",
+      "limit extended",
+      "limit shortened",
+      "cashback"
+    ]
+  },
   "banks": [
     {
       "name": "SBI",
       "displayName": "State Bank of India",
-      "senderIds": ["SBISMS", "SBIOTP", "SBIINB", "SBICRD", "SBIDEB"],
-      "creditPatterns": [
-        "(Rs\\.|INR)\\s?([\\d,]+)\\s?credited",
-        "INR\\s([\\d,]+)\\s?received",
-        "Rs\\.([\\d,]+)\\s?credited\\s?to\\s?your\\s?account",
-        "([\\d,]+)\\s?credited\\s?to\\s?your\\s?SBI\\s?account",
-        "Your\\s?account\\s?has\\s?been\\s?credited\\s?with\\s?Rs\\.([\\d,]+)",
-        "([\\d,]+)\\s?has\\s?been\\s?credited\\s?to\\s?your\\s?account"
-      ],
-      "debitPatterns": [
-        "(Rs\\.|INR)\\s?([\\d,]+)\\s?debited",
-        "INR\\s([\\d,]+)\\s?spent",
-        "Rs\\.([\\d,]+)\\s?debited\\s?from\\s?your\\s?account",
-        "([\\d,]+)\\s?debited\\s?from\\s?your\\s?SBI\\s?account",
-        "Your\\s?account\\s?has\\s?been\\s?debited\\s?with\\s?Rs\\.([\\d,]+)",
-        "([\\d,]+)\\s?has\\s?been\\s?debited\\s?from\\s?your\\s?account"
-      ],
-      "ignorePatterns": [
-        "credit card statement",
-        "available balance",
-        "current balance",
-        "closing balance",
-        "reward points",
-        "interest credited",
-        "loan alert",
-        "promo",
-        "offer",
-        "otp",
-        "verification",
-        "login alert"
-      ]
+      "senderIds": ["SBISMS", "SBIOTP", "SBIINB", "SBICRD", "SBIDEB"]
     },
     {
       "name": "HDFC",
       "displayName": "HDFC Bank",
-      "senderIds": ["HDFCBK", "HDFCOTP", "HDFCINB", "HDFCCRD"],
-      "creditPatterns": [
-        "(Rs\\.|INR)\\s?([\\d,]+)\\s?credited",
-        "INR\\s([\\d,]+)\\s?received",
-        "Rs\\.([\\d,]+)\\s?credited\\s?to\\s?your\\s?HDFC\\s?account",
-        "([\\d,]+)\\s?credited\\s?to\\s?your\\s?account",
-        "Your\\s?HDFC\\s?account\\s?has\\s?been\\s?credited\\s?with\\s?Rs\\.([\\d,]+)",
-        "([\\d,]+)\\s?has\\s?been\\s?credited\\s?to\\s?your\\s?HDFC\\s?account"
-      ],
-      "debitPatterns": [
-        "(Rs\\.|INR)\\s?([\\d,]+)\\s?debited",
-        "INR\\s([\\d,]+)\\s?spent",
-        "Rs\\.([\\d,]+)\\s?debited\\s?from\\s?your\\s?HDFC\\s?account",
-        "([\\d,]+)\\s?debited\\s?from\\s?your\\s?account",
-        "Your\\s?HDFC\\s?account\\s?has\\s?been\\s?debited\\s?with\\s?Rs\\.([\\d,]+)",
-        "([\\d,]+)\\s?has\\s?been\\s?debited\\s?from\\s?your\\s?HDFC\\s?account"
-      ],
-      "ignorePatterns": [
-        "credit card statement",
-        "available balance",
-        "current balance",
-        "closing balance",
-        "reward points",
-        "interest credited",
-        "loan alert",
-        "promo",
-        "offer",
-        "otp",
-        "verification",
-        "login alert"
-      ]
+      "senderIds": ["HDFCBK", "HDFCOTP", "HDFCINB", "HDFCCRD"]
     },
     {
       "name": "ICICI",
       "displayName": "ICICI Bank",
-      "senderIds": ["ICICIB", "ICICOTP", "ICICINB", "ICICCRD"],
-      "creditPatterns": [
-        "(Rs\\.|INR)\\s?([\\d,]+)\\s?credited",
-        "INR\\s([\\d,]+)\\s?received",
-        "Rs\\.([\\d,]+)\\s?credited\\s?to\\s?your\\s?ICICI\\s?account",
-        "([\\d,]+)\\s?credited\\s?to\\s?your\\s?account",
-        "Your\\s?ICICI\\s?account\\s?has\\s?been\\s?credited\\s?with\\s?Rs\\.([\\d,]+)",
-        "([\\d,]+)\\s?has\\s?been\\s?credited\\s?to\\s?your\\s?ICICI\\s?account"
-      ],
-      "debitPatterns": [
-        "(Rs\\.|INR)\\s?([\\d,]+)\\s?debited",
-        "INR\\s([\\d,]+)\\s?spent",
-        "Rs\\.([\\d,]+)\\s?debited\\s?from\\s?your\\s?ICICI\\s?account",
-        "([\\d,]+)\\s?debited\\s?from\\s?your\\s?account",
-        "Your\\s?ICICI\\s?account\\s?has\\s?been\\s?debited\\s?with\\s?Rs\\.([\\d,]+)",
-        "([\\d,]+)\\s?has\\s?been\\s?debited\\s?from\\s?your\\s?ICICI\\s?account"
-      ],
-      "ignorePatterns": [
-        "credit card statement",
-        "available balance",
-        "current balance",
-        "closing balance",
-        "reward points",
-        "interest credited",
-        "loan alert",
-        "promo",
-        "offer",
-        "otp",
-        "verification",
-        "login alert"
-      ]
+      "senderIds": ["ICICIB", "ICICOTP", "ICICINB", "ICICCRD"]
     },
     {
       "name": "AXIS",
       "displayName": "Axis Bank",
-      "senderIds": ["AXISBK", "AXISOTP", "AXISINB", "AXISCRD"],
-      "creditPatterns": [
-        "(Rs\\.|INR)\\s?([\\d,]+)\\s?credited",
-        "INR\\s([\\d,]+)\\s?received",
-        "Rs\\.([\\d,]+)\\s?credited\\s?to\\s?your\\s?Axis\\s?account",
-        "([\\d,]+)\\s?credited\\s?to\\s?your\\s?account",
-        "Your\\s?Axis\\s?account\\s?has\\s?been\\s?credited\\s?with\\s?Rs\\.([\\d,]+)",
-        "([\\d,]+)\\s?has\\s?been\\s?credited\\s?to\\s?your\\s?Axis\\s?account"
-      ],
-      "debitPatterns": [
-        "(Rs\\.|INR)\\s?([\\d,]+)\\s?debited",
-        "INR\\s([\\d,]+)\\s?spent",
-        "Rs\\.([\\d,]+)\\s?debited\\s?from\\s?your\\s?Axis\\s?account",
-        "([\\d,]+)\\s?debited\\s?from\\s?your\\s?account",
-        "Your\\s?Axis\\s?account\\s?has\\s?been\\s?debited\\s?with\\s?Rs\\.([\\d,]+)",
-        "([\\d,]+)\\s?has\\s?been\\s?debited\\s?from\\s?your\\s?Axis\\s?account"
-      ],
-      "ignorePatterns": [
-        "credit card statement",
-        "available balance",
-        "current balance",
-        "closing balance",
-        "reward points",
-        "interest credited",
-        "loan alert",
-        "promo",
-        "offer",
-        "otp",
-        "verification",
-        "login alert"
-      ]
+      "senderIds": ["AXISBK", "AXISOTP", "AXISINB", "AXISCRD"]
     },
     {
       "name": "KOTAK",
       "displayName": "Kotak Mahindra Bank",
-      "senderIds": ["KOTAKB", "KOTAKOTP", "KOTAKINB", "KOTAKCRD"],
-      "creditPatterns": [
-        "(Rs\\.|INR)\\s?([\\d,]+)\\s?credited",
-        "INR\\s([\\d,]+)\\s?received",
-        "Rs\\.([\\d,]+)\\s?credited\\s?to\\s?your\\s?Kotak\\s?account",
-        "([\\d,]+)\\s?credited\\s?to\\s?your\\s?account",
-        "Your\\s?Kotak\\s?account\\s?has\\s?been\\s?credited\\s?with\\s?Rs\\.([\\d,]+)",
-        "([\\d,]+)\\s?has\\s?been\\s?credited\\s?to\\s?your\\s?Kotak\\s?account"
-      ],
-      "debitPatterns": [
-        "(Rs\\.|INR)\\s?([\\d,]+)\\s?debited",
-        "INR\\s([\\d,]+)\\s?spent",
-        "Rs\\.([\\d,]+)\\s?debited\\s?from\\s?your\\s?Kotak\\s?account",
-        "([\\d,]+)\\s?debited\\s?from\\s?your\\s?account",
-        "Your\\s?Kotak\\s?account\\s?has\\s?been\\s?debited\\s?with\\s?Rs\\.([\\d,]+)",
-        "([\\d,]+)\\s?has\\s?been\\s?debited\\s?from\\s?your\\s?Kotak\\s?account"
-      ],
-      "ignorePatterns": [
-        "credit card statement",
-        "available balance",
-        "current balance",
-        "closing balance",
-        "reward points",
-        "interest credited",
-        "loan alert",
-        "promo",
-        "offer",
-        "otp",
-        "verification",
-        "login alert"
-      ]
+      "senderIds": ["KOTAKB", "KOTAKOTP", "KOTAKINB", "KOTAKCRD"]
     },
     {
       "name": "BOB",
       "displayName": "Bank of Baroda",
-      "senderIds": ["BARODA", "BARODAOTP", "BARODAINB", "BARODACRD"],
-      "creditPatterns": [
-        "(Rs\\.|INR)\\s?([\\d,]+)\\s?credited",
-        "INR\\s([\\d,]+)\\s?received",
-        "Rs\\.([\\d,]+)\\s?credited\\s?to\\s?your\\s?BOB\\s?account",
-        "([\\d,]+)\\s?credited\\s?to\\s?your\\s?account",
-        "Your\\s?BOB\\s?account\\s?has\\s?been\\s?credited\\s?with\\s?Rs\\.([\\d,]+)",
-        "([\\d,]+)\\s?has\\s?been\\s?credited\\s?to\\s?your\\s?BOB\\s?account"
-      ],
-      "debitPatterns": [
-        "(Rs\\.|INR)\\s?([\\d,]+)\\s?debited",
-        "INR\\s([\\d,]+)\\s?spent",
-        "Rs\\.([\\d,]+)\\s?debited\\s?from\\s?your\\s?BOB\\s?account",
-        "([\\d,]+)\\s?debited\\s?from\\s?your\\s?account",
-        "Your\\s?BOB\\s?account\\s?has\\s?been\\s?debited\\s?with\\s?Rs\\.([\\d,]+)",
-        "([\\d,]+)\\s?has\\s?been\\s?debited\\s?from\\s?your\\s?BOB\\s?account"
-      ],
-      "ignorePatterns": [
-        "credit card statement",
-        "available balance",
-        "current balance",
-        "closing balance",
-        "reward points",
-        "interest credited",
-        "loan alert",
-        "promo",
-        "offer",
-        "otp",
-        "verification",
-        "login alert"
-      ]
+      "senderIds": ["BARODA", "BARODAOTP", "BARODAINB", "BARODACRD"]
     },
     {
       "name": "PNB",
       "displayName": "Punjab National Bank",
-      "senderIds": ["PNBSMS", "PNBOTP", "PNBINB", "PNBCRD"],
-      "creditPatterns": [
-        "(Rs\\.|INR)\\s?([\\d,]+)\\s?credited",
-        "INR\\s([\\d,]+)\\s?received",
-        "Rs\\.([\\d,]+)\\s?credited\\s?to\\s?your\\s?PNB\\s?account",
-        "([\\d,]+)\\s?credited\\s?to\\s?your\\s?account",
-        "Your\\s?PNB\\s?account\\s?has\\s?been\\s?credited\\s?with\\s?Rs\\.([\\d,]+)",
-        "([\\d,]+)\\s?has\\s?been\\s?credited\\s?to\\s?your\\s?PNB\\s?account"
-      ],
-      "debitPatterns": [
-        "(Rs\\.|INR)\\s?([\\d,]+)\\s?debited",
-        "INR\\s([\\d,]+)\\s?spent",
-        "Rs\\.([\\d,]+)\\s?debited\\s?from\\s?your\\s?PNB\\s?account",
-        "([\\d,]+)\\s?debited\\s?from\\s?your\\s?account",
-        "Your\\s?PNB\\s?account\\s?has\\s?been\\s?debited\\s?with\\s?Rs\\.([\\d,]+)",
-        "([\\d,]+)\\s?has\\s?been\\s?debited\\s?from\\s?your\\s?PNB\\s?account"
-      ],
-      "ignorePatterns": [
-        "credit card statement",
-        "available balance",
-        "current balance",
-        "closing balance",
-        "reward points",
-        "interest credited",
-        "loan alert",
-        "promo",
-        "offer",
-        "otp",
-        "verification",
-        "login alert"
-      ]
+      "senderIds": ["PNBSMS", "PNBOTP", "PNBINB", "PNBCRD"]
     },
     {
       "name": "PAYTM",
       "displayName": "Paytm",
-      "senderIds": ["PAYTM", "PAYTMOTP", "PAYTMPAY"],
-      "creditPatterns": [
-        "(Rs\\.|INR)\\s?([\\d,]+)\\s?credited",
-        "INR\\s([\\d,]+)\\s?received",
-        "Rs\\.([\\d,]+)\\s?added\\s?to\\s?your\\s?Paytm\\s?wallet",
-        "([\\d,]+)\\s?credited\\s?to\\s?your\\s?Paytm\\s?account",
-        "Your\\s?Paytm\\s?wallet\\s?has\\s?been\\s?credited\\s?with\\s?Rs\\.([\\d,]+)",
-        "([\\d,]+)\\s?has\\s?been\\s?added\\s?to\\s?your\\s?Paytm\\s?wallet"
-      ],
-      "debitPatterns": [
-        "(Rs\\.|INR)\\s?([\\d,]+)\\s?debited",
-        "INR\\s([\\d,]+)\\s?spent",
-        "Rs\\.([\\d,]+)\\s?debited\\s?from\\s?your\\s?Paytm\\s?wallet",
-        "([\\d,]+)\\s?debited\\s?from\\s?your\\s?Paytm\\s?account",
-        "Your\\s?Paytm\\s?wallet\\s?has\\s?been\\s?debited\\s?with\\s?Rs\\.([\\d,]+)",
-        "([\\d,]+)\\s?has\\s?been\\s?debited\\s?from\\s?your\\s?Paytm\\s?wallet"
-      ],
-      "ignorePatterns": [
-        "otp",
-        "verification",
-        "login alert",
-        "promo",
-        "offer",
-        "cashback",
-        "reward points"
-      ]
+      "senderIds": ["PAYTM", "PAYTMOTP", "PAYTMPAY"]
     },
     {
       "name": "AIRTEL",
       "displayName": "Airtel Payments Bank",
-      "senderIds": ["AIRTLB", "AIRTLOTP", "AIRTLPAY"],
-      "creditPatterns": [
-        "(Rs\\.|INR)\\s?([\\d,]+)\\s?credited",
-        "INR\\s([\\d,]+)\\s?received",
-        "Rs\\.([\\d,]+)\\s?added\\s?to\\s?your\\s?Airtel\\s?bank\\s?account",
-        "([\\d,]+)\\s?credited\\s?to\\s?your\\s?Airtel\\s?account",
-        "Your\\s?Airtel\\s?bank\\s?account\\s?has\\s?been\\s?credited\\s?with\\s?Rs\\.([\\d,]+)",
-        "([\\d,]+)\\s?has\\s?been\\s?added\\s?to\\s?your\\s?Airtel\\s?bank\\s?account"
-      ],
-      "debitPatterns": [
-        "(Rs\\.|INR)\\s?([\\d,]+)\\s?debited",
-        "INR\\s([\\d,]+)\\s?spent",
-        "Rs\\.([\\d,]+)\\s?debited\\s?from\\s?your\\s?Airtel\\s?bank\\s?account",
-        "([\\d,]+)\\s?debited\\s?from\\s?your\\s?Airtel\\s?account",
-        "Your\\s?Airtel\\s?bank\\s?account\\s?has\\s?been\\s?debited\\s?with\\s?Rs\\.([\\d,]+)",
-        "([\\d,]+)\\s?has\\s?been\\s?debited\\s?from\\s?your\\s?Airtel\\s?bank\\s?account"
-      ],
-      "ignorePatterns": [
-        "otp",
-        "verification",
-        "login alert",
-        "promo",
-        "offer",
-        "cashback",
-        "reward points"
-      ]
+      "senderIds": ["AIRTLB", "AIRTLOTP", "AIRTLPAY"]
     }
   ]
 }
