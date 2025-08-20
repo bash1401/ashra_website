@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "name": "FocusTimer",
+      "description": "Boost your productivity with focused work sessions and smart breaks.",
+      "iconUrl": "https://bashtech.info/images/focustimer-icon.png",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.bashtech.focustimer"
+    },
+    {
+      "name": "SpendTrack",
+      "description": "Track your daily expenses automatically from SMS and get spending alerts.",
+      "iconUrl": "https://bashtech.info/images/spendtrack-icon.png",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.bashtech.spendtrack"
+    }
+  ]
+}
