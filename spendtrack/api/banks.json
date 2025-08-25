@@ -83,6 +83,7 @@
       ]
     },
     "ignorePatterns": [
+      "declined",
       "credit card statement",
       "statement is ready",
       "closing balance",
