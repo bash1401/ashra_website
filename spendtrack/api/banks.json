@@ -85,6 +85,7 @@
     "ignorePatterns": [
       "declined",
       "received towards",
+      "credited to your card",
       "credit card statement",
       "statement is ready",
       "closing balance",
@@ -200,17 +201,17 @@
     {
       "name": "ICICI",
       "displayName": "ICICI Bank",
-      "senderIds": ["ICICIB", "ICICOTP", "ICICINB", "ICICCRD", "ICICCRD-T", "JT-ICICIB", "JT-ICICOTP"]
+      "senderIds": ["ICICI", "ICICIB", "ICICOTP", "ICICINB", "ICICCRD", "ICICCRD-T", "JT-ICICIB", "JT-ICICOTP"]
     },
     {
       "name": "AXIS",
       "displayName": "Axis Bank",
-      "senderIds": ["AXISBK", "AXISOTP", "AXISINB", "AXISCRD", "AXISCRD-T", "JT-AXISBK", "JT-AXISOTP"]
+      "senderIds": ["AXIS", "AXISBK", "AXISOTP", "AXISINB", "AXISCRD", "AXISCRD-T", "JT-AXISBK", "JT-AXISOTP"]
     },
     {
       "name": "KOTAK",
       "displayName": "Kotak Mahindra Bank",
-      "senderIds": ["KOTAKB", "KOTAKOTP", "KOTAKINB", "KOTAKCRD", "KOTAKCRD-T", "JT-KOTAKB", "JT-KOTAKOTP"]
+      "senderIds": ["KOTAK", "KOTAKB", "KOTAKOTP", "KOTAKINB", "KOTAKCRD", "KOTAKCRD-T", "JT-KOTAKB", "JT-KOTAKOTP"]
     },
     {
       "name": "PAYTM",
