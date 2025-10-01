@@ -479,17 +479,29 @@
     // Load apps from JSON file
     async function loadApps() {
       try {
-        const response = await fetch('apps.json');
-        const data = await response.json();
-        
         const appsGrid = document.getElementById('appsGrid');
         const footerLinks = document.getElementById('footerLinks');
+        
+        // Show loading state
+        appsGrid.innerHTML = '<div class="loading">Loading apps...</div>';
+        
+        const response = await fetch('apps.json');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        // Validate data structure
+        if (!data.apps || !Array.isArray(data.apps)) {
+          throw new Error('Invalid data structure in apps.json');
+        }
         
         // Clear loading message
         appsGrid.innerHTML = '';
         
         // Generate app cards
-        data.apps.forEach(app => {
+        data.apps.forEach((app, index) => {
           const appCard = document.createElement('a');
           // If app has websiteUrl, use it; otherwise use folder
           appCard.href = app.websiteUrl || (app.folder + '/');
@@ -525,9 +537,23 @@
           }
         });
         
+        // Add fade-in animations to the newly created cards
+        // Use requestAnimationFrame to ensure DOM is ready
+        requestAnimationFrame(() => {
+          addFadeInToApps();
+        });
+        
       } catch (error) {
         console.error('Error loading apps:', error);
-        document.getElementById('appsGrid').innerHTML = '<div class="loading">Error loading apps. Please try again later.</div>';
+        const appsGrid = document.getElementById('appsGrid');
+        appsGrid.innerHTML = `
+          <div class="loading" style="color: #e74c3c;">
+            <p>Error loading apps. Please refresh the page to try again.</p>
+            <button onclick="location.reload()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #1a73e8; color: white; border: none; border-radius: 5px; cursor: pointer;">
+              Refresh Page
+            </button>
+          </div>
+        `;
       }
     }
     
@@ -574,9 +600,6 @@
         observer.observe(card);
       });
     }
-    
-    // Add fade-in to apps after they load
-    setTimeout(addFadeInToApps, 100);
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
