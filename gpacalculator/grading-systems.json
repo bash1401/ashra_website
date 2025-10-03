@@ -1,0 +1,402 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-15",
+  "description": "Comprehensive collection of grading systems from around the world",
+  "systems": [
+    {
+      "id": "us_4_0",
+      "name": "US 4.0 Scale",
+      "country": "United States",
+      "description": "Standard US grading system with 4.0 maximum",
+      "scale": 4.0,
+      "grades": [
+        {"grade": "A+", "points": 4.0, "percentage": "97-100"},
+        {"grade": "A", "points": 4.0, "percentage": "93-96"},
+        {"grade": "A-", "points": 3.7, "percentage": "90-92"},
+        {"grade": "B+", "points": 3.3, "percentage": "87-89"},
+        {"grade": "B", "points": 3.0, "percentage": "83-86"},
+        {"grade": "B-", "points": 2.7, "percentage": "80-82"},
+        {"grade": "C+", "points": 2.3, "percentage": "77-79"},
+        {"grade": "C", "points": 2.0, "percentage": "73-76"},
+        {"grade": "C-", "points": 1.7, "percentage": "70-72"},
+        {"grade": "D+", "points": 1.3, "percentage": "67-69"},
+        {"grade": "D", "points": 1.0, "percentage": "63-66"},
+        {"grade": "D-", "points": 0.7, "percentage": "60-62"},
+        {"grade": "F", "points": 0.0, "percentage": "0-59"}
+      ]
+    },
+    {
+      "id": "us_5_0",
+      "name": "US 5.0 Scale",
+      "country": "United States",
+      "description": "Alternative US grading system with 5.0 maximum",
+      "scale": 5.0,
+      "grades": [
+        {"grade": "A+", "points": 5.0, "percentage": "97-100"},
+        {"grade": "A", "points": 4.5, "percentage": "93-96"},
+        {"grade": "A-", "points": 4.2, "percentage": "90-92"},
+        {"grade": "B+", "points": 3.8, "percentage": "87-89"},
+        {"grade": "B", "points": 3.5, "percentage": "83-86"},
+        {"grade": "B-", "points": 3.2, "percentage": "80-82"},
+        {"grade": "C+", "points": 2.8, "percentage": "77-79"},
+        {"grade": "C", "points": 2.5, "percentage": "73-76"},
+        {"grade": "C-", "points": 2.2, "percentage": "70-72"},
+        {"grade": "D+", "points": 1.8, "percentage": "67-69"},
+        {"grade": "D", "points": 1.5, "percentage": "63-66"},
+        {"grade": "D-", "points": 1.2, "percentage": "60-62"},
+        {"grade": "F", "points": 0.0, "percentage": "0-59"}
+      ]
+    },
+    {
+      "id": "india_10",
+      "name": "India 10-Point Scale",
+      "country": "India",
+      "description": "Standard Indian grading system with 10.0 maximum",
+      "scale": 10.0,
+      "grades": [
+        {"grade": "O", "points": 10.0, "percentage": "90-100", "description": "Outstanding"},
+        {"grade": "A+", "points": 9.0, "percentage": "80-89", "description": "Excellent"},
+        {"grade": "A", "points": 8.0, "percentage": "70-79", "description": "Very Good"},
+        {"grade": "B+", "points": 7.0, "percentage": "60-69", "description": "Good"},
+        {"grade": "B", "points": 6.0, "percentage": "50-59", "description": "Above Average"},
+        {"grade": "C", "points": 5.0, "percentage": "40-49", "description": "Average"},
+        {"grade": "D", "points": 4.0, "percentage": "30-39", "description": "Below Average"},
+        {"grade": "F", "points": 0.0, "percentage": "0-29", "description": "Fail"}
+      ]
+    },
+    {
+      "id": "india_cgpa",
+      "name": "India CGPA System",
+      "country": "India",
+      "description": "Indian CGPA system with 10.0 maximum",
+      "scale": 10.0,
+      "grades": [
+        {"grade": "A+", "points": 10.0, "percentage": "95-100"},
+        {"grade": "A", "points": 9.0, "percentage": "85-94"},
+        {"grade": "B+", "points": 8.0, "percentage": "75-84"},
+        {"grade": "B", "points": 7.0, "percentage": "65-74"},
+        {"grade": "C+", "points": 6.0, "percentage": "55-64"},
+        {"grade": "C", "points": 5.0, "percentage": "45-54"},
+        {"grade": "D", "points": 4.0, "percentage": "35-44"},
+        {"grade": "F", "points": 0.0, "percentage": "0-34"}
+      ]
+    },
+    {
+      "id": "uk_first",
+      "name": "UK First Class System",
+      "country": "United Kingdom",
+      "description": "UK university grading system",
+      "scale": 1.0,
+      "grades": [
+        {"grade": "First", "points": 1.0, "percentage": "70-100", "description": "First Class Honours"},
+        {"grade": "2:1", "points": 0.7, "percentage": "60-69", "description": "Upper Second Class"},
+        {"grade": "2:2", "points": 0.5, "percentage": "50-59", "description": "Lower Second Class"},
+        {"grade": "Third", "points": 0.3, "percentage": "40-49", "description": "Third Class Honours"},
+        {"grade": "Pass", "points": 0.1, "percentage": "35-39", "description": "Pass"},
+        {"grade": "Fail", "points": 0.0, "percentage": "0-34", "description": "Fail"}
+      ]
+    },
+    {
+      "id": "canada_4_33",
+      "name": "Canada 4.33 Scale",
+      "country": "Canada",
+      "description": "Canadian university grading system",
+      "scale": 4.33,
+      "grades": [
+        {"grade": "A+", "points": 4.33, "percentage": "90-100"},
+        {"grade": "A", "points": 4.0, "percentage": "85-89"},
+        {"grade": "A-", "points": 3.67, "percentage": "80-84"},
+        {"grade": "B+", "points": 3.33, "percentage": "75-79"},
+        {"grade": "B", "points": 3.0, "percentage": "70-74"},
+        {"grade": "B-", "points": 2.67, "percentage": "65-69"},
+        {"grade": "C+", "points": 2.33, "percentage": "60-64"},
+        {"grade": "C", "points": 2.0, "percentage": "55-59"},
+        {"grade": "C-", "points": 1.67, "percentage": "50-54"},
+        {"grade": "D", "points": 1.0, "percentage": "40-49"},
+        {"grade": "F", "points": 0.0, "percentage": "0-39"}
+      ]
+    },
+    {
+      "id": "australia_hd",
+      "name": "Australia HD System",
+      "country": "Australia",
+      "description": "Australian university grading system",
+      "scale": 7.0,
+      "grades": [
+        {"grade": "HD", "points": 7.0, "percentage": "85-100", "description": "High Distinction"},
+        {"grade": "D", "points": 6.0, "percentage": "75-84", "description": "Distinction"},
+        {"grade": "C", "points": 5.0, "percentage": "65-74", "description": "Credit"},
+        {"grade": "P", "points": 4.0, "percentage": "50-64", "description": "Pass"},
+        {"grade": "F", "points": 0.0, "percentage": "0-49", "description": "Fail"}
+      ]
+    },
+    {
+      "id": "germany_1_6",
+      "name": "Germany 1-6 Scale",
+      "country": "Germany",
+      "description": "German university grading system (1 = best, 6 = worst)",
+      "scale": 6.0,
+      "grades": [
+        {"grade": "1.0", "points": 1.0, "percentage": "95-100", "description": "Sehr gut (Very Good)"},
+        {"grade": "1.3", "points": 1.3, "percentage": "90-94", "description": "Sehr gut"},
+        {"grade": "1.7", "points": 1.7, "percentage": "85-89", "description": "Gut (Good)"},
+        {"grade": "2.0", "points": 2.0, "percentage": "80-84", "description": "Gut"},
+        {"grade": "2.3", "points": 2.3, "percentage": "75-79", "description": "Befriedigend (Satisfactory)"},
+        {"grade": "2.7", "points": 2.7, "percentage": "70-74", "description": "Befriedigend"},
+        {"grade": "3.0", "points": 3.0, "percentage": "65-69", "description": "Ausreichend (Sufficient)"},
+        {"grade": "3.3", "points": 3.3, "percentage": "60-64", "description": "Ausreichend"},
+        {"grade": "3.7", "points": 3.7, "percentage": "55-59", "description": "Mangelhaft (Insufficient)"},
+        {"grade": "4.0", "points": 4.0, "percentage": "50-54", "description": "Mangelhaft"},
+        {"grade": "5.0", "points": 5.0, "percentage": "0-49", "description": "Ungenügend (Inadequate)"}
+      ]
+    },
+    {
+      "id": "france_20",
+      "name": "France 20-Point Scale",
+      "country": "France",
+      "description": "French university grading system",
+      "scale": 20.0,
+      "grades": [
+        {"grade": "20", "points": 20.0, "percentage": "95-100", "description": "Excellent"},
+        {"grade": "19", "points": 19.0, "percentage": "90-94", "description": "Très bien"},
+        {"grade": "18", "points": 18.0, "percentage": "85-89", "description": "Très bien"},
+        {"grade": "17", "points": 17.0, "percentage": "80-84", "description": "Bien"},
+        {"grade": "16", "points": 16.0, "percentage": "75-79", "description": "Bien"},
+        {"grade": "15", "points": 15.0, "percentage": "70-74", "description": "Assez bien"},
+        {"grade": "14", "points": 14.0, "percentage": "65-69", "description": "Assez bien"},
+        {"grade": "13", "points": 13.0, "percentage": "60-64", "description": "Passable"},
+        {"grade": "12", "points": 12.0, "percentage": "55-59", "description": "Passable"},
+        {"grade": "11", "points": 11.0, "percentage": "50-54", "description": "Passable"},
+        {"grade": "10", "points": 10.0, "percentage": "45-49", "description": "Passable"},
+        {"grade": "0-9", "points": 0.0, "percentage": "0-44", "description": "Échec (Fail)"}
+      ]
+    },
+    {
+      "id": "japan_100",
+      "name": "Japan 100-Point Scale",
+      "country": "Japan",
+      "description": "Japanese university grading system",
+      "scale": 100.0,
+      "grades": [
+        {"grade": "S", "points": 100.0, "percentage": "90-100", "description": "秀 (Excellent)"},
+        {"grade": "A", "points": 80.0, "percentage": "80-89", "description": "優 (Very Good)"},
+        {"grade": "B", "points": 70.0, "percentage": "70-79", "description": "良 (Good)"},
+        {"grade": "C", "points": 60.0, "percentage": "60-69", "description": "可 (Pass)"},
+        {"grade": "D", "points": 0.0, "percentage": "0-59", "description": "不可 (Fail)"}
+      ]
+    },
+    {
+      "id": "south_korea_4_5",
+      "name": "South Korea 4.5 Scale",
+      "country": "South Korea",
+      "description": "Korean university grading system",
+      "scale": 4.5,
+      "grades": [
+        {"grade": "A+", "points": 4.5, "percentage": "95-100"},
+        {"grade": "A", "points": 4.0, "percentage": "90-94"},
+        {"grade": "B+", "points": 3.5, "percentage": "85-89"},
+        {"grade": "B", "points": 3.0, "percentage": "80-84"},
+        {"grade": "C+", "points": 2.5, "percentage": "75-79"},
+        {"grade": "C", "points": 2.0, "percentage": "70-74"},
+        {"grade": "D+", "points": 1.5, "percentage": "65-69"},
+        {"grade": "D", "points": 1.0, "percentage": "60-64"},
+        {"grade": "F", "points": 0.0, "percentage": "0-59"}
+      ]
+    },
+    {
+      "id": "brazil_10",
+      "name": "Brazil 10-Point Scale",
+      "country": "Brazil",
+      "description": "Brazilian university grading system",
+      "scale": 10.0,
+      "grades": [
+        {"grade": "10", "points": 10.0, "percentage": "90-100", "description": "Excelente"},
+        {"grade": "9", "points": 9.0, "percentage": "80-89", "description": "Muito Bom"},
+        {"grade": "8", "points": 8.0, "percentage": "70-79", "description": "Bom"},
+        {"grade": "7", "points": 7.0, "percentage": "60-69", "description": "Regular"},
+        {"grade": "6", "points": 6.0, "percentage": "50-59", "description": "Aprovado"},
+        {"grade": "0-5", "points": 0.0, "percentage": "0-49", "description": "Reprovado"}
+      ]
+    },
+    {
+      "id": "mexico_10",
+      "name": "Mexico 10-Point Scale",
+      "country": "Mexico",
+      "description": "Mexican university grading system",
+      "scale": 10.0,
+      "grades": [
+        {"grade": "10", "points": 10.0, "percentage": "95-100", "description": "Excelente"},
+        {"grade": "9", "points": 9.0, "percentage": "85-94", "description": "Muy Bueno"},
+        {"grade": "8", "points": 8.0, "percentage": "75-84", "description": "Bueno"},
+        {"grade": "7", "points": 7.0, "percentage": "65-74", "description": "Regular"},
+        {"grade": "6", "points": 6.0, "percentage": "60-64", "description": "Suficiente"},
+        {"grade": "0-5", "points": 0.0, "percentage": "0-59", "description": "No Acreditado"}
+      ]
+    },
+    {
+      "id": "spain_10",
+      "name": "Spain 10-Point Scale",
+      "country": "Spain",
+      "description": "Spanish university grading system",
+      "scale": 10.0,
+      "grades": [
+        {"grade": "10", "points": 10.0, "percentage": "95-100", "description": "Matrícula de Honor"},
+        {"grade": "9", "points": 9.0, "percentage": "85-94", "description": "Sobresaliente"},
+        {"grade": "8", "points": 8.0, "percentage": "75-84", "description": "Notable"},
+        {"grade": "7", "points": 7.0, "percentage": "65-74", "description": "Bien"},
+        {"grade": "6", "points": 6.0, "percentage": "60-64", "description": "Suficiente"},
+        {"grade": "0-5", "points": 0.0, "percentage": "0-59", "description": "Suspenso"}
+      ]
+    },
+    {
+      "id": "italy_30",
+      "name": "Italy 30-Point Scale",
+      "country": "Italy",
+      "description": "Italian university grading system",
+      "scale": 30.0,
+      "grades": [
+        {"grade": "30L", "points": 30.0, "percentage": "95-100", "description": "30 e Lode (30 with Honors)"},
+        {"grade": "30", "points": 30.0, "percentage": "90-94", "description": "30"},
+        {"grade": "29", "points": 29.0, "percentage": "85-89", "description": "29"},
+        {"grade": "28", "points": 28.0, "percentage": "80-84", "description": "28"},
+        {"grade": "27", "points": 27.0, "percentage": "75-79", "description": "27"},
+        {"grade": "26", "points": 26.0, "percentage": "70-74", "description": "26"},
+        {"grade": "25", "points": 25.0, "percentage": "65-69", "description": "25"},
+        {"grade": "24", "points": 24.0, "percentage": "60-64", "description": "24"},
+        {"grade": "23", "points": 23.0, "percentage": "55-59", "description": "23"},
+        {"grade": "22", "points": 22.0, "percentage": "50-54", "description": "22"},
+        {"grade": "21", "points": 21.0, "percentage": "45-49", "description": "21"},
+        {"grade": "18", "points": 18.0, "percentage": "40-44", "description": "18"},
+        {"grade": "0-17", "points": 0.0, "percentage": "0-39", "description": "Respinto (Rejected)"}
+      ]
+    },
+    {
+      "id": "netherlands_10",
+      "name": "Netherlands 10-Point Scale",
+      "country": "Netherlands",
+      "description": "Dutch university grading system",
+      "scale": 10.0,
+      "grades": [
+        {"grade": "10", "points": 10.0, "percentage": "95-100", "description": "Uitmuntend (Outstanding)"},
+        {"grade": "9", "points": 9.0, "percentage": "85-94", "description": "Zeer goed (Very Good)"},
+        {"grade": "8", "points": 8.0, "percentage": "75-84", "description": "Goed (Good)"},
+        {"grade": "7", "points": 7.0, "percentage": "65-74", "description": "Ruim voldoende (More than Sufficient)"},
+        {"grade": "6", "points": 6.0, "percentage": "55-64", "description": "Voldoende (Sufficient)"},
+        {"grade": "5", "points": 5.0, "percentage": "50-54", "description": "Onvoldoende (Insufficient)"},
+        {"grade": "0-4", "points": 0.0, "percentage": "0-49", "description": "Zeer onvoldoende (Very Insufficient)"}
+      ]
+    },
+    {
+      "id": "sweden_5",
+      "name": "Sweden 5-Point Scale",
+      "country": "Sweden",
+      "description": "Swedish university grading system",
+      "scale": 5.0,
+      "grades": [
+        {"grade": "VG", "points": 5.0, "percentage": "80-100", "description": "Väl godkänd (Pass with Distinction)"},
+        {"grade": "G", "points": 4.0, "percentage": "60-79", "description": "Godkänd (Pass)"},
+        {"grade": "U", "points": 0.0, "percentage": "0-59", "description": "Underkänd (Fail)"}
+      ]
+    },
+    {
+      "id": "norway_6",
+      "name": "Norway 6-Point Scale",
+      "country": "Norway",
+      "description": "Norwegian university grading system",
+      "scale": 6.0,
+      "grades": [
+        {"grade": "A", "points": 6.0, "percentage": "90-100", "description": "Utmerket (Excellent)"},
+        {"grade": "B", "points": 5.0, "percentage": "80-89", "description": "Meget godt (Very Good)"},
+        {"grade": "C", "points": 4.0, "percentage": "70-79", "description": "Godt (Good)"},
+        {"grade": "D", "points": 3.0, "percentage": "60-69", "description": "Strykende (Satisfactory)"},
+        {"grade": "E", "points": 2.0, "percentage": "50-59", "description": "Bestått (Pass)"},
+        {"grade": "F", "points": 0.0, "percentage": "0-49", "description": "Ikke bestått (Fail)"}
+      ]
+    },
+    {
+      "id": "denmark_7",
+      "name": "Denmark 7-Point Scale",
+      "country": "Denmark",
+      "description": "Danish university grading system",
+      "scale": 7.0,
+      "grades": [
+        {"grade": "12", "points": 7.0, "percentage": "95-100", "description": "Fremragende (Outstanding)"},
+        {"grade": "10", "points": 6.0, "percentage": "85-94", "description": "Fornem (Excellent)"},
+        {"grade": "7", "points": 5.0, "percentage": "75-84", "description": "Meget godt (Very Good)"},
+        {"grade": "4", "points": 4.0, "percentage": "60-74", "description": "Godt (Good)"},
+        {"grade": "02", "points": 3.0, "percentage": "50-59", "description": "Acceptabelt (Acceptable)"},
+        {"grade": "00", "points": 2.0, "percentage": "40-49", "description": "Utilstrækkeligt (Insufficient)"},
+        {"grade": "-3", "points": 0.0, "percentage": "0-39", "description": "Ringere end utilstrækkeligt (Inadequate)"}
+      ]
+    },
+    {
+      "id": "finland_5",
+      "name": "Finland 5-Point Scale",
+      "country": "Finland",
+      "description": "Finnish university grading system",
+      "scale": 5.0,
+      "grades": [
+        {"grade": "5", "points": 5.0, "percentage": "90-100", "description": "Erinomainen (Excellent)"},
+        {"grade": "4", "points": 4.0, "percentage": "75-89", "description": "Kiitettävä (Commendable)"},
+        {"grade": "3", "points": 3.0, "percentage": "60-74", "description": "Hyvä (Good)"},
+        {"grade": "2", "points": 2.0, "percentage": "50-59", "description": "Tyydyttävä (Satisfactory)"},
+        {"grade": "1", "points": 1.0, "percentage": "40-49", "description": "Hylätty (Fail)"},
+        {"grade": "0", "points": 0.0, "percentage": "0-39", "description": "Hylätty (Fail)"}
+      ]
+    },
+    {
+      "id": "switzerland_6",
+      "name": "Switzerland 6-Point Scale",
+      "country": "Switzerland",
+      "description": "Swiss university grading system",
+      "scale": 6.0,
+      "grades": [
+        {"grade": "6", "points": 6.0, "percentage": "90-100", "description": "Sehr gut (Very Good)"},
+        {"grade": "5.5", "points": 5.5, "percentage": "85-89", "description": "Gut (Good)"},
+        {"grade": "5", "points": 5.0, "percentage": "80-84", "description": "Gut"},
+        {"grade": "4.5", "points": 4.5, "percentage": "75-79", "description": "Befriedigend (Satisfactory)"},
+        {"grade": "4", "points": 4.0, "percentage": "70-74", "description": "Befriedigend"},
+        {"grade": "3.5", "points": 3.5, "percentage": "65-69", "description": "Ausreichend (Sufficient)"},
+        {"grade": "3", "points": 3.0, "percentage": "60-64", "description": "Ausreichend"},
+        {"grade": "2.5", "points": 2.5, "percentage": "55-59", "description": "Ungenügend (Insufficient)"},
+        {"grade": "2", "points": 2.0, "percentage": "50-54", "description": "Ungenügend"},
+        {"grade": "1", "points": 1.0, "percentage": "0-49", "description": "Ungenügend"}
+      ]
+    },
+    {
+      "id": "south_africa_7",
+      "name": "South Africa 7-Point Scale",
+      "country": "South Africa",
+      "description": "South African university grading system",
+      "scale": 7.0,
+      "grades": [
+        {"grade": "7", "points": 7.0, "percentage": "80-100", "description": "Outstanding"},
+        {"grade": "6", "points": 6.0, "percentage": "70-79", "description": "Meritorious"},
+        {"grade": "5", "points": 5.0, "percentage": "60-69", "description": "Substantial"},
+        {"grade": "4", "points": 4.0, "percentage": "50-59", "description": "Moderate"},
+        {"grade": "3", "points": 3.0, "percentage": "40-49", "description": "Adequate"},
+        {"grade": "2", "points": 2.0, "percentage": "30-39", "description": "Elementary"},
+        {"grade": "1", "points": 1.0, "percentage": "0-29", "description": "Not Achieved"}
+      ]
+    },
+    {
+      "id": "new_zealand_9",
+      "name": "New Zealand 9-Point Scale",
+      "country": "New Zealand",
+      "description": "New Zealand university grading system",
+      "scale": 9.0,
+      "grades": [
+        {"grade": "A+", "points": 9.0, "percentage": "90-100", "description": "Excellent"},
+        {"grade": "A", "points": 8.0, "percentage": "85-89", "description": "Excellent"},
+        {"grade": "A-", "points": 7.0, "percentage": "80-84", "description": "Very Good"},
+        {"grade": "B+", "points": 6.0, "percentage": "75-79", "description": "Good"},
+        {"grade": "B", "points": 5.0, "percentage": "70-74", "description": "Good"},
+        {"grade": "B-", "points": 4.0, "percentage": "65-69", "description": "Satisfactory"},
+        {"grade": "C+", "points": 3.0, "percentage": "60-64", "description": "Satisfactory"},
+        {"grade": "C", "points": 2.0, "percentage": "55-59", "description": "Pass"},
+        {"grade": "C-", "points": 1.0, "percentage": "50-54", "description": "Pass"},
+        {"grade": "D", "points": 0.0, "percentage": "0-49", "description": "Fail"}
+      ]
+    }
+  ]
+}

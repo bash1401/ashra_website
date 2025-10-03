@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GPA Calculator - Track Your Academic Progress | BashTech</title>
+  <meta name="description" content="Calculate your GPA with support for multiple grading systems worldwide. Track semesters, manage subjects, and monitor your academic progress with our comprehensive GPA calculator app." />
+  <meta name="keywords" content="GPA calculator, grade point average, academic tracking, university grades, college GPA, semester tracking, grade management, BashTech" />
+  <meta name="author" content="BashTech" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.bashtech.info/gpacalculator/" />
+  <meta property="og:title" content="GPA Calculator - Track Your Academic Progress" />
+  <meta property="og:description" content="Calculate your GPA with support for multiple grading systems worldwide. Track semesters, manage subjects, and monitor your academic progress." />
+  <meta property="og:image" content="https://www.bashtech.info/gpacalculator/og-image.png" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.bashtech.info/gpacalculator/" />
+  <meta property="twitter:title" content="GPA Calculator - Track Your Academic Progress" />
+  <meta property="twitter:description" content="Calculate your GPA with support for multiple grading systems worldwide. Track semesters, manage subjects, and monitor your academic progress." />
+  <meta property="twitter:image" content="https://www.bashtech.info/gpacalculator/og-image.png" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.bashtech.info/gpacalculator/" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "GPA Calculator",
+    "description": "Calculate your GPA with support for multiple grading systems worldwide. Track semesters, manage subjects, and monitor your academic progress.",
+    "url": "https://www.bashtech.info/gpacalculator/",
+    "applicationCategory": "EducationApplication",
+    "operatingSystem": "Android, iOS",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "BashTech",
+      "url": "https://www.bashtech.info/"
+    }
+  }
+  </script>
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; 
+      line-height: 1.6; 
+      color: #333; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    
+    /* Header */
+    header { 
+      background: rgba(255, 255, 255, 0.95); 
+      backdrop-filter: blur(10px);
+      padding: 1rem 0; 
+      position: sticky; 
+      top: 0; 
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo { 
+      font-size: 1.8rem; 
+      font-weight: bold; 
+      color: #1a73e8; 
+      display: flex; 
+      align-items: center; 
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    .logo-icon { font-size: 2rem; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { 
+      color: #333; 
+      text-decoration: none; 
+      font-weight: 500; 
+      transition: all 0.3s; 
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+    }
+    .nav-links a:hover { 
+      color: #1a73e8; 
+      background: rgba(26, 115, 232, 0.1);
+    }
+    
+    /* Hero Section */
+    .hero { 
+      text-align: center; 
+      padding: 6rem 0; 
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 { 
+      font-size: 4rem; 
+      margin-bottom: 1.5rem; 
+      font-weight: 700; 
+      background: linear-gradient(45deg, #fff, #e3f2fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p { 
+      font-size: 1.4rem; 
+      margin-bottom: 2rem; 
+      opacity: 0.9; 
+    }
+    .hero-subtitle { 
+      font-size: 1.2rem; 
+      opacity: 0.8; 
+      margin-bottom: 3rem; 
+    }
+    
+    /* Features Section */
+    .features { 
+      background: white; 
+      padding: 5rem 0; 
+    }
+    .section-title { 
+      text-align: center; 
+      font-size: 3rem; 
+      margin-bottom: 4rem; 
+      color: #333; 
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(45deg, #1a73e8, #34a853);
+      border-radius: 2px;
+    }
+    .features-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 2rem; 
+    }
+    .feature-card { 
+      background: linear-gradient(135deg, #f8f9fa, #ffffff); 
+      border-radius: 20px; 
+      padding: 2.5rem; 
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    .feature-card:hover { 
+      transform: translateY(-8px); 
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .feature-icon { 
+      font-size: 3rem; 
+      margin-bottom: 1rem; 
+      display: block;
+    }
+    .feature-title { 
+      font-size: 1.3rem; 
+      font-weight: 600; 
+      color: #333; 
+      margin-bottom: 1rem;
+    }
+    .feature-description { 
+      color: #666; 
+      line-height: 1.6;
+    }
+    
+    /* Grading Systems Section */
+    .grading-systems { 
+      background: #f8f9fa; 
+      padding: 5rem 0; 
+    }
+    .systems-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+      gap: 1.5rem; 
+      margin-top: 3rem;
+    }
+    .system-card { 
+      background: white; 
+      border-radius: 15px; 
+      padding: 1.5rem; 
+      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      border-left: 4px solid #1a73e8;
+    }
+    .system-card:hover { 
+      transform: translateY(-5px); 
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    .system-name { 
+      font-weight: 600; 
+      color: #333; 
+      margin-bottom: 0.5rem;
+    }
+    .system-country { 
+      color: #666; 
+      font-size: 0.9rem; 
+      margin-bottom: 0.5rem;
+    }
+    .system-scale { 
+      color: #1a73e8; 
+      font-weight: 500;
+    }
+    
+    /* Download Section */
+    .download { 
+      background: linear-gradient(135deg, #1a73e8, #34a853); 
+      padding: 5rem 0; 
+      color: white;
+      text-align: center;
+    }
+    .download h2 { 
+      font-size: 2.5rem; 
+      margin-bottom: 1rem; 
+    }
+    .download p { 
+      font-size: 1.2rem; 
+      margin-bottom: 2rem; 
+      opacity: 0.9;
+    }
+    .download-buttons { 
+      display: flex; 
+      gap: 1rem; 
+      justify-content: center; 
+      flex-wrap: wrap;
+    }
+    .download-btn { 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 0.5rem; 
+      background: white; 
+      color: #1a73e8; 
+      padding: 1rem 2rem; 
+      border-radius: 25px; 
+      text-decoration: none; 
+      font-weight: 600; 
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .download-btn:hover { 
+      transform: translateY(-3px); 
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    
+    /* Footer */
+    footer { 
+      background: #333; 
+      color: white; 
+      padding: 3rem 0; 
+      text-align: center;
+    }
+    .footer-links { display: flex; gap: 2rem; justify-content: center; margin-bottom: 2rem; flex-wrap: wrap; }
+    .footer-links a { color: #ccc; text-decoration: none; }
+    .footer-links a:hover { color: white; }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero h1 { font-size: 2.8rem; }
+      .hero p { font-size: 1.2rem; }
+      .features-grid { grid-template-columns: 1fr; }
+      .systems-grid { grid-template-columns: 1fr; }
+      .section-title { font-size: 2.5rem; }
+      .download-buttons { flex-direction: column; align-items: center; }
+    }
+    
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1.1rem; }
+      .section-title { font-size: 2rem; }
+      .container { padding: 0 15px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a href="https://www.bashtech.info/" class="logo">
+        <span class="logo-icon">🚀</span>
+        BashTech
+      </a>
+      <div class="nav-links">
+        <a href="https://www.bashtech.info/#apps">Apps</a>
+        <a href="https://www.bashtech.info/#about">About</a>
+        <a href="mailto:subash.rathinam1401@gmail.com">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>📊 GPA Calculator</h1>
+          <p>Track Your Academic Progress</p>
+          <p class="hero-subtitle">Calculate your GPA with support for multiple grading systems worldwide</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2 class="section-title">Key Features</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <span class="feature-icon">🌍</span>
+            <h3 class="feature-title">Global Grading Systems</h3>
+            <p class="feature-description">Support for 25+ grading systems from around the world including US, India, UK, Canada, Australia, Germany, and more.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">📚</span>
+            <h3 class="feature-title">Semester Management</h3>
+            <p class="feature-description">Organize your academic progress by semesters. Add multiple subjects with credits and grades for each semester.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">📊</span>
+            <h3 class="feature-title">Real-time GPA Calculation</h3>
+            <p class="feature-description">Automatic GPA calculation with support for different grading scales. Track both semester and cumulative GPA.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">☁️</span>
+            <h3 class="feature-title">Cloud Backup & Sync</h3>
+            <p class="feature-description">Secure your data with Google Drive integration. Automatic backup and restore functionality.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">📤</span>
+            <h3 class="feature-title">Export & Share</h3>
+            <p class="feature-description">Export your academic data as JSON files. Share your progress with advisors or transfer between devices.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">🎨</span>
+            <h3 class="feature-title">Modern UI</h3>
+            <p class="feature-description">Beautiful Material 3 design with dark mode support. Intuitive interface that's easy to use and navigate.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grading-systems">
+      <div class="container">
+        <h2 class="section-title">Supported Grading Systems</h2>
+        <p style="text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 2rem;">
+          Our app supports grading systems from universities worldwide. Choose the system that matches your institution.
+        </p>
+        <div class="systems-grid" id="systemsGrid">
+          <div style="text-align: center; color: #666;">Loading grading systems...</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="download">
+      <div class="container">
+        <h2>Download GPA Calculator</h2>
+        <p>Available on Android and iOS. Track your academic progress anywhere, anytime.</p>
+        <div class="download-buttons">
+          <a href="https://play.google.com/store/apps/details?id=com.bashtech.gpacalculator" class="download-btn" target="_blank">
+            <span>📱</span>
+            Google Play Store
+          </a>
+          <a href="https://apps.apple.com/app/gpa-calculator" class="download-btn" target="_blank">
+            <span>🍎</span>
+            App Store
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="https://www.bashtech.info/">Home</a>
+        <a href="mailto:subash.rathinam1401@gmail.com">Contact</a>
+        <a href="https://play.google.com/store/apps/developer?id=Ashra" target="_blank">Play Store</a>
+        <a href="https://buymeacoffee.com/bash14" target="_blank" style="color: #ff6b6b;">☕ Support</a>
+      </div>
+      <p>&copy; 2024 BashTech. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Load grading systems from JSON
+    async function loadGradingSystems() {
+      try {
+        const systemsGrid = document.getElementById('systemsGrid');
+        
+        const response = await fetch('grading-systems.json');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        if (!data.systems || !Array.isArray(data.systems)) {
+          throw new Error('Invalid data structure in grading-systems.json');
+        }
+        
+        systemsGrid.innerHTML = '';
+        
+        // Generate system cards
+        data.systems.forEach(system => {
+          const systemCard = document.createElement('div');
+          systemCard.className = 'system-card';
+          
+          systemCard.innerHTML = `
+            <div class="system-name">${system.name}</div>
+            <div class="system-country">${system.country}</div>
+            <div class="system-scale">Scale: ${system.scale}</div>
+          `;
+          
+          systemsGrid.appendChild(systemCard);
+        });
+        
+      } catch (error) {
+        console.error('Error loading grading systems:', error);
+        const systemsGrid = document.getElementById('systemsGrid');
+        systemsGrid.innerHTML = `
+          <div style="text-align: center; color: #e74c3c;">
+            <p>Error loading grading systems. Please refresh the page to try again.</p>
+            <button onclick="location.reload()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #1a73e8; color: white; border: none; border-radius: 5px; cursor: pointer;">
+              Refresh Page
+            </button>
+          </div>
+        `;
+      }
+    }
+    
+    // Load grading systems when page loads
+    document.addEventListener('DOMContentLoaded', loadGradingSystems);
+  </script>
+</body>
+</html>

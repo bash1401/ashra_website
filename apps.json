@@ -54,6 +54,24 @@
         "Expense categorization",
         "Monthly spending reports"
       ]
+    },
+    {
+      "name": "GPA Calculator",
+      "folder": "gpacalculator",
+      "icon": "📊",
+      "category": "Education & Academic Tracking",
+      "description": "Calculate your GPA with support for multiple grading systems worldwide. Track semesters, manage subjects, and monitor your academic progress.",
+      "status": "live",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.bashtech.gpacalculator",
+      "websiteUrl": "https://www.bashtech.info/gpacalculator/index.html",
+      "features": [
+        "25+ global grading systems support",
+        "Semester and subject management",
+        "Real-time GPA calculation",
+        "Google Drive backup & sync",
+        "Export/import academic data",
+        "Modern Material 3 UI with dark mode"
+      ]
     }
   ]
 }
