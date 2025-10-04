@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Background circle -->
+  <rect width="200" height="200" rx="40" ry="40" fill="#6B46C1"/>
+  
+  <!-- Calculator body -->
+  <rect x="30" y="80" width="140" height="100" rx="8" ry="8" fill="#6B46C1"/>
+  
+  <!-- Calculator screen -->
+  <rect x="40" y="90" width="120" height="25" rx="4" ry="4" fill="white"/>
+  
+  <!-- Calculator buttons -->
+  <rect x="40" y="125" width="25" height="20" rx="3" ry="3" fill="white"/>
+  <rect x="70" y="125" width="25" height="20" rx="3" ry="3" fill="white"/>
+  <rect x="100" y="125" width="25" height="20" rx="3" ry="3" fill="white"/>
+  
+  <rect x="40" y="150" width="25" height="20" rx="3" ry="3" fill="white"/>
+  <rect x="70" y="150" width="25" height="20" rx="3" ry="3" fill="white"/>
+  <rect x="100" y="150" width="25" height="20" rx="3" ry="3" fill="white"/>
+  
+  <rect x="40" y="175" width="25" height="20" rx="3" ry="3" fill="white"/>
+  <rect x="70" y="175" width="25" height="20" rx="3" ry="3" fill="white"/>
+  <rect x="100" y="175" width="45" height="20" rx="3" ry="3" fill="white"/>
+  
+  <!-- Graduation cap -->
+  <rect x="50" y="50" width="100" height="15" rx="2" ry="2" fill="#6B46C1"/>
+  <rect x="45" y="55" width="110" height="8" rx="1" ry="1" fill="#6B46C1"/>
+  
+  <!-- Tassel -->
+  <line x1="140" y1="55" x2="160" y2="75" stroke="#6B46C1" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="160" cy="75" r="4" fill="#6B46C1"/>
+</svg>
