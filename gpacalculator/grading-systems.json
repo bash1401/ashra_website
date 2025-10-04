@@ -7,6 +7,7 @@
       "id": "us_4_0",
       "name": "US 4.0 Scale",
       "country": "United States",
+      "region": "North America",
       "description": "Standard US grading system with 4.0 maximum",
       "scale": 4.0,
       "grades": [
@@ -29,6 +30,7 @@
       "id": "us_5_0",
       "name": "US 5.0 Scale",
       "country": "United States",
+      "region": "North America",
       "description": "Alternative US grading system with 5.0 maximum",
       "scale": 5.0,
       "grades": [
@@ -51,6 +53,7 @@
       "id": "india_10",
       "name": "India 10-Point Scale",
       "country": "India",
+      "region": "South Asia",
       "description": "Standard Indian grading system with 10.0 maximum",
       "scale": 10.0,
       "grades": [
@@ -68,6 +71,7 @@
       "id": "india_cgpa",
       "name": "India CGPA System",
       "country": "India",
+      "region": "South Asia",
       "description": "Indian CGPA system with 10.0 maximum",
       "scale": 10.0,
       "grades": [
@@ -85,6 +89,7 @@
       "id": "uk_first",
       "name": "UK First Class System",
       "country": "United Kingdom",
+      "region": "Europe",
       "description": "UK university grading system",
       "scale": 1.0,
       "grades": [
@@ -100,6 +105,7 @@
       "id": "canada_4_33",
       "name": "Canada 4.33 Scale",
       "country": "Canada",
+      "region": "North America",
       "description": "Canadian university grading system",
       "scale": 4.33,
       "grades": [
@@ -120,6 +126,7 @@
       "id": "australia_hd",
       "name": "Australia HD System",
       "country": "Australia",
+      "region": "Oceania",
       "description": "Australian university grading system",
       "scale": 7.0,
       "grades": [
@@ -134,6 +141,7 @@
       "id": "germany_1_6",
       "name": "Germany 1-6 Scale",
       "country": "Germany",
+      "region": "Europe",
       "description": "German university grading system (1 = best, 6 = worst)",
       "scale": 6.0,
       "grades": [
@@ -154,6 +162,7 @@
       "id": "france_20",
       "name": "France 20-Point Scale",
       "country": "France",
+      "region": "Europe",
       "description": "French university grading system",
       "scale": 20.0,
       "grades": [
@@ -175,6 +184,7 @@
       "id": "japan_100",
       "name": "Japan 100-Point Scale",
       "country": "Japan",
+      "region": "East Asia",
       "description": "Japanese university grading system",
       "scale": 100.0,
       "grades": [
@@ -189,6 +199,7 @@
       "id": "south_korea_4_5",
       "name": "South Korea 4.5 Scale",
       "country": "South Korea",
+      "region": "East Asia",
       "description": "Korean university grading system",
       "scale": 4.5,
       "grades": [
@@ -207,6 +218,7 @@
       "id": "brazil_10",
       "name": "Brazil 10-Point Scale",
       "country": "Brazil",
+      "region": "South America",
       "description": "Brazilian university grading system",
       "scale": 10.0,
       "grades": [
@@ -222,6 +234,7 @@
       "id": "mexico_10",
       "name": "Mexico 10-Point Scale",
       "country": "Mexico",
+      "region": "North America",
       "description": "Mexican university grading system",
       "scale": 10.0,
       "grades": [
@@ -237,6 +250,7 @@
       "id": "spain_10",
       "name": "Spain 10-Point Scale",
       "country": "Spain",
+      "region": "Europe",
       "description": "Spanish university grading system",
       "scale": 10.0,
       "grades": [
@@ -252,6 +266,7 @@
       "id": "italy_30",
       "name": "Italy 30-Point Scale",
       "country": "Italy",
+      "region": "Europe",
       "description": "Italian university grading system",
       "scale": 30.0,
       "grades": [
@@ -274,6 +289,7 @@
       "id": "netherlands_10",
       "name": "Netherlands 10-Point Scale",
       "country": "Netherlands",
+      "region": "Europe",
       "description": "Dutch university grading system",
       "scale": 10.0,
       "grades": [
@@ -290,6 +306,7 @@
       "id": "sweden_5",
       "name": "Sweden 5-Point Scale",
       "country": "Sweden",
+      "region": "Europe",
       "description": "Swedish university grading system",
       "scale": 5.0,
       "grades": [
@@ -302,6 +319,7 @@
       "id": "norway_6",
       "name": "Norway 6-Point Scale",
       "country": "Norway",
+      "region": "Europe",
       "description": "Norwegian university grading system",
       "scale": 6.0,
       "grades": [
@@ -317,6 +335,7 @@
       "id": "denmark_7",
       "name": "Denmark 7-Point Scale",
       "country": "Denmark",
+      "region": "Europe",
       "description": "Danish university grading system",
       "scale": 7.0,
       "grades": [
@@ -333,6 +352,7 @@
       "id": "finland_5",
       "name": "Finland 5-Point Scale",
       "country": "Finland",
+      "region": "Europe",
       "description": "Finnish university grading system",
       "scale": 5.0,
       "grades": [
@@ -348,6 +368,7 @@
       "id": "switzerland_6",
       "name": "Switzerland 6-Point Scale",
       "country": "Switzerland",
+      "region": "Europe",
       "description": "Swiss university grading system",
       "scale": 6.0,
       "grades": [
@@ -367,6 +388,7 @@
       "id": "south_africa_7",
       "name": "South Africa 7-Point Scale",
       "country": "South Africa",
+      "region": "Africa",
       "description": "South African university grading system",
       "scale": 7.0,
       "grades": [
@@ -383,6 +405,7 @@
       "id": "new_zealand_9",
       "name": "New Zealand 9-Point Scale",
       "country": "New Zealand",
+      "region": "Oceania",
       "description": "New Zealand university grading system",
       "scale": 9.0,
       "grades": [
