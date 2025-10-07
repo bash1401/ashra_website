@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.1.5",
   "lastUpdated": "2025-10-07",
   "description": "Comprehensive collection of grading systems from around the world",
   "systems": [
@@ -11,19 +11,71 @@
       "description": "Standard US grading system with 4.0 maximum",
       "scale": 4.0,
       "grades": [
-        {"grade": "A+", "points": 4.0, "percentage": "97-100"},
-        {"grade": "A", "points": 4.0, "percentage": "93-96"},
-        {"grade": "A-", "points": 3.7, "percentage": "90-92"},
-        {"grade": "B+", "points": 3.3, "percentage": "87-89"},
-        {"grade": "B", "points": 3.0, "percentage": "83-86"},
-        {"grade": "B-", "points": 2.7, "percentage": "80-82"},
-        {"grade": "C+", "points": 2.3, "percentage": "77-79"},
-        {"grade": "C", "points": 2.0, "percentage": "73-76"},
-        {"grade": "C-", "points": 1.7, "percentage": "70-72"},
-        {"grade": "D+", "points": 1.3, "percentage": "67-69"},
-        {"grade": "D", "points": 1.0, "percentage": "63-66"},
-        {"grade": "D-", "points": 0.7, "percentage": "60-62"},
-        {"grade": "F", "points": 0.0, "percentage": "0-59"}
+        {
+          "grade": "A+",
+          "points": 4.0,
+          "percentage": "97-100"
+        },
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "93-96"
+        },
+        {
+          "grade": "A-",
+          "points": 3.7,
+          "percentage": "90-92"
+        },
+        {
+          "grade": "B+",
+          "points": 3.3,
+          "percentage": "87-89"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "83-86"
+        },
+        {
+          "grade": "B-",
+          "points": 2.7,
+          "percentage": "80-82"
+        },
+        {
+          "grade": "C+",
+          "points": 2.3,
+          "percentage": "77-79"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "73-76"
+        },
+        {
+          "grade": "C-",
+          "points": 1.7,
+          "percentage": "70-72"
+        },
+        {
+          "grade": "D+",
+          "points": 1.3,
+          "percentage": "67-69"
+        },
+        {
+          "grade": "D",
+          "points": 1.0,
+          "percentage": "63-66"
+        },
+        {
+          "grade": "D-",
+          "points": 0.7,
+          "percentage": "60-62"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-59"
+        }
       ]
     },
     {
@@ -34,19 +86,71 @@
       "description": "Alternative US grading system with 5.0 maximum",
       "scale": 5.0,
       "grades": [
-        {"grade": "A+", "points": 5.0, "percentage": "97-100"},
-        {"grade": "A", "points": 4.5, "percentage": "93-96"},
-        {"grade": "A-", "points": 4.2, "percentage": "90-92"},
-        {"grade": "B+", "points": 3.8, "percentage": "87-89"},
-        {"grade": "B", "points": 3.5, "percentage": "83-86"},
-        {"grade": "B-", "points": 3.2, "percentage": "80-82"},
-        {"grade": "C+", "points": 2.8, "percentage": "77-79"},
-        {"grade": "C", "points": 2.5, "percentage": "73-76"},
-        {"grade": "C-", "points": 2.2, "percentage": "70-72"},
-        {"grade": "D+", "points": 1.8, "percentage": "67-69"},
-        {"grade": "D", "points": 1.5, "percentage": "63-66"},
-        {"grade": "D-", "points": 1.2, "percentage": "60-62"},
-        {"grade": "F", "points": 0.0, "percentage": "0-59"}
+        {
+          "grade": "A+",
+          "points": 5.0,
+          "percentage": "97-100"
+        },
+        {
+          "grade": "A",
+          "points": 4.5,
+          "percentage": "93-96"
+        },
+        {
+          "grade": "A-",
+          "points": 4.2,
+          "percentage": "90-92"
+        },
+        {
+          "grade": "B+",
+          "points": 3.8,
+          "percentage": "87-89"
+        },
+        {
+          "grade": "B",
+          "points": 3.5,
+          "percentage": "83-86"
+        },
+        {
+          "grade": "B-",
+          "points": 3.2,
+          "percentage": "80-82"
+        },
+        {
+          "grade": "C+",
+          "points": 2.8,
+          "percentage": "77-79"
+        },
+        {
+          "grade": "C",
+          "points": 2.5,
+          "percentage": "73-76"
+        },
+        {
+          "grade": "C-",
+          "points": 2.2,
+          "percentage": "70-72"
+        },
+        {
+          "grade": "D+",
+          "points": 1.8,
+          "percentage": "67-69"
+        },
+        {
+          "grade": "D",
+          "points": 1.5,
+          "percentage": "63-66"
+        },
+        {
+          "grade": "D-",
+          "points": 1.2,
+          "percentage": "60-62"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-59"
+        }
       ]
     },
     {
@@ -57,14 +161,54 @@
       "description": "Standard Indian grading system with 10.0 maximum",
       "scale": 10.0,
       "grades": [
-        {"grade": "O", "points": 10.0, "percentage": "90-100", "description": "Outstanding"},
-        {"grade": "A+", "points": 9.0, "percentage": "80-89", "description": "Excellent"},
-        {"grade": "A", "points": 8.0, "percentage": "70-79", "description": "Very Good"},
-        {"grade": "B+", "points": 7.0, "percentage": "60-69", "description": "Good"},
-        {"grade": "B", "points": 6.0, "percentage": "50-59", "description": "Above Average"},
-        {"grade": "C", "points": 5.0, "percentage": "40-49", "description": "Average"},
-        {"grade": "D", "points": 4.0, "percentage": "30-39", "description": "Below Average"},
-        {"grade": "F", "points": 0.0, "percentage": "0-29", "description": "Fail"}
+        {
+          "grade": "O",
+          "points": 10.0,
+          "percentage": "90-100",
+          "description": "Outstanding"
+        },
+        {
+          "grade": "A+",
+          "points": 9.0,
+          "percentage": "80-89",
+          "description": "Excellent"
+        },
+        {
+          "grade": "A",
+          "points": 8.0,
+          "percentage": "70-79",
+          "description": "Very Good"
+        },
+        {
+          "grade": "B+",
+          "points": 7.0,
+          "percentage": "60-69",
+          "description": "Good"
+        },
+        {
+          "grade": "B",
+          "points": 6.0,
+          "percentage": "50-59",
+          "description": "Above Average"
+        },
+        {
+          "grade": "C",
+          "points": 5.0,
+          "percentage": "40-49",
+          "description": "Average"
+        },
+        {
+          "grade": "D",
+          "points": 4.0,
+          "percentage": "30-39",
+          "description": "Below Average"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-29",
+          "description": "Fail"
+        }
       ]
     },
     {
@@ -75,14 +219,46 @@
       "description": "Indian CGPA system with 10.0 maximum",
       "scale": 10.0,
       "grades": [
-        {"grade": "A+", "points": 10.0, "percentage": "95-100"},
-        {"grade": "A", "points": 9.0, "percentage": "85-94"},
-        {"grade": "B+", "points": 8.0, "percentage": "75-84"},
-        {"grade": "B", "points": 7.0, "percentage": "65-74"},
-        {"grade": "C+", "points": 6.0, "percentage": "55-64"},
-        {"grade": "C", "points": 5.0, "percentage": "45-54"},
-        {"grade": "D", "points": 4.0, "percentage": "35-44"},
-        {"grade": "F", "points": 0.0, "percentage": "0-34"}
+        {
+          "grade": "A+",
+          "points": 10.0,
+          "percentage": "95-100"
+        },
+        {
+          "grade": "A",
+          "points": 9.0,
+          "percentage": "85-94"
+        },
+        {
+          "grade": "B+",
+          "points": 8.0,
+          "percentage": "75-84"
+        },
+        {
+          "grade": "B",
+          "points": 7.0,
+          "percentage": "65-74"
+        },
+        {
+          "grade": "C+",
+          "points": 6.0,
+          "percentage": "55-64"
+        },
+        {
+          "grade": "C",
+          "points": 5.0,
+          "percentage": "45-54"
+        },
+        {
+          "grade": "D",
+          "points": 4.0,
+          "percentage": "35-44"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-34"
+        }
       ]
     },
     {
@@ -93,12 +269,42 @@
       "description": "UK university grading system",
       "scale": 1.0,
       "grades": [
-        {"grade": "First", "points": 1.0, "percentage": "70-100", "description": "First Class Honours"},
-        {"grade": "2:1", "points": 0.7, "percentage": "60-69", "description": "Upper Second Class"},
-        {"grade": "2:2", "points": 0.5, "percentage": "50-59", "description": "Lower Second Class"},
-        {"grade": "Third", "points": 0.3, "percentage": "40-49", "description": "Third Class Honours"},
-        {"grade": "Pass", "points": 0.1, "percentage": "35-39", "description": "Pass"},
-        {"grade": "Fail", "points": 0.0, "percentage": "0-34", "description": "Fail"}
+        {
+          "grade": "First",
+          "points": 1.0,
+          "percentage": "70-100",
+          "description": "First Class Honours"
+        },
+        {
+          "grade": "2:1",
+          "points": 0.7,
+          "percentage": "60-69",
+          "description": "Upper Second Class"
+        },
+        {
+          "grade": "2:2",
+          "points": 0.5,
+          "percentage": "50-59",
+          "description": "Lower Second Class"
+        },
+        {
+          "grade": "Third",
+          "points": 0.3,
+          "percentage": "40-49",
+          "description": "Third Class Honours"
+        },
+        {
+          "grade": "Pass",
+          "points": 0.1,
+          "percentage": "35-39",
+          "description": "Pass"
+        },
+        {
+          "grade": "Fail",
+          "points": 0.0,
+          "percentage": "0-34",
+          "description": "Fail"
+        }
       ]
     },
     {
@@ -109,17 +315,61 @@
       "description": "Canadian university grading system",
       "scale": 4.33,
       "grades": [
-        {"grade": "A+", "points": 4.33, "percentage": "90-100"},
-        {"grade": "A", "points": 4.0, "percentage": "85-89"},
-        {"grade": "A-", "points": 3.67, "percentage": "80-84"},
-        {"grade": "B+", "points": 3.33, "percentage": "75-79"},
-        {"grade": "B", "points": 3.0, "percentage": "70-74"},
-        {"grade": "B-", "points": 2.67, "percentage": "65-69"},
-        {"grade": "C+", "points": 2.33, "percentage": "60-64"},
-        {"grade": "C", "points": 2.0, "percentage": "55-59"},
-        {"grade": "C-", "points": 1.67, "percentage": "50-54"},
-        {"grade": "D", "points": 1.0, "percentage": "40-49"},
-        {"grade": "F", "points": 0.0, "percentage": "0-39"}
+        {
+          "grade": "A+",
+          "points": 4.33,
+          "percentage": "90-100"
+        },
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "85-89"
+        },
+        {
+          "grade": "A-",
+          "points": 3.67,
+          "percentage": "80-84"
+        },
+        {
+          "grade": "B+",
+          "points": 3.33,
+          "percentage": "75-79"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "70-74"
+        },
+        {
+          "grade": "B-",
+          "points": 2.67,
+          "percentage": "65-69"
+        },
+        {
+          "grade": "C+",
+          "points": 2.33,
+          "percentage": "60-64"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "55-59"
+        },
+        {
+          "grade": "C-",
+          "points": 1.67,
+          "percentage": "50-54"
+        },
+        {
+          "grade": "D",
+          "points": 1.0,
+          "percentage": "40-49"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-39"
+        }
       ]
     },
     {
@@ -130,11 +380,36 @@
       "description": "Australian university grading system",
       "scale": 7.0,
       "grades": [
-        {"grade": "HD", "points": 7.0, "percentage": "85-100", "description": "High Distinction"},
-        {"grade": "D", "points": 6.0, "percentage": "75-84", "description": "Distinction"},
-        {"grade": "C", "points": 5.0, "percentage": "65-74", "description": "Credit"},
-        {"grade": "P", "points": 4.0, "percentage": "50-64", "description": "Pass"},
-        {"grade": "F", "points": 0.0, "percentage": "0-49", "description": "Fail"}
+        {
+          "grade": "HD",
+          "points": 7.0,
+          "percentage": "85-100",
+          "description": "High Distinction"
+        },
+        {
+          "grade": "D",
+          "points": 6.0,
+          "percentage": "75-84",
+          "description": "Distinction"
+        },
+        {
+          "grade": "C",
+          "points": 5.0,
+          "percentage": "65-74",
+          "description": "Credit"
+        },
+        {
+          "grade": "P",
+          "points": 4.0,
+          "percentage": "50-64",
+          "description": "Pass"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-49",
+          "description": "Fail"
+        }
       ]
     },
     {
@@ -145,17 +420,72 @@
       "description": "German university grading system (1 = best, 6 = worst)",
       "scale": 6.0,
       "grades": [
-        {"grade": "1.0", "points": 1.0, "percentage": "95-100", "description": "Sehr gut (Very Good)"},
-        {"grade": "1.3", "points": 1.3, "percentage": "90-94", "description": "Sehr gut"},
-        {"grade": "1.7", "points": 1.7, "percentage": "85-89", "description": "Gut (Good)"},
-        {"grade": "2.0", "points": 2.0, "percentage": "80-84", "description": "Gut"},
-        {"grade": "2.3", "points": 2.3, "percentage": "75-79", "description": "Befriedigend (Satisfactory)"},
-        {"grade": "2.7", "points": 2.7, "percentage": "70-74", "description": "Befriedigend"},
-        {"grade": "3.0", "points": 3.0, "percentage": "65-69", "description": "Ausreichend (Sufficient)"},
-        {"grade": "3.3", "points": 3.3, "percentage": "60-64", "description": "Ausreichend"},
-        {"grade": "3.7", "points": 3.7, "percentage": "55-59", "description": "Mangelhaft (Insufficient)"},
-        {"grade": "4.0", "points": 4.0, "percentage": "50-54", "description": "Mangelhaft"},
-        {"grade": "5.0", "points": 5.0, "percentage": "0-49", "description": "Ungenügend (Inadequate)"}
+        {
+          "grade": "1.0",
+          "points": 1.0,
+          "percentage": "95-100",
+          "description": "Sehr gut (Very Good)"
+        },
+        {
+          "grade": "1.3",
+          "points": 1.3,
+          "percentage": "90-94",
+          "description": "Sehr gut"
+        },
+        {
+          "grade": "1.7",
+          "points": 1.7,
+          "percentage": "85-89",
+          "description": "Gut (Good)"
+        },
+        {
+          "grade": "2.0",
+          "points": 2.0,
+          "percentage": "80-84",
+          "description": "Gut"
+        },
+        {
+          "grade": "2.3",
+          "points": 2.3,
+          "percentage": "75-79",
+          "description": "Befriedigend (Satisfactory)"
+        },
+        {
+          "grade": "2.7",
+          "points": 2.7,
+          "percentage": "70-74",
+          "description": "Befriedigend"
+        },
+        {
+          "grade": "3.0",
+          "points": 3.0,
+          "percentage": "65-69",
+          "description": "Ausreichend (Sufficient)"
+        },
+        {
+          "grade": "3.3",
+          "points": 3.3,
+          "percentage": "60-64",
+          "description": "Ausreichend"
+        },
+        {
+          "grade": "3.7",
+          "points": 3.7,
+          "percentage": "55-59",
+          "description": "Mangelhaft (Insufficient)"
+        },
+        {
+          "grade": "4.0",
+          "points": 4.0,
+          "percentage": "50-54",
+          "description": "Mangelhaft"
+        },
+        {
+          "grade": "5.0",
+          "points": 5.0,
+          "percentage": "0-49",
+          "description": "Ungenügend (Inadequate)"
+        }
       ]
     },
     {
@@ -166,18 +496,78 @@
       "description": "French university grading system",
       "scale": 20.0,
       "grades": [
-        {"grade": "20", "points": 20.0, "percentage": "95-100", "description": "Excellent"},
-        {"grade": "19", "points": 19.0, "percentage": "90-94", "description": "Très bien"},
-        {"grade": "18", "points": 18.0, "percentage": "85-89", "description": "Très bien"},
-        {"grade": "17", "points": 17.0, "percentage": "80-84", "description": "Bien"},
-        {"grade": "16", "points": 16.0, "percentage": "75-79", "description": "Bien"},
-        {"grade": "15", "points": 15.0, "percentage": "70-74", "description": "Assez bien"},
-        {"grade": "14", "points": 14.0, "percentage": "65-69", "description": "Assez bien"},
-        {"grade": "13", "points": 13.0, "percentage": "60-64", "description": "Passable"},
-        {"grade": "12", "points": 12.0, "percentage": "55-59", "description": "Passable"},
-        {"grade": "11", "points": 11.0, "percentage": "50-54", "description": "Passable"},
-        {"grade": "10", "points": 10.0, "percentage": "45-49", "description": "Passable"},
-        {"grade": "0-9", "points": 0.0, "percentage": "0-44", "description": "Échec (Fail)"}
+        {
+          "grade": "20",
+          "points": 20.0,
+          "percentage": "95-100",
+          "description": "Excellent"
+        },
+        {
+          "grade": "19",
+          "points": 19.0,
+          "percentage": "90-94",
+          "description": "Très bien"
+        },
+        {
+          "grade": "18",
+          "points": 18.0,
+          "percentage": "85-89",
+          "description": "Très bien"
+        },
+        {
+          "grade": "17",
+          "points": 17.0,
+          "percentage": "80-84",
+          "description": "Bien"
+        },
+        {
+          "grade": "16",
+          "points": 16.0,
+          "percentage": "75-79",
+          "description": "Bien"
+        },
+        {
+          "grade": "15",
+          "points": 15.0,
+          "percentage": "70-74",
+          "description": "Assez bien"
+        },
+        {
+          "grade": "14",
+          "points": 14.0,
+          "percentage": "65-69",
+          "description": "Assez bien"
+        },
+        {
+          "grade": "13",
+          "points": 13.0,
+          "percentage": "60-64",
+          "description": "Passable"
+        },
+        {
+          "grade": "12",
+          "points": 12.0,
+          "percentage": "55-59",
+          "description": "Passable"
+        },
+        {
+          "grade": "11",
+          "points": 11.0,
+          "percentage": "50-54",
+          "description": "Passable"
+        },
+        {
+          "grade": "10",
+          "points": 10.0,
+          "percentage": "45-49",
+          "description": "Passable"
+        },
+        {
+          "grade": "0-9",
+          "points": 0.0,
+          "percentage": "0-44",
+          "description": "Échec (Fail)"
+        }
       ]
     },
     {
@@ -188,11 +578,36 @@
       "description": "Japanese university grading system",
       "scale": 100.0,
       "grades": [
-        {"grade": "S", "points": 100.0, "percentage": "90-100", "description": "秀 (Excellent)"},
-        {"grade": "A", "points": 80.0, "percentage": "80-89", "description": "優 (Very Good)"},
-        {"grade": "B", "points": 70.0, "percentage": "70-79", "description": "良 (Good)"},
-        {"grade": "C", "points": 60.0, "percentage": "60-69", "description": "可 (Pass)"},
-        {"grade": "D", "points": 0.0, "percentage": "0-59", "description": "不可 (Fail)"}
+        {
+          "grade": "S",
+          "points": 100.0,
+          "percentage": "90-100",
+          "description": "秀 (Excellent)"
+        },
+        {
+          "grade": "A",
+          "points": 80.0,
+          "percentage": "80-89",
+          "description": "優 (Very Good)"
+        },
+        {
+          "grade": "B",
+          "points": 70.0,
+          "percentage": "70-79",
+          "description": "良 (Good)"
+        },
+        {
+          "grade": "C",
+          "points": 60.0,
+          "percentage": "60-69",
+          "description": "可 (Pass)"
+        },
+        {
+          "grade": "D",
+          "points": 0.0,
+          "percentage": "0-59",
+          "description": "不可 (Fail)"
+        }
       ]
     },
     {
@@ -203,15 +618,51 @@
       "description": "Korean university grading system",
       "scale": 4.5,
       "grades": [
-        {"grade": "A+", "points": 4.5, "percentage": "95-100"},
-        {"grade": "A", "points": 4.0, "percentage": "90-94"},
-        {"grade": "B+", "points": 3.5, "percentage": "85-89"},
-        {"grade": "B", "points": 3.0, "percentage": "80-84"},
-        {"grade": "C+", "points": 2.5, "percentage": "75-79"},
-        {"grade": "C", "points": 2.0, "percentage": "70-74"},
-        {"grade": "D+", "points": 1.5, "percentage": "65-69"},
-        {"grade": "D", "points": 1.0, "percentage": "60-64"},
-        {"grade": "F", "points": 0.0, "percentage": "0-59"}
+        {
+          "grade": "A+",
+          "points": 4.5,
+          "percentage": "95-100"
+        },
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "90-94"
+        },
+        {
+          "grade": "B+",
+          "points": 3.5,
+          "percentage": "85-89"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "80-84"
+        },
+        {
+          "grade": "C+",
+          "points": 2.5,
+          "percentage": "75-79"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "70-74"
+        },
+        {
+          "grade": "D+",
+          "points": 1.5,
+          "percentage": "65-69"
+        },
+        {
+          "grade": "D",
+          "points": 1.0,
+          "percentage": "60-64"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-59"
+        }
       ]
     },
     {
@@ -222,12 +673,42 @@
       "description": "Brazilian university grading system",
       "scale": 10.0,
       "grades": [
-        {"grade": "10", "points": 10.0, "percentage": "90-100", "description": "Excelente"},
-        {"grade": "9", "points": 9.0, "percentage": "80-89", "description": "Muito Bom"},
-        {"grade": "8", "points": 8.0, "percentage": "70-79", "description": "Bom"},
-        {"grade": "7", "points": 7.0, "percentage": "60-69", "description": "Regular"},
-        {"grade": "6", "points": 6.0, "percentage": "50-59", "description": "Aprovado"},
-        {"grade": "0-5", "points": 0.0, "percentage": "0-49", "description": "Reprovado"}
+        {
+          "grade": "10",
+          "points": 10.0,
+          "percentage": "90-100",
+          "description": "Excelente"
+        },
+        {
+          "grade": "9",
+          "points": 9.0,
+          "percentage": "80-89",
+          "description": "Muito Bom"
+        },
+        {
+          "grade": "8",
+          "points": 8.0,
+          "percentage": "70-79",
+          "description": "Bom"
+        },
+        {
+          "grade": "7",
+          "points": 7.0,
+          "percentage": "60-69",
+          "description": "Regular"
+        },
+        {
+          "grade": "6",
+          "points": 6.0,
+          "percentage": "50-59",
+          "description": "Aprovado"
+        },
+        {
+          "grade": "0-5",
+          "points": 0.0,
+          "percentage": "0-49",
+          "description": "Reprovado"
+        }
       ]
     },
     {
@@ -238,12 +719,42 @@
       "description": "Mexican university grading system",
       "scale": 10.0,
       "grades": [
-        {"grade": "10", "points": 10.0, "percentage": "95-100", "description": "Excelente"},
-        {"grade": "9", "points": 9.0, "percentage": "85-94", "description": "Muy Bueno"},
-        {"grade": "8", "points": 8.0, "percentage": "75-84", "description": "Bueno"},
-        {"grade": "7", "points": 7.0, "percentage": "65-74", "description": "Regular"},
-        {"grade": "6", "points": 6.0, "percentage": "60-64", "description": "Suficiente"},
-        {"grade": "0-5", "points": 0.0, "percentage": "0-59", "description": "No Acreditado"}
+        {
+          "grade": "10",
+          "points": 10.0,
+          "percentage": "95-100",
+          "description": "Excelente"
+        },
+        {
+          "grade": "9",
+          "points": 9.0,
+          "percentage": "85-94",
+          "description": "Muy Bueno"
+        },
+        {
+          "grade": "8",
+          "points": 8.0,
+          "percentage": "75-84",
+          "description": "Bueno"
+        },
+        {
+          "grade": "7",
+          "points": 7.0,
+          "percentage": "65-74",
+          "description": "Regular"
+        },
+        {
+          "grade": "6",
+          "points": 6.0,
+          "percentage": "60-64",
+          "description": "Suficiente"
+        },
+        {
+          "grade": "0-5",
+          "points": 0.0,
+          "percentage": "0-59",
+          "description": "No Acreditado"
+        }
       ]
     },
     {
@@ -254,12 +765,42 @@
       "description": "Spanish university grading system",
       "scale": 10.0,
       "grades": [
-        {"grade": "10", "points": 10.0, "percentage": "95-100", "description": "Matrícula de Honor"},
-        {"grade": "9", "points": 9.0, "percentage": "85-94", "description": "Sobresaliente"},
-        {"grade": "8", "points": 8.0, "percentage": "75-84", "description": "Notable"},
-        {"grade": "7", "points": 7.0, "percentage": "65-74", "description": "Bien"},
-        {"grade": "6", "points": 6.0, "percentage": "60-64", "description": "Suficiente"},
-        {"grade": "0-5", "points": 0.0, "percentage": "0-59", "description": "Suspenso"}
+        {
+          "grade": "10",
+          "points": 10.0,
+          "percentage": "95-100",
+          "description": "Matrícula de Honor"
+        },
+        {
+          "grade": "9",
+          "points": 9.0,
+          "percentage": "85-94",
+          "description": "Sobresaliente"
+        },
+        {
+          "grade": "8",
+          "points": 8.0,
+          "percentage": "75-84",
+          "description": "Notable"
+        },
+        {
+          "grade": "7",
+          "points": 7.0,
+          "percentage": "65-74",
+          "description": "Bien"
+        },
+        {
+          "grade": "6",
+          "points": 6.0,
+          "percentage": "60-64",
+          "description": "Suficiente"
+        },
+        {
+          "grade": "0-5",
+          "points": 0.0,
+          "percentage": "0-59",
+          "description": "Suspenso"
+        }
       ]
     },
     {
@@ -270,19 +811,84 @@
       "description": "Italian university grading system",
       "scale": 30.0,
       "grades": [
-        {"grade": "30L", "points": 30.0, "percentage": "95-100", "description": "30 e Lode (30 with Honors)"},
-        {"grade": "30", "points": 30.0, "percentage": "90-94", "description": "30"},
-        {"grade": "29", "points": 29.0, "percentage": "85-89", "description": "29"},
-        {"grade": "28", "points": 28.0, "percentage": "80-84", "description": "28"},
-        {"grade": "27", "points": 27.0, "percentage": "75-79", "description": "27"},
-        {"grade": "26", "points": 26.0, "percentage": "70-74", "description": "26"},
-        {"grade": "25", "points": 25.0, "percentage": "65-69", "description": "25"},
-        {"grade": "24", "points": 24.0, "percentage": "60-64", "description": "24"},
-        {"grade": "23", "points": 23.0, "percentage": "55-59", "description": "23"},
-        {"grade": "22", "points": 22.0, "percentage": "50-54", "description": "22"},
-        {"grade": "21", "points": 21.0, "percentage": "45-49", "description": "21"},
-        {"grade": "18", "points": 18.0, "percentage": "40-44", "description": "18"},
-        {"grade": "0-17", "points": 0.0, "percentage": "0-39", "description": "Respinto (Rejected)"}
+        {
+          "grade": "30L",
+          "points": 30.0,
+          "percentage": "95-100",
+          "description": "30 e Lode (30 with Honors)"
+        },
+        {
+          "grade": "30",
+          "points": 30.0,
+          "percentage": "90-94",
+          "description": "30"
+        },
+        {
+          "grade": "29",
+          "points": 29.0,
+          "percentage": "85-89",
+          "description": "29"
+        },
+        {
+          "grade": "28",
+          "points": 28.0,
+          "percentage": "80-84",
+          "description": "28"
+        },
+        {
+          "grade": "27",
+          "points": 27.0,
+          "percentage": "75-79",
+          "description": "27"
+        },
+        {
+          "grade": "26",
+          "points": 26.0,
+          "percentage": "70-74",
+          "description": "26"
+        },
+        {
+          "grade": "25",
+          "points": 25.0,
+          "percentage": "65-69",
+          "description": "25"
+        },
+        {
+          "grade": "24",
+          "points": 24.0,
+          "percentage": "60-64",
+          "description": "24"
+        },
+        {
+          "grade": "23",
+          "points": 23.0,
+          "percentage": "55-59",
+          "description": "23"
+        },
+        {
+          "grade": "22",
+          "points": 22.0,
+          "percentage": "50-54",
+          "description": "22"
+        },
+        {
+          "grade": "21",
+          "points": 21.0,
+          "percentage": "45-49",
+          "description": "21"
+        },
+        {
+          "grade": "18",
+          "points": 18.0,
+          "percentage": "40-44",
+          "description": "18"
+        },
+        {
+          "grade": "0-17",
+          "points": 0.0,
+          "percentage": "0-39",
+          "description": "Respinto (Rejected)"
+        }
       ]
     },
     {
@@ -293,13 +899,48 @@
       "description": "Dutch university grading system",
       "scale": 10.0,
       "grades": [
-        {"grade": "10", "points": 10.0, "percentage": "95-100", "description": "Uitmuntend (Outstanding)"},
-        {"grade": "9", "points": 9.0, "percentage": "85-94", "description": "Zeer goed (Very Good)"},
-        {"grade": "8", "points": 8.0, "percentage": "75-84", "description": "Goed (Good)"},
-        {"grade": "7", "points": 7.0, "percentage": "65-74", "description": "Ruim voldoende (More than Sufficient)"},
-        {"grade": "6", "points": 6.0, "percentage": "55-64", "description": "Voldoende (Sufficient)"},
-        {"grade": "5", "points": 5.0, "percentage": "50-54", "description": "Onvoldoende (Insufficient)"},
-        {"grade": "0-4", "points": 0.0, "percentage": "0-49", "description": "Zeer onvoldoende (Very Insufficient)"}
+        {
+          "grade": "10",
+          "points": 10.0,
+          "percentage": "95-100",
+          "description": "Uitmuntend (Outstanding)"
+        },
+        {
+          "grade": "9",
+          "points": 9.0,
+          "percentage": "85-94",
+          "description": "Zeer goed (Very Good)"
+        },
+        {
+          "grade": "8",
+          "points": 8.0,
+          "percentage": "75-84",
+          "description": "Goed (Good)"
+        },
+        {
+          "grade": "7",
+          "points": 7.0,
+          "percentage": "65-74",
+          "description": "Ruim voldoende (More than Sufficient)"
+        },
+        {
+          "grade": "6",
+          "points": 6.0,
+          "percentage": "55-64",
+          "description": "Voldoende (Sufficient)"
+        },
+        {
+          "grade": "5",
+          "points": 5.0,
+          "percentage": "50-54",
+          "description": "Onvoldoende (Insufficient)"
+        },
+        {
+          "grade": "0-4",
+          "points": 0.0,
+          "percentage": "0-49",
+          "description": "Zeer onvoldoende (Very Insufficient)"
+        }
       ]
     },
     {
@@ -310,9 +951,24 @@
       "description": "Swedish university grading system",
       "scale": 5.0,
       "grades": [
-        {"grade": "VG", "points": 5.0, "percentage": "80-100", "description": "Väl godkänd (Pass with Distinction)"},
-        {"grade": "G", "points": 4.0, "percentage": "60-79", "description": "Godkänd (Pass)"},
-        {"grade": "U", "points": 0.0, "percentage": "0-59", "description": "Underkänd (Fail)"}
+        {
+          "grade": "VG",
+          "points": 5.0,
+          "percentage": "80-100",
+          "description": "Väl godkänd (Pass with Distinction)"
+        },
+        {
+          "grade": "G",
+          "points": 4.0,
+          "percentage": "60-79",
+          "description": "Godkänd (Pass)"
+        },
+        {
+          "grade": "U",
+          "points": 0.0,
+          "percentage": "0-59",
+          "description": "Underkänd (Fail)"
+        }
       ]
     },
     {
@@ -323,12 +979,42 @@
       "description": "Norwegian university grading system",
       "scale": 6.0,
       "grades": [
-        {"grade": "A", "points": 6.0, "percentage": "90-100", "description": "Utmerket (Excellent)"},
-        {"grade": "B", "points": 5.0, "percentage": "80-89", "description": "Meget godt (Very Good)"},
-        {"grade": "C", "points": 4.0, "percentage": "70-79", "description": "Godt (Good)"},
-        {"grade": "D", "points": 3.0, "percentage": "60-69", "description": "Strykende (Satisfactory)"},
-        {"grade": "E", "points": 2.0, "percentage": "50-59", "description": "Bestått (Pass)"},
-        {"grade": "F", "points": 0.0, "percentage": "0-49", "description": "Ikke bestått (Fail)"}
+        {
+          "grade": "A",
+          "points": 6.0,
+          "percentage": "90-100",
+          "description": "Utmerket (Excellent)"
+        },
+        {
+          "grade": "B",
+          "points": 5.0,
+          "percentage": "80-89",
+          "description": "Meget godt (Very Good)"
+        },
+        {
+          "grade": "C",
+          "points": 4.0,
+          "percentage": "70-79",
+          "description": "Godt (Good)"
+        },
+        {
+          "grade": "D",
+          "points": 3.0,
+          "percentage": "60-69",
+          "description": "Strykende (Satisfactory)"
+        },
+        {
+          "grade": "E",
+          "points": 2.0,
+          "percentage": "50-59",
+          "description": "Bestått (Pass)"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-49",
+          "description": "Ikke bestått (Fail)"
+        }
       ]
     },
     {
@@ -339,13 +1025,48 @@
       "description": "Danish university grading system",
       "scale": 7.0,
       "grades": [
-        {"grade": "12", "points": 7.0, "percentage": "95-100", "description": "Fremragende (Outstanding)"},
-        {"grade": "10", "points": 6.0, "percentage": "85-94", "description": "Fornem (Excellent)"},
-        {"grade": "7", "points": 5.0, "percentage": "75-84", "description": "Meget godt (Very Good)"},
-        {"grade": "4", "points": 4.0, "percentage": "60-74", "description": "Godt (Good)"},
-        {"grade": "02", "points": 3.0, "percentage": "50-59", "description": "Acceptabelt (Acceptable)"},
-        {"grade": "00", "points": 2.0, "percentage": "40-49", "description": "Utilstrækkeligt (Insufficient)"},
-        {"grade": "-3", "points": 0.0, "percentage": "0-39", "description": "Ringere end utilstrækkeligt (Inadequate)"}
+        {
+          "grade": "12",
+          "points": 7.0,
+          "percentage": "95-100",
+          "description": "Fremragende (Outstanding)"
+        },
+        {
+          "grade": "10",
+          "points": 6.0,
+          "percentage": "85-94",
+          "description": "Fornem (Excellent)"
+        },
+        {
+          "grade": "7",
+          "points": 5.0,
+          "percentage": "75-84",
+          "description": "Meget godt (Very Good)"
+        },
+        {
+          "grade": "4",
+          "points": 4.0,
+          "percentage": "60-74",
+          "description": "Godt (Good)"
+        },
+        {
+          "grade": "02",
+          "points": 3.0,
+          "percentage": "50-59",
+          "description": "Acceptabelt (Acceptable)"
+        },
+        {
+          "grade": "00",
+          "points": 2.0,
+          "percentage": "40-49",
+          "description": "Utilstrækkeligt (Insufficient)"
+        },
+        {
+          "grade": "-3",
+          "points": 0.0,
+          "percentage": "0-39",
+          "description": "Ringere end utilstrækkeligt (Inadequate)"
+        }
       ]
     },
     {
@@ -356,12 +1077,42 @@
       "description": "Finnish university grading system",
       "scale": 5.0,
       "grades": [
-        {"grade": "5", "points": 5.0, "percentage": "90-100", "description": "Erinomainen (Excellent)"},
-        {"grade": "4", "points": 4.0, "percentage": "75-89", "description": "Kiitettävä (Commendable)"},
-        {"grade": "3", "points": 3.0, "percentage": "60-74", "description": "Hyvä (Good)"},
-        {"grade": "2", "points": 2.0, "percentage": "50-59", "description": "Tyydyttävä (Satisfactory)"},
-        {"grade": "1", "points": 1.0, "percentage": "40-49", "description": "Hylätty (Fail)"},
-        {"grade": "0", "points": 0.0, "percentage": "0-39", "description": "Hylätty (Fail)"}
+        {
+          "grade": "5",
+          "points": 5.0,
+          "percentage": "90-100",
+          "description": "Erinomainen (Excellent)"
+        },
+        {
+          "grade": "4",
+          "points": 4.0,
+          "percentage": "75-89",
+          "description": "Kiitettävä (Commendable)"
+        },
+        {
+          "grade": "3",
+          "points": 3.0,
+          "percentage": "60-74",
+          "description": "Hyvä (Good)"
+        },
+        {
+          "grade": "2",
+          "points": 2.0,
+          "percentage": "50-59",
+          "description": "Tyydyttävä (Satisfactory)"
+        },
+        {
+          "grade": "1",
+          "points": 1.0,
+          "percentage": "40-49",
+          "description": "Hylätty (Fail)"
+        },
+        {
+          "grade": "0",
+          "points": 0.0,
+          "percentage": "0-39",
+          "description": "Hylätty (Fail)"
+        }
       ]
     },
     {
@@ -372,16 +1123,66 @@
       "description": "Swiss university grading system",
       "scale": 6.0,
       "grades": [
-        {"grade": "6", "points": 6.0, "percentage": "90-100", "description": "Sehr gut (Very Good)"},
-        {"grade": "5.5", "points": 5.5, "percentage": "85-89", "description": "Gut (Good)"},
-        {"grade": "5", "points": 5.0, "percentage": "80-84", "description": "Gut"},
-        {"grade": "4.5", "points": 4.5, "percentage": "75-79", "description": "Befriedigend (Satisfactory)"},
-        {"grade": "4", "points": 4.0, "percentage": "70-74", "description": "Befriedigend"},
-        {"grade": "3.5", "points": 3.5, "percentage": "65-69", "description": "Ausreichend (Sufficient)"},
-        {"grade": "3", "points": 3.0, "percentage": "60-64", "description": "Ausreichend"},
-        {"grade": "2.5", "points": 2.5, "percentage": "55-59", "description": "Ungenügend (Insufficient)"},
-        {"grade": "2", "points": 2.0, "percentage": "50-54", "description": "Ungenügend"},
-        {"grade": "1", "points": 1.0, "percentage": "0-49", "description": "Ungenügend"}
+        {
+          "grade": "6",
+          "points": 6.0,
+          "percentage": "90-100",
+          "description": "Sehr gut (Very Good)"
+        },
+        {
+          "grade": "5.5",
+          "points": 5.5,
+          "percentage": "85-89",
+          "description": "Gut (Good)"
+        },
+        {
+          "grade": "5",
+          "points": 5.0,
+          "percentage": "80-84",
+          "description": "Gut"
+        },
+        {
+          "grade": "4.5",
+          "points": 4.5,
+          "percentage": "75-79",
+          "description": "Befriedigend (Satisfactory)"
+        },
+        {
+          "grade": "4",
+          "points": 4.0,
+          "percentage": "70-74",
+          "description": "Befriedigend"
+        },
+        {
+          "grade": "3.5",
+          "points": 3.5,
+          "percentage": "65-69",
+          "description": "Ausreichend (Sufficient)"
+        },
+        {
+          "grade": "3",
+          "points": 3.0,
+          "percentage": "60-64",
+          "description": "Ausreichend"
+        },
+        {
+          "grade": "2.5",
+          "points": 2.5,
+          "percentage": "55-59",
+          "description": "Ungenügend (Insufficient)"
+        },
+        {
+          "grade": "2",
+          "points": 2.0,
+          "percentage": "50-54",
+          "description": "Ungenügend"
+        },
+        {
+          "grade": "1",
+          "points": 1.0,
+          "percentage": "0-49",
+          "description": "Ungenügend"
+        }
       ]
     },
     {
@@ -392,13 +1193,48 @@
       "description": "South African university grading system",
       "scale": 7.0,
       "grades": [
-        {"grade": "7", "points": 7.0, "percentage": "80-100", "description": "Outstanding"},
-        {"grade": "6", "points": 6.0, "percentage": "70-79", "description": "Meritorious"},
-        {"grade": "5", "points": 5.0, "percentage": "60-69", "description": "Substantial"},
-        {"grade": "4", "points": 4.0, "percentage": "50-59", "description": "Moderate"},
-        {"grade": "3", "points": 3.0, "percentage": "40-49", "description": "Adequate"},
-        {"grade": "2", "points": 2.0, "percentage": "30-39", "description": "Elementary"},
-        {"grade": "1", "points": 1.0, "percentage": "0-29", "description": "Not Achieved"}
+        {
+          "grade": "7",
+          "points": 7.0,
+          "percentage": "80-100",
+          "description": "Outstanding"
+        },
+        {
+          "grade": "6",
+          "points": 6.0,
+          "percentage": "70-79",
+          "description": "Meritorious"
+        },
+        {
+          "grade": "5",
+          "points": 5.0,
+          "percentage": "60-69",
+          "description": "Substantial"
+        },
+        {
+          "grade": "4",
+          "points": 4.0,
+          "percentage": "50-59",
+          "description": "Moderate"
+        },
+        {
+          "grade": "3",
+          "points": 3.0,
+          "percentage": "40-49",
+          "description": "Adequate"
+        },
+        {
+          "grade": "2",
+          "points": 2.0,
+          "percentage": "30-39",
+          "description": "Elementary"
+        },
+        {
+          "grade": "1",
+          "points": 1.0,
+          "percentage": "0-29",
+          "description": "Not Achieved"
+        }
       ]
     },
     {
@@ -409,788 +1245,3447 @@
       "description": "New Zealand university grading system",
       "scale": 9.0,
       "grades": [
-        {"grade": "A+", "points": 9.0, "percentage": "90-100", "description": "Excellent"},
-        {"grade": "A", "points": 8.0, "percentage": "85-89", "description": "Excellent"},
-        {"grade": "A-", "points": 7.0, "percentage": "80-84", "description": "Very Good"},
-        {"grade": "B+", "points": 6.0, "percentage": "75-79", "description": "Good"},
-        {"grade": "B", "points": 5.0, "percentage": "70-74", "description": "Good"},
-        {"grade": "B-", "points": 4.0, "percentage": "65-69", "description": "Satisfactory"},
-        {"grade": "C+", "points": 3.0, "percentage": "60-64", "description": "Satisfactory"},
-        {"grade": "C", "points": 2.0, "percentage": "55-59", "description": "Pass"},
-        {"grade": "C-", "points": 1.0, "percentage": "50-54", "description": "Pass"},
-        {"grade": "D", "points": 0.0, "percentage": "0-49", "description": "Fail"}
+        {
+          "grade": "A+",
+          "points": 9.0,
+          "percentage": "90-100",
+          "description": "Excellent"
+        },
+        {
+          "grade": "A",
+          "points": 8.0,
+          "percentage": "85-89",
+          "description": "Excellent"
+        },
+        {
+          "grade": "A-",
+          "points": 7.0,
+          "percentage": "80-84",
+          "description": "Very Good"
+        },
+        {
+          "grade": "B+",
+          "points": 6.0,
+          "percentage": "75-79",
+          "description": "Good"
+        },
+        {
+          "grade": "B",
+          "points": 5.0,
+          "percentage": "70-74",
+          "description": "Good"
+        },
+        {
+          "grade": "B-",
+          "points": 4.0,
+          "percentage": "65-69",
+          "description": "Satisfactory"
+        },
+        {
+          "grade": "C+",
+          "points": 3.0,
+          "percentage": "60-64",
+          "description": "Satisfactory"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "55-59",
+          "description": "Pass"
+        },
+        {
+          "grade": "C-",
+          "points": 1.0,
+          "percentage": "50-54",
+          "description": "Pass"
+        },
+        {
+          "grade": "D",
+          "points": 0.0,
+          "percentage": "0-49",
+          "description": "Fail"
+        }
       ]
     },
     {
       "id": "us_harvard_4_0",
       "name": "Harvard University (US 4.0 GPA)",
       "institution": "Harvard University",
-      "aliases": ["Harvard", "Harvard College", "HU"],
-      "keywords": ["US", "Ivy League", "4.0", "Undergraduate"],
+      "aliases": [
+        "Harvard",
+        "Harvard College",
+        "HU"
+      ],
+      "keywords": [
+        "US",
+        "Ivy League",
+        "4.0",
+        "Undergraduate"
+      ],
       "country": "United States",
       "region": "North America",
       "description": "Harvard standard letter-grade scale",
       "scale": 4.0,
       "grades": [
-        {"grade": "A+", "points": 4.0, "percentage": "97-100"},
-        {"grade": "A", "points": 4.0, "percentage": "93-96"},
-        {"grade": "A-", "points": 3.7, "percentage": "90-92"},
-        {"grade": "B+", "points": 3.3, "percentage": "87-89"},
-        {"grade": "B", "points": 3.0, "percentage": "83-86"},
-        {"grade": "B-", "points": 2.7, "percentage": "80-82"},
-        {"grade": "C+", "points": 2.3, "percentage": "77-79"},
-        {"grade": "C", "points": 2.0, "percentage": "73-76"},
-        {"grade": "C-", "points": 1.7, "percentage": "70-72"},
-        {"grade": "D+", "points": 1.3, "percentage": "67-69"},
-        {"grade": "D", "points": 1.0, "percentage": "63-66"},
-        {"grade": "D-", "points": 0.7, "percentage": "60-62"},
-        {"grade": "F", "points": 0.0, "percentage": "0-59"}
+        {
+          "grade": "A+",
+          "points": 4.0,
+          "percentage": "97-100"
+        },
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "93-96"
+        },
+        {
+          "grade": "A-",
+          "points": 3.7,
+          "percentage": "90-92"
+        },
+        {
+          "grade": "B+",
+          "points": 3.3,
+          "percentage": "87-89"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "83-86"
+        },
+        {
+          "grade": "B-",
+          "points": 2.7,
+          "percentage": "80-82"
+        },
+        {
+          "grade": "C+",
+          "points": 2.3,
+          "percentage": "77-79"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "73-76"
+        },
+        {
+          "grade": "C-",
+          "points": 1.7,
+          "percentage": "70-72"
+        },
+        {
+          "grade": "D+",
+          "points": 1.3,
+          "percentage": "67-69"
+        },
+        {
+          "grade": "D",
+          "points": 1.0,
+          "percentage": "63-66"
+        },
+        {
+          "grade": "D-",
+          "points": 0.7,
+          "percentage": "60-62"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-59"
+        }
       ]
     },
     {
       "id": "us_mit_4_0",
       "name": "MIT (US 4.0 GPA)",
       "institution": "Massachusetts Institute of Technology",
-      "aliases": ["MIT"],
-      "keywords": ["US", "4.0", "Tech", "Engineering"],
+      "aliases": [
+        "MIT"
+      ],
+      "keywords": [
+        "US",
+        "4.0",
+        "Tech",
+        "Engineering"
+      ],
       "country": "United States",
       "region": "North America",
       "description": "MIT standard letter-grade scale",
       "scale": 4.0,
       "grades": [
-        {"grade": "A+", "points": 4.0, "percentage": "97-100"},
-        {"grade": "A", "points": 4.0, "percentage": "93-96"},
-        {"grade": "A-", "points": 3.7, "percentage": "90-92"},
-        {"grade": "B+", "points": 3.3, "percentage": "87-89"},
-        {"grade": "B", "points": 3.0, "percentage": "83-86"},
-        {"grade": "B-", "points": 2.7, "percentage": "80-82"},
-        {"grade": "C+", "points": 2.3, "percentage": "77-79"},
-        {"grade": "C", "points": 2.0, "percentage": "73-76"},
-        {"grade": "C-", "points": 1.7, "percentage": "70-72"},
-        {"grade": "D+", "points": 1.3, "percentage": "67-69"},
-        {"grade": "D", "points": 1.0, "percentage": "63-66"},
-        {"grade": "D-", "points": 0.7, "percentage": "60-62"},
-        {"grade": "F", "points": 0.0, "percentage": "0-59"}
+        {
+          "grade": "A+",
+          "points": 4.0,
+          "percentage": "97-100"
+        },
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "93-96"
+        },
+        {
+          "grade": "A-",
+          "points": 3.7,
+          "percentage": "90-92"
+        },
+        {
+          "grade": "B+",
+          "points": 3.3,
+          "percentage": "87-89"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "83-86"
+        },
+        {
+          "grade": "B-",
+          "points": 2.7,
+          "percentage": "80-82"
+        },
+        {
+          "grade": "C+",
+          "points": 2.3,
+          "percentage": "77-79"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "73-76"
+        },
+        {
+          "grade": "C-",
+          "points": 1.7,
+          "percentage": "70-72"
+        },
+        {
+          "grade": "D+",
+          "points": 1.3,
+          "percentage": "67-69"
+        },
+        {
+          "grade": "D",
+          "points": 1.0,
+          "percentage": "63-66"
+        },
+        {
+          "grade": "D-",
+          "points": 0.7,
+          "percentage": "60-62"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-59"
+        }
       ]
     },
     {
       "id": "us_stanford_4_0",
       "name": "Stanford University (US 4.0 GPA)",
       "institution": "Stanford University",
-      "aliases": ["Stanford"],
-      "keywords": ["US", "4.0", "Private"],
+      "aliases": [
+        "Stanford"
+      ],
+      "keywords": [
+        "US",
+        "4.0",
+        "Private"
+      ],
       "country": "United States",
       "region": "North America",
       "description": "Stanford standard letter-grade scale",
       "scale": 4.0,
       "grades": [
-        {"grade": "A+", "points": 4.0, "percentage": "97-100"},
-        {"grade": "A", "points": 4.0, "percentage": "93-96"},
-        {"grade": "A-", "points": 3.7, "percentage": "90-92"},
-        {"grade": "B+", "points": 3.3, "percentage": "87-89"},
-        {"grade": "B", "points": 3.0, "percentage": "83-86"},
-        {"grade": "B-", "points": 2.7, "percentage": "80-82"},
-        {"grade": "C+", "points": 2.3, "percentage": "77-79"},
-        {"grade": "C", "points": 2.0, "percentage": "73-76"},
-        {"grade": "C-", "points": 1.7, "percentage": "70-72"},
-        {"grade": "D+", "points": 1.3, "percentage": "67-69"},
-        {"grade": "D", "points": 1.0, "percentage": "63-66"},
-        {"grade": "D-", "points": 0.7, "percentage": "60-62"},
-        {"grade": "F", "points": 0.0, "percentage": "0-59"}
+        {
+          "grade": "A+",
+          "points": 4.0,
+          "percentage": "97-100"
+        },
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "93-96"
+        },
+        {
+          "grade": "A-",
+          "points": 3.7,
+          "percentage": "90-92"
+        },
+        {
+          "grade": "B+",
+          "points": 3.3,
+          "percentage": "87-89"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "83-86"
+        },
+        {
+          "grade": "B-",
+          "points": 2.7,
+          "percentage": "80-82"
+        },
+        {
+          "grade": "C+",
+          "points": 2.3,
+          "percentage": "77-79"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "73-76"
+        },
+        {
+          "grade": "C-",
+          "points": 1.7,
+          "percentage": "70-72"
+        },
+        {
+          "grade": "D+",
+          "points": 1.3,
+          "percentage": "67-69"
+        },
+        {
+          "grade": "D",
+          "points": 1.0,
+          "percentage": "63-66"
+        },
+        {
+          "grade": "D-",
+          "points": 0.7,
+          "percentage": "60-62"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-59"
+        }
       ]
     },
     {
       "id": "us_uc_berkeley_4_0",
       "name": "UC Berkeley (US 4.0 GPA)",
       "institution": "University of California, Berkeley",
-      "aliases": ["UC Berkeley", "Berkeley", "UCB", "Cal"],
-      "keywords": ["US", "4.0", "Public"],
+      "aliases": [
+        "UC Berkeley",
+        "Berkeley",
+        "UCB",
+        "Cal"
+      ],
+      "keywords": [
+        "US",
+        "4.0",
+        "Public"
+      ],
       "country": "United States",
       "region": "North America",
       "description": "UC Berkeley standard letter-grade scale",
       "scale": 4.0,
       "grades": [
-        {"grade": "A+", "points": 4.0, "percentage": "97-100"},
-        {"grade": "A", "points": 4.0, "percentage": "93-96"},
-        {"grade": "A-", "points": 3.7, "percentage": "90-92"},
-        {"grade": "B+", "points": 3.3, "percentage": "87-89"},
-        {"grade": "B", "points": 3.0, "percentage": "83-86"},
-        {"grade": "B-", "points": 2.7, "percentage": "80-82"},
-        {"grade": "C+", "points": 2.3, "percentage": "77-79"},
-        {"grade": "C", "points": 2.0, "percentage": "73-76"},
-        {"grade": "C-", "points": 1.7, "percentage": "70-72"},
-        {"grade": "D+", "points": 1.3, "percentage": "67-69"},
-        {"grade": "D", "points": 1.0, "percentage": "63-66"},
-        {"grade": "D-", "points": 0.7, "percentage": "60-62"},
-        {"grade": "F", "points": 0.0, "percentage": "0-59"}
+        {
+          "grade": "A+",
+          "points": 4.0,
+          "percentage": "97-100"
+        },
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "93-96"
+        },
+        {
+          "grade": "A-",
+          "points": 3.7,
+          "percentage": "90-92"
+        },
+        {
+          "grade": "B+",
+          "points": 3.3,
+          "percentage": "87-89"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "83-86"
+        },
+        {
+          "grade": "B-",
+          "points": 2.7,
+          "percentage": "80-82"
+        },
+        {
+          "grade": "C+",
+          "points": 2.3,
+          "percentage": "77-79"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "73-76"
+        },
+        {
+          "grade": "C-",
+          "points": 1.7,
+          "percentage": "70-72"
+        },
+        {
+          "grade": "D+",
+          "points": 1.3,
+          "percentage": "67-69"
+        },
+        {
+          "grade": "D",
+          "points": 1.0,
+          "percentage": "63-66"
+        },
+        {
+          "grade": "D-",
+          "points": 0.7,
+          "percentage": "60-62"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-59"
+        }
       ]
     },
     {
       "id": "us_ucla_4_0",
       "name": "UCLA (US 4.0 GPA)",
       "institution": "University of California, Los Angeles",
-      "aliases": ["UCLA"],
-      "keywords": ["US", "4.0", "Public"],
+      "aliases": [
+        "UCLA"
+      ],
+      "keywords": [
+        "US",
+        "4.0",
+        "Public"
+      ],
       "country": "United States",
       "region": "North America",
       "description": "UCLA standard letter-grade scale",
       "scale": 4.0,
       "grades": [
-        {"grade": "A+", "points": 4.0, "percentage": "97-100"},
-        {"grade": "A", "points": 4.0, "percentage": "93-96"},
-        {"grade": "A-", "points": 3.7, "percentage": "90-92"},
-        {"grade": "B+", "points": 3.3, "percentage": "87-89"},
-        {"grade": "B", "points": 3.0, "percentage": "83-86"},
-        {"grade": "B-", "points": 2.7, "percentage": "80-82"},
-        {"grade": "C+", "points": 2.3, "percentage": "77-79"},
-        {"grade": "C", "points": 2.0, "percentage": "73-76"},
-        {"grade": "C-", "points": 1.7, "percentage": "70-72"},
-        {"grade": "D+", "points": 1.3, "percentage": "67-69"},
-        {"grade": "D", "points": 1.0, "percentage": "63-66"},
-        {"grade": "D-", "points": 0.7, "percentage": "60-62"},
-        {"grade": "F", "points": 0.0, "percentage": "0-59"}
+        {
+          "grade": "A+",
+          "points": 4.0,
+          "percentage": "97-100"
+        },
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "93-96"
+        },
+        {
+          "grade": "A-",
+          "points": 3.7,
+          "percentage": "90-92"
+        },
+        {
+          "grade": "B+",
+          "points": 3.3,
+          "percentage": "87-89"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "83-86"
+        },
+        {
+          "grade": "B-",
+          "points": 2.7,
+          "percentage": "80-82"
+        },
+        {
+          "grade": "C+",
+          "points": 2.3,
+          "percentage": "77-79"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "73-76"
+        },
+        {
+          "grade": "C-",
+          "points": 1.7,
+          "percentage": "70-72"
+        },
+        {
+          "grade": "D+",
+          "points": 1.3,
+          "percentage": "67-69"
+        },
+        {
+          "grade": "D",
+          "points": 1.0,
+          "percentage": "63-66"
+        },
+        {
+          "grade": "D-",
+          "points": 0.7,
+          "percentage": "60-62"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-59"
+        }
       ]
     },
     {
       "id": "us_umich_4_0",
       "name": "University of Michigan (US 4.0 GPA)",
       "institution": "University of Michigan",
-      "aliases": ["U-M", "UMich", "Michigan"],
-      "keywords": ["US", "4.0", "Public"],
+      "aliases": [
+        "U-M",
+        "UMich",
+        "Michigan"
+      ],
+      "keywords": [
+        "US",
+        "4.0",
+        "Public"
+      ],
       "country": "United States",
       "region": "North America",
       "description": "University of Michigan standard letter-grade scale",
       "scale": 4.0,
       "grades": [
-        {"grade": "A+", "points": 4.0, "percentage": "97-100"},
-        {"grade": "A", "points": 4.0, "percentage": "93-96"},
-        {"grade": "A-", "points": 3.7, "percentage": "90-92"},
-        {"grade": "B+", "points": 3.3, "percentage": "87-89"},
-        {"grade": "B", "points": 3.0, "percentage": "83-86"},
-        {"grade": "B-", "points": 2.7, "percentage": "80-82"},
-        {"grade": "C+", "points": 2.3, "percentage": "77-79"},
-        {"grade": "C", "points": 2.0, "percentage": "73-76"},
-        {"grade": "C-", "points": 1.7, "percentage": "70-72"},
-        {"grade": "D+", "points": 1.3, "percentage": "67-69"},
-        {"grade": "D", "points": 1.0, "percentage": "63-66"},
-        {"grade": "D-", "points": 0.7, "percentage": "60-62"},
-        {"grade": "F", "points": 0.0, "percentage": "0-59"}
+        {
+          "grade": "A+",
+          "points": 4.0,
+          "percentage": "97-100"
+        },
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "93-96"
+        },
+        {
+          "grade": "A-",
+          "points": 3.7,
+          "percentage": "90-92"
+        },
+        {
+          "grade": "B+",
+          "points": 3.3,
+          "percentage": "87-89"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "83-86"
+        },
+        {
+          "grade": "B-",
+          "points": 2.7,
+          "percentage": "80-82"
+        },
+        {
+          "grade": "C+",
+          "points": 2.3,
+          "percentage": "77-79"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "73-76"
+        },
+        {
+          "grade": "C-",
+          "points": 1.7,
+          "percentage": "70-72"
+        },
+        {
+          "grade": "D+",
+          "points": 1.3,
+          "percentage": "67-69"
+        },
+        {
+          "grade": "D",
+          "points": 1.0,
+          "percentage": "63-66"
+        },
+        {
+          "grade": "D-",
+          "points": 0.7,
+          "percentage": "60-62"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-59"
+        }
       ]
     },
     {
       "id": "us_texas_austin_4_0",
       "name": "UT Austin (US 4.0 GPA)",
       "institution": "The University of Texas at Austin",
-      "aliases": ["UT Austin", "Texas", "UTA"],
-      "keywords": ["US", "4.0", "Public"],
+      "aliases": [
+        "UT Austin",
+        "Texas",
+        "UTA"
+      ],
+      "keywords": [
+        "US",
+        "4.0",
+        "Public"
+      ],
       "country": "United States",
       "region": "North America",
       "description": "UT Austin standard letter-grade scale",
       "scale": 4.0,
       "grades": [
-        {"grade": "A+", "points": 4.0, "percentage": "97-100"},
-        {"grade": "A", "points": 4.0, "percentage": "93-96"},
-        {"grade": "A-", "points": 3.7, "percentage": "90-92"},
-        {"grade": "B+", "points": 3.3, "percentage": "87-89"},
-        {"grade": "B", "points": 3.0, "percentage": "83-86"},
-        {"grade": "B-", "points": 2.7, "percentage": "80-82"},
-        {"grade": "C+", "points": 2.3, "percentage": "77-79"},
-        {"grade": "C", "points": 2.0, "percentage": "73-76"},
-        {"grade": "C-", "points": 1.7, "percentage": "70-72"},
-        {"grade": "D+", "points": 1.3, "percentage": "67-69"},
-        {"grade": "D", "points": 1.0, "percentage": "63-66"},
-        {"grade": "D-", "points": 0.7, "percentage": "60-62"},
-        {"grade": "F", "points": 0.0, "percentage": "0-59"}
+        {
+          "grade": "A+",
+          "points": 4.0,
+          "percentage": "97-100"
+        },
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "93-96"
+        },
+        {
+          "grade": "A-",
+          "points": 3.7,
+          "percentage": "90-92"
+        },
+        {
+          "grade": "B+",
+          "points": 3.3,
+          "percentage": "87-89"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "83-86"
+        },
+        {
+          "grade": "B-",
+          "points": 2.7,
+          "percentage": "80-82"
+        },
+        {
+          "grade": "C+",
+          "points": 2.3,
+          "percentage": "77-79"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "73-76"
+        },
+        {
+          "grade": "C-",
+          "points": 1.7,
+          "percentage": "70-72"
+        },
+        {
+          "grade": "D+",
+          "points": 1.3,
+          "percentage": "67-69"
+        },
+        {
+          "grade": "D",
+          "points": 1.0,
+          "percentage": "63-66"
+        },
+        {
+          "grade": "D-",
+          "points": 0.7,
+          "percentage": "60-62"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-59"
+        }
       ]
     },
     {
       "id": "us_cmu_4_0",
       "name": "Carnegie Mellon University (US 4.0 GPA)",
       "institution": "Carnegie Mellon University",
-      "aliases": ["CMU"],
-      "keywords": ["US", "4.0", "Tech"],
+      "aliases": [
+        "CMU"
+      ],
+      "keywords": [
+        "US",
+        "4.0",
+        "Tech"
+      ],
       "country": "United States",
       "region": "North America",
       "description": "CMU standard letter-grade scale",
       "scale": 4.0,
       "grades": [
-        {"grade": "A+", "points": 4.0, "percentage": "97-100"},
-        {"grade": "A", "points": 4.0, "percentage": "93-96"},
-        {"grade": "A-", "points": 3.7, "percentage": "90-92"},
-        {"grade": "B+", "points": 3.3, "percentage": "87-89"},
-        {"grade": "B", "points": 3.0, "percentage": "83-86"},
-        {"grade": "B-", "points": 2.7, "percentage": "80-82"},
-        {"grade": "C+", "points": 2.3, "percentage": "77-79"},
-        {"grade": "C", "points": 2.0, "percentage": "73-76"},
-        {"grade": "C-", "points": 1.7, "percentage": "70-72"},
-        {"grade": "D+", "points": 1.3, "percentage": "67-69"},
-        {"grade": "D", "points": 1.0, "percentage": "63-66"},
-        {"grade": "D-", "points": 0.7, "percentage": "60-62"},
-        {"grade": "F", "points": 0.0, "percentage": "0-59"}
+        {
+          "grade": "A+",
+          "points": 4.0,
+          "percentage": "97-100"
+        },
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "93-96"
+        },
+        {
+          "grade": "A-",
+          "points": 3.7,
+          "percentage": "90-92"
+        },
+        {
+          "grade": "B+",
+          "points": 3.3,
+          "percentage": "87-89"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "83-86"
+        },
+        {
+          "grade": "B-",
+          "points": 2.7,
+          "percentage": "80-82"
+        },
+        {
+          "grade": "C+",
+          "points": 2.3,
+          "percentage": "77-79"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "73-76"
+        },
+        {
+          "grade": "C-",
+          "points": 1.7,
+          "percentage": "70-72"
+        },
+        {
+          "grade": "D+",
+          "points": 1.3,
+          "percentage": "67-69"
+        },
+        {
+          "grade": "D",
+          "points": 1.0,
+          "percentage": "63-66"
+        },
+        {
+          "grade": "D-",
+          "points": 0.7,
+          "percentage": "60-62"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-59"
+        }
       ]
     },
     {
       "id": "us_gatech_4_0",
       "name": "Georgia Tech (US 4.0 GPA)",
       "institution": "Georgia Institute of Technology",
-      "aliases": ["Georgia Tech", "GaTech"],
-      "keywords": ["US", "4.0", "Engineering"],
+      "aliases": [
+        "Georgia Tech",
+        "GaTech"
+      ],
+      "keywords": [
+        "US",
+        "4.0",
+        "Engineering"
+      ],
       "country": "United States",
       "region": "North America",
       "description": "Georgia Tech standard letter-grade scale",
       "scale": 4.0,
       "grades": [
-        {"grade": "A+", "points": 4.0, "percentage": "97-100"},
-        {"grade": "A", "points": 4.0, "percentage": "93-96"},
-        {"grade": "A-", "points": 3.7, "percentage": "90-92"},
-        {"grade": "B+", "points": 3.3, "percentage": "87-89"},
-        {"grade": "B", "points": 3.0, "percentage": "83-86"},
-        {"grade": "B-", "points": 2.7, "percentage": "80-82"},
-        {"grade": "C+", "points": 2.3, "percentage": "77-79"},
-        {"grade": "C", "points": 2.0, "percentage": "73-76"},
-        {"grade": "C-", "points": 1.7, "percentage": "70-72"},
-        {"grade": "D+", "points": 1.3, "percentage": "67-69"},
-        {"grade": "D", "points": 1.0, "percentage": "63-66"},
-        {"grade": "D-", "points": 0.7, "percentage": "60-62"},
-        {"grade": "F", "points": 0.0, "percentage": "0-59"}
+        {
+          "grade": "A+",
+          "points": 4.0,
+          "percentage": "97-100"
+        },
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "93-96"
+        },
+        {
+          "grade": "A-",
+          "points": 3.7,
+          "percentage": "90-92"
+        },
+        {
+          "grade": "B+",
+          "points": 3.3,
+          "percentage": "87-89"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "83-86"
+        },
+        {
+          "grade": "B-",
+          "points": 2.7,
+          "percentage": "80-82"
+        },
+        {
+          "grade": "C+",
+          "points": 2.3,
+          "percentage": "77-79"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "73-76"
+        },
+        {
+          "grade": "C-",
+          "points": 1.7,
+          "percentage": "70-72"
+        },
+        {
+          "grade": "D+",
+          "points": 1.3,
+          "percentage": "67-69"
+        },
+        {
+          "grade": "D",
+          "points": 1.0,
+          "percentage": "63-66"
+        },
+        {
+          "grade": "D-",
+          "points": 0.7,
+          "percentage": "60-62"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-59"
+        }
       ]
     },
     {
       "id": "us_uiuc_4_0",
       "name": "UIUC (US 4.0 GPA)",
       "institution": "University of Illinois Urbana-Champaign",
-      "aliases": ["UIUC", "Illinois"],
-      "keywords": ["US", "4.0", "Public"],
+      "aliases": [
+        "UIUC",
+        "Illinois"
+      ],
+      "keywords": [
+        "US",
+        "4.0",
+        "Public"
+      ],
       "country": "United States",
       "region": "North America",
       "description": "UIUC standard letter-grade scale",
       "scale": 4.0,
       "grades": [
-        {"grade": "A+", "points": 4.0, "percentage": "97-100"},
-        {"grade": "A", "points": 4.0, "percentage": "93-96"},
-        {"grade": "A-", "points": 3.7, "percentage": "90-92"},
-        {"grade": "B+", "points": 3.3, "percentage": "87-89"},
-        {"grade": "B", "points": 3.0, "percentage": "83-86"},
-        {"grade": "B-", "points": 2.7, "percentage": "80-82"},
-        {"grade": "C+", "points": 2.3, "percentage": "77-79"},
-        {"grade": "C", "points": 2.0, "percentage": "73-76"},
-        {"grade": "C-", "points": 1.7, "percentage": "70-72"},
-        {"grade": "D+", "points": 1.3, "percentage": "67-69"},
-        {"grade": "D", "points": 1.0, "percentage": "63-66"},
-        {"grade": "D-", "points": 0.7, "percentage": "60-62"},
-        {"grade": "F", "points": 0.0, "percentage": "0-59"}
+        {
+          "grade": "A+",
+          "points": 4.0,
+          "percentage": "97-100"
+        },
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "93-96"
+        },
+        {
+          "grade": "A-",
+          "points": 3.7,
+          "percentage": "90-92"
+        },
+        {
+          "grade": "B+",
+          "points": 3.3,
+          "percentage": "87-89"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "83-86"
+        },
+        {
+          "grade": "B-",
+          "points": 2.7,
+          "percentage": "80-82"
+        },
+        {
+          "grade": "C+",
+          "points": 2.3,
+          "percentage": "77-79"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "73-76"
+        },
+        {
+          "grade": "C-",
+          "points": 1.7,
+          "percentage": "70-72"
+        },
+        {
+          "grade": "D+",
+          "points": 1.3,
+          "percentage": "67-69"
+        },
+        {
+          "grade": "D",
+          "points": 1.0,
+          "percentage": "63-66"
+        },
+        {
+          "grade": "D-",
+          "points": 0.7,
+          "percentage": "60-62"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-59"
+        }
       ]
     },
     {
       "id": "us_columbia_4_0",
       "name": "Columbia University (US 4.0 GPA)",
       "institution": "Columbia University",
-      "aliases": ["Columbia"],
-      "keywords": ["US", "4.0", "Ivy League"],
+      "aliases": [
+        "Columbia"
+      ],
+      "keywords": [
+        "US",
+        "4.0",
+        "Ivy League"
+      ],
       "country": "United States",
       "region": "North America",
       "description": "Columbia standard letter-grade scale",
       "scale": 4.0,
       "grades": [
-        {"grade": "A+", "points": 4.0, "percentage": "97-100"},
-        {"grade": "A", "points": 4.0, "percentage": "93-96"},
-        {"grade": "A-", "points": 3.7, "percentage": "90-92"},
-        {"grade": "B+", "points": 3.3, "percentage": "87-89"},
-        {"grade": "B", "points": 3.0, "percentage": "83-86"},
-        {"grade": "B-", "points": 2.7, "percentage": "80-82"},
-        {"grade": "C+", "points": 2.3, "percentage": "77-79"},
-        {"grade": "C", "points": 2.0, "percentage": "73-76"},
-        {"grade": "C-", "points": 1.7, "percentage": "70-72"},
-        {"grade": "D+", "points": 1.3, "percentage": "67-69"},
-        {"grade": "D", "points": 1.0, "percentage": "63-66"},
-        {"grade": "D-", "points": 0.7, "percentage": "60-62"},
-        {"grade": "F", "points": 0.0, "percentage": "0-59"}
+        {
+          "grade": "A+",
+          "points": 4.0,
+          "percentage": "97-100"
+        },
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "93-96"
+        },
+        {
+          "grade": "A-",
+          "points": 3.7,
+          "percentage": "90-92"
+        },
+        {
+          "grade": "B+",
+          "points": 3.3,
+          "percentage": "87-89"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "83-86"
+        },
+        {
+          "grade": "B-",
+          "points": 2.7,
+          "percentage": "80-82"
+        },
+        {
+          "grade": "C+",
+          "points": 2.3,
+          "percentage": "77-79"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "73-76"
+        },
+        {
+          "grade": "C-",
+          "points": 1.7,
+          "percentage": "70-72"
+        },
+        {
+          "grade": "D+",
+          "points": 1.3,
+          "percentage": "67-69"
+        },
+        {
+          "grade": "D",
+          "points": 1.0,
+          "percentage": "63-66"
+        },
+        {
+          "grade": "D-",
+          "points": 0.7,
+          "percentage": "60-62"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-59"
+        }
       ]
     },
     {
       "id": "ca_ubc_4_33",
       "name": "University of British Columbia (Canada 4.33)",
       "institution": "The University of British Columbia",
-      "aliases": ["UBC"],
-      "keywords": ["Canada", "4.33", "British Columbia"],
+      "aliases": [
+        "UBC"
+      ],
+      "keywords": [
+        "Canada",
+        "4.33",
+        "British Columbia"
+      ],
       "country": "Canada",
       "region": "North America",
       "description": "UBC 4.33-point scale",
       "scale": 4.33,
       "grades": [
-        {"grade": "A+", "points": 4.33, "percentage": "90-100"},
-        {"grade": "A", "points": 4.0, "percentage": "85-89"},
-        {"grade": "A-", "points": 3.67, "percentage": "80-84"},
-        {"grade": "B+", "points": 3.33, "percentage": "75-79"},
-        {"grade": "B", "points": 3.0, "percentage": "70-74"},
-        {"grade": "B-", "points": 2.67, "percentage": "65-69"},
-        {"grade": "C+", "points": 2.33, "percentage": "60-64"},
-        {"grade": "C", "points": 2.0, "percentage": "55-59"},
-        {"grade": "C-", "points": 1.67, "percentage": "50-54"},
-        {"grade": "D", "points": 1.0, "percentage": "40-49"},
-        {"grade": "F", "points": 0.0, "percentage": "0-39"}
+        {
+          "grade": "A+",
+          "points": 4.33,
+          "percentage": "90-100"
+        },
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "85-89"
+        },
+        {
+          "grade": "A-",
+          "points": 3.67,
+          "percentage": "80-84"
+        },
+        {
+          "grade": "B+",
+          "points": 3.33,
+          "percentage": "75-79"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "70-74"
+        },
+        {
+          "grade": "B-",
+          "points": 2.67,
+          "percentage": "65-69"
+        },
+        {
+          "grade": "C+",
+          "points": 2.33,
+          "percentage": "60-64"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "55-59"
+        },
+        {
+          "grade": "C-",
+          "points": 1.67,
+          "percentage": "50-54"
+        },
+        {
+          "grade": "D",
+          "points": 1.0,
+          "percentage": "40-49"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-39"
+        }
       ]
     },
     {
       "id": "ca_sfu_4_33",
       "name": "Simon Fraser University (Canada 4.33)",
       "institution": "Simon Fraser University",
-      "aliases": ["SFU"],
-      "keywords": ["Canada", "4.33"],
+      "aliases": [
+        "SFU"
+      ],
+      "keywords": [
+        "Canada",
+        "4.33"
+      ],
       "country": "Canada",
       "region": "North America",
       "description": "SFU 4.33-point scale",
       "scale": 4.33,
       "grades": [
-        {"grade": "A+", "points": 4.33, "percentage": "90-100"},
-        {"grade": "A", "points": 4.0, "percentage": "85-89"},
-        {"grade": "A-", "points": 3.67, "percentage": "80-84"},
-        {"grade": "B+", "points": 3.33, "percentage": "75-79"},
-        {"grade": "B", "points": 3.0, "percentage": "70-74"},
-        {"grade": "B-", "points": 2.67, "percentage": "65-69"},
-        {"grade": "C+", "points": 2.33, "percentage": "60-64"},
-        {"grade": "C", "points": 2.0, "percentage": "55-59"},
-        {"grade": "C-", "points": 1.67, "percentage": "50-54"},
-        {"grade": "D", "points": 1.0, "percentage": "40-49"},
-        {"grade": "F", "points": 0.0, "percentage": "0-39"}
+        {
+          "grade": "A+",
+          "points": 4.33,
+          "percentage": "90-100"
+        },
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "85-89"
+        },
+        {
+          "grade": "A-",
+          "points": 3.67,
+          "percentage": "80-84"
+        },
+        {
+          "grade": "B+",
+          "points": 3.33,
+          "percentage": "75-79"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "70-74"
+        },
+        {
+          "grade": "B-",
+          "points": 2.67,
+          "percentage": "65-69"
+        },
+        {
+          "grade": "C+",
+          "points": 2.33,
+          "percentage": "60-64"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "55-59"
+        },
+        {
+          "grade": "C-",
+          "points": 1.67,
+          "percentage": "50-54"
+        },
+        {
+          "grade": "D",
+          "points": 1.0,
+          "percentage": "40-49"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-39"
+        }
       ]
     },
     {
       "id": "ca_utoronto_4_0",
       "name": "University of Toronto (Canada 4.0)",
       "institution": "University of Toronto",
-      "aliases": ["U of T", "UofT"],
-      "keywords": ["Canada", "4.0", "Ontario"],
+      "aliases": [
+        "U of T",
+        "UofT"
+      ],
+      "keywords": [
+        "Canada",
+        "4.0",
+        "Ontario"
+      ],
       "country": "Canada",
       "region": "North America",
       "description": "U of T 4.0-point scale",
       "scale": 4.0,
       "grades": [
-        {"grade": "A+", "points": 4.0, "percentage": "90-100"},
-        {"grade": "A", "points": 4.0, "percentage": "85-89"},
-        {"grade": "A-", "points": 3.7, "percentage": "80-84"},
-        {"grade": "B+", "points": 3.3, "percentage": "77-79"},
-        {"grade": "B", "points": 3.0, "percentage": "73-76"},
-        {"grade": "B-", "points": 2.7, "percentage": "70-72"},
-        {"grade": "C+", "points": 2.3, "percentage": "67-69"},
-        {"grade": "C", "points": 2.0, "percentage": "63-66"},
-        {"grade": "C-", "points": 1.7, "percentage": "60-62"},
-        {"grade": "D", "points": 1.0, "percentage": "50-59"},
-        {"grade": "F", "points": 0.0, "percentage": "0-49"}
+        {
+          "grade": "A+",
+          "points": 4.0,
+          "percentage": "90-100"
+        },
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "85-89"
+        },
+        {
+          "grade": "A-",
+          "points": 3.7,
+          "percentage": "80-84"
+        },
+        {
+          "grade": "B+",
+          "points": 3.3,
+          "percentage": "77-79"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "73-76"
+        },
+        {
+          "grade": "B-",
+          "points": 2.7,
+          "percentage": "70-72"
+        },
+        {
+          "grade": "C+",
+          "points": 2.3,
+          "percentage": "67-69"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "63-66"
+        },
+        {
+          "grade": "C-",
+          "points": 1.7,
+          "percentage": "60-62"
+        },
+        {
+          "grade": "D",
+          "points": 1.0,
+          "percentage": "50-59"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-49"
+        }
       ]
     },
     {
       "id": "ca_waterloo_4_0",
       "name": "University of Waterloo (Canada 4.0)",
       "institution": "University of Waterloo",
-      "aliases": ["Waterloo", "UWaterloo"],
-      "keywords": ["Canada", "4.0", "Ontario"],
+      "aliases": [
+        "Waterloo",
+        "UWaterloo"
+      ],
+      "keywords": [
+        "Canada",
+        "4.0",
+        "Ontario"
+      ],
       "country": "Canada",
       "region": "North America",
       "description": "Waterloo 4.0-point scale",
       "scale": 4.0,
       "grades": [
-        {"grade": "A+", "points": 4.0, "percentage": "90-100"},
-        {"grade": "A", "points": 4.0, "percentage": "85-89"},
-        {"grade": "A-", "points": 3.7, "percentage": "80-84"},
-        {"grade": "B+", "points": 3.3, "percentage": "77-79"},
-        {"grade": "B", "points": 3.0, "percentage": "73-76"},
-        {"grade": "B-", "points": 2.7, "percentage": "70-72"},
-        {"grade": "C+", "points": 2.3, "percentage": "67-69"},
-        {"grade": "C", "points": 2.0, "percentage": "63-66"},
-        {"grade": "C-", "points": 1.7, "percentage": "60-62"},
-        {"grade": "D", "points": 1.0, "percentage": "50-59"},
-        {"grade": "F", "points": 0.0, "percentage": "0-49"}
+        {
+          "grade": "A+",
+          "points": 4.0,
+          "percentage": "90-100"
+        },
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "85-89"
+        },
+        {
+          "grade": "A-",
+          "points": 3.7,
+          "percentage": "80-84"
+        },
+        {
+          "grade": "B+",
+          "points": 3.3,
+          "percentage": "77-79"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "73-76"
+        },
+        {
+          "grade": "B-",
+          "points": 2.7,
+          "percentage": "70-72"
+        },
+        {
+          "grade": "C+",
+          "points": 2.3,
+          "percentage": "67-69"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "63-66"
+        },
+        {
+          "grade": "C-",
+          "points": 1.7,
+          "percentage": "60-62"
+        },
+        {
+          "grade": "D",
+          "points": 1.0,
+          "percentage": "50-59"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-49"
+        }
       ]
     },
     {
       "id": "uk_oxford_first",
       "name": "University of Oxford (UK Classification)",
       "institution": "University of Oxford",
-      "aliases": ["Oxford"],
-      "keywords": ["UK", "Classification", "First Class"],
+      "aliases": [
+        "Oxford"
+      ],
+      "keywords": [
+        "UK",
+        "Classification",
+        "First Class"
+      ],
       "country": "United Kingdom",
       "region": "Europe",
       "description": "UK classification system",
       "scale": 1.0,
       "grades": [
-        {"grade": "First", "points": 1.0, "percentage": "70-100", "description": "First Class Honours"},
-        {"grade": "2:1", "points": 0.7, "percentage": "60-69", "description": "Upper Second Class"},
-        {"grade": "2:2", "points": 0.5, "percentage": "50-59", "description": "Lower Second Class"},
-        {"grade": "Third", "points": 0.3, "percentage": "40-49", "description": "Third Class Honours"},
-        {"grade": "Pass", "points": 0.1, "percentage": "35-39", "description": "Pass"},
-        {"grade": "Fail", "points": 0.0, "percentage": "0-34", "description": "Fail"}
+        {
+          "grade": "First",
+          "points": 1.0,
+          "percentage": "70-100",
+          "description": "First Class Honours"
+        },
+        {
+          "grade": "2:1",
+          "points": 0.7,
+          "percentage": "60-69",
+          "description": "Upper Second Class"
+        },
+        {
+          "grade": "2:2",
+          "points": 0.5,
+          "percentage": "50-59",
+          "description": "Lower Second Class"
+        },
+        {
+          "grade": "Third",
+          "points": 0.3,
+          "percentage": "40-49",
+          "description": "Third Class Honours"
+        },
+        {
+          "grade": "Pass",
+          "points": 0.1,
+          "percentage": "35-39",
+          "description": "Pass"
+        },
+        {
+          "grade": "Fail",
+          "points": 0.0,
+          "percentage": "0-34",
+          "description": "Fail"
+        }
       ]
     },
     {
       "id": "uk_cambridge_first",
       "name": "University of Cambridge (UK Classification)",
       "institution": "University of Cambridge",
-      "aliases": ["Cambridge", "Cam"],
-      "keywords": ["UK", "Classification"],
+      "aliases": [
+        "Cambridge",
+        "Cam"
+      ],
+      "keywords": [
+        "UK",
+        "Classification"
+      ],
       "country": "United Kingdom",
       "region": "Europe",
       "description": "UK classification system",
       "scale": 1.0,
       "grades": [
-        {"grade": "First", "points": 1.0, "percentage": "70-100", "description": "First Class Honours"},
-        {"grade": "2:1", "points": 0.7, "percentage": "60-69", "description": "Upper Second Class"},
-        {"grade": "2:2", "points": 0.5, "percentage": "50-59", "description": "Lower Second Class"},
-        {"grade": "Third", "points": 0.3, "percentage": "40-49", "description": "Third Class Honours"},
-        {"grade": "Pass", "points": 0.1, "percentage": "35-39", "description": "Pass"},
-        {"grade": "Fail", "points": 0.0, "percentage": "0-34", "description": "Fail"}
+        {
+          "grade": "First",
+          "points": 1.0,
+          "percentage": "70-100",
+          "description": "First Class Honours"
+        },
+        {
+          "grade": "2:1",
+          "points": 0.7,
+          "percentage": "60-69",
+          "description": "Upper Second Class"
+        },
+        {
+          "grade": "2:2",
+          "points": 0.5,
+          "percentage": "50-59",
+          "description": "Lower Second Class"
+        },
+        {
+          "grade": "Third",
+          "points": 0.3,
+          "percentage": "40-49",
+          "description": "Third Class Honours"
+        },
+        {
+          "grade": "Pass",
+          "points": 0.1,
+          "percentage": "35-39",
+          "description": "Pass"
+        },
+        {
+          "grade": "Fail",
+          "points": 0.0,
+          "percentage": "0-34",
+          "description": "Fail"
+        }
       ]
     },
     {
       "id": "uk_imperial_first",
       "name": "Imperial College London (UK Classification)",
       "institution": "Imperial College London",
-      "aliases": ["Imperial", "ICL"],
-      "keywords": ["UK", "Classification", "Engineering"],
+      "aliases": [
+        "Imperial",
+        "ICL"
+      ],
+      "keywords": [
+        "UK",
+        "Classification",
+        "Engineering"
+      ],
       "country": "United Kingdom",
       "region": "Europe",
       "description": "UK classification system",
       "scale": 1.0,
       "grades": [
-        {"grade": "First", "points": 1.0, "percentage": "70-100", "description": "First Class Honours"},
-        {"grade": "2:1", "points": 0.7, "percentage": "60-69", "description": "Upper Second Class"},
-        {"grade": "2:2", "points": 0.5, "percentage": "50-59", "description": "Lower Second Class"},
-        {"grade": "Third", "points": 0.3, "percentage": "40-49", "description": "Third Class Honours"},
-        {"grade": "Pass", "points": 0.1, "percentage": "35-39", "description": "Pass"},
-        {"grade": "Fail", "points": 0.0, "percentage": "0-34", "description": "Fail"}
+        {
+          "grade": "First",
+          "points": 1.0,
+          "percentage": "70-100",
+          "description": "First Class Honours"
+        },
+        {
+          "grade": "2:1",
+          "points": 0.7,
+          "percentage": "60-69",
+          "description": "Upper Second Class"
+        },
+        {
+          "grade": "2:2",
+          "points": 0.5,
+          "percentage": "50-59",
+          "description": "Lower Second Class"
+        },
+        {
+          "grade": "Third",
+          "points": 0.3,
+          "percentage": "40-49",
+          "description": "Third Class Honours"
+        },
+        {
+          "grade": "Pass",
+          "points": 0.1,
+          "percentage": "35-39",
+          "description": "Pass"
+        },
+        {
+          "grade": "Fail",
+          "points": 0.0,
+          "percentage": "0-34",
+          "description": "Fail"
+        }
       ]
     },
     {
       "id": "au_melbourne_hd",
       "name": "University of Melbourne (Australia 7.0 HD)",
       "institution": "The University of Melbourne",
-      "aliases": ["UniMelb"],
-      "keywords": ["Australia", "7.0", "HD"],
+      "aliases": [
+        "UniMelb"
+      ],
+      "keywords": [
+        "Australia",
+        "7.0",
+        "HD"
+      ],
       "country": "Australia",
       "region": "Oceania",
       "description": "Australian HD/D/C/P system",
       "scale": 7.0,
       "grades": [
-        {"grade": "HD", "points": 7.0, "percentage": "85-100", "description": "High Distinction"},
-        {"grade": "D", "points": 6.0, "percentage": "75-84", "description": "Distinction"},
-        {"grade": "C", "points": 5.0, "percentage": "65-74", "description": "Credit"},
-        {"grade": "P", "points": 4.0, "percentage": "50-64", "description": "Pass"},
-        {"grade": "F", "points": 0.0, "percentage": "0-49", "description": "Fail"}
+        {
+          "grade": "HD",
+          "points": 7.0,
+          "percentage": "85-100",
+          "description": "High Distinction"
+        },
+        {
+          "grade": "D",
+          "points": 6.0,
+          "percentage": "75-84",
+          "description": "Distinction"
+        },
+        {
+          "grade": "C",
+          "points": 5.0,
+          "percentage": "65-74",
+          "description": "Credit"
+        },
+        {
+          "grade": "P",
+          "points": 4.0,
+          "percentage": "50-64",
+          "description": "Pass"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-49",
+          "description": "Fail"
+        }
       ]
     },
     {
       "id": "au_sydney_hd",
       "name": "University of Sydney (Australia 7.0 HD)",
       "institution": "The University of Sydney",
-      "aliases": ["USYD"],
-      "keywords": ["Australia", "7.0", "HD"],
+      "aliases": [
+        "USYD"
+      ],
+      "keywords": [
+        "Australia",
+        "7.0",
+        "HD"
+      ],
       "country": "Australia",
       "region": "Oceania",
       "description": "Australian HD/D/C/P system",
       "scale": 7.0,
       "grades": [
-        {"grade": "HD", "points": 7.0, "percentage": "85-100", "description": "High Distinction"},
-        {"grade": "D", "points": 6.0, "percentage": "75-84", "description": "Distinction"},
-        {"grade": "C", "points": 5.0, "percentage": "65-74", "description": "Credit"},
-        {"grade": "P", "points": 4.0, "percentage": "50-64", "description": "Pass"},
-        {"grade": "F", "points": 0.0, "percentage": "0-49", "description": "Fail"}
+        {
+          "grade": "HD",
+          "points": 7.0,
+          "percentage": "85-100",
+          "description": "High Distinction"
+        },
+        {
+          "grade": "D",
+          "points": 6.0,
+          "percentage": "75-84",
+          "description": "Distinction"
+        },
+        {
+          "grade": "C",
+          "points": 5.0,
+          "percentage": "65-74",
+          "description": "Credit"
+        },
+        {
+          "grade": "P",
+          "points": 4.0,
+          "percentage": "50-64",
+          "description": "Pass"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-49",
+          "description": "Fail"
+        }
       ]
     },
     {
       "id": "de_tum_1_6",
       "name": "TU Munich (Germany 1-6)",
       "institution": "Technical University of Munich",
-      "aliases": ["TUM"],
-      "keywords": ["Germany", "1.0", "Best is 1"],
+      "aliases": [
+        "TUM"
+      ],
+      "keywords": [
+        "Germany",
+        "1.0",
+        "Best is 1"
+      ],
       "country": "Germany",
       "region": "Europe",
       "description": "German numeric scale (1=best, higher=worse)",
       "scale": 6.0,
       "grades": [
-        {"grade": "1.0", "points": 1.0, "percentage": "95-100", "description": "Sehr gut (Very Good)"},
-        {"grade": "1.3", "points": 1.3, "percentage": "90-94", "description": "Sehr gut"},
-        {"grade": "1.7", "points": 1.7, "percentage": "85-89", "description": "Gut (Good)"},
-        {"grade": "2.0", "points": 2.0, "percentage": "80-84", "description": "Gut"},
-        {"grade": "2.3", "points": 2.3, "percentage": "75-79", "description": "Befriedigend (Satisfactory)"},
-        {"grade": "2.7", "points": 2.7, "percentage": "70-74", "description": "Befriedigend"},
-        {"grade": "3.0", "points": 3.0, "percentage": "65-69", "description": "Ausreichend (Sufficient)"},
-        {"grade": "3.3", "points": 3.3, "percentage": "60-64", "description": "Ausreichend"},
-        {"grade": "3.7", "points": 3.7, "percentage": "55-59", "description": "Mangelhaft (Insufficient)"},
-        {"grade": "4.0", "points": 4.0, "percentage": "50-54", "description": "Mangelhaft"},
-        {"grade": "5.0", "points": 5.0, "percentage": "0-49", "description": "Ungenügend (Inadequate)"}
+        {
+          "grade": "1.0",
+          "points": 1.0,
+          "percentage": "95-100",
+          "description": "Sehr gut (Very Good)"
+        },
+        {
+          "grade": "1.3",
+          "points": 1.3,
+          "percentage": "90-94",
+          "description": "Sehr gut"
+        },
+        {
+          "grade": "1.7",
+          "points": 1.7,
+          "percentage": "85-89",
+          "description": "Gut (Good)"
+        },
+        {
+          "grade": "2.0",
+          "points": 2.0,
+          "percentage": "80-84",
+          "description": "Gut"
+        },
+        {
+          "grade": "2.3",
+          "points": 2.3,
+          "percentage": "75-79",
+          "description": "Befriedigend (Satisfactory)"
+        },
+        {
+          "grade": "2.7",
+          "points": 2.7,
+          "percentage": "70-74",
+          "description": "Befriedigend"
+        },
+        {
+          "grade": "3.0",
+          "points": 3.0,
+          "percentage": "65-69",
+          "description": "Ausreichend (Sufficient)"
+        },
+        {
+          "grade": "3.3",
+          "points": 3.3,
+          "percentage": "60-64",
+          "description": "Ausreichend"
+        },
+        {
+          "grade": "3.7",
+          "points": 3.7,
+          "percentage": "55-59",
+          "description": "Mangelhaft (Insufficient)"
+        },
+        {
+          "grade": "4.0",
+          "points": 4.0,
+          "percentage": "50-54",
+          "description": "Mangelhaft"
+        },
+        {
+          "grade": "5.0",
+          "points": 5.0,
+          "percentage": "0-49",
+          "description": "Ungenügend (Inadequate)"
+        }
       ]
     },
     {
       "id": "fr_sorbonne_20",
       "name": "Sorbonne University (France 20)",
       "institution": "Sorbonne University",
-      "aliases": ["Sorbonne", "UPMC"],
-      "keywords": ["France", "20-point"],
+      "aliases": [
+        "Sorbonne",
+        "UPMC"
+      ],
+      "keywords": [
+        "France",
+        "20-point"
+      ],
       "country": "France",
       "region": "Europe",
       "description": "French 0-20 scale",
       "scale": 20.0,
       "grades": [
-        {"grade": "20", "points": 20.0, "percentage": "95-100", "description": "Excellent"},
-        {"grade": "19", "points": 19.0, "percentage": "90-94", "description": "Très bien"},
-        {"grade": "18", "points": 18.0, "percentage": "85-89", "description": "Très bien"},
-        {"grade": "17", "points": 17.0, "percentage": "80-84", "description": "Bien"},
-        {"grade": "16", "points": 16.0, "percentage": "75-79", "description": "Bien"},
-        {"grade": "15", "points": 15.0, "percentage": "70-74", "description": "Assez bien"},
-        {"grade": "14", "points": 14.0, "percentage": "65-69", "description": "Assez bien"},
-        {"grade": "13", "points": 13.0, "percentage": "60-64", "description": "Passable"},
-        {"grade": "12", "points": 12.0, "percentage": "55-59", "description": "Passable"},
-        {"grade": "11", "points": 11.0, "percentage": "50-54", "description": "Passable"},
-        {"grade": "10", "points": 10.0, "percentage": "45-49", "description": "Passable"},
-        {"grade": "0-9", "points": 0.0, "percentage": "0-44", "description": "Échec (Fail)"}
+        {
+          "grade": "20",
+          "points": 20.0,
+          "percentage": "95-100",
+          "description": "Excellent"
+        },
+        {
+          "grade": "19",
+          "points": 19.0,
+          "percentage": "90-94",
+          "description": "Très bien"
+        },
+        {
+          "grade": "18",
+          "points": 18.0,
+          "percentage": "85-89",
+          "description": "Très bien"
+        },
+        {
+          "grade": "17",
+          "points": 17.0,
+          "percentage": "80-84",
+          "description": "Bien"
+        },
+        {
+          "grade": "16",
+          "points": 16.0,
+          "percentage": "75-79",
+          "description": "Bien"
+        },
+        {
+          "grade": "15",
+          "points": 15.0,
+          "percentage": "70-74",
+          "description": "Assez bien"
+        },
+        {
+          "grade": "14",
+          "points": 14.0,
+          "percentage": "65-69",
+          "description": "Assez bien"
+        },
+        {
+          "grade": "13",
+          "points": 13.0,
+          "percentage": "60-64",
+          "description": "Passable"
+        },
+        {
+          "grade": "12",
+          "points": 12.0,
+          "percentage": "55-59",
+          "description": "Passable"
+        },
+        {
+          "grade": "11",
+          "points": 11.0,
+          "percentage": "50-54",
+          "description": "Passable"
+        },
+        {
+          "grade": "10",
+          "points": 10.0,
+          "percentage": "45-49",
+          "description": "Passable"
+        },
+        {
+          "grade": "0-9",
+          "points": 0.0,
+          "percentage": "0-44",
+          "description": "Échec (Fail)"
+        }
       ]
     },
     {
       "id": "in_iit_bombay_10",
       "name": "IIT Bombay (India 10-Point)",
       "institution": "Indian Institute of Technology Bombay",
-      "aliases": ["IITB"],
-      "keywords": ["India", "10-point", "IIT"],
+      "aliases": [
+        "IITB"
+      ],
+      "keywords": [
+        "India",
+        "10-point",
+        "IIT"
+      ],
       "country": "India",
       "region": "South Asia",
       "description": "Indian 10-point with letter grades",
       "scale": 10.0,
       "grades": [
-        {"grade": "O", "points": 10.0, "percentage": "90-100", "description": "Outstanding"},
-        {"grade": "A+", "points": 9.0, "percentage": "80-89", "description": "Excellent"},
-        {"grade": "A", "points": 8.0, "percentage": "70-79", "description": "Very Good"},
-        {"grade": "B+", "points": 7.0, "percentage": "60-69", "description": "Good"},
-        {"grade": "B", "points": 6.0, "percentage": "50-59", "description": "Above Average"},
-        {"grade": "C", "points": 5.0, "percentage": "40-49", "description": "Average"},
-        {"grade": "D", "points": 4.0, "percentage": "30-39", "description": "Below Average"},
-        {"grade": "F", "points": 0.0, "percentage": "0-29", "description": "Fail"}
+        {
+          "grade": "O",
+          "points": 10.0,
+          "percentage": "90-100",
+          "description": "Outstanding"
+        },
+        {
+          "grade": "A+",
+          "points": 9.0,
+          "percentage": "80-89",
+          "description": "Excellent"
+        },
+        {
+          "grade": "A",
+          "points": 8.0,
+          "percentage": "70-79",
+          "description": "Very Good"
+        },
+        {
+          "grade": "B+",
+          "points": 7.0,
+          "percentage": "60-69",
+          "description": "Good"
+        },
+        {
+          "grade": "B",
+          "points": 6.0,
+          "percentage": "50-59",
+          "description": "Above Average"
+        },
+        {
+          "grade": "C",
+          "points": 5.0,
+          "percentage": "40-49",
+          "description": "Average"
+        },
+        {
+          "grade": "D",
+          "points": 4.0,
+          "percentage": "30-39",
+          "description": "Below Average"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-29",
+          "description": "Fail"
+        }
       ]
     },
     {
       "id": "in_iit_delhi_10",
       "name": "IIT Delhi (India 10-Point)",
       "institution": "Indian Institute of Technology Delhi",
-      "aliases": ["IITD"],
-      "keywords": ["India", "10-point", "IIT"],
+      "aliases": [
+        "IITD"
+      ],
+      "keywords": [
+        "India",
+        "10-point",
+        "IIT"
+      ],
       "country": "India",
       "region": "South Asia",
       "description": "Indian 10-point with letter grades",
       "scale": 10.0,
       "grades": [
-        {"grade": "O", "points": 10.0, "percentage": "90-100", "description": "Outstanding"},
-        {"grade": "A+", "points": 9.0, "percentage": "80-89", "description": "Excellent"},
-        {"grade": "A", "points": 8.0, "percentage": "70-79", "description": "Very Good"},
-        {"grade": "B+", "points": 7.0, "percentage": "60-69", "description": "Good"},
-        {"grade": "B", "points": 6.0, "percentage": "50-59", "description": "Above Average"},
-        {"grade": "C", "points": 5.0, "percentage": "40-49", "description": "Average"},
-        {"grade": "D", "points": 4.0, "percentage": "30-39", "description": "Below Average"},
-        {"grade": "F", "points": 0.0, "percentage": "0-29", "description": "Fail"}
+        {
+          "grade": "O",
+          "points": 10.0,
+          "percentage": "90-100",
+          "description": "Outstanding"
+        },
+        {
+          "grade": "A+",
+          "points": 9.0,
+          "percentage": "80-89",
+          "description": "Excellent"
+        },
+        {
+          "grade": "A",
+          "points": 8.0,
+          "percentage": "70-79",
+          "description": "Very Good"
+        },
+        {
+          "grade": "B+",
+          "points": 7.0,
+          "percentage": "60-69",
+          "description": "Good"
+        },
+        {
+          "grade": "B",
+          "points": 6.0,
+          "percentage": "50-59",
+          "description": "Above Average"
+        },
+        {
+          "grade": "C",
+          "points": 5.0,
+          "percentage": "40-49",
+          "description": "Average"
+        },
+        {
+          "grade": "D",
+          "points": 4.0,
+          "percentage": "30-39",
+          "description": "Below Average"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-29",
+          "description": "Fail"
+        }
       ]
     },
     {
       "id": "jp_utokyo_100",
       "name": "University of Tokyo (Japan 100)",
       "institution": "The University of Tokyo",
-      "aliases": ["UTokyo", "Todai"],
-      "keywords": ["Japan", "100-point", "S/A/B/C/D"],
+      "aliases": [
+        "UTokyo",
+        "Todai"
+      ],
+      "keywords": [
+        "Japan",
+        "100-point",
+        "S/A/B/C/D"
+      ],
       "country": "Japan",
       "region": "East Asia",
       "description": "Japanese 100-point with S-A-B-C-D",
       "scale": 100.0,
       "grades": [
-        {"grade": "S", "points": 100.0, "percentage": "90-100", "description": "秀 (Excellent)"},
-        {"grade": "A", "points": 80.0, "percentage": "80-89", "description": "優 (Very Good)"},
-        {"grade": "B", "points": 70.0, "percentage": "70-79", "description": "良 (Good)"},
-        {"grade": "C", "points": 60.0, "percentage": "60-69", "description": "可 (Pass)"},
-        {"grade": "D", "points": 0.0, "percentage": "0-59", "description": "不可 (Fail)"}
+        {
+          "grade": "S",
+          "points": 100.0,
+          "percentage": "90-100",
+          "description": "秀 (Excellent)"
+        },
+        {
+          "grade": "A",
+          "points": 80.0,
+          "percentage": "80-89",
+          "description": "優 (Very Good)"
+        },
+        {
+          "grade": "B",
+          "points": 70.0,
+          "percentage": "70-79",
+          "description": "良 (Good)"
+        },
+        {
+          "grade": "C",
+          "points": 60.0,
+          "percentage": "60-69",
+          "description": "可 (Pass)"
+        },
+        {
+          "grade": "D",
+          "points": 0.0,
+          "percentage": "0-59",
+          "description": "不可 (Fail)"
+        }
       ]
     },
     {
       "id": "kr_snu_4_5",
       "name": "Seoul National University (Korea 4.5)",
       "institution": "Seoul National University",
-      "aliases": ["SNU"],
-      "keywords": ["Korea", "4.5"],
+      "aliases": [
+        "SNU"
+      ],
+      "keywords": [
+        "Korea",
+        "4.5"
+      ],
       "country": "South Korea",
       "region": "East Asia",
       "description": "Korean 4.5 GPA scale",
       "scale": 4.5,
       "grades": [
-        {"grade": "A+", "points": 4.5, "percentage": "95-100"},
-        {"grade": "A", "points": 4.0, "percentage": "90-94"},
-        {"grade": "B+", "points": 3.5, "percentage": "85-89"},
-        {"grade": "B", "points": 3.0, "percentage": "80-84"},
-        {"grade": "C+", "points": 2.5, "percentage": "75-79"},
-        {"grade": "C", "points": 2.0, "percentage": "70-74"},
-        {"grade": "D+", "points": 1.5, "percentage": "65-69"},
-        {"grade": "D", "points": 1.0, "percentage": "60-64"},
-        {"grade": "F", "points": 0.0, "percentage": "0-59"}
+        {
+          "grade": "A+",
+          "points": 4.5,
+          "percentage": "95-100"
+        },
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "90-94"
+        },
+        {
+          "grade": "B+",
+          "points": 3.5,
+          "percentage": "85-89"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "80-84"
+        },
+        {
+          "grade": "C+",
+          "points": 2.5,
+          "percentage": "75-79"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "70-74"
+        },
+        {
+          "grade": "D+",
+          "points": 1.5,
+          "percentage": "65-69"
+        },
+        {
+          "grade": "D",
+          "points": 1.0,
+          "percentage": "60-64"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-59"
+        }
       ]
     },
     {
       "id": "es_ub_10",
       "name": "University of Barcelona (Spain 10)",
       "institution": "Universitat de Barcelona",
-      "aliases": ["UB"],
-      "keywords": ["Spain", "10-point"],
+      "aliases": [
+        "UB"
+      ],
+      "keywords": [
+        "Spain",
+        "10-point"
+      ],
       "country": "Spain",
       "region": "Europe",
       "description": "Spanish 0-10 scale",
       "scale": 10.0,
       "grades": [
-        {"grade": "10", "points": 10.0, "percentage": "95-100", "description": "Matrícula de Honor"},
-        {"grade": "9", "points": 9.0, "percentage": "85-94", "description": "Sobresaliente"},
-        {"grade": "8", "points": 8.0, "percentage": "75-84", "description": "Notable"},
-        {"grade": "7", "points": 7.0, "percentage": "65-74", "description": "Bien"},
-        {"grade": "6", "points": 6.0, "percentage": "60-64", "description": "Suficiente"},
-        {"grade": "0-5", "points": 0.0, "percentage": "0-59", "description": "Suspenso"}
+        {
+          "grade": "10",
+          "points": 10.0,
+          "percentage": "95-100",
+          "description": "Matrícula de Honor"
+        },
+        {
+          "grade": "9",
+          "points": 9.0,
+          "percentage": "85-94",
+          "description": "Sobresaliente"
+        },
+        {
+          "grade": "8",
+          "points": 8.0,
+          "percentage": "75-84",
+          "description": "Notable"
+        },
+        {
+          "grade": "7",
+          "points": 7.0,
+          "percentage": "65-74",
+          "description": "Bien"
+        },
+        {
+          "grade": "6",
+          "points": 6.0,
+          "percentage": "60-64",
+          "description": "Suficiente"
+        },
+        {
+          "grade": "0-5",
+          "points": 0.0,
+          "percentage": "0-59",
+          "description": "Suspenso"
+        }
       ]
     },
     {
       "id": "it_sapienza_30",
       "name": "Sapienza University of Rome (Italy 30)",
       "institution": "Sapienza Università di Roma",
-      "aliases": ["Sapienza"],
-      "keywords": ["Italy", "30 e Lode"],
+      "aliases": [
+        "Sapienza"
+      ],
+      "keywords": [
+        "Italy",
+        "30 e Lode"
+      ],
       "country": "Italy",
       "region": "Europe",
       "description": "Italian 30-point scale",
       "scale": 30.0,
       "grades": [
-        {"grade": "30L", "points": 30.0, "percentage": "95-100", "description": "30 e Lode (30 with Honors)"},
-        {"grade": "30", "points": 30.0, "percentage": "90-94", "description": "30"},
-        {"grade": "29", "points": 29.0, "percentage": "85-89", "description": "29"},
-        {"grade": "28", "points": 28.0, "percentage": "80-84", "description": "28"},
-        {"grade": "27", "points": 27.0, "percentage": "75-79", "description": "27"},
-        {"grade": "26", "points": 26.0, "percentage": "70-74", "description": "26"},
-        {"grade": "25", "points": 25.0, "percentage": "65-69", "description": "25"},
-        {"grade": "24", "points": 24.0, "percentage": "60-64", "description": "24"},
-        {"grade": "23", "points": 23.0, "percentage": "55-59", "description": "23"},
-        {"grade": "22", "points": 22.0, "percentage": "50-54", "description": "22"},
-        {"grade": "21", "points": 21.0, "percentage": "45-49", "description": "21"},
-        {"grade": "18", "points": 18.0, "percentage": "40-44", "description": "18"},
-        {"grade": "0-17", "points": 0.0, "percentage": "0-39", "description": "Respinto (Rejected)"}
+        {
+          "grade": "30L",
+          "points": 30.0,
+          "percentage": "95-100",
+          "description": "30 e Lode (30 with Honors)"
+        },
+        {
+          "grade": "30",
+          "points": 30.0,
+          "percentage": "90-94",
+          "description": "30"
+        },
+        {
+          "grade": "29",
+          "points": 29.0,
+          "percentage": "85-89",
+          "description": "29"
+        },
+        {
+          "grade": "28",
+          "points": 28.0,
+          "percentage": "80-84",
+          "description": "28"
+        },
+        {
+          "grade": "27",
+          "points": 27.0,
+          "percentage": "75-79",
+          "description": "27"
+        },
+        {
+          "grade": "26",
+          "points": 26.0,
+          "percentage": "70-74",
+          "description": "26"
+        },
+        {
+          "grade": "25",
+          "points": 25.0,
+          "percentage": "65-69",
+          "description": "25"
+        },
+        {
+          "grade": "24",
+          "points": 24.0,
+          "percentage": "60-64",
+          "description": "24"
+        },
+        {
+          "grade": "23",
+          "points": 23.0,
+          "percentage": "55-59",
+          "description": "23"
+        },
+        {
+          "grade": "22",
+          "points": 22.0,
+          "percentage": "50-54",
+          "description": "22"
+        },
+        {
+          "grade": "21",
+          "points": 21.0,
+          "percentage": "45-49",
+          "description": "21"
+        },
+        {
+          "grade": "18",
+          "points": 18.0,
+          "percentage": "40-44",
+          "description": "18"
+        },
+        {
+          "grade": "0-17",
+          "points": 0.0,
+          "percentage": "0-39",
+          "description": "Respinto (Rejected)"
+        }
       ]
     },
     {
       "id": "nl_tudelft_10",
       "name": "TU Delft (Netherlands 10)",
       "institution": "Delft University of Technology",
-      "aliases": ["TU Delft"],
-      "keywords": ["Netherlands", "10-point", "Engineering"],
+      "aliases": [
+        "TU Delft"
+      ],
+      "keywords": [
+        "Netherlands",
+        "10-point",
+        "Engineering"
+      ],
       "country": "Netherlands",
       "region": "Europe",
       "description": "Dutch 0-10 scale",
       "scale": 10.0,
       "grades": [
-        {"grade": "10", "points": 10.0, "percentage": "95-100", "description": "Uitmuntend (Outstanding)"},
-        {"grade": "9", "points": 9.0, "percentage": "85-94", "description": "Zeer goed (Very Good)"},
-        {"grade": "8", "points": 8.0, "percentage": "75-84", "description": "Goed (Good)"},
-        {"grade": "7", "points": 7.0, "percentage": "65-74", "description": "Ruim voldoende (More than Sufficient)"},
-        {"grade": "6", "points": 6.0, "percentage": "55-64", "description": "Voldoende (Sufficient)"},
-        {"grade": "5", "points": 5.0, "percentage": "50-54", "description": "Onvoldoende (Insufficient)"},
-        {"grade": "0-4", "points": 0.0, "percentage": "0-49", "description": "Zeer onvoldoende (Very Insufficient)"}
+        {
+          "grade": "10",
+          "points": 10.0,
+          "percentage": "95-100",
+          "description": "Uitmuntend (Outstanding)"
+        },
+        {
+          "grade": "9",
+          "points": 9.0,
+          "percentage": "85-94",
+          "description": "Zeer goed (Very Good)"
+        },
+        {
+          "grade": "8",
+          "points": 8.0,
+          "percentage": "75-84",
+          "description": "Goed (Good)"
+        },
+        {
+          "grade": "7",
+          "points": 7.0,
+          "percentage": "65-74",
+          "description": "Ruim voldoende (More than Sufficient)"
+        },
+        {
+          "grade": "6",
+          "points": 6.0,
+          "percentage": "55-64",
+          "description": "Voldoende (Sufficient)"
+        },
+        {
+          "grade": "5",
+          "points": 5.0,
+          "percentage": "50-54",
+          "description": "Onvoldoende (Insufficient)"
+        },
+        {
+          "grade": "0-4",
+          "points": 0.0,
+          "percentage": "0-49",
+          "description": "Zeer onvoldoende (Very Insufficient)"
+        }
       ]
     },
     {
       "id": "se_kth_5",
       "name": "KTH Royal Institute of Technology (Sweden VG/G/U)",
       "institution": "KTH Royal Institute of Technology",
-      "aliases": ["KTH"],
-      "keywords": ["Sweden", "VG/G/U"],
+      "aliases": [
+        "KTH"
+      ],
+      "keywords": [
+        "Sweden",
+        "VG/G/U"
+      ],
       "country": "Sweden",
       "region": "Europe",
       "description": "Swedish VG/G/U system",
       "scale": 5.0,
       "grades": [
-        {"grade": "VG", "points": 5.0, "percentage": "80-100", "description": "Väl godkänd (Pass with Distinction)"},
-        {"grade": "G", "points": 4.0, "percentage": "60-79", "description": "Godkänd (Pass)"},
-        {"grade": "U", "points": 0.0, "percentage": "0-59", "description": "Underkänd (Fail)"}
+        {
+          "grade": "VG",
+          "points": 5.0,
+          "percentage": "80-100",
+          "description": "Väl godkänd (Pass with Distinction)"
+        },
+        {
+          "grade": "G",
+          "points": 4.0,
+          "percentage": "60-79",
+          "description": "Godkänd (Pass)"
+        },
+        {
+          "grade": "U",
+          "points": 0.0,
+          "percentage": "0-59",
+          "description": "Underkänd (Fail)"
+        }
       ]
     },
     {
       "id": "no_uio_6",
       "name": "University of Oslo (Norway A–F)",
       "institution": "University of Oslo",
-      "aliases": ["UiO"],
-      "keywords": ["Norway", "A-F"],
+      "aliases": [
+        "UiO"
+      ],
+      "keywords": [
+        "Norway",
+        "A-F"
+      ],
       "country": "Norway",
       "region": "Europe",
       "description": "Norwegian A–F 6-point system",
       "scale": 6.0,
       "grades": [
-        {"grade": "A", "points": 6.0, "percentage": "90-100", "description": "Utmerket (Excellent)"},
-        {"grade": "B", "points": 5.0, "percentage": "80-89", "description": "Meget godt (Very Good)"},
-        {"grade": "C", "points": 4.0, "percentage": "70-79", "description": "Godt (Good)"},
-        {"grade": "D", "points": 3.0, "percentage": "60-69", "description": "Strykende (Satisfactory)"},
-        {"grade": "E", "points": 2.0, "percentage": "50-59", "description": "Bestått (Pass)"},
-        {"grade": "F", "points": 0.0, "percentage": "0-49", "description": "Ikke bestått (Fail)"}
+        {
+          "grade": "A",
+          "points": 6.0,
+          "percentage": "90-100",
+          "description": "Utmerket (Excellent)"
+        },
+        {
+          "grade": "B",
+          "points": 5.0,
+          "percentage": "80-89",
+          "description": "Meget godt (Very Good)"
+        },
+        {
+          "grade": "C",
+          "points": 4.0,
+          "percentage": "70-79",
+          "description": "Godt (Good)"
+        },
+        {
+          "grade": "D",
+          "points": 3.0,
+          "percentage": "60-69",
+          "description": "Strykende (Satisfactory)"
+        },
+        {
+          "grade": "E",
+          "points": 2.0,
+          "percentage": "50-59",
+          "description": "Bestått (Pass)"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-49",
+          "description": "Ikke bestått (Fail)"
+        }
       ]
     },
     {
       "id": "ch_ethz_6",
       "name": "ETH Zurich (Switzerland 6)",
       "institution": "ETH Zurich",
-      "aliases": ["ETH", "ETHZ"],
-      "keywords": ["Switzerland", "6-point"],
+      "aliases": [
+        "ETH",
+        "ETHZ"
+      ],
+      "keywords": [
+        "Switzerland",
+        "6-point"
+      ],
       "country": "Switzerland",
       "region": "Europe",
       "description": "Swiss 6-point system",
       "scale": 6.0,
       "grades": [
-        {"grade": "6", "points": 6.0, "percentage": "90-100", "description": "Sehr gut (Very Good)"},
-        {"grade": "5.5", "points": 5.5, "percentage": "85-89", "description": "Gut (Good)"},
-        {"grade": "5", "points": 5.0, "percentage": "80-84", "description": "Gut"},
-        {"grade": "4.5", "points": 4.5, "percentage": "75-79", "description": "Befriedigend (Satisfactory)"},
-        {"grade": "4", "points": 4.0, "percentage": "70-74", "description": "Befriedigend"},
-        {"grade": "3.5", "points": 3.5, "percentage": "65-69", "description": "Ausreichend (Sufficient)"},
-        {"grade": "3", "points": 3.0, "percentage": "60-64", "description": "Ausreichend"},
-        {"grade": "2.5", "points": 2.5, "percentage": "55-59", "description": "Ungenügend (Insufficient)"},
-        {"grade": "2", "points": 2.0, "percentage": "50-54", "description": "Ungenügend"},
-        {"grade": "1", "points": 1.0, "percentage": "0-49", "description": "Ungenügend"}
+        {
+          "grade": "6",
+          "points": 6.0,
+          "percentage": "90-100",
+          "description": "Sehr gut (Very Good)"
+        },
+        {
+          "grade": "5.5",
+          "points": 5.5,
+          "percentage": "85-89",
+          "description": "Gut (Good)"
+        },
+        {
+          "grade": "5",
+          "points": 5.0,
+          "percentage": "80-84",
+          "description": "Gut"
+        },
+        {
+          "grade": "4.5",
+          "points": 4.5,
+          "percentage": "75-79",
+          "description": "Befriedigend (Satisfactory)"
+        },
+        {
+          "grade": "4",
+          "points": 4.0,
+          "percentage": "70-74",
+          "description": "Befriedigend"
+        },
+        {
+          "grade": "3.5",
+          "points": 3.5,
+          "percentage": "65-69",
+          "description": "Ausreichend (Sufficient)"
+        },
+        {
+          "grade": "3",
+          "points": 3.0,
+          "percentage": "60-64",
+          "description": "Ausreichend"
+        },
+        {
+          "grade": "2.5",
+          "points": 2.5,
+          "percentage": "55-59",
+          "description": "Ungenügend (Insufficient)"
+        },
+        {
+          "grade": "2",
+          "points": 2.0,
+          "percentage": "50-54",
+          "description": "Ungenügend"
+        },
+        {
+          "grade": "1",
+          "points": 1.0,
+          "percentage": "0-49",
+          "description": "Ungenügend"
+        }
       ]
     },
     {
       "id": "za_uct_7",
       "name": "University of Cape Town (South Africa 7)",
       "institution": "University of Cape Town",
-      "aliases": ["UCT"],
-      "keywords": ["South Africa", "7-point"],
+      "aliases": [
+        "UCT"
+      ],
+      "keywords": [
+        "South Africa",
+        "7-point"
+      ],
       "country": "South Africa",
       "region": "Africa",
       "description": "South African 1–7 scale",
       "scale": 7.0,
       "grades": [
-        {"grade": "7", "points": 7.0, "percentage": "80-100", "description": "Outstanding"},
-        {"grade": "6", "points": 6.0, "percentage": "70-79", "description": "Meritorious"},
-        {"grade": "5", "points": 5.0, "percentage": "60-69", "description": "Substantial"},
-        {"grade": "4", "points": 4.0, "percentage": "50-59", "description": "Moderate"},
-        {"grade": "3", "points": 3.0, "percentage": "40-49", "description": "Adequate"},
-        {"grade": "2", "points": 2.0, "percentage": "30-39", "description": "Elementary"},
-        {"grade": "1", "points": 1.0, "percentage": "0-29", "description": "Not Achieved"}
+        {
+          "grade": "7",
+          "points": 7.0,
+          "percentage": "80-100",
+          "description": "Outstanding"
+        },
+        {
+          "grade": "6",
+          "points": 6.0,
+          "percentage": "70-79",
+          "description": "Meritorious"
+        },
+        {
+          "grade": "5",
+          "points": 5.0,
+          "percentage": "60-69",
+          "description": "Substantial"
+        },
+        {
+          "grade": "4",
+          "points": 4.0,
+          "percentage": "50-59",
+          "description": "Moderate"
+        },
+        {
+          "grade": "3",
+          "points": 3.0,
+          "percentage": "40-49",
+          "description": "Adequate"
+        },
+        {
+          "grade": "2",
+          "points": 2.0,
+          "percentage": "30-39",
+          "description": "Elementary"
+        },
+        {
+          "grade": "1",
+          "points": 1.0,
+          "percentage": "0-29",
+          "description": "Not Achieved"
+        }
       ]
     },
     {
       "id": "nz_auckland_9",
       "name": "University of Auckland (New Zealand 9)",
       "institution": "University of Auckland",
-      "aliases": ["UoA"],
-      "keywords": ["New Zealand", "9-point"],
+      "aliases": [
+        "UoA"
+      ],
+      "keywords": [
+        "New Zealand",
+        "9-point"
+      ],
       "country": "New Zealand",
       "region": "Oceania",
       "description": "New Zealand A+ to D 9-point",
       "scale": 9.0,
       "grades": [
-        {"grade": "A+", "points": 9.0, "percentage": "90-100", "description": "Excellent"},
-        {"grade": "A", "points": 8.0, "percentage": "85-89", "description": "Excellent"},
-        {"grade": "A-", "points": 7.0, "percentage": "80-84", "description": "Very Good"},
-        {"grade": "B+", "points": 6.0, "percentage": "75-79", "description": "Good"},
-        {"grade": "B", "points": 5.0, "percentage": "70-74", "description": "Good"},
-        {"grade": "B-", "points": 4.0, "percentage": "65-69", "description": "Satisfactory"},
-        {"grade": "C+", "points": 3.0, "percentage": "60-64", "description": "Satisfactory"},
-        {"grade": "C", "points": 2.0, "percentage": "55-59", "description": "Pass"},
-        {"grade": "C-", "points": 1.0, "percentage": "50-54", "description": "Pass"},
-        {"grade": "D", "points": 0.0, "percentage": "0-49", "description": "Fail"}
+        {
+          "grade": "A+",
+          "points": 9.0,
+          "percentage": "90-100",
+          "description": "Excellent"
+        },
+        {
+          "grade": "A",
+          "points": 8.0,
+          "percentage": "85-89",
+          "description": "Excellent"
+        },
+        {
+          "grade": "A-",
+          "points": 7.0,
+          "percentage": "80-84",
+          "description": "Very Good"
+        },
+        {
+          "grade": "B+",
+          "points": 6.0,
+          "percentage": "75-79",
+          "description": "Good"
+        },
+        {
+          "grade": "B",
+          "points": 5.0,
+          "percentage": "70-74",
+          "description": "Good"
+        },
+        {
+          "grade": "B-",
+          "points": 4.0,
+          "percentage": "65-69",
+          "description": "Satisfactory"
+        },
+        {
+          "grade": "C+",
+          "points": 3.0,
+          "percentage": "60-64",
+          "description": "Satisfactory"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "55-59",
+          "description": "Pass"
+        },
+        {
+          "grade": "C-",
+          "points": 1.0,
+          "percentage": "50-54",
+          "description": "Pass"
+        },
+        {
+          "grade": "D",
+          "points": 0.0,
+          "percentage": "0-49",
+          "description": "Fail"
+        }
+      ]
+    },
+    {
+      "id": "china_100",
+      "name": "China 100-Point Scale",
+      "country": "China",
+      "region": "East Asia",
+      "description": "Chinese 0–100 scale",
+      "scale": 100.0,
+      "grades": [
+        {
+          "grade": "Excellent",
+          "points": 95.0,
+          "percentage": "95-100"
+        },
+        {
+          "grade": "Very Good",
+          "points": 85.0,
+          "percentage": "85-94"
+        },
+        {
+          "grade": "Good",
+          "points": 75.0,
+          "percentage": "75-84"
+        },
+        {
+          "grade": "Satisfactory",
+          "points": 65.0,
+          "percentage": "65-74"
+        },
+        {
+          "grade": "Pass",
+          "points": 60.0,
+          "percentage": "60-64"
+        },
+        {
+          "grade": "Fail",
+          "points": 0.0,
+          "percentage": "0-59"
+        }
+      ]
+    },
+    {
+      "id": "russia_5",
+      "name": "Russia 5-Point Scale",
+      "country": "Russia",
+      "region": "Europe",
+      "description": "Russian 5-point scale (5=Excellent, 2=Unsatisfactory)",
+      "scale": 5.0,
+      "grades": [
+        {
+          "grade": "5",
+          "points": 5.0,
+          "percentage": "85-100",
+          "description": "Excellent"
+        },
+        {
+          "grade": "4",
+          "points": 4.0,
+          "percentage": "70-84",
+          "description": "Good"
+        },
+        {
+          "grade": "3",
+          "points": 3.0,
+          "percentage": "60-69",
+          "description": "Satisfactory"
+        },
+        {
+          "grade": "2",
+          "points": 0.0,
+          "percentage": "0-59",
+          "description": "Unsatisfactory"
+        }
+      ]
+    },
+    {
+      "id": "portugal_20",
+      "name": "Portugal 20-Point Scale",
+      "country": "Portugal",
+      "region": "Europe",
+      "description": "Portuguese 0–20 scale",
+      "scale": 20.0,
+      "grades": [
+        {
+          "grade": "20",
+          "points": 20.0,
+          "percentage": "95-100"
+        },
+        {
+          "grade": "18-19",
+          "points": 19.0,
+          "percentage": "90-94"
+        },
+        {
+          "grade": "16-17",
+          "points": 17.0,
+          "percentage": "80-89"
+        },
+        {
+          "grade": "14-15",
+          "points": 15.0,
+          "percentage": "70-79"
+        },
+        {
+          "grade": "10-13",
+          "points": 12.0,
+          "percentage": "50-69"
+        },
+        {
+          "grade": "0-9",
+          "points": 0.0,
+          "percentage": "0-49"
+        }
+      ]
+    },
+    {
+      "id": "austria_5",
+      "name": "Austria 5-Point Scale",
+      "country": "Austria",
+      "region": "Europe",
+      "description": "Austrian 1–5 scale (1=Sehr gut, 5=Nicht genügend)",
+      "scale": 5.0,
+      "grades": [
+        {
+          "grade": "1",
+          "points": 1.0,
+          "percentage": "90-100",
+          "description": "Sehr gut"
+        },
+        {
+          "grade": "2",
+          "points": 2.0,
+          "percentage": "80-89",
+          "description": "Gut"
+        },
+        {
+          "grade": "3",
+          "points": 3.0,
+          "percentage": "65-79",
+          "description": "Befriedigend"
+        },
+        {
+          "grade": "4",
+          "points": 4.0,
+          "percentage": "50-64",
+          "description": "Genügend"
+        },
+        {
+          "grade": "5",
+          "points": 5.0,
+          "percentage": "0-49",
+          "description": "Nicht genügend"
+        }
+      ]
+    },
+    {
+      "id": "czech_1_4",
+      "name": "Czech Republic 1–4 Scale",
+      "country": "Czech Republic",
+      "region": "Europe",
+      "description": "Czech 1–4 scale (1=best, 4=fail)",
+      "scale": 4.0,
+      "grades": [
+        {
+          "grade": "1",
+          "points": 1.0,
+          "percentage": "90-100",
+          "description": "Výborně"
+        },
+        {
+          "grade": "2",
+          "points": 2.0,
+          "percentage": "75-89",
+          "description": "Velmi dobře"
+        },
+        {
+          "grade": "3",
+          "points": 3.0,
+          "percentage": "60-74",
+          "description": "Dobře"
+        },
+        {
+          "grade": "4",
+          "points": 4.0,
+          "percentage": "0-59",
+          "description": "Nedostatečně"
+        }
+      ]
+    },
+    {
+      "id": "poland_2_5",
+      "name": "Poland 2–5 Scale",
+      "country": "Poland",
+      "region": "Europe",
+      "description": "Polish 2–5 scale (5=very good, 2=fail)",
+      "scale": 5.0,
+      "grades": [
+        {
+          "grade": "5",
+          "points": 5.0,
+          "percentage": "90-100",
+          "description": "Bardzo dobry"
+        },
+        {
+          "grade": "4",
+          "points": 4.0,
+          "percentage": "75-89",
+          "description": "Dobry"
+        },
+        {
+          "grade": "3",
+          "points": 3.0,
+          "percentage": "60-74",
+          "description": "Dostateczny"
+        },
+        {
+          "grade": "2",
+          "points": 0.0,
+          "percentage": "0-59",
+          "description": "Niedostateczny"
+        }
+      ]
+    },
+    {
+      "id": "hungary_5",
+      "name": "Hungary 5-Point Scale",
+      "country": "Hungary",
+      "region": "Europe",
+      "description": "Hungarian 1–5 scale (5=Jeles, 1=Elégtelen)",
+      "scale": 5.0,
+      "grades": [
+        {
+          "grade": "5",
+          "points": 5.0,
+          "percentage": "90-100",
+          "description": "Jeles"
+        },
+        {
+          "grade": "4",
+          "points": 4.0,
+          "percentage": "80-89",
+          "description": "Jó"
+        },
+        {
+          "grade": "3",
+          "points": 3.0,
+          "percentage": "65-79",
+          "description": "Közepes"
+        },
+        {
+          "grade": "2",
+          "points": 2.0,
+          "percentage": "50-64",
+          "description": "Elégséges"
+        },
+        {
+          "grade": "1",
+          "points": 0.0,
+          "percentage": "0-49",
+          "description": "Elégtelen"
+        }
+      ]
+    },
+    {
+      "id": "romania_10",
+      "name": "Romania 10-Point Scale",
+      "country": "Romania",
+      "region": "Europe",
+      "description": "Romanian 1–10 scale",
+      "scale": 10.0,
+      "grades": [
+        {
+          "grade": "10",
+          "points": 10.0,
+          "percentage": "95-100"
+        },
+        {
+          "grade": "9",
+          "points": 9.0,
+          "percentage": "85-94"
+        },
+        {
+          "grade": "8",
+          "points": 8.0,
+          "percentage": "75-84"
+        },
+        {
+          "grade": "7",
+          "points": 7.0,
+          "percentage": "65-74"
+        },
+        {
+          "grade": "6",
+          "points": 6.0,
+          "percentage": "55-64"
+        },
+        {
+          "grade": "5",
+          "points": 5.0,
+          "percentage": "50-54"
+        },
+        {
+          "grade": "0-4",
+          "points": 0.0,
+          "percentage": "0-49"
+        }
+      ]
+    },
+    {
+      "id": "greece_10",
+      "name": "Greece 10-Point Scale",
+      "country": "Greece",
+      "region": "Europe",
+      "description": "Greek 0–10 scale",
+      "scale": 10.0,
+      "grades": [
+        {
+          "grade": "9-10",
+          "points": 9.5,
+          "percentage": "90-100",
+          "description": "Άριστα"
+        },
+        {
+          "grade": "7-8.9",
+          "points": 8.0,
+          "percentage": "70-89",
+          "description": "Λίαν Καλώς"
+        },
+        {
+          "grade": "5-6.9",
+          "points": 6.0,
+          "percentage": "50-69",
+          "description": "Καλώς"
+        },
+        {
+          "grade": "0-4.9",
+          "points": 0.0,
+          "percentage": "0-49",
+          "description": "Ανεπιτυχώς"
+        }
+      ]
+    },
+    {
+      "id": "turkey_100",
+      "name": "Turkey 100-Point Scale",
+      "country": "Turkey",
+      "region": "Europe",
+      "description": "Turkish 0–100 scale",
+      "scale": 100.0,
+      "grades": [
+        {
+          "grade": "90-100",
+          "points": 95.0,
+          "percentage": "90-100",
+          "description": "AA"
+        },
+        {
+          "grade": "80-89",
+          "points": 85.0,
+          "percentage": "80-89",
+          "description": "BA/BB"
+        },
+        {
+          "grade": "70-79",
+          "points": 75.0,
+          "percentage": "70-79",
+          "description": "CB/CC"
+        },
+        {
+          "grade": "60-69",
+          "points": 65.0,
+          "percentage": "60-69",
+          "description": "DC/DD"
+        },
+        {
+          "grade": "50-59",
+          "points": 55.0,
+          "percentage": "50-59",
+          "description": "FD"
+        },
+        {
+          "grade": "0-49",
+          "points": 0.0,
+          "percentage": "0-49",
+          "description": "FF"
+        }
+      ]
+    },
+    {
+      "id": "argentina_10",
+      "name": "Argentina 10-Point Scale",
+      "country": "Argentina",
+      "region": "South America",
+      "description": "Argentine 0–10 scale",
+      "scale": 10.0,
+      "grades": [
+        {
+          "grade": "10",
+          "points": 10.0,
+          "percentage": "95-100"
+        },
+        {
+          "grade": "9",
+          "points": 9.0,
+          "percentage": "90-94"
+        },
+        {
+          "grade": "8",
+          "points": 8.0,
+          "percentage": "80-89"
+        },
+        {
+          "grade": "7",
+          "points": 7.0,
+          "percentage": "70-79"
+        },
+        {
+          "grade": "6",
+          "points": 6.0,
+          "percentage": "60-69"
+        },
+        {
+          "grade": "0-5",
+          "points": 0.0,
+          "percentage": "0-59"
+        }
+      ]
+    },
+    {
+      "id": "chile_7",
+      "name": "Chile 7-Point Scale",
+      "country": "Chile",
+      "region": "South America",
+      "description": "Chilean 1.0–7.0 scale",
+      "scale": 7.0,
+      "grades": [
+        {
+          "grade": "7.0",
+          "points": 7.0,
+          "percentage": "95-100",
+          "description": "Sobresaliente"
+        },
+        {
+          "grade": "6.0",
+          "points": 6.0,
+          "percentage": "85-94",
+          "description": "Muy bueno"
+        },
+        {
+          "grade": "5.0",
+          "points": 5.0,
+          "percentage": "75-84",
+          "description": "Bueno"
+        },
+        {
+          "grade": "4.0",
+          "points": 4.0,
+          "percentage": "60-74",
+          "description": "Suficiente"
+        },
+        {
+          "grade": "1.0-3.9",
+          "points": 0.0,
+          "percentage": "0-59",
+          "description": "Insuficiente"
+        }
+      ]
+    },
+    {
+      "id": "colombia_5",
+      "name": "Colombia 5-Point Scale",
+      "country": "Colombia",
+      "region": "South America",
+      "description": "Colombian 0–5 scale",
+      "scale": 5.0,
+      "grades": [
+        {
+          "grade": "5.0",
+          "points": 5.0,
+          "percentage": "90-100"
+        },
+        {
+          "grade": "4.0",
+          "points": 4.0,
+          "percentage": "80-89"
+        },
+        {
+          "grade": "3.0",
+          "points": 3.0,
+          "percentage": "70-79"
+        },
+        {
+          "grade": "2.0",
+          "points": 2.0,
+          "percentage": "60-69"
+        },
+        {
+          "grade": "0-1.9",
+          "points": 0.0,
+          "percentage": "0-59"
+        }
+      ]
+    },
+    {
+      "id": "peru_20",
+      "name": "Peru 20-Point Scale",
+      "country": "Peru",
+      "region": "South America",
+      "description": "Peruvian 0–20 scale",
+      "scale": 20.0,
+      "grades": [
+        {
+          "grade": "18-20",
+          "points": 19.0,
+          "percentage": "90-100"
+        },
+        {
+          "grade": "14-17",
+          "points": 15.0,
+          "percentage": "70-89"
+        },
+        {
+          "grade": "11-13",
+          "points": 12.0,
+          "percentage": "55-69"
+        },
+        {
+          "grade": "0-10",
+          "points": 0.0,
+          "percentage": "0-54"
+        }
+      ]
+    },
+    {
+      "id": "philippines_5",
+      "name": "Philippines 1.0–5.0 Scale",
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "description": "Philippine 1.0 (best) to 5.0 (fail)",
+      "scale": 5.0,
+      "grades": [
+        {
+          "grade": "1.0",
+          "points": 1.0,
+          "percentage": "96-100",
+          "description": "Excellent"
+        },
+        {
+          "grade": "1.5",
+          "points": 1.5,
+          "percentage": "90-95"
+        },
+        {
+          "grade": "2.0",
+          "points": 2.0,
+          "percentage": "84-89"
+        },
+        {
+          "grade": "2.5",
+          "points": 2.5,
+          "percentage": "78-83"
+        },
+        {
+          "grade": "3.0",
+          "points": 3.0,
+          "percentage": "75-77",
+          "description": "Pass"
+        },
+        {
+          "grade": "5.0",
+          "points": 5.0,
+          "percentage": "0-74",
+          "description": "Fail"
+        }
+      ]
+    },
+    {
+      "id": "malaysia_4_0",
+      "name": "Malaysia 4.0 Scale",
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "description": "Malaysian 4.0 GPA scale",
+      "scale": 4.0,
+      "grades": [
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "80-100"
+        },
+        {
+          "grade": "A-",
+          "points": 3.7,
+          "percentage": "75-79"
+        },
+        {
+          "grade": "B+",
+          "points": 3.3,
+          "percentage": "70-74"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "65-69"
+        },
+        {
+          "grade": "B-",
+          "points": 2.7,
+          "percentage": "60-64"
+        },
+        {
+          "grade": "C+",
+          "points": 2.3,
+          "percentage": "55-59"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "50-54"
+        },
+        {
+          "grade": "F",
+          "points": 0.0,
+          "percentage": "0-49"
+        }
+      ]
+    },
+    {
+      "id": "indonesia_4_0",
+      "name": "Indonesia 4.0 Scale",
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "description": "Indonesian 4.0 GPA scale",
+      "scale": 4.0,
+      "grades": [
+        {
+          "grade": "A",
+          "points": 4.0,
+          "percentage": "85-100"
+        },
+        {
+          "grade": "A-",
+          "points": 3.7,
+          "percentage": "80-84"
+        },
+        {
+          "grade": "B+",
+          "points": 3.3,
+          "percentage": "75-79"
+        },
+        {
+          "grade": "B",
+          "points": 3.0,
+          "percentage": "70-74"
+        },
+        {
+          "grade": "C+",
+          "points": 2.3,
+          "percentage": "65-69"
+        },
+        {
+          "grade": "C",
+          "points": 2.0,
+          "percentage": "60-64"
+        },
+        {
+          "grade": "D",
+          "points": 1.0,
+          "percentage": "50-59"
+        },
+        {
+          "grade": "E",
+          "points": 0.0,
+          "percentage": "0-49"
+        }
+      ]
+    },
+    {
+      "id": "singapore_5_0",
+      "name": "Singapore 5.0 Scale",
+      "country": "Singapore",
+      "region": "Southeast Asia",
+      "description": "Singaporean 5.0 GPA scale variant",
+      "scale": 5.0,
+      "grades": [
+        {
+          "grade": "A+",
+          "points": 5.0
+        },
+        {
+          "grade": "A",
+          "points": 5.0
+        },
+        {
+          "grade": "A-",
+          "points": 4.5
+        },
+        {
+          "grade": "B+",
+          "points": 4.0
+        },
+        {
+          "grade": "B",
+          "points": 3.5
+        },
+        {
+          "grade": "B-",
+          "points": 3.0
+        },
+        {
+          "grade": "C+",
+          "points": 2.5
+        },
+        {
+          "grade": "C",
+          "points": 2.0
+        },
+        {
+          "grade": "D",
+          "points": 1.0
+        },
+        {
+          "grade": "F",
+          "points": 0.0
+        }
+      ]
+    },
+    {
+      "id": "saudi_arabia_5_0",
+      "name": "Saudi Arabia 5.0 Scale",
+      "country": "Saudi Arabia",
+      "region": "Middle East",
+      "description": "Saudi 5.0 GPA scale",
+      "scale": 5.0,
+      "grades": [
+        {
+          "grade": "A+",
+          "points": 5.0
+        },
+        {
+          "grade": "A",
+          "points": 4.5
+        },
+        {
+          "grade": "B+",
+          "points": 4.0
+        },
+        {
+          "grade": "B",
+          "points": 3.5
+        },
+        {
+          "grade": "C+",
+          "points": 3.0
+        },
+        {
+          "grade": "C",
+          "points": 2.5
+        },
+        {
+          "grade": "D+",
+          "points": 2.0
+        },
+        {
+          "grade": "D",
+          "points": 1.0
+        },
+        {
+          "grade": "F",
+          "points": 0.0
+        }
+      ]
+    },
+    {
+      "id": "uae_4_0",
+      "name": "UAE 4.0 Scale",
+      "country": "United Arab Emirates",
+      "region": "Middle East",
+      "description": "UAE 4.0 GPA scale",
+      "scale": 4.0,
+      "grades": [
+        {
+          "grade": "A",
+          "points": 4.0
+        },
+        {
+          "grade": "A-",
+          "points": 3.7
+        },
+        {
+          "grade": "B+",
+          "points": 3.3
+        },
+        {
+          "grade": "B",
+          "points": 3.0
+        },
+        {
+          "grade": "C+",
+          "points": 2.3
+        },
+        {
+          "grade": "C",
+          "points": 2.0
+        },
+        {
+          "grade": "D",
+          "points": 1.0
+        },
+        {
+          "grade": "F",
+          "points": 0.0
+        }
+      ]
+    },
+    {
+      "id": "iran_20",
+      "name": "Iran 20-Point Scale",
+      "country": "Iran",
+      "region": "Middle East",
+      "description": "Iranian 0–20 scale",
+      "scale": 20.0,
+      "grades": [
+        {
+          "grade": "18-20",
+          "points": 19.0,
+          "percentage": "90-100"
+        },
+        {
+          "grade": "15-17",
+          "points": 16.0,
+          "percentage": "75-89"
+        },
+        {
+          "grade": "10-14",
+          "points": 12.0,
+          "percentage": "50-74"
+        },
+        {
+          "grade": "0-9",
+          "points": 0.0,
+          "percentage": "0-49"
+        }
+      ]
+    },
+    {
+      "id": "pakistan_4_0",
+      "name": "Pakistan 4.0 Scale",
+      "country": "Pakistan",
+      "region": "South Asia",
+      "description": "Pakistani 4.0 GPA scale",
+      "scale": 4.0,
+      "grades": [
+        {
+          "grade": "A",
+          "points": 4.0
+        },
+        {
+          "grade": "B",
+          "points": 3.0
+        },
+        {
+          "grade": "C",
+          "points": 2.0
+        },
+        {
+          "grade": "D",
+          "points": 1.0
+        },
+        {
+          "grade": "F",
+          "points": 0.0
+        }
+      ]
+    },
+    {
+      "id": "nigeria_5_0",
+      "name": "Nigeria 5.0 Scale",
+      "country": "Nigeria",
+      "region": "Africa",
+      "description": "Nigerian 5.0 GPA scale",
+      "scale": 5.0,
+      "grades": [
+        {
+          "grade": "A",
+          "points": 5.0
+        },
+        {
+          "grade": "B",
+          "points": 4.0
+        },
+        {
+          "grade": "C",
+          "points": 3.0
+        },
+        {
+          "grade": "D",
+          "points": 2.0
+        },
+        {
+          "grade": "E",
+          "points": 1.0
+        },
+        {
+          "grade": "F",
+          "points": 0.0
+        }
+      ]
+    },
+    {
+      "id": "kenya_100",
+      "name": "Kenya 100-Point Scale",
+      "country": "Kenya",
+      "region": "Africa",
+      "description": "Kenyan 0–100 with letter categories",
+      "scale": 100.0,
+      "grades": [
+        {
+          "grade": "A",
+          "points": 90.0,
+          "percentage": "80-100"
+        },
+        {
+          "grade": "B",
+          "points": 70.0,
+          "percentage": "65-79"
+        },
+        {
+          "grade": "C",
+          "points": 55.0,
+          "percentage": "50-64"
+        },
+        {
+          "grade": "D",
+          "points": 40.0,
+          "percentage": "40-49"
+        },
+        {
+          "grade": "E",
+          "points": 0.0,
+          "percentage": "0-39"
+        }
       ]
     }
   ]
