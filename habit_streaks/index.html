@@ -285,22 +285,41 @@
     }
     .screenshot-grid { 
       display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
       gap: 2rem; 
       margin-top: 2rem; 
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .screenshot { 
       background: rgba(255, 255, 255, 0.1); 
       backdrop-filter: blur(10px);
-      padding: 1rem; 
+      padding: 1.5rem; 
       border-radius: 16px; 
       border: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .screenshot:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.15);
     }
     .screenshot img { 
       width: 100%; 
       height: auto; 
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    .screenshot img:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    }
+    .screenshot p {
+      margin-top: 1rem;
+      font-weight: 600;
+      color: white;
+      font-size: 1.1rem;
     }
     
     /* Stats Section */
@@ -374,7 +393,10 @@
       .hero h1 { font-size: 2.8rem; }
       .hero p { font-size: 1.2rem; }
       .features-grid { grid-template-columns: 1fr; }
-      .screenshot-grid { grid-template-columns: 1fr; }
+      .screenshot-grid { 
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+        gap: 1.5rem;
+      }
     }
     
     @media (max-width: 480px) {
@@ -511,16 +533,28 @@
         <h2>App Screenshots</h2>
         <div class="screenshot-grid">
           <div class="screenshot">
-            <img src="screenshot1.png" alt="Habit Streaks Main Dashboard" onerror="this.style.display='none'">
+            <img src="screenshot1.jpg" alt="Habit Streaks Main Dashboard - Track your daily habits with beautiful streak counters" onerror="this.style.display='none'">
             <p>Main Dashboard</p>
           </div>
           <div class="screenshot">
-            <img src="screenshot2.png" alt="Habit Streaks Progress Tracking" onerror="this.style.display='none'">
+            <img src="screenshot2.jpg" alt="Habit Streaks Progress Tracking - Visual progress charts and streak analytics" onerror="this.style.display='none'">
             <p>Progress Tracking</p>
           </div>
           <div class="screenshot">
-            <img src="screenshot3.png" alt="Habit Streaks Statistics" onerror="this.style.display='none'">
+            <img src="screenshot3.jpg" alt="Habit Streaks Statistics - Detailed insights and habit formation analytics" onerror="this.style.display='none'">
             <p>Statistics & Insights</p>
+          </div>
+          <div class="screenshot">
+            <img src="screenshot4.jpg" alt="Habit Streaks Group Challenges - Compete with friends and stay motivated together" onerror="this.style.display='none'">
+            <p>Group Challenges</p>
+          </div>
+          <div class="screenshot">
+            <img src="screenshot5.jpg" alt="Habit Streaks Achievement System - Unlock badges and celebrate milestones" onerror="this.style.display='none'">
+            <p>Achievement System</p>
+          </div>
+          <div class="screenshot">
+            <img src="screenshot6.jpg" alt="Habit Streaks Settings - Customize notifications and personalize your experience" onerror="this.style.display='none'">
+            <p>Settings & Customization</p>
           </div>
         </div>
       </div>
