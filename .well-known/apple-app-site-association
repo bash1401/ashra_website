@@ -1,0 +1,19 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "TEAMID.com.bashtech.habittracker",
+        "paths": [
+          "/habitstreaks/join/group/*"
+        ]
+      },
+      {
+        "appID": "TEAMID.com.bashtech.gpacalculator",
+        "paths": [
+          "/gpacalculator/*"
+        ]
+      }
+    ]
+  }
+}
