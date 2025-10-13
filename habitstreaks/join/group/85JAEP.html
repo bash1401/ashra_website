@@ -38,6 +38,32 @@
             margin-bottom: 30px;
             font-size: 16px;
         }
+        .app-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .app-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        .app-button:hover {
+            transform: translateY(-2px);
+        }
+        .android-button {
+            background: #3ddc84;
+        }
+        .ios-button {
+            background: #007aff;
+        }
         .invite-code {
             background: #f8f9fa;
             border: 2px dashed #dee2e6;
@@ -56,19 +82,10 @@
             color: #333;
             font-family: 'Courier New', monospace;
         }
-        .redirect-button {
-            background: #3ddc84;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            margin: 20px 0;
-            transition: transform 0.2s;
-        }
-        .redirect-button:hover {
-            transform: translateY(-2px);
+        .instructions {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
         }
         .loading {
             color: #666;
@@ -81,50 +98,39 @@
     <div class="container">
         <div class="logo">🏃‍♂️</div>
         <h1>Join Group Challenge</h1>
-        <p class="subtitle">Download Habit Streaks to join this group challenge!</p>
+        <p class="subtitle">Download Habit Streaks to join this group challenge and build better habits together!</p>
         
         <div class="invite-code">
             <div class="invite-code-label">Group Invite Code</div>
-            <div class="invite-code-value" id="inviteCode">Loading...</div>
+            <div class="invite-code-value">85JAEP</div>
+        </div>
+        
+        <div class="app-buttons">
+            <a href="https://play.google.com/store/apps/details?id=com.bashtech.habittracker" class="app-button android-button">
+                📱 Download for Android
+            </a>
+            <a href="https://apps.apple.com/app/habit-streaks/id123456789" class="app-button ios-button">
+                🍎 Download for iOS
+            </a>
+        </div>
+        
+        <div class="instructions">
+            <strong>How to join:</strong><br>
+            1. Download the app using the button above<br>
+            2. Open the app and sign up<br>
+            3. Go to "Group Challenges" and tap "Join Group"<br>
+            4. Enter the invite code: <strong>85JAEP</strong>
         </div>
         
         <div class="loading" id="loading">
             Trying to open the app...
         </div>
-        
-        <div id="redirectSection" style="display: none;">
-            <p>App not installed? Download it first:</p>
-            <a href="https://www.bashtech.info/habit_streaks/" class="redirect-button">
-                📱 Go to App Page
-            </a>
-        </div>
     </div>
 
     <script>
-        // Extract invite code from URL
-        function getInviteCode() {
-            const pathParts = window.location.pathname.split('/');
-            const inviteCode = pathParts[pathParts.length - 1];
-            
-            // If no invite code in path, try to get from query parameter
-            if (!inviteCode || inviteCode === 'redirect.html') {
-                const urlParams = new URLSearchParams(window.location.search);
-                return urlParams.get('code') || 'UNKNOWN';
-            }
-            
-            return inviteCode;
-        }
-        
-        // Update the page with invite code
-        function updatePage() {
-            const inviteCode = getInviteCode();
-            document.getElementById('inviteCode').textContent = inviteCode;
-        }
-        
         // Try to open the app
         function tryOpenApp() {
-            const inviteCode = getInviteCode();
-            const appScheme = `habitstreaks://join/group/${inviteCode}`;
+            const appScheme = 'habitstreaks://join/group/85JAEP';
             
             // Show loading message
             document.getElementById('loading').style.display = 'block';
@@ -135,16 +141,12 @@
             iframe.src = appScheme;
             document.body.appendChild(iframe);
             
-            // If app doesn't open within 3 seconds, show redirect option
+            // If app doesn't open within 3 seconds, the user stays on this page
             setTimeout(() => {
                 iframe.remove();
                 document.getElementById('loading').style.display = 'none';
-                document.getElementById('redirectSection').style.display = 'block';
             }, 3000);
         }
-        
-        // Initialize the page
-        updatePage();
         
         // Try to open the app
         tryOpenApp();

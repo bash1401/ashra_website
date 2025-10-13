@@ -38,11 +38,29 @@
             margin-bottom: 30px;
             font-size: 16px;
         }
+        .invite-code {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .invite-code-label {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .invite-code-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            font-family: 'Courier New', monospace;
+        }
         .app-buttons {
             display: flex;
             flex-direction: column;
             gap: 15px;
-            margin-bottom: 30px;
+            margin: 20px 0;
         }
         .app-button {
             display: flex;
@@ -64,28 +82,30 @@
         .ios-button {
             background: #007aff;
         }
-        .invite-code {
-            background: #f8f9fa;
-            border: 2px dashed #dee2e6;
+        .redirect-button {
+            background: #6c757d;
+            color: white;
+            padding: 15px 30px;
             border-radius: 12px;
-            padding: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
             margin: 20px 0;
+            transition: transform 0.2s;
         }
-        .invite-code-label {
+        .redirect-button:hover {
+            transform: translateY(-2px);
+        }
+        .loading {
             color: #666;
             font-size: 14px;
-            margin-bottom: 10px;
-        }
-        .invite-code-value {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-            font-family: 'Courier New', monospace;
+            margin-top: 20px;
         }
         .instructions {
             color: #666;
             font-size: 14px;
             line-height: 1.5;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -100,48 +120,83 @@
             <div class="invite-code-value" id="inviteCode">Loading...</div>
         </div>
         
-        <div class="app-buttons">
-            <a href="https://play.google.com/store/apps/details?id=com.bashtech.habittracker" class="app-button android-button">
-                📱 Download for Android
-            </a>
-            <a href="https://apps.apple.com/app/habit-streaks/id123456789" class="app-button ios-button">
-                🍎 Download for iOS
-            </a>
+        <div class="loading" id="loading">
+            Trying to open the app...
         </div>
         
-        <div class="instructions">
-            <strong>How to join:</strong><br>
-            1. Download the app using the button above<br>
-            2. Open the app and sign up<br>
-            3. Go to "Group Challenges" and tap "Join Group"<br>
-            4. Enter the invite code shown above
+        <div id="redirectSection" style="display: none;">
+            <div class="app-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.bashtech.habittracker" class="app-button android-button">
+                    📱 Download for Android
+                </a>
+                <a href="https://apps.apple.com/app/habit-streaks/id123456789" class="app-button ios-button">
+                    🍎 Download for iOS
+                </a>
+            </div>
+            
+            <a href="https://www.bashtech.info/habit_streaks/" class="redirect-button">
+                🌐 Visit App Page
+            </a>
+            
+            <div class="instructions">
+                <strong>How to join:</strong><br>
+                1. Download the app using the button above<br>
+                2. Open the app and sign up<br>
+                3. Go to "Group Challenges" and tap "Join Group"<br>
+                4. Enter the invite code: <strong id="inviteCodeText">Loading...</strong>
+            </div>
         </div>
     </div>
 
     <script>
         // Extract invite code from URL
-        const pathParts = window.location.pathname.split('/');
-        const inviteCode = pathParts[pathParts.length - 1];
-        
-        if (inviteCode && inviteCode !== '404.html' && inviteCode !== 'index.html') {
-            document.getElementById('inviteCode').textContent = inviteCode;
-        } else {
-            document.getElementById('inviteCode').textContent = 'Invalid Link';
+        function getInviteCode() {
+            const pathParts = window.location.pathname.split('/');
+            const inviteCode = pathParts[pathParts.length - 1];
+            
+            // If no invite code in path, try to get from query parameter
+            if (!inviteCode || inviteCode === '404.html') {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get('code') || 'UNKNOWN';
+            }
+            
+            return inviteCode;
         }
         
-        // Try to open the app first
-        const appScheme = 'habitstreaks://join/group/' + inviteCode;
+        // Update the page with invite code
+        function updatePage() {
+            const inviteCode = getInviteCode();
+            document.getElementById('inviteCode').textContent = inviteCode;
+            document.getElementById('inviteCodeText').textContent = inviteCode;
+        }
         
-        // Create a hidden iframe to try opening the app
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = appScheme;
-        document.body.appendChild(iframe);
+        // Try to open the app
+        function tryOpenApp() {
+            const inviteCode = getInviteCode();
+            const appScheme = `habitstreaks://join/group/${inviteCode}`;
+            
+            // Show loading message
+            document.getElementById('loading').style.display = 'block';
+            
+            // Create a hidden iframe to try opening the app
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = appScheme;
+            document.body.appendChild(iframe);
+            
+            // If app doesn't open within 3 seconds, show redirect option
+            setTimeout(() => {
+                iframe.remove();
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('redirectSection').style.display = 'block';
+            }, 3000);
+        }
         
-        // If app doesn't open within 2 seconds, show the fallback page
-        setTimeout(() => {
-            iframe.remove();
-        }, 2000);
+        // Initialize the page
+        updatePage();
+        
+        // Try to open the app
+        tryOpenApp();
     </script>
 </body>
 </html>
