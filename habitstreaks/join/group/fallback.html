@@ -88,6 +88,7 @@
             line-height: 1.5;
         }
         .loading {
+            display: none;
             color: #666;
             font-size: 14px;
             margin-top: 20px;
@@ -134,7 +135,7 @@
             const inviteCode = pathParts[pathParts.length - 1];
             
             // If no invite code in path, try to get from query parameter
-            if (!inviteCode || inviteCode === 'index.html') {
+            if (!inviteCode || inviteCode === 'fallback.html') {
                 const urlParams = new URLSearchParams(window.location.search);
                 return urlParams.get('code') || 'UNKNOWN';
             }
