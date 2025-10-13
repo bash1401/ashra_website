@@ -38,32 +38,6 @@
             margin-bottom: 30px;
             font-size: 16px;
         }
-        .app-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        .app-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px 20px;
-            border-radius: 12px;
-            text-decoration: none;
-            color: white;
-            font-weight: 600;
-            transition: transform 0.2s;
-        }
-        .app-button:hover {
-            transform: translateY(-2px);
-        }
-        .android-button {
-            background: #3ddc84;
-        }
-        .ios-button {
-            background: #007aff;
-        }
         .invite-code {
             background: #f8f9fa;
             border: 2px dashed #dee2e6;
@@ -82,14 +56,52 @@
             color: #333;
             font-family: 'Courier New', monospace;
         }
-        .instructions {
-            color: #666;
-            font-size: 14px;
-            line-height: 1.5;
+        .app-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .app-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        .app-button:hover {
+            transform: translateY(-2px);
+        }
+        .android-button {
+            background: #3ddc84;
+        }
+        .redirect-button {
+            background: #6c757d;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin: 20px 0;
+            transition: transform 0.2s;
+        }
+        .redirect-button:hover {
+            transform: translateY(-2px);
         }
         .loading {
             color: #666;
             font-size: 14px;
+            margin-top: 20px;
+        }
+        .instructions {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
             margin-top: 20px;
         }
     </style>
@@ -98,32 +110,35 @@
     <div class="container">
         <div class="logo">🏃‍♂️</div>
         <h1>Join Group Challenge</h1>
-        <p class="subtitle">Download Habit Streaks to join this group challenge and build better habits together!</p>
-        
-        <div class="invite-code">
-            <div class="invite-code-label">Group Invite Code</div>
-            <div class="invite-code-value" id="inviteCode">Loading...</div>
-        </div>
-        
-        <div class="app-buttons">
-            <a href="https://play.google.com/store/apps/details?id=com.bashtech.habittracker" class="app-button android-button">
-                📱 Download for Android
-            </a>
-            <a href="https://apps.apple.com/app/habit-streaks/id123456789" class="app-button ios-button">
-                🍎 Download for iOS
-            </a>
-        </div>
-        
-        <div class="instructions">
-            <strong>How to join:</strong><br>
-            1. Download the app using the button above<br>
-            2. Open the app and sign up<br>
-            3. Go to "Group Challenges" and tap "Join Group"<br>
-            4. Enter the invite code: <strong id="inviteCodeText">Loading...</strong>
-        </div>
+        <p class="subtitle">Checking if app is installed...</p>
         
         <div class="loading" id="loading">
             Trying to open the app...
+        </div>
+        
+        <div id="fallback" style="display: none;">
+            <div class="invite-code">
+                <div class="invite-code-label">Group Invite Code</div>
+                <div class="invite-code-value" id="inviteCode">Loading...</div>
+            </div>
+            
+            <div class="app-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.bashtech.habittracker" class="app-button android-button">
+                    📱 Download for Android
+                </a>
+            </div>
+            
+            <a href="https://www.bashtech.info/habit_streaks/" class="redirect-button">
+                🌐 Visit App Page
+            </a>
+            
+            <div class="instructions">
+                <strong>How to join:</strong><br>
+                1. Download the app using the button above<br>
+                2. Open the app and sign up<br>
+                3. Go to "Group Challenges" and tap "Join Group"<br>
+                4. Enter the invite code: <strong id="inviteCodeText">Loading...</strong>
+            </div>
         </div>
     </div>
 
@@ -149,13 +164,28 @@
             document.getElementById('inviteCodeText').textContent = inviteCode;
         }
         
-        // Try to open the app
+        // Try to open the app and check if it opens
         function tryOpenApp() {
             const inviteCode = getInviteCode();
             const appScheme = `habitstreaks://join/group/${inviteCode}`;
             
-            // Show loading message
-            document.getElementById('loading').style.display = 'block';
+            // Track if the page loses focus (app opened)
+            let pageHidden = false;
+            let timeoutId;
+            
+            // Listen for page visibility change
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden) {
+                    pageHidden = true;
+                    clearTimeout(timeoutId);
+                }
+            });
+            
+            // Listen for page blur (app might have opened)
+            window.addEventListener('blur', function() {
+                pageHidden = true;
+                clearTimeout(timeoutId);
+            });
             
             // Create a hidden iframe to try opening the app
             const iframe = document.createElement('iframe');
@@ -163,11 +193,15 @@
             iframe.src = appScheme;
             document.body.appendChild(iframe);
             
-            // If app doesn't open within 3 seconds, the user stays on this page
-            setTimeout(() => {
-                iframe.remove();
-                document.getElementById('loading').style.display = 'none';
-            }, 3000);
+            // Set a timeout to show fallback if app doesn't open
+            timeoutId = setTimeout(() => {
+                if (!pageHidden) {
+                    // App didn't open, show fallback
+                    iframe.remove();
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('fallback').style.display = 'block';
+                }
+            }, 2000);
         }
         
         // Initialize the page
