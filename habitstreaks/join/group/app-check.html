@@ -79,9 +79,6 @@
         .android-button {
             background: #3ddc84;
         }
-        .ios-button {
-            background: #007aff;
-        }
         .redirect-button {
             background: #6c757d;
             color: white;
@@ -121,7 +118,7 @@
         </div>
         
         <div class="loading" id="loading">
-            Trying to open the app...
+            Checking if app is installed...
         </div>
         
         <div id="redirectSection" style="display: none;">
@@ -156,7 +153,7 @@
             const inviteCode = pathParts[pathParts.length - 1];
             
             // If no invite code in path, try to get from query parameter
-            if (!inviteCode || inviteCode === '404.html') {
+            if (!inviteCode || inviteCode === 'app-check.html') {
                 const urlParams = new URLSearchParams(window.location.search);
                 return urlParams.get('code') || 'UNKNOWN';
             }
