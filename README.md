@@ -157,7 +157,7 @@ When the app is ready, change `"status": "coming-soon"` to `"status": "live"` in
   "developer": {
     "name": "BashTech",
     "email": "subash.rathinam1401@gmail.com",
-    "playStoreUrl": "https://play.google.com/store/apps/developer?id=Ashra",
+    "playStoreUrl": "https://play.google.com/store/apps/developer?id=bashtech",
     "focus": "Privacy & Security Apps",
     "location": "India"
   },

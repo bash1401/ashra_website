@@ -73,7 +73,7 @@ focustimer/
 - **Developer**: BashTech
 - **Email**: subash.rathinam1401@gmail.com
 - **Website**: https://www.bashtech.info/
-- **Play Store**: https://play.google.com/store/apps/developer?id=Ashra
+- **Play Store**: https://play.google.com/store/apps/developer?id=bashtech
 
 ## License
 
