@@ -97,10 +97,28 @@
             Trying to open the app...
         </div>
         
-        <div id="fallback" style="display: none;">
+        <div id="appButton" style="display: none;">
             <div class="invite-code">
                 <div class="invite-code-label">Group Invite Code</div>
                 <div class="invite-code-value" id="inviteCode">Loading...</div>
+            </div>
+            
+            <a href="#" id="openAppButton" class="app-button android-button">
+                🚀 Open Habit Streaks App
+            </a>
+            
+            <div class="instructions">
+                <strong>How to join:</strong><br>
+                1. Tap the button above to open the app<br>
+                2. The app will open with the join dialog<br>
+                3. Enter your details and join the group!
+            </div>
+        </div>
+        
+        <div id="fallback" style="display: none;">
+            <div class="invite-code">
+                <div class="invite-code-label">Group Invite Code</div>
+                <div class="invite-code-value" id="inviteCodeFallback">Loading...</div>
             </div>
             
             <a href="https://play.google.com/store/apps/details?id=com.bashtech.habittracker" class="app-button android-button">
@@ -136,6 +154,7 @@
         function updatePage() {
             const inviteCode = getInviteCode();
             document.getElementById('inviteCode').textContent = inviteCode;
+            document.getElementById('inviteCodeFallback').textContent = inviteCode;
             document.getElementById('inviteCodeText').textContent = inviteCode;
         }
         
@@ -146,33 +165,6 @@
             
             console.log('🔗 WEB DEBUG - Trying to open app with scheme:', appScheme);
             
-            // Track if the page loses focus (app opened)
-            let pageHidden = false;
-            let timeoutId;
-            let appOpened = false;
-            
-            // Listen for page visibility change
-            document.addEventListener('visibilitychange', function() {
-                console.log('🔗 WEB DEBUG - Page visibility changed, hidden:', document.hidden);
-                if (document.hidden) {
-                    pageHidden = true;
-                    appOpened = true;
-                    clearTimeout(timeoutId);
-                    console.log('🔗 WEB DEBUG - App opened successfully!');
-                }
-            });
-            
-            // Listen for page blur (app might have opened)
-            window.addEventListener('blur', function() {
-                console.log('🔗 WEB DEBUG - Page lost focus, app might have opened');
-                pageHidden = true;
-                appOpened = true;
-                clearTimeout(timeoutId);
-            });
-            
-            // Simple, direct approach
-            console.log('🔗 WEB DEBUG - Attempting to open app...');
-            
             // Try to open the app immediately
             try {
                 window.location.href = appScheme;
@@ -181,16 +173,18 @@
                 console.log('🔗 WEB DEBUG - window.location.href failed:', e);
             }
             
-            // Set a timeout to show fallback if app doesn't open
-            timeoutId = setTimeout(() => {
-                console.log('🔗 WEB DEBUG - Timeout reached, pageHidden:', pageHidden, 'appOpened:', appOpened);
-                if (!pageHidden && !appOpened) {
-                    // App didn't open, show fallback
-                    console.log('🔗 WEB DEBUG - App did not open, showing fallback');
-                    document.getElementById('loading').style.display = 'none';
-                    document.getElementById('fallback').style.display = 'block';
-                }
-            }, 2000);
+            // Show the app button after a short delay
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('appButton').style.display = 'block';
+                
+                // Set up the button click handler
+                document.getElementById('openAppButton').onclick = function(e) {
+                    e.preventDefault();
+                    console.log('🔗 WEB DEBUG - Button clicked, opening app...');
+                    window.location.href = appScheme;
+                };
+            }, 1000);
         }
         
         // Initialize the page
