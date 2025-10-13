@@ -139,7 +139,7 @@
             // Remove any file extensions
             const cleanCode = inviteCode.replace(/\.(html|htm)$/, '');
             
-            if (cleanCode && cleanCode !== 'index' && cleanCode !== '404') {
+            if (cleanCode && cleanCode !== 'index' && cleanCode !== '404' && cleanCode !== 'join') {
                 return cleanCode;
             }
             return null;
