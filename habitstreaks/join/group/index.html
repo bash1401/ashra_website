@@ -125,6 +125,14 @@
     <script>
         // Extract invite code from URL
         function extractInviteCode() {
+            // First try to get from query parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const codeParam = urlParams.get('code');
+            if (codeParam) {
+                return codeParam;
+            }
+            
+            // Fallback to path-based extraction
             const pathParts = window.location.pathname.split('/');
             const inviteCode = pathParts[pathParts.length - 1];
             
