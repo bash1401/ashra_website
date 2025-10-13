@@ -56,8 +56,31 @@
             color: #333;
             font-family: 'Courier New', monospace;
         }
-        .redirect-button {
+        .app-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .app-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        .app-button:hover {
+            transform: translateY(-2px);
+        }
+        .android-button {
             background: #3ddc84;
+        }
+        .redirect-button {
+            background: #6c757d;
             color: white;
             padding: 15px 30px;
             border-radius: 12px;
@@ -75,79 +98,25 @@
             font-size: 14px;
             margin-top: 20px;
         }
+        .instructions {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="logo">🏃‍♂️</div>
         <h1>Join Group Challenge</h1>
-        <p class="subtitle">Download Habit Streaks to join this group challenge!</p>
-        
-        <div class="invite-code">
-            <div class="invite-code-label">Group Invite Code</div>
-            <div class="invite-code-value" id="inviteCode">Loading...</div>
-        </div>
+        <p class="subtitle">Checking if app is installed...</p>
         
         <div class="loading" id="loading">
             Trying to open the app...
         </div>
-        
-        <div id="redirectSection" style="display: none;">
-            <p>App not installed? Download it first:</p>
-            <a href="https://www.bashtech.info/habit_streaks/" class="redirect-button">
-                📱 Go to App Page
-            </a>
-        </div>
     </div>
 
-    <script>
-        // Extract invite code from URL
-        function getInviteCode() {
-            const pathParts = window.location.pathname.split('/');
-            const inviteCode = pathParts[pathParts.length - 1];
-            
-            // If no invite code in path, try to get from query parameter
-            if (!inviteCode || inviteCode === 'redirect.html') {
-                const urlParams = new URLSearchParams(window.location.search);
-                return urlParams.get('code') || 'UNKNOWN';
-            }
-            
-            return inviteCode;
-        }
-        
-        // Update the page with invite code
-        function updatePage() {
-            const inviteCode = getInviteCode();
-            document.getElementById('inviteCode').textContent = inviteCode;
-        }
-        
-        // Try to open the app
-        function tryOpenApp() {
-            const inviteCode = getInviteCode();
-            const appScheme = `habitstreaks://join/group/${inviteCode}`;
-            
-            // Show loading message
-            document.getElementById('loading').style.display = 'block';
-            
-            // Create a hidden iframe to try opening the app
-            const iframe = document.createElement('iframe');
-            iframe.style.display = 'none';
-            iframe.src = appScheme;
-            document.body.appendChild(iframe);
-            
-            // If app doesn't open within 3 seconds, show redirect option
-            setTimeout(() => {
-                iframe.remove();
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('redirectSection').style.display = 'block';
-            }, 3000);
-        }
-        
-        // Initialize the page
-        updatePage();
-        
-        // Try to open the app
-        tryOpenApp();
-    </script>
+    <script src="redirect.js"></script>
 </body>
 </html>
