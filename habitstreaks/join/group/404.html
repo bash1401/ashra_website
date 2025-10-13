@@ -173,45 +173,63 @@
             // Multiple approaches to open the app
             console.log('🔗 WEB DEBUG - Attempting to open app with multiple methods...');
             
-            // Method 1: Direct window.location
-            try {
-                window.location.href = appScheme;
-                console.log('🔗 WEB DEBUG - Method 1: window.location.href attempted');
-            } catch (e) {
-                console.log('🔗 WEB DEBUG - Method 1 failed:', e);
-            }
+            // Method 1: Direct window.location (most reliable)
+            setTimeout(() => {
+                try {
+                    console.log('🔗 WEB DEBUG - Method 1: window.location.href');
+                    window.location.href = appScheme;
+                } catch (e) {
+                    console.log('🔗 WEB DEBUG - Method 1 failed:', e);
+                }
+            }, 100);
             
             // Method 2: Create a link and click it
-            try {
-                const link = document.createElement('a');
-                link.href = appScheme;
-                link.style.display = 'none';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                console.log('🔗 WEB DEBUG - Method 2: Link click attempted');
-            } catch (e) {
-                console.log('🔗 WEB DEBUG - Method 2 failed:', e);
-            }
+            setTimeout(() => {
+                try {
+                    console.log('🔗 WEB DEBUG - Method 2: Link click');
+                    const link = document.createElement('a');
+                    link.href = appScheme;
+                    link.style.display = 'none';
+                    document.body.appendChild(link);
+                    link.click();
+                    setTimeout(() => document.body.removeChild(link), 100);
+                } catch (e) {
+                    console.log('🔗 WEB DEBUG - Method 2 failed:', e);
+                }
+            }, 200);
             
             // Method 3: Iframe approach
-            try {
-                const iframe = document.createElement('iframe');
-                iframe.style.display = 'none';
-                iframe.src = appScheme;
-                document.body.appendChild(iframe);
-                console.log('🔗 WEB DEBUG - Method 3: Iframe attempted');
-            } catch (e) {
-                console.log('🔗 WEB DEBUG - Method 3 failed:', e);
-            }
+            setTimeout(() => {
+                try {
+                    console.log('🔗 WEB DEBUG - Method 3: Iframe');
+                    const iframe = document.createElement('iframe');
+                    iframe.style.display = 'none';
+                    iframe.src = appScheme;
+                    document.body.appendChild(iframe);
+                } catch (e) {
+                    console.log('🔗 WEB DEBUG - Method 3 failed:', e);
+                }
+            }, 300);
             
             // Method 4: Use window.open
-            try {
-                window.open(appScheme, '_self');
-                console.log('🔗 WEB DEBUG - Method 4: window.open attempted');
-            } catch (e) {
-                console.log('🔗 WEB DEBUG - Method 4 failed:', e);
-            }
+            setTimeout(() => {
+                try {
+                    console.log('🔗 WEB DEBUG - Method 4: window.open');
+                    window.open(appScheme, '_self');
+                } catch (e) {
+                    console.log('🔗 WEB DEBUG - Method 4 failed:', e);
+                }
+            }, 400);
+            
+            // Method 5: Direct navigation
+            setTimeout(() => {
+                try {
+                    console.log('🔗 WEB DEBUG - Method 5: Direct navigation');
+                    window.location = appScheme;
+                } catch (e) {
+                    console.log('🔗 WEB DEBUG - Method 5 failed:', e);
+                }
+            }, 500);
             
             // Set a timeout to show fallback if app doesn't open
             timeoutId = setTimeout(() => {
