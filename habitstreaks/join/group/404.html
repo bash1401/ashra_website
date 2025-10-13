@@ -56,12 +56,6 @@
             color: #333;
             font-family: 'Courier New', monospace;
         }
-        .app-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin: 20px 0;
-        }
         .app-button {
             display: flex;
             align-items: center;
@@ -72,29 +66,13 @@
             color: white;
             font-weight: 600;
             transition: transform 0.2s;
+            margin: 20px 0;
         }
         .app-button:hover {
             transform: translateY(-2px);
         }
         .android-button {
             background: #3ddc84;
-        }
-        .ios-button {
-            background: #007aff;
-        }
-        .redirect-button {
-            background: #6c757d;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            margin: 20px 0;
-            transition: transform 0.2s;
-        }
-        .redirect-button:hover {
-            transform: translateY(-2px);
         }
         .loading {
             color: #666;
@@ -113,30 +91,20 @@
     <div class="container">
         <div class="logo">🏃‍♂️</div>
         <h1>Join Group Challenge</h1>
-        <p class="subtitle">Download Habit Streaks to join this group challenge and build better habits together!</p>
-        
-        <div class="invite-code">
-            <div class="invite-code-label">Group Invite Code</div>
-            <div class="invite-code-value" id="inviteCode">Loading...</div>
-        </div>
+        <p class="subtitle">Download Habit Streaks to join this group challenge!</p>
         
         <div class="loading" id="loading">
             Trying to open the app...
         </div>
         
-        <div id="redirectSection" style="display: none;">
-            <div class="app-buttons">
-                <a href="https://play.google.com/store/apps/details?id=com.bashtech.habittracker" class="app-button android-button">
-                    📱 Download for Android
-                </a>
-                <!-- iOS download button - will be added later -->
-                <!-- <a href="https://apps.apple.com/app/habit-streaks/id123456789" class="app-button ios-button">
-                    🍎 Download for iOS
-                </a> -->
+        <div id="fallback" style="display: none;">
+            <div class="invite-code">
+                <div class="invite-code-label">Group Invite Code</div>
+                <div class="invite-code-value" id="inviteCode">Loading...</div>
             </div>
             
-            <a href="https://www.bashtech.info/habit_streaks/" class="redirect-button">
-                🌐 Visit App Page
+            <a href="https://play.google.com/store/apps/details?id=com.bashtech.habittracker" class="app-button android-button">
+                📱 Download Habit Streaks
             </a>
             
             <div class="instructions">
@@ -176,9 +144,6 @@
             const inviteCode = getInviteCode();
             const appScheme = `habitstreaks://join/group/${inviteCode}`;
             
-            // Show loading message
-            document.getElementById('loading').style.display = 'block';
-            
             // Track if the page loses focus (app opened)
             let pageHidden = false;
             let timeoutId;
@@ -209,7 +174,7 @@
                     // App didn't open, show fallback
                     iframe.remove();
                     document.getElementById('loading').style.display = 'none';
-                    document.getElementById('redirectSection').style.display = 'block';
+                    document.getElementById('fallback').style.display = 'block';
                 }
             }, 2000);
         }
