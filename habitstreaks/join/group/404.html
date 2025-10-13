@@ -149,12 +149,14 @@
             // Track if the page loses focus (app opened)
             let pageHidden = false;
             let timeoutId;
+            let appOpened = false;
             
             // Listen for page visibility change
             document.addEventListener('visibilitychange', function() {
                 console.log('🔗 WEB DEBUG - Page visibility changed, hidden:', document.hidden);
                 if (document.hidden) {
                     pageHidden = true;
+                    appOpened = true;
                     clearTimeout(timeoutId);
                     console.log('🔗 WEB DEBUG - App opened successfully!');
                 }
@@ -164,30 +166,63 @@
             window.addEventListener('blur', function() {
                 console.log('🔗 WEB DEBUG - Page lost focus, app might have opened');
                 pageHidden = true;
+                appOpened = true;
                 clearTimeout(timeoutId);
             });
             
-            // Try to open the app using window.location first
-            console.log('🔗 WEB DEBUG - Attempting to open app...');
-            window.location.href = appScheme;
+            // Multiple approaches to open the app
+            console.log('🔗 WEB DEBUG - Attempting to open app with multiple methods...');
             
-            // Also try with iframe as backup
-            const iframe = document.createElement('iframe');
-            iframe.style.display = 'none';
-            iframe.src = appScheme;
-            document.body.appendChild(iframe);
+            // Method 1: Direct window.location
+            try {
+                window.location.href = appScheme;
+                console.log('🔗 WEB DEBUG - Method 1: window.location.href attempted');
+            } catch (e) {
+                console.log('🔗 WEB DEBUG - Method 1 failed:', e);
+            }
+            
+            // Method 2: Create a link and click it
+            try {
+                const link = document.createElement('a');
+                link.href = appScheme;
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                console.log('🔗 WEB DEBUG - Method 2: Link click attempted');
+            } catch (e) {
+                console.log('🔗 WEB DEBUG - Method 2 failed:', e);
+            }
+            
+            // Method 3: Iframe approach
+            try {
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = appScheme;
+                document.body.appendChild(iframe);
+                console.log('🔗 WEB DEBUG - Method 3: Iframe attempted');
+            } catch (e) {
+                console.log('🔗 WEB DEBUG - Method 3 failed:', e);
+            }
+            
+            // Method 4: Use window.open
+            try {
+                window.open(appScheme, '_self');
+                console.log('🔗 WEB DEBUG - Method 4: window.open attempted');
+            } catch (e) {
+                console.log('🔗 WEB DEBUG - Method 4 failed:', e);
+            }
             
             // Set a timeout to show fallback if app doesn't open
             timeoutId = setTimeout(() => {
-                console.log('🔗 WEB DEBUG - Timeout reached, pageHidden:', pageHidden);
-                if (!pageHidden) {
+                console.log('🔗 WEB DEBUG - Timeout reached, pageHidden:', pageHidden, 'appOpened:', appOpened);
+                if (!pageHidden && !appOpened) {
                     // App didn't open, show fallback
                     console.log('🔗 WEB DEBUG - App did not open, showing fallback');
-                    iframe.remove();
                     document.getElementById('loading').style.display = 'none';
                     document.getElementById('fallback').style.display = 'block';
                 }
-            }, 2000);
+            }, 3000); // Increased timeout to 3 seconds
         }
         
         // Initialize the page
