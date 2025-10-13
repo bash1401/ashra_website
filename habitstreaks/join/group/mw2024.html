@@ -87,10 +87,6 @@
             font-size: 14px;
             line-height: 1.5;
         }
-        .loading {
-            color: #999;
-            font-style: italic;
-        }
     </style>
 </head>
 <body>
@@ -101,7 +97,7 @@
         
         <div class="invite-code">
             <div class="invite-code-label">Group Invite Code</div>
-            <div class="invite-code-value" id="inviteCode">Loading...</div>
+            <div class="invite-code-value">mw2024</div>
         </div>
         
         <div class="app-buttons">
@@ -118,63 +114,24 @@
             1. Download the app using the button above<br>
             2. Open the app and sign up<br>
             3. Go to "Group Challenges" and tap "Join Group"<br>
-            4. Enter the invite code shown above
+            4. Enter the invite code: <strong>mw2024</strong>
         </div>
     </div>
 
     <script>
-        // Extract invite code from URL
-        function extractInviteCode() {
-            const pathParts = window.location.pathname.split('/');
-            const inviteCode = pathParts[pathParts.length - 1];
-            
-            // Remove any file extensions
-            const cleanCode = inviteCode.replace(/\.(html|htm)$/, '');
-            
-            if (cleanCode && cleanCode !== 'index' && cleanCode !== '404') {
-                return cleanCode;
-            }
-            return null;
-        }
-        
-        // Update the invite code display
-        function updateInviteCode() {
-            const inviteCode = extractInviteCode();
-            const inviteCodeElement = document.getElementById('inviteCode');
-            
-            if (inviteCode) {
-                inviteCodeElement.textContent = inviteCode;
-                inviteCodeElement.classList.remove('loading');
-            } else {
-                inviteCodeElement.textContent = 'Invalid Link';
-                inviteCodeElement.classList.remove('loading');
-            }
-        }
-        
         // Try to open the app first
-        function tryOpenApp() {
-            const inviteCode = extractInviteCode();
-            if (inviteCode) {
-                const appScheme = 'habitstreaks://join/group/' + inviteCode;
-                
-                // Create a hidden iframe to try opening the app
-                const iframe = document.createElement('iframe');
-                iframe.style.display = 'none';
-                iframe.src = appScheme;
-                document.body.appendChild(iframe);
-                
-                // If app doesn't open within 2 seconds, show the fallback page
-                setTimeout(() => {
-                    iframe.remove();
-                }, 2000);
-            }
-        }
+        const appScheme = 'habitstreaks://join/group/mw2024';
         
-        // Initialize the page
-        document.addEventListener('DOMContentLoaded', function() {
-            updateInviteCode();
-            tryOpenApp();
-        });
+        // Create a hidden iframe to try opening the app
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = appScheme;
+        document.body.appendChild(iframe);
+        
+        // If app doesn't open within 2 seconds, show the fallback page
+        setTimeout(() => {
+            iframe.remove();
+        }, 2000);
     </script>
 </body>
 </html>

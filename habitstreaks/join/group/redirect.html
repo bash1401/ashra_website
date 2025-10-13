@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+        // Extract invite code from URL and redirect to main page
+        const pathParts = window.location.pathname.split('/');
+        const inviteCode = pathParts[pathParts.length - 1];
+        
+        if (inviteCode && inviteCode !== 'redirect.html') {
+            // Redirect to the main page with the invite code
+            window.location.href = '/habitstreaks/join/group/?code=' + inviteCode;
+        } else {
+            // Fallback to main page
+            window.location.href = '/habitstreaks/join/group/';
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
