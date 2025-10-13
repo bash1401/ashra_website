@@ -26,19 +26,3 @@
     }
   }
 ]
-
-[
-  {
-    "relation": [
-      "delegate_permission/common.handle_all_urls",
-      "delegate_permission/common.get_login_creds"
-    ],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "com.bashtech.gpacalculator",
-      "sha256_cert_fingerprints": [
-        "5A:F0:71:4D:34:77:11:1A:35:CF:B1:64:FF:31:04:9B:B2:32:95:AB:94:91:9E:55:80:F9:E8:2A:2F:A2:27:1D"
-      ]
-    }
-  }
-]
