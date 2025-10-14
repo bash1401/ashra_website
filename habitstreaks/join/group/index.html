@@ -266,6 +266,8 @@
             // Track if the page loses focus (app opened)
             let appOpened = false;
             let timeoutId;
+            let attemptCount = 0;
+            const maxAttempts = 3;
             
             // Listen for page visibility change
             document.addEventListener('visibilitychange', function() {
@@ -305,26 +307,60 @@
                 }
             }
             
-            // Try to open the app
-            if (isAndroid()) {
-                // For Android, try universal link first (use bashtech.info domain)
-                const httpsUrl = `https://www.bashtech.info/habitstreaks/join/group/${inviteCode}`;
-                console.log('Trying universal link:', httpsUrl);
-                window.location.href = httpsUrl;
+            function tryNextMethod() {
+                attemptCount++;
+                console.log(`Attempt ${attemptCount} of ${maxAttempts}`);
                 
-                // Fallback to intent after a delay
-                setTimeout(() => {
-                    if (!appOpened && isChrome()) {
+                if (attemptCount === 1) {
+                    // First attempt: Try universal link
+                    const httpsUrl = `https://www.bashtech.info/habitstreaks/join/group/${inviteCode}`;
+                    console.log('Trying universal link:', httpsUrl);
+                    window.location.href = httpsUrl;
+                    
+                    // Check if app opened after a short delay
+                    setTimeout(() => {
+                        if (!appOpened && attemptCount < maxAttempts) {
+                            tryNextMethod();
+                        } else if (!appOpened) {
+                            showFallback();
+                        }
+                    }, 1500);
+                    
+                } else if (attemptCount === 2) {
+                    // Second attempt: Try intent URL (Android Chrome)
+                    if (isAndroid() && isChrome()) {
                         console.log('Trying intent URL');
                         window.location.href = buildAndroidIntentUrl(inviteCode);
+                    } else {
+                        console.log('Trying custom scheme');
+                        window.location.href = appScheme;
                     }
-                }, 1000);
-                
-            } else {
-                // For iOS or other platforms, try custom scheme
-                console.log('Trying custom scheme:', appScheme);
-                window.location.href = appScheme;
+                    
+                    // Check if app opened after a short delay
+                    setTimeout(() => {
+                        if (!appOpened && attemptCount < maxAttempts) {
+                            tryNextMethod();
+                        } else if (!appOpened) {
+                            showFallback();
+                        }
+                    }, 1500);
+                    
+                } else {
+                    // Third attempt: Try custom scheme
+                    console.log('Trying custom scheme:', appScheme);
+                    window.location.href = appScheme;
+                    
+                    // Final check
+                    setTimeout(() => {
+                        if (!appOpened) {
+                            showFallback();
+                        }
+                    }, 1500);
+                }
             }
+            
+            // Start the detection process
+            tryNextMethod();
             
             // Set a timeout to show fallback if app doesn't open
             timeoutId = setTimeout(() => {
@@ -332,7 +368,7 @@
                     console.log('App not detected, showing fallback');
                     showFallback();
                 }
-            }, 2500);
+            }, 5000);
         }
         
         // Retry app detection function
