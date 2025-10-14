@@ -193,93 +193,6 @@
             return /Chrome/i.test(navigator.userAgent) && !/OPR|Edg|Brave/i.test(navigator.userAgent);
         }
 
-        // Check if custom scheme is supported (app installed)
-        function checkSchemeSupport(scheme) {
-            return new Promise((resolve) => {
-                const iframe = document.createElement('iframe');
-                iframe.style.display = 'none';
-                iframe.style.width = '1px';
-                iframe.style.height = '1px';
-                iframe.style.position = 'absolute';
-                iframe.style.left = '-9999px';
-                
-                let resolved = false;
-                let appOpened = false;
-                
-                const cleanup = () => {
-                    try { iframe.remove(); } catch (_) {}
-                };
-                
-                // Listen for page visibility change (app opened)
-                const visibilityHandler = () => {
-                    if (document.hidden) {
-                        appOpened = true;
-                        if (!resolved) {
-                            resolved = true;
-                            cleanup();
-                            resolve(true); // App opened, scheme is supported
-                        }
-                    }
-                };
-                
-                // Listen for page blur (app might have opened)
-                const blurHandler = () => {
-                    appOpened = true;
-                    if (!resolved) {
-                        resolved = true;
-                        cleanup();
-                        resolve(true); // App opened, scheme is supported
-                    }
-                };
-                
-                document.addEventListener('visibilitychange', visibilityHandler);
-                window.addEventListener('blur', blurHandler);
-                
-                iframe.onload = () => {
-                    if (!resolved && !appOpened) {
-                        resolved = true;
-                        cleanup();
-                        document.removeEventListener('visibilitychange', visibilityHandler);
-                        window.removeEventListener('blur', blurHandler);
-                        resolve(false); // If iframe loads, scheme not supported
-                    }
-                };
-                
-                iframe.onerror = () => {
-                    if (!resolved && !appOpened) {
-                        resolved = true;
-                        cleanup();
-                        document.removeEventListener('visibilitychange', visibilityHandler);
-                        window.removeEventListener('blur', blurHandler);
-                        resolve(false); // Error loading, scheme not supported
-                    }
-                };
-                
-                // Set timeout
-                setTimeout(() => {
-                    if (!resolved) {
-                        resolved = true;
-                        cleanup();
-                        document.removeEventListener('visibilitychange', visibilityHandler);
-                        window.removeEventListener('blur', blurHandler);
-                        resolve(false); // Timeout, assume not supported
-                    }
-                }, 2000);
-                
-                try {
-                    iframe.src = scheme;
-                    document.body.appendChild(iframe);
-                } catch (error) {
-                    if (!resolved) {
-                        resolved = true;
-                        cleanup();
-                        document.removeEventListener('visibilitychange', visibilityHandler);
-                        window.removeEventListener('blur', blurHandler);
-                        resolve(false);
-                    }
-                }
-            });
-        }
 
         function showOpenInAppButton(inviteCode) {
             const btn = document.getElementById('openInAppBtn');
@@ -346,21 +259,17 @@
         }
 
         // Try to open the app and check if it opens
-        async function tryOpenApp() {
+        function tryOpenApp() {
             const inviteCode = getInviteCode();
             const appScheme = `habitstreaks://join/group/${inviteCode}`;
             
             // Track if the page loses focus (app opened)
-            let pageHidden = false;
             let appOpened = false;
             let timeoutId;
-            let detectionAttempts = 0;
-            const maxAttempts = 3;
             
             // Listen for page visibility change
             document.addEventListener('visibilitychange', function() {
                 if (document.hidden) {
-                    pageHidden = true;
                     appOpened = true;
                     console.log('App opened - page hidden');
                     clearTimeout(timeoutId);
@@ -369,7 +278,6 @@
             
             // Listen for page blur (app might have opened)
             window.addEventListener('blur', function() {
-                pageHidden = true;
                 appOpened = true;
                 console.log('App opened - page blurred');
                 clearTimeout(timeoutId);
@@ -386,72 +294,6 @@
                 }
             });
             
-            // Try to detect if app is installed by attempting to open it
-            async function attemptAppOpen() {
-                detectionAttempts++;
-                console.log(`Detection attempt ${detectionAttempts} of ${maxAttempts}`);
-                
-                if (isAndroid()) {
-                    // For Android, try multiple methods
-                    const httpsUrl = `https://subashrathinam.github.io/ashra_website/habitstreaks/join/group/${inviteCode}`;
-                    
-                    if (detectionAttempts === 1) {
-                        // First attempt: Try universal link directly
-                        window.location.href = httpsUrl;
-                        
-                        // Give it time to open
-                        setTimeout(() => {
-                            if (!appOpened && detectionAttempts < maxAttempts) {
-                                attemptAppOpen();
-                            } else if (!appOpened) {
-                                showFallback();
-                            }
-                        }, 2000);
-                        
-                    } else if (detectionAttempts === 2) {
-                        // Second attempt: Try intent URL
-                        if (isChrome()) {
-                            window.location.href = buildAndroidIntentUrl(inviteCode);
-                        } else {
-                            window.location.href = appScheme;
-                        }
-                        
-                        // Give it time to open
-                        setTimeout(() => {
-                            if (!appOpened && detectionAttempts < maxAttempts) {
-                                attemptAppOpen();
-                            } else if (!appOpened) {
-                                showFallback();
-                            }
-                        }, 2000);
-                        
-                    } else {
-                        // Third attempt: Direct scheme
-                        window.location.href = appScheme;
-                        
-                        // Give it time to open
-                        setTimeout(() => {
-                            if (!appOpened) {
-                                showFallback();
-                            }
-                        }, 2000);
-                    }
-                    
-                } else {
-                    // For iOS or other platforms, try to open the app directly
-                    // and monitor if it opens
-                    window.location.href = appScheme;
-                    
-                    // Give the app a chance to open
-                    setTimeout(() => {
-                        if (!appOpened) {
-                            // App didn't open, show fallback
-                            showFallback();
-                        }
-                    }, 1500);
-                }
-            }
-            
             function showFallback() {
                 if (!appOpened) {
                     document.getElementById('loading').style.display = 'none';
@@ -460,15 +302,34 @@
                 }
             }
             
-            // Start the app opening attempt
-            attemptAppOpen();
+            // Try to open the app
+            if (isAndroid()) {
+                // For Android, try universal link first
+                const httpsUrl = `https://subashrathinam.github.io/ashra_website/habitstreaks/join/group/${inviteCode}`;
+                console.log('Trying universal link:', httpsUrl);
+                window.location.href = httpsUrl;
+                
+                // Fallback to intent after a delay
+                setTimeout(() => {
+                    if (!appOpened && isChrome()) {
+                        console.log('Trying intent URL');
+                        window.location.href = buildAndroidIntentUrl(inviteCode);
+                    }
+                }, 1000);
+                
+            } else {
+                // For iOS or other platforms, try custom scheme
+                console.log('Trying custom scheme:', appScheme);
+                window.location.href = appScheme;
+            }
             
             // Set a timeout to show fallback if app doesn't open
             timeoutId = setTimeout(() => {
                 if (!appOpened) {
+                    console.log('App not detected, showing fallback');
                     showFallback();
                 }
-            }, 3000);
+            }, 2500);
         }
         
         // Retry app detection function
