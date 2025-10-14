@@ -157,13 +157,13 @@
     </div>
 
     <script>
-        // Extract invite code from URL
+        // Extract invite code from URL path or query parameter
         function getInviteCode() {
             const pathParts = window.location.pathname.split('/');
             const inviteCode = pathParts[pathParts.length - 1];
             
             // If no invite code in path, try to get from query parameter
-            if (!inviteCode || inviteCode === 'index.html' || inviteCode === '') {
+            if (!inviteCode || inviteCode === 'index.html') {
                 const urlParams = new URLSearchParams(window.location.search);
                 return urlParams.get('code') || urlParams.get('invite') || 'UNKNOWN';
             }
@@ -181,7 +181,6 @@
         // Build intent URL for Android Chrome handoff (fallback)
         function buildAndroidIntentUrl(inviteCode) {
             const fallback = encodeURIComponent(window.location.href);
-            // Use the correct domain and package name
             return `intent://www.bashtech.info/habitstreaks/join/group/${inviteCode}#Intent;scheme=https;package=com.bashtech.habittracker;S.browser_fallback_url=${fallback};end`;
         }
 
@@ -193,20 +192,12 @@
             return /Chrome/i.test(navigator.userAgent) && !/OPR|Edg|Brave/i.test(navigator.userAgent);
         }
 
-        function showOpenInAppButton(inviteCode) {
-            // Button is already set up and visible, no need to do anything
-            console.log('✅ Open in Habit Streaks button is ready');
-        }
-
         // Try to open the app and check if it opens
         function tryOpenApp() {
             const inviteCode = getInviteCode();
             const appScheme = `habitstreaks://join/group/${inviteCode}`;
             
             console.log('🚀 Starting app detection for invite code:', inviteCode);
-            console.log('📱 User agent:', navigator.userAgent);
-            console.log('🤖 Is Android:', isAndroid());
-            console.log('🌐 Is Chrome:', isChrome());
             console.log('🔗 App scheme:', appScheme);
             
             // Track if the page loses focus (app opened)
@@ -221,8 +212,6 @@
                     appOpened = true;
                     console.log('✅ App opened - page hidden');
                     clearTimeout(timeoutId);
-                } else {
-                    console.log('👁️ Page visible again');
                 }
             });
             
@@ -235,13 +224,10 @@
             
             // Listen for page focus (user came back to browser)
             window.addEventListener('focus', function() {
-                console.log('👁️ Page focused');
                 if (appOpened) {
-                    // User came back from the app, hide the loading
                     clearTimeout(timeoutId);
                     document.getElementById('loading').style.display = 'none';
                     document.getElementById('fallback').style.display = 'block';
-                    showOpenInAppButton(inviteCode);
                 }
             });
             
@@ -249,7 +235,6 @@
                 if (!appOpened) {
                     document.getElementById('loading').style.display = 'none';
                     document.getElementById('fallback').style.display = 'block';
-                    showOpenInAppButton(inviteCode);
                 }
             }
             
@@ -258,18 +243,17 @@
                 console.log(`🔄 Attempt ${attemptCount} of ${maxAttempts}`);
                 
                 if (attemptCount === 1) {
-                    // First attempt: Try custom scheme directly (most reliable)
+                    // First attempt: Try custom scheme directly
                     console.log('🎯 Trying custom scheme:', appScheme);
                     window.location.href = appScheme;
                     
-                    // Check if app opened after a short delay
                     setTimeout(() => {
                         if (!appOpened && attemptCount < maxAttempts) {
                             tryNextMethod();
                         } else if (!appOpened) {
                             showFallback();
                         }
-                    }, 1000); // Reduced timeout for faster response
+                    }, 1000);
                     
                 } else if (attemptCount === 2) {
                     // Second attempt: Try universal link
@@ -277,14 +261,13 @@
                     console.log('🌐 Trying universal link:', httpsUrl);
                     window.location.href = httpsUrl;
                     
-                    // Check if app opened after a short delay
                     setTimeout(() => {
                         if (!appOpened && attemptCount < maxAttempts) {
                             tryNextMethod();
                         } else if (!appOpened) {
                             showFallback();
                         }
-                    }, 1000); // Reduced timeout for faster response
+                    }, 1000);
                     
                 } else {
                     // Third attempt: Try intent URL (Android Chrome) or custom scheme
@@ -296,12 +279,11 @@
                         window.location.href = appScheme;
                     }
                     
-                    // Final check
                     setTimeout(() => {
                         if (!appOpened) {
                             showFallback();
                         }
-                    }, 1000); // Reduced timeout for faster response
+                    }, 1000);
                 }
             }
             
@@ -314,7 +296,7 @@
                     console.log('⏰ App not detected, showing fallback');
                     showFallback();
                 }
-            }, 2500); // Reduced timeout for faster UX
+            }, 2500);
         }
         
         // Retry app detection function
@@ -327,14 +309,12 @@
         // Initialize the page
         updatePage();
         
-        // Set up the Open in Habit Streaks button immediately
+        // Set up the Open in Habit Streaks button
         const openBtn = document.getElementById('openInAppBtn');
         if (openBtn) {
             openBtn.onclick = function(e) {
                 e.preventDefault();
                 console.log('🚀 Open in Habit Streaks button clicked');
-                
-                // Use the same working logic as Try Again button
                 document.getElementById('fallback').style.display = 'none';
                 document.getElementById('loading').style.display = 'block';
                 tryOpenApp();
