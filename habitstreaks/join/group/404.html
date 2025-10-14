@@ -158,33 +158,38 @@
             document.getElementById('inviteCodeText').textContent = inviteCode;
         }
         
-        // Try to open the app and check if it opens
+        // Try to open the app (Android intent:// for Chrome) with Play Store fallback
         function tryOpenApp() {
             const inviteCode = getInviteCode();
             const appScheme = `habitstreaks://join/group/${inviteCode}`;
+            const androidIntent = `intent://join/group/${inviteCode}#Intent;scheme=habitstreaks;package=com.bashtech.habittracker;S.browser_fallback_url=${encodeURIComponent('https://play.google.com/store/apps/details?id=com.bashtech.habittracker')};end`;
             
-            console.log('🔗 WEB DEBUG - Trying to open app with scheme:', appScheme);
+            console.log('🔗 WEB DEBUG - Trying Android intent deep link:', androidIntent);
             
-            // Try to open the app immediately
-            try {
+            const ua = navigator.userAgent || '';
+            const isAndroid = /Android/i.test(ua);
+            
+            if (isAndroid) {
+                // Prefer intent:// for Chrome on Android
+                window.location.href = androidIntent;
+            } else {
+                // Fallback to custom scheme for other platforms
                 window.location.href = appScheme;
-                console.log('🔗 WEB DEBUG - window.location.href attempted');
-            } catch (e) {
-                console.log('🔗 WEB DEBUG - window.location.href failed:', e);
             }
             
-            // Show the app button after a short delay
+            // Also render the manual open button in case navigation was blocked
             setTimeout(() => {
                 document.getElementById('loading').style.display = 'none';
                 document.getElementById('appButton').style.display = 'block';
-                
-                // Set up the button click handler
                 document.getElementById('openAppButton').onclick = function(e) {
                     e.preventDefault();
-                    console.log('🔗 WEB DEBUG - Button clicked, opening app...');
-                    window.location.href = appScheme;
+                    if (isAndroid) {
+                        window.location.href = androidIntent;
+                    } else {
+                        window.location.href = appScheme;
+                    }
                 };
-            }, 1000);
+            }, 800);
         }
         
         // Initialize the page
