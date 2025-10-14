@@ -1,5 +1,5 @@
-// Universal redirect handler for deep links
-// This will redirect any path to the main page with the invite code
+// Universal deep link handler for GitHub Pages
+// This script will be included in all pages to handle deep linking
 
 (function() {
     'use strict';
@@ -10,7 +10,7 @@
         const inviteCode = pathParts[pathParts.length - 1];
         
         // If no invite code in path, try to get from query parameter
-        if (!inviteCode || inviteCode === 'redirect.js') {
+        if (!inviteCode || inviteCode === 'handler.js') {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get('code') || 'UNKNOWN';
         }
@@ -27,7 +27,7 @@
     function redirectToMainPage() {
         if (isDeepLinkPage()) {
             const inviteCode = getInviteCode();
-            const mainPageUrl = `https://www.bashtech.info/habitstreaks/join/group/fallback.html?code=${inviteCode}`;
+            const mainPageUrl = `https://www.bashtech.info/habitstreaks/join/group/universal.html?code=${inviteCode}`;
             window.location.href = mainPageUrl;
         }
     }

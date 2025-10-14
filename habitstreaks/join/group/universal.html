@@ -163,7 +163,7 @@
             const inviteCode = pathParts[pathParts.length - 1];
             
             // If no invite code in path, try to get from query parameter
-            if (!inviteCode || inviteCode === '404.html') {
+            if (!inviteCode || inviteCode === 'universal.html') {
                 const urlParams = new URLSearchParams(window.location.search);
                 return urlParams.get('code') || 'UNKNOWN';
             }
