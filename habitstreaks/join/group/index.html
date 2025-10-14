@@ -124,7 +124,7 @@
             </div>
             
             <div class="app-buttons">
-                <a id="openInAppBtn" href="#" class="app-button android-button" style="display:none;">
+                <a id="openInAppBtn" href="#" class="app-button android-button">
                     🚀 Open in Habit Streaks
                 </a>
                 <a href="https://play.google.com/store/apps/details?id=com.bashtech.habittracker" class="app-button android-button" target="_blank">
@@ -194,17 +194,8 @@
         }
 
         function showOpenInAppButton(inviteCode) {
-            const btn = document.getElementById('openInAppBtn');
-            btn.style.display = 'inline-flex';
-            btn.onclick = function(e) {
-                e.preventDefault();
-                console.log('🚀 Open in Habit Streaks button clicked');
-                
-                // Use the same working logic as Try Again button
-                document.getElementById('fallback').style.display = 'none';
-                document.getElementById('loading').style.display = 'block';
-                tryOpenApp();
-            };
+            // Button is already set up and visible, no need to do anything
+            console.log('✅ Open in Habit Streaks button is ready');
         }
 
         // Try to open the app and check if it opens
@@ -336,10 +327,18 @@
         // Initialize the page
         updatePage();
         
-        // Check if we're in incognito mode and adjust behavior
-        function isIncognitoMode() {
-            // Simple detection - in incognito mode, some features might be limited
-            return !window.chrome || !window.chrome.runtime;
+        // Set up the Open in Habit Streaks button immediately
+        const openBtn = document.getElementById('openInAppBtn');
+        if (openBtn) {
+            openBtn.onclick = function(e) {
+                e.preventDefault();
+                console.log('🚀 Open in Habit Streaks button clicked');
+                
+                // Use the same working logic as Try Again button
+                document.getElementById('fallback').style.display = 'none';
+                document.getElementById('loading').style.display = 'block';
+                tryOpenApp();
+            };
         }
         
         // Try to open the app immediately
