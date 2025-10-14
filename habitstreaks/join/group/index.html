@@ -138,7 +138,7 @@
                 </button>
             </div>
             
-            <a href="https://subashrathinam.github.io/ashra_website/habit_streaks/" class="redirect-button">
+            <a href="https://www.bashtech.info/habit_streaks/" class="redirect-button">
                 🌐 Visit App Page
             </a>
             
@@ -181,8 +181,8 @@
         // Build intent URL for Android Chrome handoff (fallback)
         function buildAndroidIntentUrl(inviteCode) {
             const fallback = encodeURIComponent(window.location.href);
-            // Use the actual GitHub Pages URL for the intent
-            return `intent://subashrathinam.github.io/ashra_website/habitstreaks/join/group/${inviteCode}#Intent;scheme=https;package=com.bashtech.habittracker;S.browser_fallback_url=${fallback};end`;
+            // Use the bashtech.info domain for the intent
+            return `intent://www.bashtech.info/habitstreaks/join/group/${inviteCode}#Intent;scheme=https;package=com.bashtech.habittracker;S.browser_fallback_url=${fallback};end`;
         }
 
         function isAndroid() {
@@ -273,6 +273,8 @@
                     appOpened = true;
                     console.log('App opened - page hidden');
                     clearTimeout(timeoutId);
+                } else {
+                    console.log('Page visible again');
                 }
             });
             
@@ -285,6 +287,7 @@
             
             // Listen for page focus (user came back to browser)
             window.addEventListener('focus', function() {
+                console.log('Page focused');
                 if (appOpened) {
                     // User came back from the app, hide the loading
                     clearTimeout(timeoutId);
@@ -304,8 +307,8 @@
             
             // Try to open the app
             if (isAndroid()) {
-                // For Android, try universal link first
-                const httpsUrl = `https://subashrathinam.github.io/ashra_website/habitstreaks/join/group/${inviteCode}`;
+                // For Android, try universal link first (use bashtech.info domain)
+                const httpsUrl = `https://www.bashtech.info/habitstreaks/join/group/${inviteCode}`;
                 console.log('Trying universal link:', httpsUrl);
                 window.location.href = httpsUrl;
                 
