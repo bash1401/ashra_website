@@ -1,6 +1,20 @@
 [
   {
     "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.bashtech.habittracker",
+      "sha256_cert_fingerprints": [
+        "4E:50:2D:DE:2C:01:BA:6D:E7:10:D6:98:6E:42:A8:AC:B9:0F:1C:0C:4C:F0:B4:06:00:2C:3A:D8:6E:45:A8:AB"
+      ]
+    }
+  }
+]
+[
+  {
+    "relation": [
       "delegate_permission/common.handle_all_urls",
       "delegate_permission/common.get_login_creds"
     ],
