@@ -138,7 +138,7 @@
                 </button>
             </div>
             
-            <a href="https://www.bashtech.info/habit_streaks/" class="redirect-button">
+            <a href="https://subashrathinam.github.io/ashra_website/habit_streaks/" class="redirect-button">
                 🌐 Visit App Page
             </a>
             
@@ -181,7 +181,8 @@
         // Build intent URL for Android Chrome handoff (fallback)
         function buildAndroidIntentUrl(inviteCode) {
             const fallback = encodeURIComponent(window.location.href);
-            return `intent://www.bashtech.info/habitstreaks/join/group/${inviteCode}#Intent;scheme=https;package=com.bashtech.habittracker;S.browser_fallback_url=${fallback};end`;
+            // Use the actual GitHub Pages URL for the intent
+            return `intent://subashrathinam.github.io/ashra_website/habitstreaks/join/group/${inviteCode}#Intent;scheme=https;package=com.bashtech.habittracker;S.browser_fallback_url=${fallback};end`;
         }
 
         function isAndroid() {
@@ -220,7 +221,7 @@
                 function attemptOpen() {
                     if (isAndroid()) {
                         // For Android, try universal link first
-                        const httpsUrl = `https://www.bashtech.info/habitstreaks/join/group/${inviteCode}`;
+                        const httpsUrl = `https://subashrathinam.github.io/ashra_website/habitstreaks/join/group/${inviteCode}`;
                         window.location.href = httpsUrl;
                         
                         // Fallback to intent if universal link doesn't work
@@ -291,7 +292,7 @@
                 
                 if (isAndroid()) {
                     // For Android, try multiple methods
-                    const httpsUrl = `https://www.bashtech.info/habitstreaks/join/group/${inviteCode}`;
+                    const httpsUrl = `https://subashrathinam.github.io/ashra_website/habitstreaks/join/group/${inviteCode}`;
                     
                     if (detectionAttempts === 1) {
                         // First attempt: Try universal link with iframe
