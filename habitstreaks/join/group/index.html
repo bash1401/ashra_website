@@ -198,62 +198,12 @@
             btn.style.display = 'inline-flex';
             btn.onclick = function(e) {
                 e.preventDefault();
+                console.log('🚀 Open in Habit Streaks button clicked');
                 
-                // Track if app opens
-                let appOpened = false;
-                let timeoutId;
-                
-                // Listen for page visibility change
-                document.addEventListener('visibilitychange', function() {
-                    if (document.hidden) {
-                        appOpened = true;
-                        clearTimeout(timeoutId);
-                    }
-                });
-                
-                // Listen for page blur
-                window.addEventListener('blur', function() {
-                    appOpened = true;
-                    clearTimeout(timeoutId);
-                });
-                
-                // Try to open the app
-                function attemptOpen() {
-                    if (isAndroid()) {
-                        // For Android, try universal link first
-                        const httpsUrl = `https://www.bashtech.info/habitstreaks/join/group/${inviteCode}`;
-                        window.location.href = httpsUrl;
-                        
-                        // Fallback to intent if universal link doesn't work
-                        setTimeout(() => {
-                            if (!appOpened && isChrome()) {
-                                window.location.href = buildAndroidIntentUrl(inviteCode);
-                            }
-                        }, 1000);
-                    } else {
-                        // For iOS or other platforms, try custom scheme with error handling
-                        try {
-                            window.location.href = `habitstreaks://join/group/${inviteCode}`;
-                        } catch (error) {
-                            // Scheme not registered, show fallback
-                            console.log('Custom scheme not registered:', error);
-                            showFallback();
-                        }
-                    }
-                }
-                
-                attemptOpen();
-                
-                // Set timeout to show message if app doesn't open
-                timeoutId = setTimeout(() => {
-                    if (!appOpened) {
-                        alert('App not found. Please download the app from the Play Store first.');
-                    }
-                }, 2000);
-                
-                function showFallback() {
-                    alert('App not found. Please download the app from the Play Store first.');
-                }
+                // Use the same working logic as Try Again button
+                document.getElementById('fallback').style.display = 'none';
+                document.getElementById('loading').style.display = 'block';
+                tryOpenApp();
             };
         }
 
@@ -317,7 +267,7 @@
                 console.log(`🔄 Attempt ${attemptCount} of ${maxAttempts}`);
                 
                 if (attemptCount === 1) {
-                    // First attempt: Try custom scheme directly
+                    // First attempt: Try custom scheme directly (most reliable)
                     console.log('🎯 Trying custom scheme:', appScheme);
                     window.location.href = appScheme;
                     
@@ -328,7 +278,7 @@
                         } else if (!appOpened) {
                             showFallback();
                         }
-                    }, 1500);
+                    }, 1000); // Reduced timeout for faster response
                     
                 } else if (attemptCount === 2) {
                     // Second attempt: Try universal link
@@ -343,7 +293,7 @@
                         } else if (!appOpened) {
                             showFallback();
                         }
-                    }, 1500);
+                    }, 1000); // Reduced timeout for faster response
                     
                 } else {
                     // Third attempt: Try intent URL (Android Chrome) or custom scheme
@@ -360,7 +310,7 @@
                         if (!appOpened) {
                             showFallback();
                         }
-                    }, 1500);
+                    }, 1000); // Reduced timeout for faster response
                 }
             }
             
@@ -373,7 +323,7 @@
                     console.log('⏰ App not detected, showing fallback');
                     showFallback();
                 }
-            }, 3000); // Reduced timeout for better UX
+            }, 2500); // Reduced timeout for faster UX
         }
         
         // Retry app detection function
@@ -392,17 +342,9 @@
             return !window.chrome || !window.chrome.runtime;
         }
         
-        // Try to open the app
-        if (isIncognitoMode()) {
-            console.log('🕵️ Incognito mode detected - showing fallback immediately');
-            setTimeout(() => {
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('fallback').style.display = 'block';
-                showOpenInAppButton(getInviteCode());
-            }, 1000);
-        } else {
-            tryOpenApp();
-        }
+        // Try to open the app immediately
+        console.log('🚀 Starting immediate app detection...');
+        tryOpenApp();
     </script>
 </body>
 </html>
