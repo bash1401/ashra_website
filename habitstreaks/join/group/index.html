@@ -113,7 +113,8 @@
         <p class="subtitle">Checking if app is installed...</p>
         
         <div class="loading" id="loading">
-            Trying to open the app...
+            <div style="margin-bottom: 10px;">🔍 Checking if Habit Streaks app is installed...</div>
+            <div style="font-size: 12px; color: #999;">This may take a few seconds</div>
         </div>
         
         <div id="fallback" style="display: none;">
@@ -131,6 +132,12 @@
                 </a>
             </div>
             
+            <div style="text-align: center; margin: 15px 0;">
+                <button id="retryBtn" onclick="retryAppDetection()" style="background: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 14px;">
+                    🔄 Try Again
+                </button>
+            </div>
+            
             <a href="https://www.bashtech.info/habit_streaks/" class="redirect-button">
                 🌐 Visit App Page
             </a>
@@ -141,6 +148,10 @@
                 2. Open the app and sign up<br>
                 3. Go to "Group Challenges" and tap "Join Group"<br>
                 4. Enter the invite code: <strong id="inviteCodeText">Loading...</strong>
+                <br><br>
+                <div style="background: #e3f2fd; padding: 10px; border-radius: 8px; margin-top: 10px; font-size: 13px;">
+                    💡 <strong>Tip:</strong> If you already have the app installed, try the "Open in Habit Streaks" button above.
+                </div>
             </div>
         </div>
     </div>
@@ -186,23 +197,52 @@
             btn.style.display = 'inline-flex';
             btn.onclick = function(e) {
                 e.preventDefault();
-                // Prefer verified https universal link first
-                const httpsUrl = `https://www.bashtech.info/habitstreaks/join/group/${inviteCode}`;
-                if (isAndroid()) {
-                    window.location.href = httpsUrl;
-                    // Also schedule a secondary attempt with intent after a short delay
-                    setTimeout(() => {
-                        if (document.visibilityState === 'visible') {
-                            if (isChrome()) {
+                
+                // Track if app opens
+                let appOpened = false;
+                let timeoutId;
+                
+                // Listen for page visibility change
+                document.addEventListener('visibilitychange', function() {
+                    if (document.hidden) {
+                        appOpened = true;
+                        clearTimeout(timeoutId);
+                    }
+                });
+                
+                // Listen for page blur
+                window.addEventListener('blur', function() {
+                    appOpened = true;
+                    clearTimeout(timeoutId);
+                });
+                
+                // Try to open the app
+                function attemptOpen() {
+                    if (isAndroid()) {
+                        // For Android, try universal link first
+                        const httpsUrl = `https://www.bashtech.info/habitstreaks/join/group/${inviteCode}`;
+                        window.location.href = httpsUrl;
+                        
+                        // Fallback to intent if universal link doesn't work
+                        setTimeout(() => {
+                            if (!appOpened && isChrome()) {
                                 window.location.href = buildAndroidIntentUrl(inviteCode);
-                            } else {
-                                window.location.href = `habitstreaks://join/group/${inviteCode}`;
                             }
-                        }
-                    }, 600);
-                } else {
-                    window.location.href = httpsUrl;
+                        }, 1000);
+                    } else {
+                        // For iOS or other platforms, try custom scheme
+                        window.location.href = `habitstreaks://join/group/${inviteCode}`;
+                    }
                 }
+                
+                attemptOpen();
+                
+                // Set timeout to show message if app doesn't open
+                timeoutId = setTimeout(() => {
+                    if (!appOpened) {
+                        alert('App not found. Please download the app from the Play Store first.');
+                    }
+                }, 2000);
             };
         }
 
@@ -213,12 +253,16 @@
             
             // Track if the page loses focus (app opened)
             let pageHidden = false;
+            let appOpened = false;
             let timeoutId;
+            let detectionAttempts = 0;
+            const maxAttempts = 3;
             
             // Listen for page visibility change
             document.addEventListener('visibilitychange', function() {
                 if (document.hidden) {
                     pageHidden = true;
+                    appOpened = true;
                     clearTimeout(timeoutId);
                 }
             });
@@ -226,40 +270,125 @@
             // Listen for page blur (app might have opened)
             window.addEventListener('blur', function() {
                 pageHidden = true;
+                appOpened = true;
                 clearTimeout(timeoutId);
             });
             
-            // Prefer verified https universal link (lets Android OS/Chrome decide)
-            const httpsUrl = `https://www.bashtech.info/habitstreaks/join/group/${inviteCode}`;
-            window.location.href = httpsUrl;
-            
-            // As fallback, attempt intent (Chrome) or scheme after a short delay
-            setTimeout(() => {
-                if (!document.hidden) {
-                    if (isAndroid() && isChrome()) {
-                        window.location.href = buildAndroidIntentUrl(inviteCode);
-                    } else {
-                        const iframe = document.createElement('iframe');
-                        iframe.style.display = 'none';
-                        iframe.src = appScheme;
-                        document.body.appendChild(iframe);
-                    }
-                }
-            }, 400);
-            
-            // Set a timeout to show fallback if app doesn't open
-            timeoutId = setTimeout(() => {
-                if (!pageHidden) {
-                    // App didn't open, show fallback
-                    const iframes = document.getElementsByTagName('iframe');
-                    if (iframes.length) {
-                        try { iframes[0].remove(); } catch (_) {}
-                    }
+            // Listen for page focus (user came back to browser)
+            window.addEventListener('focus', function() {
+                if (appOpened) {
+                    // User came back from the app, hide the loading
+                    clearTimeout(timeoutId);
                     document.getElementById('loading').style.display = 'none';
                     document.getElementById('fallback').style.display = 'block';
                     showOpenInAppButton(inviteCode);
                 }
-            }, 2000);
+            });
+            
+            // Try to detect if app is installed by attempting to open it
+            function attemptAppOpen() {
+                detectionAttempts++;
+                
+                if (isAndroid()) {
+                    // For Android, try multiple methods
+                    const httpsUrl = `https://www.bashtech.info/habitstreaks/join/group/${inviteCode}`;
+                    
+                    if (detectionAttempts === 1) {
+                        // First attempt: Try universal link with iframe
+                        const iframe = document.createElement('iframe');
+                        iframe.style.display = 'none';
+                        iframe.style.width = '1px';
+                        iframe.style.height = '1px';
+                        iframe.style.position = 'absolute';
+                        iframe.style.left = '-9999px';
+                        
+                        let iframeLoaded = false;
+                        
+                        iframe.onload = function() {
+                            iframeLoaded = true;
+                            setTimeout(() => {
+                                if (!appOpened && detectionAttempts < maxAttempts) {
+                                    attemptAppOpen();
+                                } else if (!appOpened) {
+                                    showFallback();
+                                }
+                            }, 1000);
+                        };
+                        
+                        iframe.onerror = function() {
+                            iframeLoaded = true;
+                            setTimeout(() => {
+                                if (!appOpened && detectionAttempts < maxAttempts) {
+                                    attemptAppOpen();
+                                } else if (!appOpened) {
+                                    showFallback();
+                                }
+                            }, 1000);
+                        };
+                        
+                        iframe.src = httpsUrl;
+                        document.body.appendChild(iframe);
+                        
+                        // Clean up iframe
+                        setTimeout(() => {
+                            try { iframe.remove(); } catch (_) {}
+                        }, 2000);
+                        
+                    } else if (detectionAttempts === 2) {
+                        // Second attempt: Try intent URL
+                        if (isChrome()) {
+                            window.location.href = buildAndroidIntentUrl(inviteCode);
+                        } else {
+                            window.location.href = appScheme;
+                        }
+                    } else {
+                        // Third attempt: Direct scheme
+                        window.location.href = appScheme;
+                    }
+                    
+                } else {
+                    // For iOS or other platforms, try custom scheme
+                    const iframe = document.createElement('iframe');
+                    iframe.style.display = 'none';
+                    iframe.src = appScheme;
+                    document.body.appendChild(iframe);
+                    
+                    // Clean up iframe after attempt
+                    setTimeout(() => {
+                        try { iframe.remove(); } catch (_) {}
+                        if (!appOpened && detectionAttempts < maxAttempts) {
+                            attemptAppOpen();
+                        } else if (!appOpened) {
+                            showFallback();
+                        }
+                    }, 1000);
+                }
+            }
+            
+            function showFallback() {
+                if (!appOpened) {
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('fallback').style.display = 'block';
+                    showOpenInAppButton(inviteCode);
+                }
+            }
+            
+            // Start the app opening attempt
+            attemptAppOpen();
+            
+            // Set a timeout to show fallback if app doesn't open
+            timeoutId = setTimeout(() => {
+                if (!appOpened) {
+                    showFallback();
+                }
+            }, 5000);
+        }
+        
+        // Retry app detection function
+        function retryAppDetection() {
+            document.getElementById('fallback').style.display = 'none';
+            document.getElementById('loading').style.display = 'block';
+            tryOpenApp();
         }
         
         // Initialize the page
