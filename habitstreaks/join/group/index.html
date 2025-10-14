@@ -167,7 +167,7 @@
             document.getElementById('inviteCodeText').textContent = inviteCode;
         }
         
-        // Build intent URL for Android Chrome handoff
+        // Build intent URL for Android Chrome handoff (fallback)
         function buildAndroidIntentUrl(inviteCode) {
             const fallback = encodeURIComponent(window.location.href);
             return `intent://www.bashtech.info/habitstreaks/join/group/${inviteCode}#Intent;scheme=https;package=com.bashtech.habittracker;S.browser_fallback_url=${fallback};end`;
@@ -186,12 +186,22 @@
             btn.style.display = 'inline-flex';
             btn.onclick = function(e) {
                 e.preventDefault();
-                // Prefer intent handoff on Android Chrome
-                if (isAndroid() && isChrome()) {
-                    window.location.href = buildAndroidIntentUrl(inviteCode);
+                // Prefer verified https universal link first
+                const httpsUrl = `https://www.bashtech.info/habitstreaks/join/group/${inviteCode}`;
+                if (isAndroid()) {
+                    window.location.href = httpsUrl;
+                    // Also schedule a secondary attempt with intent after a short delay
+                    setTimeout(() => {
+                        if (document.visibilityState === 'visible') {
+                            if (isChrome()) {
+                                window.location.href = buildAndroidIntentUrl(inviteCode);
+                            } else {
+                                window.location.href = `habitstreaks://join/group/${inviteCode}`;
+                            }
+                        }
+                    }, 600);
                 } else {
-                    // Fallback to custom scheme
-                    window.location.href = `habitstreaks://join/group/${inviteCode}`;
+                    window.location.href = httpsUrl;
                 }
             };
         }
@@ -219,16 +229,23 @@
                 clearTimeout(timeoutId);
             });
             
-            // Prefer Android Chrome intent handoff when possible
-            if (isAndroid() && isChrome()) {
-                window.location.href = buildAndroidIntentUrl(inviteCode);
-            } else {
-                // Create a hidden iframe to try opening the app via custom scheme
-                const iframe = document.createElement('iframe');
-                iframe.style.display = 'none';
-                iframe.src = appScheme;
-                document.body.appendChild(iframe);
-            }
+            // Prefer verified https universal link (lets Android OS/Chrome decide)
+            const httpsUrl = `https://www.bashtech.info/habitstreaks/join/group/${inviteCode}`;
+            window.location.href = httpsUrl;
+            
+            // As fallback, attempt intent (Chrome) or scheme after a short delay
+            setTimeout(() => {
+                if (!document.hidden) {
+                    if (isAndroid() && isChrome()) {
+                        window.location.href = buildAndroidIntentUrl(inviteCode);
+                    } else {
+                        const iframe = document.createElement('iframe');
+                        iframe.style.display = 'none';
+                        iframe.src = appScheme;
+                        document.body.appendChild(iframe);
+                    }
+                }
+            }, 400);
             
             // Set a timeout to show fallback if app doesn't open
             timeoutId = setTimeout(() => {
