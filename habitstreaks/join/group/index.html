@@ -193,7 +193,6 @@
             return /Chrome/i.test(navigator.userAgent) && !/OPR|Edg|Brave/i.test(navigator.userAgent);
         }
 
-
         function showOpenInAppButton(inviteCode) {
             const btn = document.getElementById('openInAppBtn');
             btn.style.display = 'inline-flex';
@@ -220,17 +219,17 @@
                 
                 // Try to open the app
                 function attemptOpen() {
-                if (isAndroid()) {
-                    // For Android, try universal link first
-                    const httpsUrl = `https://www.bashtech.info/habitstreaks/join/group/${inviteCode}`;
-                    window.location.href = httpsUrl;
-                    
-                    // Fallback to intent if universal link doesn't work
-                    setTimeout(() => {
-                        if (!appOpened && isChrome()) {
-                            window.location.href = buildAndroidIntentUrl(inviteCode);
-                        }
-                    }, 1000);
+                    if (isAndroid()) {
+                        // For Android, try universal link first
+                        const httpsUrl = `https://www.bashtech.info/habitstreaks/join/group/${inviteCode}`;
+                        window.location.href = httpsUrl;
+                        
+                        // Fallback to intent if universal link doesn't work
+                        setTimeout(() => {
+                            if (!appOpened && isChrome()) {
+                                window.location.href = buildAndroidIntentUrl(inviteCode);
+                            }
+                        }, 1000);
                     } else {
                         // For iOS or other platforms, try custom scheme with error handling
                         try {
