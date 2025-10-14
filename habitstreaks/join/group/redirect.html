@@ -123,6 +123,9 @@
             </div>
             
             <div class="app-buttons">
+                <a id="openInAppBtn" href="#" class="app-button android-button" style="display:none;">
+                    🚀 Open in Habit Streaks
+                </a>
                 <a href="https://play.google.com/store/apps/details?id=com.bashtech.habittracker" class="app-button android-button">
                     📱 Download for Android
                 </a>
@@ -164,6 +167,33 @@
             document.getElementById('inviteCodeText').textContent = inviteCode;
         }
         
+        // Build intent URL for Android Chrome handoff
+        function buildAndroidIntentUrl(inviteCode) {
+            const fallback = encodeURIComponent(window.location.href);
+            return `intent://www.bashtech.info/habitstreaks/join/group/${inviteCode}#Intent;scheme=https;package=com.bashtech.habittracker;S.browser_fallback_url=${fallback};end`;
+        }
+
+        function isAndroid() {
+            return /Android/i.test(navigator.userAgent);
+        }
+
+        function isChrome() {
+            return /Chrome/i.test(navigator.userAgent) && !/OPR|Edg|Brave/i.test(navigator.userAgent);
+        }
+
+        function showOpenInAppButton(inviteCode) {
+            const btn = document.getElementById('openInAppBtn');
+            btn.style.display = 'inline-flex';
+            btn.onclick = function(e) {
+                e.preventDefault();
+                if (isAndroid() && isChrome()) {
+                    window.location.href = buildAndroidIntentUrl(inviteCode);
+                } else {
+                    window.location.href = `habitstreaks://join/group/${inviteCode}`;
+                }
+            };
+        }
+
         // Try to open the app and check if it opens
         function tryOpenApp() {
             const inviteCode = getInviteCode();
@@ -187,19 +217,27 @@
                 clearTimeout(timeoutId);
             });
             
-            // Create a hidden iframe to try opening the app
-            const iframe = document.createElement('iframe');
-            iframe.style.display = 'none';
-            iframe.src = appScheme;
-            document.body.appendChild(iframe);
+            if (isAndroid() && isChrome()) {
+                window.location.href = buildAndroidIntentUrl(inviteCode);
+            } else {
+                // Create a hidden iframe to try opening the app
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = appScheme;
+                document.body.appendChild(iframe);
+            }
             
             // Set a timeout to show fallback if app doesn't open
             timeoutId = setTimeout(() => {
                 if (!pageHidden) {
                     // App didn't open, show fallback
-                    iframe.remove();
+                    const iframes = document.getElementsByTagName('iframe');
+                    if (iframes.length) {
+                        try { iframes[0].remove(); } catch (_) {}
+                    }
                     document.getElementById('loading').style.display = 'none';
                     document.getElementById('fallback').style.display = 'block';
+                    showOpenInAppButton(inviteCode);
                 }
             }, 2000);
         }

@@ -101,6 +101,9 @@
         </div>
         
         <div class="app-buttons">
+            <a id="openInAppBtn" href="#" class="app-button android-button" style="display:none;">
+                🚀 Open in Habit Streaks
+            </a>
             <a href="https://play.google.com/store/apps/details?id=com.bashtech.habittracker" class="app-button android-button">
                 📱 Download for Android
             </a>
@@ -119,19 +122,68 @@
     </div>
 
     <script>
-        // Try to open the app first
-        const appScheme = 'habitstreaks://join/group/mw2024';
-        
-        // Create a hidden iframe to try opening the app
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = appScheme;
-        document.body.appendChild(iframe);
-        
-        // If app doesn't open within 2 seconds, show the fallback page
-        setTimeout(() => {
-            iframe.remove();
-        }, 2000);
+        function isAndroid() {
+            return /Android/i.test(navigator.userAgent);
+        }
+
+        function isChrome() {
+            return /Chrome/i.test(navigator.userAgent) && !/OPR|Edg|Brave/i.test(navigator.userAgent);
+        }
+
+        function buildAndroidIntentUrl(inviteCode) {
+            const fallback = encodeURIComponent(window.location.href);
+            return `intent://www.bashtech.info/habitstreaks/join/group/${inviteCode}#Intent;scheme=https;package=com.bashtech.habittracker;S.browser_fallback_url=${fallback};end`;
+        }
+
+        function showOpenInAppButton(inviteCode) {
+            const btn = document.getElementById('openInAppBtn');
+            btn.style.display = 'inline-flex';
+            btn.onclick = function(e) {
+                e.preventDefault();
+                if (isAndroid() && isChrome()) {
+                    window.location.href = buildAndroidIntentUrl(inviteCode);
+                } else {
+                    window.location.href = `habitstreaks://join/group/${inviteCode}`;
+                }
+            };
+        }
+
+        (function init() {
+            const inviteCode = 'mw2024';
+            let pageHidden = false;
+            let timeoutId;
+
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden) {
+                    pageHidden = true;
+                    clearTimeout(timeoutId);
+                }
+            });
+
+            window.addEventListener('blur', function() {
+                pageHidden = true;
+                clearTimeout(timeoutId);
+            });
+
+            if (isAndroid() && isChrome()) {
+                window.location.href = buildAndroidIntentUrl(inviteCode);
+            } else {
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = `habitstreaks://join/group/${inviteCode}`;
+                document.body.appendChild(iframe);
+            }
+
+            timeoutId = setTimeout(() => {
+                if (!pageHidden) {
+                    const iframes = document.getElementsByTagName('iframe');
+                    if (iframes.length) {
+                        try { iframes[0].remove(); } catch (_) {}
+                    }
+                    showOpenInAppButton(inviteCode);
+                }
+            }, 2000);
+        })();
     </script>
 </body>
 </html>
