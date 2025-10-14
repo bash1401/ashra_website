@@ -193,6 +193,94 @@
             return /Chrome/i.test(navigator.userAgent) && !/OPR|Edg|Brave/i.test(navigator.userAgent);
         }
 
+        // Check if custom scheme is supported (app installed)
+        function checkSchemeSupport(scheme) {
+            return new Promise((resolve) => {
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.style.width = '1px';
+                iframe.style.height = '1px';
+                iframe.style.position = 'absolute';
+                iframe.style.left = '-9999px';
+                
+                let resolved = false;
+                let appOpened = false;
+                
+                const cleanup = () => {
+                    try { iframe.remove(); } catch (_) {}
+                };
+                
+                // Listen for page visibility change (app opened)
+                const visibilityHandler = () => {
+                    if (document.hidden) {
+                        appOpened = true;
+                        if (!resolved) {
+                            resolved = true;
+                            cleanup();
+                            resolve(true); // App opened, scheme is supported
+                        }
+                    }
+                };
+                
+                // Listen for page blur (app might have opened)
+                const blurHandler = () => {
+                    appOpened = true;
+                    if (!resolved) {
+                        resolved = true;
+                        cleanup();
+                        resolve(true); // App opened, scheme is supported
+                    }
+                };
+                
+                document.addEventListener('visibilitychange', visibilityHandler);
+                window.addEventListener('blur', blurHandler);
+                
+                iframe.onload = () => {
+                    if (!resolved && !appOpened) {
+                        resolved = true;
+                        cleanup();
+                        document.removeEventListener('visibilitychange', visibilityHandler);
+                        window.removeEventListener('blur', blurHandler);
+                        resolve(false); // If iframe loads, scheme not supported
+                    }
+                };
+                
+                iframe.onerror = () => {
+                    if (!resolved && !appOpened) {
+                        resolved = true;
+                        cleanup();
+                        document.removeEventListener('visibilitychange', visibilityHandler);
+                        window.removeEventListener('blur', blurHandler);
+                        resolve(false); // Error loading, scheme not supported
+                    }
+                };
+                
+                // Set timeout
+                setTimeout(() => {
+                    if (!resolved) {
+                        resolved = true;
+                        cleanup();
+                        document.removeEventListener('visibilitychange', visibilityHandler);
+                        window.removeEventListener('blur', blurHandler);
+                        resolve(false); // Timeout, assume not supported
+                    }
+                }, 2000);
+                
+                try {
+                    iframe.src = scheme;
+                    document.body.appendChild(iframe);
+                } catch (error) {
+                    if (!resolved) {
+                        resolved = true;
+                        cleanup();
+                        document.removeEventListener('visibilitychange', visibilityHandler);
+                        window.removeEventListener('blur', blurHandler);
+                        resolve(false);
+                    }
+                }
+            });
+        }
+
         function showOpenInAppButton(inviteCode) {
             const btn = document.getElementById('openInAppBtn');
             btn.style.display = 'inline-flex';
@@ -231,8 +319,14 @@
                             }
                         }, 1000);
                     } else {
-                        // For iOS or other platforms, try custom scheme
-                        window.location.href = `habitstreaks://join/group/${inviteCode}`;
+                        // For iOS or other platforms, try custom scheme with error handling
+                        try {
+                            window.location.href = `habitstreaks://join/group/${inviteCode}`;
+                        } catch (error) {
+                            // Scheme not registered, show fallback
+                            console.log('Custom scheme not registered:', error);
+                            showFallback();
+                        }
                     }
                 }
                 
@@ -244,11 +338,15 @@
                         alert('App not found. Please download the app from the Play Store first.');
                     }
                 }, 2000);
+                
+                function showFallback() {
+                    alert('App not found. Please download the app from the Play Store first.');
+                }
             };
         }
 
         // Try to open the app and check if it opens
-        function tryOpenApp() {
+        async function tryOpenApp() {
             const inviteCode = getInviteCode();
             const appScheme = `habitstreaks://join/group/${inviteCode}`;
             
@@ -264,6 +362,7 @@
                 if (document.hidden) {
                     pageHidden = true;
                     appOpened = true;
+                    console.log('App opened - page hidden');
                     clearTimeout(timeoutId);
                 }
             });
@@ -272,6 +371,7 @@
             window.addEventListener('blur', function() {
                 pageHidden = true;
                 appOpened = true;
+                console.log('App opened - page blurred');
                 clearTimeout(timeoutId);
             });
             
@@ -287,52 +387,25 @@
             });
             
             // Try to detect if app is installed by attempting to open it
-            function attemptAppOpen() {
+            async function attemptAppOpen() {
                 detectionAttempts++;
+                console.log(`Detection attempt ${detectionAttempts} of ${maxAttempts}`);
                 
                 if (isAndroid()) {
                     // For Android, try multiple methods
                     const httpsUrl = `https://subashrathinam.github.io/ashra_website/habitstreaks/join/group/${inviteCode}`;
                     
                     if (detectionAttempts === 1) {
-                        // First attempt: Try universal link with iframe
-                        const iframe = document.createElement('iframe');
-                        iframe.style.display = 'none';
-                        iframe.style.width = '1px';
-                        iframe.style.height = '1px';
-                        iframe.style.position = 'absolute';
-                        iframe.style.left = '-9999px';
+                        // First attempt: Try universal link directly
+                        window.location.href = httpsUrl;
                         
-                        let iframeLoaded = false;
-                        
-                        iframe.onload = function() {
-                            iframeLoaded = true;
-                            setTimeout(() => {
-                                if (!appOpened && detectionAttempts < maxAttempts) {
-                                    attemptAppOpen();
-                                } else if (!appOpened) {
-                                    showFallback();
-                                }
-                            }, 1000);
-                        };
-                        
-                        iframe.onerror = function() {
-                            iframeLoaded = true;
-                            setTimeout(() => {
-                                if (!appOpened && detectionAttempts < maxAttempts) {
-                                    attemptAppOpen();
-                                } else if (!appOpened) {
-                                    showFallback();
-                                }
-                            }, 1000);
-                        };
-                        
-                        iframe.src = httpsUrl;
-                        document.body.appendChild(iframe);
-                        
-                        // Clean up iframe
+                        // Give it time to open
                         setTimeout(() => {
-                            try { iframe.remove(); } catch (_) {}
+                            if (!appOpened && detectionAttempts < maxAttempts) {
+                                attemptAppOpen();
+                            } else if (!appOpened) {
+                                showFallback();
+                            }
                         }, 2000);
                         
                     } else if (detectionAttempts === 2) {
@@ -342,27 +415,40 @@
                         } else {
                             window.location.href = appScheme;
                         }
+                        
+                        // Give it time to open
+                        setTimeout(() => {
+                            if (!appOpened && detectionAttempts < maxAttempts) {
+                                attemptAppOpen();
+                            } else if (!appOpened) {
+                                showFallback();
+                            }
+                        }, 2000);
+                        
                     } else {
                         // Third attempt: Direct scheme
                         window.location.href = appScheme;
+                        
+                        // Give it time to open
+                        setTimeout(() => {
+                            if (!appOpened) {
+                                showFallback();
+                            }
+                        }, 2000);
                     }
                     
                 } else {
-                    // For iOS or other platforms, try custom scheme
-                    const iframe = document.createElement('iframe');
-                    iframe.style.display = 'none';
-                    iframe.src = appScheme;
-                    document.body.appendChild(iframe);
+                    // For iOS or other platforms, try to open the app directly
+                    // and monitor if it opens
+                    window.location.href = appScheme;
                     
-                    // Clean up iframe after attempt
+                    // Give the app a chance to open
                     setTimeout(() => {
-                        try { iframe.remove(); } catch (_) {}
-                        if (!appOpened && detectionAttempts < maxAttempts) {
-                            attemptAppOpen();
-                        } else if (!appOpened) {
+                        if (!appOpened) {
+                            // App didn't open, show fallback
                             showFallback();
                         }
-                    }, 1000);
+                    }, 1500);
                 }
             }
             
@@ -382,7 +468,7 @@
                 if (!appOpened) {
                     showFallback();
                 }
-            }, 5000);
+            }, 3000);
         }
         
         // Retry app detection function
