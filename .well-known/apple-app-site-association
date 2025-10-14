@@ -3,13 +3,13 @@
     "apps": [],
     "details": [
       {
-        "appID": "TEAMID.com.bashtech.habittracker",
+        "appID": "YOUR_TEAM_ID.com.bashtech.habittracker",
         "paths": [
           "/habitstreaks/join/group/*"
         ]
       },
       {
-        "appID": "TEAMID.com.bashtech.gpacalculator",
+        "appID": "YOUR_TEAM_ID.com.bashtech.gpacalculator",
         "paths": [
           "/gpacalculator/*"
         ]
@@ -18,7 +18,7 @@
   },
   "webcredentials": {
     "apps": [
-      "TEAMID.com.bashtech.habittracker"
+      "YOUR_TEAM_ID.com.bashtech.habittracker"
     ]
   }
 }

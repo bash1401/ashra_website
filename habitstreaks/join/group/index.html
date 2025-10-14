@@ -127,7 +127,7 @@
                 <a id="openInAppBtn" href="#" class="app-button android-button" style="display:none;">
                     🚀 Open in Habit Streaks
                 </a>
-                <a href="https://play.google.com/store/apps/details?id=com.bashtech.habittracker" class="app-button android-button">
+                <a href="https://play.google.com/store/apps/details?id=com.bashtech.habittracker" class="app-button android-button" target="_blank">
                     📱 Download for Android
                 </a>
             </div>
@@ -181,7 +181,7 @@
         // Build intent URL for Android Chrome handoff (fallback)
         function buildAndroidIntentUrl(inviteCode) {
             const fallback = encodeURIComponent(window.location.href);
-            // Use the bashtech.info domain for the intent
+            // Use the correct domain and package name
             return `intent://www.bashtech.info/habitstreaks/join/group/${inviteCode}#Intent;scheme=https;package=com.bashtech.habittracker;S.browser_fallback_url=${fallback};end`;
         }
 
@@ -220,17 +220,17 @@
                 
                 // Try to open the app
                 function attemptOpen() {
-                    if (isAndroid()) {
-                        // For Android, try universal link first
-                        const httpsUrl = `https://subashrathinam.github.io/ashra_website/habitstreaks/join/group/${inviteCode}`;
-                        window.location.href = httpsUrl;
-                        
-                        // Fallback to intent if universal link doesn't work
-                        setTimeout(() => {
-                            if (!appOpened && isChrome()) {
-                                window.location.href = buildAndroidIntentUrl(inviteCode);
-                            }
-                        }, 1000);
+                if (isAndroid()) {
+                    // For Android, try universal link first
+                    const httpsUrl = `https://www.bashtech.info/habitstreaks/join/group/${inviteCode}`;
+                    window.location.href = httpsUrl;
+                    
+                    // Fallback to intent if universal link doesn't work
+                    setTimeout(() => {
+                        if (!appOpened && isChrome()) {
+                            window.location.href = buildAndroidIntentUrl(inviteCode);
+                        }
+                    }, 1000);
                     } else {
                         // For iOS or other platforms, try custom scheme with error handling
                         try {
@@ -262,6 +262,11 @@
         function tryOpenApp() {
             const inviteCode = getInviteCode();
             const appScheme = `habitstreaks://join/group/${inviteCode}`;
+            
+            console.log('Starting app detection for invite code:', inviteCode);
+            console.log('User agent:', navigator.userAgent);
+            console.log('Is Android:', isAndroid());
+            console.log('Is Chrome:', isChrome());
             
             // Track if the page loses focus (app opened)
             let appOpened = false;
@@ -368,7 +373,7 @@
                     console.log('App not detected, showing fallback');
                     showFallback();
                 }
-            }, 5000);
+            }, 3000); // Reduced timeout for better UX
         }
         
         // Retry app detection function
@@ -381,8 +386,23 @@
         // Initialize the page
         updatePage();
         
+        // Check if we're in incognito mode and adjust behavior
+        function isIncognitoMode() {
+            // Simple detection - in incognito mode, some features might be limited
+            return !window.chrome || !window.chrome.runtime;
+        }
+        
         // Try to open the app
-        tryOpenApp();
+        if (isIncognitoMode()) {
+            console.log('Incognito mode detected - showing fallback immediately');
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('fallback').style.display = 'block';
+                showOpenInAppButton(getInviteCode());
+            }, 1000);
+        } else {
+            tryOpenApp();
+        }
     </script>
 </body>
 </html>
