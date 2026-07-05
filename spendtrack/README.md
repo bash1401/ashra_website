@@ -102,7 +102,7 @@ Provides bank configuration data for SMS parsing:
 
 This website is part of the BashTech developer portfolio. For questions or suggestions, please contact:
 - Email: subash.rathinam1401@gmail.com
-- Website: https://www.bashtech.info
+- Website: https://bash1401.github.io/ashra_website
 
 ## License
 
@@ -111,6 +111,6 @@ This website is part of the BashTech developer portfolio. For questions or sugge
 ## Links
 
 - **App Download**: [Google Play Store](https://play.google.com/store/apps/details?id=com.bashtech.spendtrack)
-- **Developer Website**: [BashTech](https://www.bashtech.info)
+- **Developer Website**: [BashTech](https://bash1401.github.io/ashra_website)
 - **Privacy Policy**: [privacy.html](privacy.html)
 - **Terms of Service**: [terms.html](terms.html)

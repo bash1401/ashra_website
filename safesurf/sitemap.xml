@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.bashtech.info/safesurf/</loc>
+    <loc>https://bash1401.github.io/ashra_website/safesurf/</loc>
     <lastmod>2024-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.bashtech.info/safesurf/index.html</loc>
+    <loc>https://bash1401.github.io/ashra_website/safesurf/index.html</loc>
     <lastmod>2024-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.bashtech.info/safesurf/about.html</loc>
+    <loc>https://bash1401.github.io/ashra_website/safesurf/about.html</loc>
     <lastmod>2024-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.bashtech.info/safesurf/privacy.html</loc>
+    <loc>https://bash1401.github.io/ashra_website/safesurf/privacy.html</loc>
     <lastmod>2024-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.bashtech.info/safesurf/apps.json</loc>
+    <loc>https://bash1401.github.io/ashra_website/safesurf/apps.json</loc>
     <lastmod>2024-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.bashtech.info/safesurf/app_version.json</loc>
+    <loc>https://bash1401.github.io/ashra_website/safesurf/app_version.json</loc>
     <lastmod>2024-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

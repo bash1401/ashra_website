@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.bashtech.info/21dayhabit/sitemap.xml
+Sitemap: https://bash1401.github.io/ashra_website/21dayhabit/sitemap.xml

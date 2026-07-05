@@ -4,12 +4,13 @@ A centralized developer website showcasing all BashTech mobile applications with
 
 ## 🚀 Live Website
 
-**Main Site**: `https://yourusername.github.io/ashra_website/`
+**Main Site**: `https://bash1401.github.io/ashra_website/`
 
 **App Pages**:
-- **SafeSurf**: `https://bash1401.github.io/SafeSurf-DNS-VPN/` (Live - External)
-- **SpendTrack**: `https://yourusername.github.io/ashra_website/spendtrack/` (Planned)
-- **PG Pay**: `https://yourusername.github.io/ashra_website/pgpay/` (Planned)
+- **21 Day Habit**: `https://bash1401.github.io/ashra_website/21dayhabit/`
+- **SafeSurf**: `https://bash1401.github.io/ashra_website/safesurf/`
+- **Focus Timer**: `https://bash1401.github.io/ashra_website/focustimer/`
+- **Habit Streaks**: `https://bash1401.github.io/ashra_website/habit_streaks/`
 
 ## 📁 Project Structure
 

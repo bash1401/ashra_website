@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Developer Website -->
   <url>
-    <loc>https://www.bashtech.info/</loc>
+    <loc>https://bash1401.github.io/ashra_website/</loc>
     <lastmod>2024-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -10,26 +10,26 @@
   
   <!-- SafeSurf App Section -->
   <url>
-    <loc>https://www.bashtech.info/safesurf/</loc>
+    <loc>https://bash1401.github.io/ashra_website/safesurf/</loc>
     <lastmod>2024-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.bashtech.info/safesurf/index.html</loc>
+    <loc>https://bash1401.github.io/ashra_website/safesurf/index.html</loc>
     <lastmod>2024-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.bashtech.info/safesurf/about.html</loc>
+    <loc>https://bash1401.github.io/ashra_website/safesurf/about.html</loc>
     <lastmod>2024-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.bashtech.info/safesurf/privacy.html</loc>
+    <loc>https://bash1401.github.io/ashra_website/safesurf/privacy.html</loc>
     <lastmod>2024-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -38,25 +38,25 @@
   
   <!-- Focus Timer App Section -->
   <url>
-    <loc>https://www.bashtech.info/focustimer/</loc>
+    <loc>https://bash1401.github.io/ashra_website/focustimer/</loc>
     <lastmod>2024-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.bashtech.info/focustimer/index.html</loc>
+    <loc>https://bash1401.github.io/ashra_website/focustimer/index.html</loc>
     <lastmod>2024-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.bashtech.info/focustimer/about.html</loc>
+    <loc>https://bash1401.github.io/ashra_website/focustimer/about.html</loc>
     <lastmod>2024-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.bashtech.info/focustimer/privacy.html</loc>
+    <loc>https://bash1401.github.io/ashra_website/focustimer/privacy.html</loc>
     <lastmod>2024-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -64,37 +64,37 @@
   
   <!-- SpendTrack App Section -->
   <url>
-    <loc>https://www.bashtech.info/spendtrack/</loc>
+    <loc>https://bash1401.github.io/ashra_website/spendtrack/</loc>
     <lastmod>2024-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.bashtech.info/spendtrack/index.html</loc>
+    <loc>https://bash1401.github.io/ashra_website/spendtrack/index.html</loc>
     <lastmod>2024-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.bashtech.info/spendtrack/about.html</loc>
+    <loc>https://bash1401.github.io/ashra_website/spendtrack/about.html</loc>
     <lastmod>2024-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.bashtech.info/spendtrack/privacy.html</loc>
+    <loc>https://bash1401.github.io/ashra_website/spendtrack/privacy.html</loc>
     <lastmod>2024-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.bashtech.info/spendtrack/terms.html</loc>
+    <loc>https://bash1401.github.io/ashra_website/spendtrack/terms.html</loc>
     <lastmod>2024-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.bashtech.info/spendtrack/api/banks.json</loc>
+    <loc>https://bash1401.github.io/ashra_website/spendtrack/api/banks.json</loc>
     <lastmod>2024-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -102,37 +102,37 @@
 
   <!-- 21 Day Habit App Section -->
   <url>
-    <loc>https://www.bashtech.info/21dayhabit/</loc>
+    <loc>https://bash1401.github.io/ashra_website/21dayhabit/</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.bashtech.info/21dayhabit/about.html</loc>
+    <loc>https://bash1401.github.io/ashra_website/21dayhabit/about.html</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.bashtech.info/21dayhabit/documentation.html</loc>
+    <loc>https://bash1401.github.io/ashra_website/21dayhabit/documentation.html</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.bashtech.info/21dayhabit/privacy.html</loc>
+    <loc>https://bash1401.github.io/ashra_website/21dayhabit/privacy.html</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.bashtech.info/21dayhabit/terms.html</loc>
+    <loc>https://bash1401.github.io/ashra_website/21dayhabit/terms.html</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.bashtech.info/21dayhabit/support.html</loc>
+    <loc>https://bash1401.github.io/ashra_website/21dayhabit/support.html</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

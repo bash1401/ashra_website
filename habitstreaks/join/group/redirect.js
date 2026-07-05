@@ -15,7 +15,7 @@ function getInviteCode() {
 // Redirect to the main page with the invite code
 function redirectToMainPage() {
     const inviteCode = getInviteCode();
-    const mainPageUrl = `https://www.bashtech.info/habitstreaks/join/group/index.html?code=${inviteCode}`;
+    const mainPageUrl = `https://bash1401.github.io/ashra_website/habitstreaks/join/group/index.html?code=${inviteCode}`;
     console.log('🔄 Redirecting to:', mainPageUrl);
     window.location.href = mainPageUrl;
 }

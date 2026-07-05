@@ -143,7 +143,7 @@
                 </button>
             </div>
             
-            <a href="https://www.bashtech.info/habit_streaks/" class="redirect-button">
+            <a href="https://bash1401.github.io/ashra_website/habit_streaks/" class="redirect-button">
                 🌐 Visit App Page
             </a>
             
@@ -186,7 +186,7 @@
         // Build intent URL for Android Chrome handoff (fallback)
         function buildAndroidIntentUrl(inviteCode) {
             const fallback = encodeURIComponent(window.location.href);
-            return `intent://www.bashtech.info/habitstreaks/join/group/${inviteCode}#Intent;scheme=https;package=com.bashtech.habittracker;S.browser_fallback_url=${fallback};end`;
+            return `intent://bash1401.github.io/ashra_website/habitstreaks/join/group/${inviteCode}#Intent;scheme=https;package=com.bashtech.habittracker;S.browser_fallback_url=${fallback};end`;
         }
 
         function isAndroid() {
@@ -297,7 +297,7 @@
                     
                 } else if (attemptCount === 2) {
                     // Second attempt: Try universal link
-                    const httpsUrl = `https://www.bashtech.info/habitstreaks/join/group/${inviteCode}`;
+                    const httpsUrl = `https://bash1401.github.io/ashra_website/habitstreaks/join/group/${inviteCode}`;
                     console.log('🌐 Trying universal link:', httpsUrl);
                     window.location.href = httpsUrl;
                     

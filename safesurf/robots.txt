@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.bashtech.info/safesurf/sitemap.xml
+Sitemap: https://bash1401.github.io/ashra_website/safesurf/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
