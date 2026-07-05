@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.bashtech.info/21dayhabit/sitemap.xml

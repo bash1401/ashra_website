@@ -10,10 +10,6 @@
       {
         "source": "/habitstreaks/join/group/**",
         "destination": "/habitstreaks/join/group/universal.html"
-      },
-      {
-        "source": "**",
-        "destination": "/index.html"
       }
     ],
     "headers": [
@@ -29,3 +25,4 @@
     ]
   }
 }
+

@@ -92,6 +92,25 @@
         "Customizable categories and themes",
         "Statistics and insights"
       ]
+    },
+    {
+      "name": "21 Day Habit",
+      "folder": "21dayhabit",
+      "icon": "🎯",
+      "category": "Habit Tracking & Focus",
+      "description": "Build one habit at a time with a strict daily window, focus sessions, streak tracking, badges, and smart weekday reminders.",
+      "status": "live",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.bashtech.twentyonedayhabitdeveloper",
+      "websiteUrl": "https://www.bashtech.info/21dayhabit/index.html",
+      "features": [
+        "One-habit focus with 21-day cycles",
+        "Timed focus sessions with progress tracking",
+        "Weekday-aware reminders and alarms",
+        "Streak freezes and completion badges",
+        "History heatmap and analytics",
+        "Premium: unlimited habits, zero ads, data export",
+        "Local-first privacy with optional backup"
+      ]
     }
   ]
 }
