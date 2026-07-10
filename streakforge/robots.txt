@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bash1401.github.io/ashra_website/streakforge/sitemap.xml

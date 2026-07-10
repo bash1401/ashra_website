@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — StreakForge | BashTech</title>
+  <meta name="description" content="StreakForge features, specialties, habits, reminders, Life dashboard, premium, and privacy-first design.">
+  <link rel="canonical" href="https://bash1401.github.io/ashra_website/streakforge/documentation.html">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root { --primary-color: #6750a4; --deep: #1a1025; }
+    .hero { background: linear-gradient(135deg, var(--deep), #4a2c7a, var(--primary-color)); color: #fff; padding: 110px 0 70px; }
+    .content { background: #fff; border-radius: 20px; margin-top: -50px; box-shadow: 0 20px 40px rgba(0,0,0,.08); }
+    .section { background: #f8f9fa; border-radius: 14px; padding: 1.5rem; margin-bottom: 1.25rem; border-left: 4px solid var(--primary-color); }
+    .section h2 { font-size: 1.15rem; margin-bottom: .75rem; color: var(--deep); }
+    code { background: #ede9fe; color: #5b21b6; padding: .1rem .35rem; border-radius: 4px; }
+  </style>
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background:#1a1025;">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">StreakForge</a>
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link active" href="documentation.html">Docs</a>
+        <a class="nav-link" href="privacy.html">Privacy</a>
+        <a class="nav-link" href="terms.html">Terms</a>
+        <a class="nav-link" href="support.html">Support</a>
+      </div>
+    </div>
+  </nav>
+  <section class="hero text-center">
+    <div class="container">
+      <h1 class="display-5 fw-bold">App Documentation</h1>
+      <p class="lead mb-0">Features, specialties &amp; how StreakForge works</p>
+      <p class="mt-2 opacity-75">Last updated: July 10, 2026 · Package <code class="text-white">com.bashtect.streakforge</code></p>
+    </div>
+  </section>
+  <div class="container pb-5">
+    <div class="content p-4 p-md-5">
+
+      <div class="section">
+        <h2>What makes StreakForge special</h2>
+        <ul class="mb-0">
+          <li><strong>Offline-first life scoreboard</strong> — habit data lives on your device; no account required.</li>
+          <li><strong>Combined activity heatmap</strong> — GitHub-style calendar across <em>all</em> habits, not one task at a time.</li>
+          <li><strong>Per-habit reminders</strong> — multiple daily times, notification actions (+1 / Snooze / Skip).</li>
+          <li><strong>Life Dashboard</strong> — daily score, life areas, lifetime totals, and personal records.</li>
+          <li><strong>Regional habit catalog</strong> — searchable templates (Firebase) with local customization.</li>
+          <li><strong>Streak recovery</strong> — restore a missed day (Premium free weekly restores, or rewarded ad).</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Core features</h2>
+        <ul class="mb-0">
+          <li><strong>Yes/No &amp; Counter habits</strong> — daily or weekly targets, units, colors, icons.</li>
+          <li><strong>Streak engine</strong> — current/longest streak, skip weekdays, planned skips.</li>
+          <li><strong>Home screen</strong> — list/grid views, quick complete / +1, wallpaper accents.</li>
+          <li><strong>Task detail</strong> — charts, 90-day heatmap, multiple reminders (toggle / edit / delete).</li>
+          <li><strong>Onboarding setup</strong> — pick habits, set reminder times, request notification permission.</li>
+          <li><strong>Widgets</strong> — home widget synced with your top habits.</li>
+          <li><strong>Backup &amp; export</strong> — database backup/restore and CSV export from Settings.</li>
+          <li><strong>Achievements</strong> — badges, XP, and level names as you stay consistent.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Reminders &amp; notifications</h2>
+        <ul class="mb-0">
+          <li>Local notifications only (no cloud push for habit data).</li>
+          <li>Android 13+ asks for notification permission on the setup reminders step.</li>
+          <li>Notification actions: <strong>+1</strong> (complete/increment), <strong>Snooze</strong> (10 minutes), <strong>Skip</strong> (mark skipped today).</li>
+          <li>On MIUI/Samsung, allow notifications and disable battery restrictions for reliable alarms.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Life Dashboard</h2>
+        <ul class="mb-0">
+          <li>Today’s score and overall life score across life areas.</li>
+          <li>Per-habit status for today (done / skipped / progress).</li>
+          <li>90-day combined activity heatmap for all habits.</li>
+          <li>Lifetime totals and personal records.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Premium</h2>
+        <ul class="mb-0">
+          <li>Unlimited habits (free limit: 3).</li>
+          <li>No launch ads.</li>
+          <li>Weekly free streak restores, then optional rewarded ad.</li>
+          <li>Share progress with app promotion link.</li>
+          <li>Monthly and yearly plans — <strong>prices come from Google Play</strong> for your country/currency.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Privacy snapshot</h2>
+        <p class="mb-0">Habit completions, streaks, and journals stay on-device. Firebase is used only for a read-only public habit catalog. Ads and Play Billing may process device/purchase data under Google’s policies. Full details: <a href="privacy.html">Privacy Policy</a>.</p>
+      </div>
+
+      <div class="section">
+        <h2>Support</h2>
+        <p class="mb-0">See <a href="support.html">Help &amp; Support</a> for FAQs. More BashTech apps: <a href="https://bash1401.github.io/ashra_website/">developer site</a> · <a href="https://play.google.com/store/apps/developer?id=bashtech">Play Store</a>.</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

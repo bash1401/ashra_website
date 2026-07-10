@@ -1,7 +1,6 @@
 {
   "developer": {
     "name": "BashTech",
-    "email": "subash.rathinam1401@gmail.com",
     "playStoreUrl": "https://play.google.com/store/apps/developer?id=bashtech",
     "focus": "Innovative Mobile Apps",
     "location": "India"
@@ -110,6 +109,26 @@
         "History heatmap and analytics",
         "Premium: unlimited habits, zero ads, data export",
         "Local-first privacy with optional backup"
+      ]
+    },
+    {
+      "name": "StreakForge",
+      "folder": "streakforge",
+      "icon": "🔥",
+      "category": "Habit Tracking & Personal Development",
+      "description": "Offline-first habit scoreboard with streaks, life dashboard, badges, multi-reminders, widgets, and a searchable habit catalog you customize locally.",
+      "status": "development",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.bashtect.streakforge",
+      "websiteUrl": "https://bash1401.github.io/ashra_website/streakforge/index.html",
+      "features": [
+        "Yes/No and counter habits with streak engine",
+        "Life areas, daily score, and combined activity heatmap",
+        "Multiple per-habit reminders with +1 / Snooze / Skip",
+        "Searchable Firebase habit catalog with local edits",
+        "Badges, XP levels, and personal records",
+        "Home widgets and notification quick actions",
+        "Backup, restore, and CSV export",
+        "Local-first privacy — no account required"
       ]
     }
   ]
